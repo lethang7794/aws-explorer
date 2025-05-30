@@ -1,0 +1,16 @@
+module.exports = {
+  plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+          removeTitle: false,
+        },
+      },
+    },
+    'convertStyleToAttrs',
+    'prefixIds',
+    'removeDimensions',
+  ],
+}

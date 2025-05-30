@@ -308,4 +308,4 @@ export const serviceNames = {
   AWSSnowball: 'AWS Snowball',
   AWSSnowballEdge: 'AWS Snowball Edge',
   AWSStorageGateway: 'AWS Storage Gateway',
-};
+} as Record<string, string>
