@@ -24,17 +24,17 @@ type Data = {
   )) as RecursiveDirectory
 
   const data: Data[] = []
-  let name = ''
-  let service = ''
-  let type = ''
-  let component = ''
-  let importComponent = ''
-  let categories: string[] = []
-  let obj: Data
-
-  let prefix = ''
 
   files.forEach((file) => {
+    let name = ''
+    let service = ''
+    let type = ''
+    let component = ''
+    let importComponent = ''
+    let categories: string[] = []
+    let obj: Data
+    let prefix = ''
+
     const { fullpath, filename } = file
 
     if (fullpath.includes('Architecture-Group-Icons')) {

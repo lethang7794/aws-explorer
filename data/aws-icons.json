@@ -190,7 +190,7 @@
       "component": "ArchitectureServiceAWSLakeFormation"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -199,7 +199,7 @@
       "component": "ResourceAmazonAthenaDataSourceConnectors"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -208,7 +208,7 @@
       "component": "ResourceAmazonCloudSearchSearchDocuments"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -217,7 +217,7 @@
       "component": "ResourceAmazonDataZoneBusinessDataCatalog"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -226,7 +226,7 @@
       "component": "ResourceAmazonDataZoneDataPortal"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -235,7 +235,7 @@
       "component": "ResourceAmazonDataZoneDataProjects"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -244,7 +244,7 @@
       "component": "ResourceAmazonEMRCluster"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -253,7 +253,7 @@
       "component": "ResourceAmazonEMREMREngine"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -262,7 +262,7 @@
       "component": "ResourceAmazonEMRHDFSCluster"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -271,7 +271,7 @@
       "component": "ResourceAmazonMSKAmazonMSKConnect"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -280,7 +280,7 @@
       "component": "ResourceAmazonOpenSearchServiceClusterAdministratorNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -289,7 +289,7 @@
       "component": "ResourceAmazonOpenSearchServiceDataNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -298,7 +298,7 @@
       "component": "ResourceAmazonOpenSearchServiceIndex"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -307,7 +307,7 @@
       "component": "ResourceAmazonOpenSearchServiceObservability"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -316,7 +316,7 @@
       "component": "ResourceAmazonOpenSearchServiceOpenSearchDashboards"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -325,7 +325,7 @@
       "component": "ResourceAmazonOpenSearchServiceOpenSearchIngestion"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -334,7 +334,7 @@
       "component": "ResourceAmazonOpenSearchServiceTraces"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -343,7 +343,7 @@
       "component": "ResourceAmazonOpenSearchServiceUltraWarmNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -352,7 +352,7 @@
       "component": "ResourceAmazonQuicksightPaginatedReports"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -361,7 +361,7 @@
       "component": "ResourceAmazonRedshiftAutocopy"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -370,7 +370,7 @@
       "component": "ResourceAmazonRedshiftDataSharingGovernance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -379,7 +379,7 @@
       "component": "ResourceAmazonRedshiftDenseComputeNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -388,7 +388,7 @@
       "component": "ResourceAmazonRedshiftDenseStorageNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -397,7 +397,7 @@
       "component": "ResourceAmazonRedshiftML"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -406,7 +406,7 @@
       "component": "ResourceAmazonRedshiftQueryEditorv20"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -415,7 +415,7 @@
       "component": "ResourceAmazonRedshiftRA3"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -424,7 +424,7 @@
       "component": "ResourceAmazonRedshiftStreamingIngestion"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -433,7 +433,7 @@
       "component": "ResourceAWSDataExchangeforAPIs"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -442,7 +442,7 @@
       "component": "ResourceAWSGlueAWSGlueforRay"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -451,7 +451,7 @@
       "component": "ResourceAWSGlueCrawler"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -460,7 +460,7 @@
       "component": "ResourceAWSGlueDataCatalog"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -469,7 +469,7 @@
       "component": "ResourceAWSGlueDataQuality"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Analytics"
@@ -568,7 +568,7 @@
       "component": "ArchitectureServiceAWSStepFunctions"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -577,7 +577,7 @@
       "component": "ResourceAmazonEventBridgeCustomEventBus"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -586,7 +586,7 @@
       "component": "ResourceAmazonEventBridgeDefaultEventBus"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -595,7 +595,7 @@
       "component": "ResourceAmazonEventBridgeEvent"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -604,7 +604,7 @@
       "component": "ResourceAmazonEventBridgePipes"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -613,7 +613,7 @@
       "component": "ResourceAmazonEventBridgeRule"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -622,7 +622,7 @@
       "component": "ResourceAmazonEventBridgeSaasPartnerEvent"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -631,7 +631,7 @@
       "component": "ResourceAmazonEventBridgeScheduler"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -640,7 +640,7 @@
       "component": "ResourceAmazonEventBridgeSchema"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -649,7 +649,7 @@
       "component": "ResourceAmazonEventBridgeSchemaRegistry"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -658,7 +658,7 @@
       "component": "ResourceAmazonMQBroker"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -667,7 +667,7 @@
       "component": "ResourceAmazonSimpleNotificationServiceEmailNotification"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -676,7 +676,7 @@
       "component": "ResourceAmazonSimpleNotificationServiceHTTPNotification"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -685,7 +685,7 @@
       "component": "ResourceAmazonSimpleNotificationServiceTopic"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -694,7 +694,7 @@
       "component": "ResourceAmazonSimpleQueueServiceMessage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Application Integration"
@@ -1081,7 +1081,7 @@
       "component": "ArchitectureServiceTensorFlowonAWS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1090,7 +1090,7 @@
       "component": "ResourceAmazonDevOpsGuruInsights"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1099,7 +1099,7 @@
       "component": "ResourceAmazonRekognitionImage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1108,7 +1108,7 @@
       "component": "ResourceAmazonRekognitionVideo"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1117,7 +1117,7 @@
       "component": "ResourceAmazonSageMakerCanvas"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1126,7 +1126,7 @@
       "component": "ResourceAmazonSageMakerGeospatialML"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1135,7 +1135,7 @@
       "component": "ResourceAmazonSageMakerModel"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1144,7 +1144,7 @@
       "component": "ResourceAmazonSageMakerNotebook"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1153,7 +1153,7 @@
       "component": "ResourceAmazonSageMakerShadowTesting"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1162,7 +1162,7 @@
       "component": "ResourceAmazonSageMakerTrain"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Artificial Intelligence"
@@ -1189,7 +1189,7 @@
       "component": "ArchitectureServiceAmazonQuantumLedgerDatabase"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Blockchain"
@@ -1324,7 +1324,7 @@
       "component": "ArchitectureServiceAWSWickr"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Business Applications"
@@ -1333,7 +1333,7 @@
       "component": "ResourceAmazonPinpointJourney"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Business Applications"
@@ -1342,7 +1342,7 @@
       "component": "ResourceAmazonSimpleEmailServiceEmail"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryAnalytics"
@@ -1351,7 +1351,7 @@
       "component": "CategoryAnalytics"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryApplicationIntegration"
@@ -1360,7 +1360,7 @@
       "component": "CategoryApplicationIntegration"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryArtificialIntelligence"
@@ -1369,7 +1369,7 @@
       "component": "CategoryArtificialIntelligence"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryBlockchain"
@@ -1378,7 +1378,7 @@
       "component": "CategoryBlockchain"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryBusinessApplications"
@@ -1387,7 +1387,7 @@
       "component": "CategoryBusinessApplications"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryCloudFinancialManagement"
@@ -1396,7 +1396,7 @@
       "component": "CategoryCloudFinancialManagement"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryCompute"
@@ -1405,7 +1405,7 @@
       "component": "CategoryCompute"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryContactCenter"
@@ -1414,7 +1414,7 @@
       "component": "CategoryContactCenter"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryContainers"
@@ -1423,7 +1423,7 @@
       "component": "CategoryContainers"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryCustomerEnablement"
@@ -1432,7 +1432,7 @@
       "component": "CategoryCustomerEnablement"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryDatabase"
@@ -1441,7 +1441,7 @@
       "component": "CategoryDatabase"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryDeveloperTools"
@@ -1450,7 +1450,7 @@
       "component": "CategoryDeveloperTools"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryEndUserComputing"
@@ -1459,7 +1459,7 @@
       "component": "CategoryEndUserComputing"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryFrontEndWebMobile"
@@ -1468,7 +1468,7 @@
       "component": "CategoryFrontEndWebMobile"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryGames"
@@ -1477,7 +1477,7 @@
       "component": "CategoryGames"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryInternetofThings"
@@ -1486,7 +1486,7 @@
       "component": "CategoryInternetofThings"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryManagementGovernance"
@@ -1495,7 +1495,7 @@
       "component": "CategoryManagementGovernance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryMediaServices"
@@ -1504,7 +1504,7 @@
       "component": "CategoryMediaServices"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryMigrationModernization"
@@ -1513,7 +1513,7 @@
       "component": "CategoryMigrationModernization"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryNetworkingContentDelivery"
@@ -1522,7 +1522,7 @@
       "component": "CategoryNetworkingContentDelivery"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryQuantumTechnologies"
@@ -1531,7 +1531,7 @@
       "component": "CategoryQuantumTechnologies"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryRobotics"
@@ -1540,7 +1540,7 @@
       "component": "CategoryRobotics"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategorySatellite"
@@ -1549,7 +1549,7 @@
       "component": "CategorySatellite"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategorySecurityIdentityCompliance"
@@ -1558,7 +1558,7 @@
       "component": "CategorySecurityIdentityCompliance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryServerless"
@@ -1567,7 +1567,7 @@
       "component": "CategoryServerless"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Category",
       "categories": [
         "CategoryStorage"
@@ -1846,7 +1846,7 @@
       "component": "ArchitectureServiceNICEEnginFrame"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1855,7 +1855,7 @@
       "component": "ResourceAmazonEC2AMI"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1864,7 +1864,7 @@
       "component": "ResourceAmazonEC2AutoScaling"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1873,7 +1873,7 @@
       "component": "ResourceAmazonEC2AWSMicroserviceExtractorforNET"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1882,7 +1882,7 @@
       "component": "ResourceAmazonEC2DBInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1891,7 +1891,7 @@
       "component": "ResourceAmazonEC2ElasticIPAddress"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1900,7 +1900,7 @@
       "component": "ResourceAmazonEC2Instance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1909,7 +1909,7 @@
       "component": "ResourceAmazonEC2Instances"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1918,7 +1918,7 @@
       "component": "ResourceAmazonEC2InstancewithCloudWatch"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1927,7 +1927,7 @@
       "component": "ResourceAmazonEC2Rescue"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1936,7 +1936,7 @@
       "component": "ResourceAmazonEC2SpotInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1945,7 +1945,7 @@
       "component": "ResourceAWSElasticBeanstalkApplication"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -1954,7 +1954,7 @@
       "component": "ResourceAWSElasticBeanstalkDeployment"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Compute"
@@ -2044,7 +2044,7 @@
       "component": "ArchitectureServiceRedHatOpenShiftServiceonAWS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2053,7 +2053,7 @@
       "component": "ResourceAmazonElasticContainerRegistryImage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2062,7 +2062,7 @@
       "component": "ResourceAmazonElasticContainerRegistryRegistry"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2071,7 +2071,7 @@
       "component": "ResourceAmazonElasticContainerServiceContainer1"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2080,7 +2080,7 @@
       "component": "ResourceAmazonElasticContainerServiceContainer2"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2089,7 +2089,7 @@
       "component": "ResourceAmazonElasticContainerServiceContainer3"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2098,7 +2098,7 @@
       "component": "ResourceAmazonElasticContainerServiceCopiIoTCLI"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2107,7 +2107,7 @@
       "component": "ResourceAmazonElasticContainerServiceECSServiceConnect"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2116,7 +2116,7 @@
       "component": "ResourceAmazonElasticContainerServiceService"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2125,7 +2125,7 @@
       "component": "ResourceAmazonElasticContainerServiceTask"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Containers"
@@ -2216,7 +2216,7 @@
       "component": "ArchitectureServiceAWSDatabaseMigrationService"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database",
@@ -2316,7 +2316,7 @@
       "component": "ArchitectureServiceOracleDatabaseatAWS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2325,7 +2325,7 @@
       "component": "ResourceAmazonAuroraAmazonAuroraInstancealternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2334,7 +2334,7 @@
       "component": "ResourceAmazonAuroraAmazonRDSInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2343,7 +2343,7 @@
       "component": "ResourceAmazonAuroraAmazonRDSInstanceAternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2352,7 +2352,7 @@
       "component": "ResourceAmazonAuroraInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2361,7 +2361,7 @@
       "component": "ResourceAmazonAuroraMariaDBInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2370,7 +2370,7 @@
       "component": "ResourceAmazonAuroraMariaDBInstanceAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2379,7 +2379,7 @@
       "component": "ResourceAmazonAuroraMySQLInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2388,7 +2388,7 @@
       "component": "ResourceAmazonAuroraMySQLInstanceAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2397,7 +2397,7 @@
       "component": "ResourceAmazonAuroraOracleInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2406,7 +2406,7 @@
       "component": "ResourceAmazonAuroraOracleInstanceAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2415,7 +2415,7 @@
       "component": "ResourceAmazonAuroraPIOPSInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2424,7 +2424,7 @@
       "component": "ResourceAmazonAuroraPostgreSQLInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2433,7 +2433,7 @@
       "component": "ResourceAmazonAuroraPostgreSQLInstanceAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2442,7 +2442,7 @@
       "component": "ResourceAmazonAuroraSQLServerInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2451,7 +2451,7 @@
       "component": "ResourceAmazonAuroraSQLServerInstanceAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2460,7 +2460,7 @@
       "component": "ResourceAmazonAuroraTrustedLanguageExtensionsforPostgreSQL"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2469,7 +2469,7 @@
       "component": "ResourceAmazonDocumentDBElasticClusters"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2478,7 +2478,7 @@
       "component": "ResourceAmazonDynamoDBAmazonDynamoDBAccelerator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2487,7 +2487,7 @@
       "component": "ResourceAmazonDynamoDBAttribute"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2496,7 +2496,7 @@
       "component": "ResourceAmazonDynamoDBAttributes"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2505,7 +2505,7 @@
       "component": "ResourceAmazonDynamoDBGlobalsecondaryindex"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2514,7 +2514,7 @@
       "component": "ResourceAmazonDynamoDBItem"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2523,7 +2523,7 @@
       "component": "ResourceAmazonDynamoDBItems"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2532,7 +2532,7 @@
       "component": "ResourceAmazonDynamoDBStandardAccessTableClass"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2541,7 +2541,7 @@
       "component": "ResourceAmazonDynamoDBStandardInfrequentAccessTableClass"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2550,7 +2550,7 @@
       "component": "ResourceAmazonDynamoDBStream"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2559,7 +2559,7 @@
       "component": "ResourceAmazonDynamoDBTable"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2568,7 +2568,7 @@
       "component": "ResourceAmazonElastiCacheCacheNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2577,7 +2577,7 @@
       "component": "ResourceAmazonElastiCacheElastiCacheforMemcached"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2586,7 +2586,7 @@
       "component": "ResourceAmazonElastiCacheElastiCacheforRedis"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2595,7 +2595,7 @@
       "component": "ResourceAmazonElastiCacheElastiCacheforValkey"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2604,7 +2604,7 @@
       "component": "ResourceAmazonRDSBlueGreenDeployments"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2613,7 +2613,7 @@
       "component": "ResourceAmazonRDSMultiAZ"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2622,7 +2622,7 @@
       "component": "ResourceAmazonRDSMultiAZDBCluster"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2631,7 +2631,7 @@
       "component": "ResourceAmazonRDSOptimizedWrites"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2640,7 +2640,7 @@
       "component": "ResourceAmazonRDSProxyInstance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2649,7 +2649,7 @@
       "component": "ResourceAmazonRDSProxyInstanceAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Database"
@@ -2802,7 +2802,7 @@
       "component": "ArchitectureServiceAWSXRay"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Developer Tools"
@@ -2829,7 +2829,7 @@
       "component": "ArchitectureServiceAmazonWorkSpacesFamily"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "End User Computing"
@@ -2838,7 +2838,7 @@
       "component": "ResourceAmazonWorkSpacesFamilyAmazonWorkSpaces"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "End User Computing"
@@ -2847,7 +2847,7 @@
       "component": "ResourceAmazonWorkSpacesFamilyAmazonWorkSpacesCore"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "End User Computing"
@@ -2883,7 +2883,7 @@
       "component": "ArchitectureServiceAWSDeviceFarm"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Front End Web Mobile"
@@ -2892,7 +2892,7 @@
       "component": "ResourceAmazonLocationServiceGeofence"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Front End Web Mobile"
@@ -2901,7 +2901,7 @@
       "component": "ResourceAmazonLocationServiceMap"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Front End Web Mobile"
@@ -2910,7 +2910,7 @@
       "component": "ResourceAmazonLocationServicePlace"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Front End Web Mobile"
@@ -2919,7 +2919,7 @@
       "component": "ResourceAmazonLocationServiceRoutes"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Front End Web Mobile"
@@ -2928,7 +2928,7 @@
       "component": "ResourceAmazonLocationServiceTrack"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Front End Web Mobile"
@@ -2973,7 +2973,7 @@
       "component": "ArchitectureServiceAWSMarketplaceDark"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -2982,7 +2982,7 @@
       "component": "ResourceAlert"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -2991,7 +2991,7 @@
       "component": "ResourceAuthenticatedUser"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3000,7 +3000,7 @@
       "component": "ResourceAWSManagementConsole"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3009,7 +3009,7 @@
       "component": "ResourceCamera"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3018,7 +3018,7 @@
       "component": "ResourceChat"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3027,7 +3027,7 @@
       "component": "ResourceClient"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3036,7 +3036,7 @@
       "component": "ResourceColdStorage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3045,7 +3045,7 @@
       "component": "ResourceCredentials"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3054,7 +3054,7 @@
       "component": "ResourceDatabase"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3063,7 +3063,7 @@
       "component": "ResourceDataStream"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3072,7 +3072,7 @@
       "component": "ResourceDataTable"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3081,7 +3081,7 @@
       "component": "ResourceDisk"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3090,7 +3090,7 @@
       "component": "ResourceDocument"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3099,7 +3099,7 @@
       "component": "ResourceDocuments"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3108,7 +3108,7 @@
       "component": "ResourceEmail"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3117,7 +3117,7 @@
       "component": "ResourceFirewall"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3126,7 +3126,7 @@
       "component": "ResourceFolder"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3135,7 +3135,7 @@
       "component": "ResourceFolders"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3144,7 +3144,7 @@
       "component": "ResourceForums"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3153,7 +3153,7 @@
       "component": "ResourceGear"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3162,7 +3162,7 @@
       "component": "ResourceGenericApplication"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3171,7 +3171,7 @@
       "component": "ResourceGitRepository"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3180,7 +3180,7 @@
       "component": "ResourceGlobe"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3189,7 +3189,7 @@
       "component": "ResourceInternet"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3198,7 +3198,7 @@
       "component": "ResourceInternetalt1"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3207,7 +3207,7 @@
       "component": "ResourceInternetalt2"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3216,7 +3216,7 @@
       "component": "ResourceJSONScript"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3225,7 +3225,7 @@
       "component": "ResourceLogs"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3234,7 +3234,7 @@
       "component": "ResourceMagnifyingGlass"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3243,7 +3243,7 @@
       "component": "ResourceMetrics"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3252,7 +3252,7 @@
       "component": "ResourceMobileclient"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3261,7 +3261,7 @@
       "component": "ResourceMultimedia"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3270,7 +3270,7 @@
       "component": "ResourceOfficebuilding"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3279,7 +3279,7 @@
       "component": "ResourceProgrammingLanguage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3288,7 +3288,7 @@
       "component": "ResourceQuestion"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3297,7 +3297,7 @@
       "component": "ResourceRecover"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3306,7 +3306,7 @@
       "component": "ResourceSAMLtoken"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3315,7 +3315,7 @@
       "component": "ResourceSDK"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3324,7 +3324,7 @@
       "component": "ResourceServer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3333,7 +3333,7 @@
       "component": "ResourceServers"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3342,7 +3342,7 @@
       "component": "ResourceShield"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3351,7 +3351,7 @@
       "component": "ResourceSourceCode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3360,7 +3360,7 @@
       "component": "ResourceSSLpadlock"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3369,7 +3369,7 @@
       "component": "ResourceTapestorage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3378,7 +3378,7 @@
       "component": "ResourceToolkit"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3387,7 +3387,7 @@
       "component": "ResourceUser"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "General Icons"
@@ -3516,7 +3516,7 @@
       "component": "ArchitectureServiceFreeRTOS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3525,7 +3525,7 @@
       "component": "ResourceAWSIoTAction"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3534,7 +3534,7 @@
       "component": "ResourceAWSIoTActuator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3543,7 +3543,7 @@
       "component": "ResourceAWSIoTAlexaEnabledDevice"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3552,7 +3552,7 @@
       "component": "ResourceAWSIoTAlexaSkill"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3561,7 +3561,7 @@
       "component": "ResourceAWSIoTAlexaVoiceService"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3570,7 +3570,7 @@
       "component": "ResourceAWSIoTAnalyticsChannel"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3579,7 +3579,7 @@
       "component": "ResourceAWSIoTAnalyticsDataset"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3588,7 +3588,7 @@
       "component": "ResourceAWSIoTAnalyticsDataStore"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3597,7 +3597,7 @@
       "component": "ResourceAWSIoTAnalyticsNotebook"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3606,7 +3606,7 @@
       "component": "ResourceAWSIoTAnalyticsPipeline"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3615,7 +3615,7 @@
       "component": "ResourceAWSIoTCertificate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3624,7 +3624,7 @@
       "component": "ResourceAWSIoTCoreDeviceAdvisor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3633,7 +3633,7 @@
       "component": "ResourceAWSIoTCoreDeviceLocation"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3642,7 +3642,7 @@
       "component": "ResourceAWSIoTDesiredState"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3651,7 +3651,7 @@
       "component": "ResourceAWSIoTDeviceDefenderIoTDeviceJobs"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3660,7 +3660,7 @@
       "component": "ResourceAWSIoTDeviceGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3669,7 +3669,7 @@
       "component": "ResourceAWSIoTDeviceManagementFleetHub"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3678,7 +3678,7 @@
       "component": "ResourceAWSIoTDeviceTester"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3687,7 +3687,7 @@
       "component": "ResourceAWSIoTEcho"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3696,7 +3696,7 @@
       "component": "ResourceAWSIoTFireTV"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3705,7 +3705,7 @@
       "component": "ResourceAWSIoTFireTVStick"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3714,7 +3714,7 @@
       "component": "ResourceAWSIoTGreengrassArtifact"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3723,7 +3723,7 @@
       "component": "ResourceAWSIoTGreengrassComponent"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3732,7 +3732,7 @@
       "component": "ResourceAWSIoTGreengrassComponentMachineLearning"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3741,7 +3741,7 @@
       "component": "ResourceAWSIoTGreengrassComponentNucleus"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3750,7 +3750,7 @@
       "component": "ResourceAWSIoTGreengrassComponentPrivate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3759,7 +3759,7 @@
       "component": "ResourceAWSIoTGreengrassComponentPublic"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3768,7 +3768,7 @@
       "component": "ResourceAWSIoTGreengrassConnector"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3777,7 +3777,7 @@
       "component": "ResourceAWSIoTGreengrassInterprocessCommunication"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3786,7 +3786,7 @@
       "component": "ResourceAWSIoTGreengrassProtocol"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3795,7 +3795,7 @@
       "component": "ResourceAWSIoTGreengrassRecipe"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3804,7 +3804,7 @@
       "component": "ResourceAWSIoTGreengrassStreamManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3813,7 +3813,7 @@
       "component": "ResourceAWSIoTHardwareBoard"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3822,7 +3822,7 @@
       "component": "ResourceAWSIoTHTTP2Protocol"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3831,7 +3831,7 @@
       "component": "ResourceAWSIoTHTTPProtocol"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3840,7 +3840,7 @@
       "component": "ResourceAWSIoTLambdaFunction"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3849,7 +3849,7 @@
       "component": "ResourceAWSIoTLoRaWANProtocol"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3858,7 +3858,7 @@
       "component": "ResourceAWSIoTMQTTProtocol"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3867,7 +3867,7 @@
       "component": "ResourceAWSIoTOverAirUpdate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3876,7 +3876,7 @@
       "component": "ResourceAWSIoTPolicy"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3885,7 +3885,7 @@
       "component": "ResourceAWSIoTReportedState"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3894,7 +3894,7 @@
       "component": "ResourceAWSIoTRule"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3903,7 +3903,7 @@
       "component": "ResourceAWSIoTSailboat"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3912,7 +3912,7 @@
       "component": "ResourceAWSIoTSensor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3921,7 +3921,7 @@
       "component": "ResourceAWSIoTServo"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3930,7 +3930,7 @@
       "component": "ResourceAWSIoTShadow"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3939,7 +3939,7 @@
       "component": "ResourceAWSIoTSimulator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3948,7 +3948,7 @@
       "component": "ResourceAWSIoTSiteWiseAsset"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3957,7 +3957,7 @@
       "component": "ResourceAWSIoTSiteWiseAssetHierarchy"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3966,7 +3966,7 @@
       "component": "ResourceAWSIoTSiteWiseAssetModel"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3975,7 +3975,7 @@
       "component": "ResourceAWSIoTSiteWiseAssetProperties"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3984,7 +3984,7 @@
       "component": "ResourceAWSIoTSiteWiseDataStreams"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -3993,7 +3993,7 @@
       "component": "ResourceAWSIoTThingBank"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4002,7 +4002,7 @@
       "component": "ResourceAWSIoTThingBicycle"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4011,7 +4011,7 @@
       "component": "ResourceAWSIoTThingbulb"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4020,7 +4020,7 @@
       "component": "ResourceAWSIoTThingCamera"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4029,7 +4029,7 @@
       "component": "ResourceAWSIoTThingCar"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4038,7 +4038,7 @@
       "component": "ResourceAWSIoTThingCart"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4047,7 +4047,7 @@
       "component": "ResourceAWSIoTThingCoffeePot"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4056,7 +4056,7 @@
       "component": "ResourceAWSIoTThingDoorLock"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4065,7 +4065,7 @@
       "component": "ResourceAWSIoTThingFactory"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4074,7 +4074,7 @@
       "component": "ResourceAWSIoTThingFreeRTOSDevice"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4083,7 +4083,7 @@
       "component": "ResourceAWSIoTThingGeneric"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4092,7 +4092,7 @@
       "component": "ResourceAWSIoTThingHouse"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4101,7 +4101,7 @@
       "component": "ResourceAWSIoTThingHumiditySensor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4110,7 +4110,7 @@
       "component": "ResourceAWSIoTThingIndustrialPC"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4119,7 +4119,7 @@
       "component": "ResourceAWSIoTThingMedicalEmergency"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4128,7 +4128,7 @@
       "component": "ResourceAWSIoTThingPLC"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4137,7 +4137,7 @@
       "component": "ResourceAWSIoTThingPoliceEmergency"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4146,7 +4146,7 @@
       "component": "ResourceAWSIoTThingRelay"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4155,7 +4155,7 @@
       "component": "ResourceAWSIoTThingStacklight"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4164,7 +4164,7 @@
       "component": "ResourceAWSIoTThingTemperatureHumiditySensor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4173,7 +4173,7 @@
       "component": "ResourceAWSIoTThingTemperatureSensor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4182,7 +4182,7 @@
       "component": "ResourceAWSIoTThingTemperatureVibrationSensor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4191,7 +4191,7 @@
       "component": "ResourceAWSIoTThingThermostat"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4200,7 +4200,7 @@
       "component": "ResourceAWSIoTThingTravel"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4209,7 +4209,7 @@
       "component": "ResourceAWSIoTThingUtility"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4218,7 +4218,7 @@
       "component": "ResourceAWSIoTThingVibrationSensor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4227,7 +4227,7 @@
       "component": "ResourceAWSIoTThingWindfarm"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "IoT"
@@ -4506,7 +4506,7 @@
       "component": "ArchitectureServiceAWSWellArchitectedTool"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4515,7 +4515,7 @@
       "component": "ResourceAmazonCloudWatchAlarm"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4524,7 +4524,7 @@
       "component": "ResourceAmazonCloudWatchCrossaccountObservability"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4533,7 +4533,7 @@
       "component": "ResourceAmazonCloudWatchDataProtection"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4542,7 +4542,7 @@
       "component": "ResourceAmazonCloudWatchEventEventBased"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4551,7 +4551,7 @@
       "component": "ResourceAmazonCloudWatchEventTimeBased"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4560,7 +4560,7 @@
       "component": "ResourceAmazonCloudWatchEvidently"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4569,7 +4569,7 @@
       "component": "ResourceAmazonCloudWatchLogs"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4578,7 +4578,7 @@
       "component": "ResourceAmazonCloudWatchMetricsInsights"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4587,7 +4587,7 @@
       "component": "ResourceAmazonCloudWatchRule"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4596,7 +4596,7 @@
       "component": "ResourceAmazonCloudWatchRUM"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4605,7 +4605,7 @@
       "component": "ResourceAmazonCloudWatchSynthetics"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4614,7 +4614,7 @@
       "component": "ResourceAWSCloudFormationChangeSet"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4623,7 +4623,7 @@
       "component": "ResourceAWSCloudFormationStack"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4632,7 +4632,7 @@
       "component": "ResourceAWSCloudFormationTemplate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4641,7 +4641,7 @@
       "component": "ResourceAWSCloudTrailCloudTrailLake"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4650,7 +4650,7 @@
       "component": "ResourceAWSLicenseManagerApplicationDiscovery"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4659,7 +4659,7 @@
       "component": "ResourceAWSLicenseManagerLicenseBlending"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4668,7 +4668,7 @@
       "component": "ResourceAWSOrganizationsAccount"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4677,7 +4677,7 @@
       "component": "ResourceAWSOrganizationsManagementAccount"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4686,7 +4686,7 @@
       "component": "ResourceAWSOrganizationsOrganizationalUnit"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4695,7 +4695,7 @@
       "component": "ResourceAWSSystemsManagerApplicationManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4704,7 +4704,7 @@
       "component": "ResourceAWSSystemsManagerAutomation"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4713,7 +4713,7 @@
       "component": "ResourceAWSSystemsManagerChangeCalendar"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4722,7 +4722,7 @@
       "component": "ResourceAWSSystemsManagerChangeManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4731,7 +4731,7 @@
       "component": "ResourceAWSSystemsManagerCompliance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4740,7 +4740,7 @@
       "component": "ResourceAWSSystemsManagerDistributor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4749,7 +4749,7 @@
       "component": "ResourceAWSSystemsManagerDocuments"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4758,7 +4758,7 @@
       "component": "ResourceAWSSystemsManagerIncidentManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4767,7 +4767,7 @@
       "component": "ResourceAWSSystemsManagerInventory"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4776,7 +4776,7 @@
       "component": "ResourceAWSSystemsManagerMaintenanceWindows"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4785,7 +4785,7 @@
       "component": "ResourceAWSSystemsManagerOpsCenter"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4794,7 +4794,7 @@
       "component": "ResourceAWSSystemsManagerParameterStore"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4803,7 +4803,7 @@
       "component": "ResourceAWSSystemsManagerPatchManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4812,7 +4812,7 @@
       "component": "ResourceAWSSystemsManagerRunCommand"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4821,7 +4821,7 @@
       "component": "ResourceAWSSystemsManagerSessionManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4830,7 +4830,7 @@
       "component": "ResourceAWSSystemsManagerStateManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4839,7 +4839,7 @@
       "component": "ResourceAWSTrustedAdvisorChecklist"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4848,7 +4848,7 @@
       "component": "ResourceAWSTrustedAdvisorChecklistCost"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4857,7 +4857,7 @@
       "component": "ResourceAWSTrustedAdvisorChecklistFaultTolerant"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -4866,7 +4866,7 @@
       "component": "ResourceAWSTrustedAdvisorChecklistPerformance"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Management Governance"
@@ -5073,7 +5073,7 @@
       "component": "ArchitectureServiceAWSThinkboxXMesh"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Media Services"
@@ -5082,7 +5082,7 @@
       "component": "ResourceAWSCloudDigitalInterface"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Media Services"
@@ -5172,7 +5172,7 @@
       "component": "ArchitectureServiceAWSTransferFamily"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5181,7 +5181,7 @@
       "component": "ResourceAWSApplicationDiscoveryServiceAWSAgentlessCollector"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5190,7 +5190,7 @@
       "component": "ResourceAWSApplicationDiscoveryServiceAWSDiscoveryAgent"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5199,7 +5199,7 @@
       "component": "ResourceAWSApplicationDiscoveryServiceMigrationEvaluatorCollector"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5208,7 +5208,7 @@
       "component": "ResourceAWSDatasyncAgent"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5217,7 +5217,7 @@
       "component": "ResourceAWSDataSyncDiscovery"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5226,7 +5226,7 @@
       "component": "ResourceAWSMainframeModernizationAnalyzer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5235,7 +5235,7 @@
       "component": "ResourceAWSMainframeModernizationCompiler"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5244,7 +5244,7 @@
       "component": "ResourceAWSMainframeModernizationConverter"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5253,7 +5253,7 @@
       "component": "ResourceAWSMainframeModernizationDeveloper"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5262,7 +5262,7 @@
       "component": "ResourceAWSMainframeModernizationRuntime"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5271,7 +5271,7 @@
       "component": "ResourceAWSMigrationHubRefactorSpacesApplications"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5280,7 +5280,7 @@
       "component": "ResourceAWSMigrationHubRefactorSpacesEnvironments"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5289,7 +5289,7 @@
       "component": "ResourceAWSMigrationHubRefactorSpacesServices"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5298,7 +5298,7 @@
       "component": "ResourceAWSTransferFamilyAWSAS2"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5307,7 +5307,7 @@
       "component": "ResourceAWSTransferFamilyAWSFTP"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5316,7 +5316,7 @@
       "component": "ResourceAWSTransferFamilyAWSFTPS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Migration Modernization"
@@ -5487,7 +5487,7 @@
       "component": "ArchitectureServiceElasticLoadBalancing"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5496,7 +5496,7 @@
       "component": "ResourceAmazonAPIGatewayEndpoint"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5505,7 +5505,7 @@
       "component": "ResourceAmazonCloudFrontDownloadDistribution"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5514,7 +5514,7 @@
       "component": "ResourceAmazonCloudFrontEdgeLocation"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5523,7 +5523,7 @@
       "component": "ResourceAmazonCloudFrontFunctions"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5532,7 +5532,7 @@
       "component": "ResourceAmazonCloudFrontStreamingDistribution"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5541,7 +5541,7 @@
       "component": "ResourceAmazonRoute53HostedZone"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5550,7 +5550,7 @@
       "component": "ResourceAmazonRoute53ReadinessChecks"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5559,7 +5559,7 @@
       "component": "ResourceAmazonRoute53Resolver"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5568,7 +5568,7 @@
       "component": "ResourceAmazonRoute53ResolverDNSFirewall"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5577,7 +5577,7 @@
       "component": "ResourceAmazonRoute53ResolverQueryLogging"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5586,7 +5586,7 @@
       "component": "ResourceAmazonRoute53RouteTable"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5595,7 +5595,7 @@
       "component": "ResourceAmazonRoute53RoutingControls"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5604,7 +5604,7 @@
       "component": "ResourceAmazonVPCCarrierGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5613,7 +5613,7 @@
       "component": "ResourceAmazonVPCCustomerGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5622,7 +5622,7 @@
       "component": "ResourceAmazonVPCElasticNetworkAdapter"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5631,7 +5631,7 @@
       "component": "ResourceAmazonVPCElasticNetworkInterface"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5640,7 +5640,7 @@
       "component": "ResourceAmazonVPCEndpoints"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5649,7 +5649,7 @@
       "component": "ResourceAmazonVPCFlowLogs"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5658,7 +5658,7 @@
       "component": "ResourceAmazonVPCInternetGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5667,7 +5667,7 @@
       "component": "ResourceAmazonVPCNATGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5676,7 +5676,7 @@
       "component": "ResourceAmazonVPCNetworkAccessAnalyzer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5685,7 +5685,7 @@
       "component": "ResourceAmazonVPCNetworkAccessControlList"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5694,7 +5694,7 @@
       "component": "ResourceAmazonVPCPeeringConnection"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5703,7 +5703,7 @@
       "component": "ResourceAmazonVPCReachabilityAnalyzer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5712,7 +5712,7 @@
       "component": "ResourceAmazonVPCRouter"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5721,7 +5721,7 @@
       "component": "ResourceAmazonVPCTrafficMirroring"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5730,7 +5730,7 @@
       "component": "ResourceAmazonVPCVirtualprivatecloudVPC"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5739,7 +5739,7 @@
       "component": "ResourceAmazonVPCVPNConnection"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5748,7 +5748,7 @@
       "component": "ResourceAmazonVPCVPNGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5757,7 +5757,7 @@
       "component": "ResourceAWSAppMeshMesh"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5766,7 +5766,7 @@
       "component": "ResourceAWSAppMeshVirtualGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5775,7 +5775,7 @@
       "component": "ResourceAWSAppMeshVirtualNode"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5784,7 +5784,7 @@
       "component": "ResourceAWSAppMeshVirtualRouter"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5793,7 +5793,7 @@
       "component": "ResourceAWSAppMeshVirtualService"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5802,7 +5802,7 @@
       "component": "ResourceAWSCloudMapNamespace"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5811,7 +5811,7 @@
       "component": "ResourceAWSCloudMapResource"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5820,7 +5820,7 @@
       "component": "ResourceAWSCloudMapService"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5829,7 +5829,7 @@
       "component": "ResourceAWSCloudWANCoreNetworkEdge"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5838,7 +5838,7 @@
       "component": "ResourceAWSCloudWANSegmentNetwork"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5847,7 +5847,7 @@
       "component": "ResourceAWSCloudWANTransitGatewayRouteTableAttachment"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5856,7 +5856,7 @@
       "component": "ResourceAWSDirectConnectGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5865,7 +5865,7 @@
       "component": "ResourceAWSTransitGatewayAttachment"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5874,7 +5874,7 @@
       "component": "ResourceElasticLoadBalancingApplicationLoadBalancer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5883,7 +5883,7 @@
       "component": "ResourceElasticLoadBalancingClassicLoadBalancer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5892,7 +5892,7 @@
       "component": "ResourceElasticLoadBalancingGatewayLoadBalancer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Networking Content Delivery"
@@ -5910,7 +5910,7 @@
       "component": "ArchitectureServiceAmazonBraket"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5919,7 +5919,7 @@
       "component": "ResourceAmazonBraketChandelier"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5928,7 +5928,7 @@
       "component": "ResourceAmazonBraketChip"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5937,7 +5937,7 @@
       "component": "ResourceAmazonBraketEmbeddedSimulator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5946,7 +5946,7 @@
       "component": "ResourceAmazonBraketManagedSimulator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5955,7 +5955,7 @@
       "component": "ResourceAmazonBraketNoiseSimulator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5964,7 +5964,7 @@
       "component": "ResourceAmazonBraketQPU"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5973,7 +5973,7 @@
       "component": "ResourceAmazonBraketSimulator"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5982,7 +5982,7 @@
       "component": "ResourceAmazonBraketSimulator1"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -5991,7 +5991,7 @@
       "component": "ResourceAmazonBraketSimulator2"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -6000,7 +6000,7 @@
       "component": "ResourceAmazonBraketSimulator3"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -6009,7 +6009,7 @@
       "component": "ResourceAmazonBraketSimulator4"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -6018,7 +6018,7 @@
       "component": "ResourceAmazonBraketStateVector"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Quantum Technologies"
@@ -6036,7 +6036,7 @@
       "component": "ArchitectureServiceAWSRoboMaker"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Robotics"
@@ -6045,7 +6045,7 @@
       "component": "ResourceAWSRoboMakerCloudExtensionsROS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Robotics"
@@ -6054,7 +6054,7 @@
       "component": "ResourceAWSRoboMakerDevelopmentEnvironment"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Robotics"
@@ -6063,7 +6063,7 @@
       "component": "ResourceAWSRoboMakerFleetManagement"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Robotics"
@@ -6324,7 +6324,7 @@
       "component": "ArchitectureServiceAWSWAF"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6333,7 +6333,7 @@
       "component": "ResourceAmazonInspectorAgent"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6342,7 +6342,7 @@
       "component": "ResourceAWSCertificateManagerCertificateAuthority"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6351,7 +6351,7 @@
       "component": "ResourceAWSDirectoryServiceADConnector"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6360,7 +6360,7 @@
       "component": "ResourceAWSDirectoryServiceAWSManagedMicrosoftAD"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6369,7 +6369,7 @@
       "component": "ResourceAWSDirectoryServiceSimpleAD"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6378,7 +6378,7 @@
       "component": "ResourceAWSIdentityAccessManagementAddon"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6387,7 +6387,7 @@
       "component": "ResourceAWSIdentityAccessManagementAWSSTS"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6396,7 +6396,7 @@
       "component": "ResourceAWSIdentityAccessManagementAWSSTSAlternate"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6405,7 +6405,7 @@
       "component": "ResourceAWSIdentityAccessManagementDataEncryptionKey"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6414,7 +6414,7 @@
       "component": "ResourceAWSIdentityAccessManagementEncryptedData"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6423,7 +6423,7 @@
       "component": "ResourceAWSIdentityAccessManagementIAMAccessAnalyzer"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6432,7 +6432,7 @@
       "component": "ResourceAWSIdentityAccessManagementIAMRolesAnywhere"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6441,7 +6441,7 @@
       "component": "ResourceAWSIdentityAccessManagementLongTermSecurityCredential"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6450,7 +6450,7 @@
       "component": "ResourceAWSIdentityAccessManagementMFAToken"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6459,7 +6459,7 @@
       "component": "ResourceAWSIdentityAccessManagementPermissions"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6468,7 +6468,7 @@
       "component": "ResourceAWSIdentityAccessManagementRole"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6477,7 +6477,7 @@
       "component": "ResourceAWSIdentityAccessManagementTemporarySecurityCredential"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6486,7 +6486,7 @@
       "component": "ResourceAWSKeyManagementServiceExternalKeyStore"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6495,7 +6495,7 @@
       "component": "ResourceAWSNetworkFirewallEndpoints"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6504,7 +6504,7 @@
       "component": "ResourceAWSSecurityHubFinding"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6513,7 +6513,7 @@
       "component": "ResourceAWSShieldAWSShieldAdvanced"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6522,7 +6522,7 @@
       "component": "ResourceAWSWAFBadBot"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6531,7 +6531,7 @@
       "component": "ResourceAWSWAFBot"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6540,7 +6540,7 @@
       "component": "ResourceAWSWAFBotControl"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6549,7 +6549,7 @@
       "component": "ResourceAWSWAFFilteringRule"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6558,7 +6558,7 @@
       "component": "ResourceAWSWAFLabels"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6567,7 +6567,7 @@
       "component": "ResourceAWSWAFManagedRule"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Security Identity Compliance"
@@ -6720,7 +6720,7 @@
       "component": "ArchitectureServiceAWSStorageGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6729,7 +6729,7 @@
       "component": "ResourceAmazonElasticBlockStoreAmazonDataLifecycleManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6738,7 +6738,7 @@
       "component": "ResourceAmazonElasticBlockStoreMultipleVolumes"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6747,7 +6747,7 @@
       "component": "ResourceAmazonElasticBlockStoreSnapshot"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6756,7 +6756,7 @@
       "component": "ResourceAmazonElasticBlockStoreVolume"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6765,7 +6765,7 @@
       "component": "ResourceAmazonElasticBlockStoreVolumegp3"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6774,7 +6774,7 @@
       "component": "ResourceAmazonElasticFileSystemEFSIntelligentTiering"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6783,7 +6783,7 @@
       "component": "ResourceAmazonElasticFileSystemEFSOneZone"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6792,7 +6792,7 @@
       "component": "ResourceAmazonElasticFileSystemEFSOneZoneInfrequentAccess"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6801,7 +6801,7 @@
       "component": "ResourceAmazonElasticFileSystemEFSStandard"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6810,7 +6810,7 @@
       "component": "ResourceAmazonElasticFileSystemEFSStandardInfrequentAccess"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6819,7 +6819,7 @@
       "component": "ResourceAmazonElasticFileSystemElasticThroughput"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6828,7 +6828,7 @@
       "component": "ResourceAmazonElasticFileSystemFileSystem"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6837,7 +6837,7 @@
       "component": "ResourceAmazonFileCacheHybridNFSlinkeddatasets"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6846,7 +6846,7 @@
       "component": "ResourceAmazonFileCacheOnpremisesNFSlinkeddatasets"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6855,7 +6855,7 @@
       "component": "ResourceAmazonFileCacheS3linkeddatasets"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6864,7 +6864,7 @@
       "component": "ResourceAmazonSimpleStorageServiceBucket"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6873,7 +6873,7 @@
       "component": "ResourceAmazonSimpleStorageServiceBucketWithObjects"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6882,7 +6882,7 @@
       "component": "ResourceAmazonSimpleStorageServiceDirectorybucket"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6891,7 +6891,7 @@
       "component": "ResourceAmazonSimpleStorageServiceGeneralAccessPoints"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6900,7 +6900,7 @@
       "component": "ResourceAmazonSimpleStorageServiceGlacierArchive"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6909,7 +6909,7 @@
       "component": "ResourceAmazonSimpleStorageServiceGlacierVault"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6918,7 +6918,7 @@
       "component": "ResourceAmazonSimpleStorageServiceObject"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6927,7 +6927,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3BatchOperations"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6936,7 +6936,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3ExpressOneZone"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6945,7 +6945,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3GlacierDeepArchive"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6954,7 +6954,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3GlacierFlexibleRetrieval"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6963,7 +6963,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3GlacierInstantRetrieval"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6972,7 +6972,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3IntelligentTiering"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6981,7 +6981,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3MultiRegionAccessPoints"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6990,7 +6990,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3ObjectLambda"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -6999,7 +6999,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3ObjectLambdaAccessPoints"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7008,7 +7008,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3ObjectLock"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7017,7 +7017,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3OneZoneIA"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7026,7 +7026,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3OnOutposts"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7035,7 +7035,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3Replication"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7044,7 +7044,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3ReplicationTimeControl"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7053,7 +7053,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3Select"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7062,7 +7062,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3Standard"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7071,7 +7071,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3StandardIA"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7080,7 +7080,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3StorageLens"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7089,7 +7089,7 @@
       "component": "ResourceAmazonSimpleStorageServiceS3Tables"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7098,7 +7098,7 @@
       "component": "ResourceAmazonSimpleStorageServiceVPCAccessPoints"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7107,7 +7107,7 @@
       "component": "ResourceAWSBackupAuditManager"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7116,7 +7116,7 @@
       "component": "ResourceAWSBackupAWSBackupforAWSCloudFormation"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7125,7 +7125,7 @@
       "component": "ResourceAWSBackupAWSBackupsupportforAmazonFSxforNetAppONTAP"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7134,7 +7134,7 @@
       "component": "ResourceAWSBackupAWSBackupsupportforAmazonS3"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7143,7 +7143,7 @@
       "component": "ResourceAWSBackupAWSBackupSupportforVMwareWorkloads"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7152,7 +7152,7 @@
       "component": "ResourceAWSBackupBackupPlan"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7161,7 +7161,7 @@
       "component": "ResourceAWSBackupBackupRestore"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7170,7 +7170,7 @@
       "component": "ResourceAWSBackupBackupVault"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7179,7 +7179,7 @@
       "component": "ResourceAWSBackupComplianceReporting"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7188,7 +7188,7 @@
       "component": "ResourceAWSBackupCompute"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7197,7 +7197,7 @@
       "component": "ResourceAWSBackupDatabase"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7206,7 +7206,7 @@
       "component": "ResourceAWSBackupGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7215,7 +7215,7 @@
       "component": "ResourceAWSBackupLegalHold"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7224,7 +7224,7 @@
       "component": "ResourceAWSBackupRecoveryPointObjective"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7233,7 +7233,7 @@
       "component": "ResourceAWSBackupRecoveryTimeObjective"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7242,7 +7242,7 @@
       "component": "ResourceAWSBackupStorage"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7251,7 +7251,7 @@
       "component": "ResourceAWSBackupVaultLock"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7260,7 +7260,7 @@
       "component": "ResourceAWSBackupVirtualMachine"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7269,7 +7269,7 @@
       "component": "ResourceAWSBackupVirtualMachineMonitor"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7278,7 +7278,7 @@
       "component": "ResourceAWSSnowballSnowballImportExport"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7287,7 +7287,7 @@
       "component": "ResourceAWSStorageGatewayAmazonFSxFileGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7296,7 +7296,7 @@
       "component": "ResourceAWSStorageGatewayAmazonS3FileGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7305,7 +7305,7 @@
       "component": "ResourceAWSStorageGatewayCachedVolume"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7314,7 +7314,7 @@
       "component": "ResourceAWSStorageGatewayFileGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7323,7 +7323,7 @@
       "component": "ResourceAWSStorageGatewayNoncachedVolume"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7332,7 +7332,7 @@
       "component": "ResourceAWSStorageGatewayTapeGateway"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
@@ -7341,7 +7341,7 @@
       "component": "ResourceAWSStorageGatewayVirtualTapeLibrary"
     },
     {
-      "service": "AWS Storage Gateway",
+      "service": "",
       "type": "Resource",
       "categories": [
         "Storage"
