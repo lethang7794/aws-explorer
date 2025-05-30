@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import { useState, useMemo, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
+import { useState, useMemo, useEffect } from 'react'
+import { Input } from '@/components/ui/input'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Card,
   CardHeader,
@@ -10,39 +10,39 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { LayoutGrid, List, Info } from "lucide-react";
-import { awsServiceCategories, type Service } from "@/lib/aws-services-data"; // Import type
+} from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { LayoutGrid, List, Info } from 'lucide-react'
+import { awsServiceCategories, type Service } from '@/lib/aws-services-data' // Import type
 
 interface AwsServicesListProps {
-  services: Service[];
+  services: Service[]
 }
 
-type LayoutMode = "card" | "list";
+type LayoutMode = 'card' | 'list'
 
 export default function AwsServicesList({
   services: initialServices,
 }: AwsServicesListProps) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [services, setServices] = useState<Service[]>(initialServices);
-  const [layoutMode, setLayoutMode] = useState<LayoutMode>("card");
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [services, setServices] = useState<Service[]>(initialServices)
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>('card')
 
   useEffect(() => {
-    setServices(initialServices);
-  }, [initialServices]);
+    setServices(initialServices)
+  }, [initialServices])
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
-        : [...prev, category],
-    );
-  };
+        : [...prev, category]
+    )
+  }
 
   const filteredServices = useMemo(() => {
     return services.filter((service) => {
@@ -50,13 +50,13 @@ export default function AwsServicesList({
         service.service.toLowerCase().includes(searchTerm.toLowerCase()) ||
         service.shortDescription
           .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+          .includes(searchTerm.toLowerCase())
       const matchesCategories =
         selectedCategories.length === 0 ||
-        selectedCategories.every((cat) => service.categories.includes(cat));
-      return matchesSearchTerm && matchesCategories;
-    });
-  }, [services, searchTerm, selectedCategories]);
+        selectedCategories.every((cat) => service.categories.includes(cat))
+      return matchesSearchTerm && matchesCategories
+    })
+  }, [services, searchTerm, selectedCategories])
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -114,17 +114,17 @@ export default function AwsServicesList({
             <h2 className="text-xl font-semibold mb-3">View Mode</h2>
             <div className="flex space-x-2">
               <Button
-                variant={layoutMode === "card" ? "secondary" : "outline"}
+                variant={layoutMode === 'card' ? 'secondary' : 'outline'}
                 size="icon"
-                onClick={() => setLayoutMode("card")}
+                onClick={() => setLayoutMode('card')}
                 aria-label="Card view"
               >
                 <LayoutGrid className="h-5 w-5" />
               </Button>
               <Button
-                variant={layoutMode === "list" ? "secondary" : "outline"}
+                variant={layoutMode === 'list' ? 'secondary' : 'outline'}
                 size="icon"
-                onClick={() => setLayoutMode("list")}
+                onClick={() => setLayoutMode('list')}
                 aria-label="List view"
               >
                 <List className="h-5 w-5" />
@@ -135,7 +135,7 @@ export default function AwsServicesList({
 
         <main className="md:col-span-3">
           {filteredServices.length > 0 ? (
-            layoutMode === "card" ? (
+            layoutMode === 'card' ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
                   <Card
@@ -223,5 +223,5 @@ export default function AwsServicesList({
         </main>
       </div>
     </div>
-  );
+  )
 }

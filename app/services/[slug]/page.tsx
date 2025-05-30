@@ -1,10 +1,17 @@
-import { awsServicesData, getServiceBySlug } from "@/lib/aws-services-data"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowLeft, ExternalLink } from "lucide-react"
-import { notFound } from "next/navigation"
+import { awsServicesData, getServiceBySlug } from '@/lib/aws-services-data'
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { notFound } from 'next/navigation'
 
 interface ServiceDetailPageProps {
   params: {
@@ -38,8 +45,12 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl md:text-4xl">{service.service}</CardTitle>
-          <CardDescription className="text-lg text-muted-foreground pt-1">{service.shortDescription}</CardDescription>
+          <CardTitle className="text-3xl md:text-4xl">
+            {service.service}
+          </CardTitle>
+          <CardDescription className="text-lg text-muted-foreground pt-1">
+            {service.shortDescription}
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div>
@@ -60,9 +71,15 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
           </div>
         </CardContent>
         <CardFooter>
-          <a href={service.url} target="_blank" rel="noopener noreferrer" className="w-full">
+          <a
+            href={service.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
             <Button className="w-full">
-              View Official Documentation <ExternalLink className="ml-2 h-4 w-4" />
+              View Official Documentation{' '}
+              <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
         </CardFooter>
