@@ -2,8 +2,9 @@ import awsServices from '../data/aws-services.json'
 
 export interface Service {
   id?: string
-  slug: string
+  slug?: string
   service: string
+  serviceSimpleName?: string
   shortDescription: string
   url: string
   categories: string[]
@@ -17,10 +18,22 @@ const generateSlug = (name: string) => {
     .replace(/[^a-z0-9-]/g, '')
 }
 
-export const awsServicesData: Service[] = awsServices.map((service) => ({
-  ...service,
-  slug: generateSlug(service.service),
-}))
+function simplifyServiceName(service: string): string {
+  return service
+    .replace(/AWS /g, '')
+    .replace(/AWS\n/g, '')
+    .replace(/Amazon /g, '')
+    .trim()
+}
+
+export const awsServicesData: Service[] = awsServices
+  .map((s) => ({
+    ...s,
+    serviceSimpleName: simplifyServiceName(s.service).trim(),
+    slug: generateSlug(s.service),
+  }))
+  .sort((a, b) => a.serviceSimpleName.localeCompare(b.serviceSimpleName))
+// console.log('AWS Services Data:', awsServicesData)
 
 function getAllCategories(services: Service[]) {
   const categoriesSet = new Set<string>()

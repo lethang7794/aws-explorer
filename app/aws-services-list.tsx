@@ -154,7 +154,7 @@ export default function AwsServicesList({
                           href={`/services/${service.slug}`}
                           className="text-blue-600 hover:text-blue-700 hover:underline"
                         >
-                          {service.service}
+                          {service.serviceSimpleName}
                         </Link>
                       </CardTitle>
                       <CardDescription className="text-xs h-10 overflow-hidden">
@@ -185,7 +185,7 @@ export default function AwsServicesList({
                       <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
                         <div className="flex-grow">
                           <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-                            {service.service}
+                            {service.serviceSimpleName}
                           </h3>
                           <p className="text-sm text-muted-foreground mt-1">
                             {service.shortDescription}
