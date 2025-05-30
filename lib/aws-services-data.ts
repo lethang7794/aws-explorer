@@ -22,6 +22,16 @@ export const awsServicesData: Service[] = awsServices.map((service) => ({
   slug: generateSlug(service.service),
 }));
 
+function getAllCategories(services: Service[]) {
+  const categoriesSet = new Set<string>();
+  services.forEach((service) => {
+    service.categories.forEach((category) => categoriesSet.add(category));
+  });
+  return Array.from(categoriesSet).sort();
+}
+
+export const awsServiceCategories = getAllCategories(awsServicesData);
+
 export const getServiceBySlug = (slug: string): Service | undefined => {
   return awsServicesData.find((service) => service.slug === slug);
 };
