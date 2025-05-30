@@ -53,7 +53,7 @@ export default function AwsServicesList({
           .includes(searchTerm.toLowerCase())
       const matchesCategories =
         selectedCategories.length === 0 ||
-        selectedCategories.every((cat) => service.categories.includes(cat))
+        selectedCategories.some((cat) => service.categories.includes(cat))
       return matchesSearchTerm && matchesCategories
     })
   }, [services, searchTerm, selectedCategories])
@@ -152,7 +152,7 @@ export default function AwsServicesList({
                       <CardTitle className="text-lg">
                         <Link
                           href={`/services/${service.slug}`}
-                          className="text-primary hover:underline"
+                          className="text-blue-600 hover:text-blue-700 hover:underline"
                         >
                           {service.service}
                         </Link>
@@ -184,7 +184,7 @@ export default function AwsServicesList({
                     <Link href={`/services/${service.slug}`} passHref>
                       <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
                         <div className="flex-grow">
-                          <h3 className="text-lg font-semibold text-primary hover:underline">
+                          <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
                             {service.service}
                           </h3>
                           <p className="text-sm text-muted-foreground mt-1">

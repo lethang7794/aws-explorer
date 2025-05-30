@@ -7,13 +7,15 @@ import {
   AWS_ICONS_EXTRACT_PATH,
 } from '@/constants/aws-icons-etl'
 
-type Data = {
-  service: string
+type DataItem = {
+  service?: string
   type: string
-  name: string
-  component: string
-  importComponent?: string
   categories: string[]
+  name: string
+  nameWithPrefix: string
+  component?: string
+  importComponent?: string
+  resources?: string[]
 }
 
 //
@@ -23,7 +25,7 @@ type Data = {
     true
   )) as RecursiveDirectory
 
-  const data: Data[] = []
+  const items: DataItem[] = []
 
   files.forEach((file) => {
     let name = ''
@@ -32,7 +34,7 @@ type Data = {
     let component = ''
     let importComponent = ''
     let categories: string[] = []
-    let obj: Data
+    let obj: DataItem
     let prefix = ''
 
     const { fullpath, filename } = file
@@ -41,9 +43,6 @@ type Data = {
       prefix = 'ArchitectureGroup'
     } else if (fullpath.includes('Architecture-Service-Icons')) {
       prefix = 'ArchitectureService'
-      console.log(
-        `Processing Architecture Service Icon: ${filename} (${fullpath})`
-      )
       service = convertFilenameToServiceName(filename)
     } else if (fullpath.includes('Category-Icons')) {
       prefix = 'Category'
@@ -52,7 +51,7 @@ type Data = {
     }
 
     name = removeSpecialCharacters(
-      `${prefix} ${filename
+      `${filename
         .replace(/([A-Z]+)(?=[A-Z][a-z0-9])/g, (match) =>
           match.length > 1 ? match.charAt(0) + match.slice(1) + ' ' : match
         )
@@ -78,7 +77,7 @@ type Data = {
     importComponent = `import ${component} from 'aws-react-icons/icons/${component}';`
 
     if (fullpath.includes('Architecture-Group-Icons')) {
-      prefix = 'Architecture Group'
+      prefix = 'ArchitectureGroup-'
       type = 'Architecture Group'
     } else if (fullpath.includes('Architecture-Service-Icons')) {
       type = 'Architecture Service'
@@ -113,28 +112,31 @@ type Data = {
     }
 
     obj = {
-      service: service,
+      service: service || undefined,
       type: type,
       categories: categories,
-      name: name,
-      component: component,
+      name: name.trim(),
+      nameWithPrefix: `${prefix}${name}`,
+      // component: component,
       // importComponent: importComponent,
     }
 
     categories = []
 
-    data.push(obj)
+    items.push(obj)
   })
 
-  data.sort((a, b) => a?.categories[1]?.localeCompare(b.categories[1]))
+  items.sort((a, b) => a?.categories[1]?.localeCompare(b.categories[1]))
 
-  data.sort((a, b) => a?.categories[0]?.localeCompare(b.categories[0]))
+  items.sort((a, b) => a?.categories[0]?.localeCompare(b.categories[0]))
+
+  const itemsWithResources = groupResourcesOfService(items)
 
   fs.writeFileSync(
     path.resolve(process.cwd(), AWS_ICONS_DATA_PATH),
     JSON.stringify(
       {
-        data,
+        data: itemsWithResources,
       },
       null,
       2
@@ -147,12 +149,28 @@ function removeSpecialCharacters(str: string): string {
 }
 
 function convertFilenameToServiceName(filename: string) {
-  // Remove the extension
-  const nameWithoutExtension = filename.replace(/\.[^/.]+$/, '')
+  const processedServiceName = filename.replace(/\.[^/.]+$/, '') // Remove the extension
 
-  if (serviceNames[nameWithoutExtension]) {
-    return serviceNames[nameWithoutExtension]
+  if (serviceNames[processedServiceName]) {
+    return serviceNames[processedServiceName]
   }
 
-  return nameWithoutExtension
+  return processedServiceName
+}
+
+function groupResourcesOfService(data: DataItem[]): DataItem[] {
+  const resources = data.filter((item) => item.type === 'Resource')
+
+  return data.map((item) => {
+    if (item.type === 'Architecture Service') {
+      const matchedResources = resources
+        .filter((resource) => resource.name.startsWith(item.name))
+        .map((resource) => resource.name)
+      return {
+        ...item,
+        resources: matchedResources.length ? matchedResources : undefined,
+      }
+    }
+    return item
+  })
 }
