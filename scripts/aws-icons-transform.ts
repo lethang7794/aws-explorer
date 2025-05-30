@@ -79,11 +79,19 @@ async function renameFiles(mainDir: string): Promise<void> {
 
 async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
   const iconsDir = path.join(process.cwd(), AWS_ICONS_TRANSFORM_PATH)
+  const iconsWithoutPrefixDir = path.join(
+    process.cwd(),
+    AWS_ICONS_TRANSFORM_PATH + '-without-prefix'
+  )
+
   let prefix = ''
 
   // Create the icons directory if it doesn't exist
   if (!fs.existsSync(iconsDir)) {
     fs.mkdirSync(iconsDir)
+  }
+  if (!fs.existsSync(iconsWithoutPrefixDir)) {
+    fs.mkdirSync(iconsWithoutPrefixDir)
   }
 
   const dirEntries = await fs.promises.readdir(mainDir, {
@@ -107,8 +115,13 @@ async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
       await copySvgFilesToIconsDirectory(entryPath)
     } else if (path.extname(entryPath).toLowerCase() === '.svg') {
       const targetPath = path.join(iconsDir, `${prefix}${entry.name}`)
+      const targetWithoutPrefixPath = path.join(
+        iconsDir + '-without-prefix',
+        `${entry.name}`
+      )
 
       await fs.promises.copyFile(entryPath, targetPath)
+      await fs.promises.copyFile(entryPath, targetWithoutPrefixPath)
       console.log(`Copied file: ${entryPath} to ${targetPath}`)
     }
   }
@@ -133,4 +146,3 @@ async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
     console.error('Error:', error)
   }
 })()
-export { AWS_ICONS_EXTRACT_PATH }

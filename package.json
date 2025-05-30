@@ -11,9 +11,10 @@
     "icons:extract": "bash ./scripts/aws-icons-extract.sh",
     "posticons:extract": "bash ./scripts/aws-icons-extract-post.sh",
     "icons:transform": "tsx ./scripts/aws-icons-transform.ts",
-    "posticons:transform": "svgo --config svgo.config.cjs -f aws-icons-transform/ -o aws-icons-transform-optimized/",
+    "posticons:transform": "bash ./scripts/aws-icons-transform-post.sh",
     "icons:load": "tsx ./scripts/aws-icons-load.ts",
-    "icons": "pnpm run icons:extract && pnpm run icons:transform && pnpm run icons:load"
+    "icons": "pnpm run icons:extract && pnpm run icons:transform && pnpm run icons:load",
+    "icons:post": "bash ./scripts/aws-icons-post.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

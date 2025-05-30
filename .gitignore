@@ -40,6 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-aws-icons-extract/
-aws-icons-transform-optimized/
-aws-icons-transform/
+aws-icons-*/
