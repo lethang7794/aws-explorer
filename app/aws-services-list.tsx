@@ -6,27 +6,23 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ExternalLink } from "lucide-react"
-
-interface Service {
-  service: string
-  shortDescription: string
-  url: string
-  categories: string[]
-  detailDescription: string
-}
+import { LayoutGrid, List, Info } from "lucide-react"
+import type { Service } from "@/lib/aws-services-data" // Import type
 
 interface AwsServicesListProps {
   services: Service[]
 }
 
+type LayoutMode = "card" | "list"
+
 export default function AwsServicesList({ services: initialServices }: AwsServicesListProps) {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [services, setServices] = useState<Service[]>(initialServices)
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>("card")
 
-  // Effect to update services if initialServices prop changes (though not typical for this static data example)
   useEffect(() => {
     setServices(initialServices)
   }, [initialServices])
@@ -64,7 +60,7 @@ export default function AwsServicesList({ services: initialServices }: AwsServic
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow">
+        <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start">
           <div>
             <h2 className="text-xl font-semibold mb-3">Search Services</h2>
             <Input
@@ -77,7 +73,7 @@ export default function AwsServicesList({ services: initialServices }: AwsServic
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-3">Filter by Category</h2>
-            <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
+            <div className="space-y-2 max-h-72 overflow-y-auto pr-2">
               {allCategories.map((category) => (
                 <div key={category} className="flex items-center space-x-2">
                   <Checkbox
@@ -92,47 +88,101 @@ export default function AwsServicesList({ services: initialServices }: AwsServic
               ))}
             </div>
             {selectedCategories.length > 0 && (
-              <button onClick={() => setSelectedCategories([])} className="mt-4 text-sm text-primary hover:underline">
+              <Button
+                variant="link"
+                onClick={() => setSelectedCategories([])}
+                className="mt-4 p-0 h-auto text-sm text-primary hover:underline"
+              >
                 Clear all filters
-              </button>
+              </Button>
             )}
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-3">View Mode</h2>
+            <div className="flex space-x-2">
+              <Button
+                variant={layoutMode === "card" ? "secondary" : "outline"}
+                size="icon"
+                onClick={() => setLayoutMode("card")}
+                aria-label="Card view"
+              >
+                <LayoutGrid className="h-5 w-5" />
+              </Button>
+              <Button
+                variant={layoutMode === "list" ? "secondary" : "outline"}
+                size="icon"
+                onClick={() => setLayoutMode("list")}
+                aria-label="List view"
+              >
+                <List className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </aside>
 
         <main className="md:col-span-3">
           {filteredServices.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredServices.map((service) => (
-                <Card key={service.service} className="flex flex-col">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{service.service}</CardTitle>
-                    <CardDescription className="text-xs h-10 overflow-hidden">
-                      {service.shortDescription}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-sm text-muted-foreground mb-2 line-clamp-4">{service.detailDescription}</p>
-                    <div className="space-x-1">
-                      {service.categories.map((category) => (
-                        <Badge key={category} variant="secondary" className="text-xs">
-                          {category}
-                        </Badge>
-                      ))}
+            layoutMode === "card" ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredServices.map((service) => (
+                  <Card key={service.id} className="flex flex-col">
+                    <CardHeader>
+                      <CardTitle className="text-lg">{service.service}</CardTitle>
+                      <CardDescription className="text-xs h-10 overflow-hidden">
+                        {service.shortDescription}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="space-x-1 space-y-1">
+                        {service.categories.map((category) => (
+                          <Badge key={category} variant="secondary" className="text-xs">
+                            {category}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter>
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="text-sm text-primary hover:underline flex items-center w-full"
+                        passHref
+                      >
+                        <Button variant="outline" className="w-full">
+                          <Info className="mr-2 h-4 w-4" /> View Details
+                        </Button>
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {filteredServices.map((service) => (
+                  <Card key={service.id} className="p-0">
+                    <div className="flex items-center justify-between p-4">
+                      <div className="flex-grow">
+                        <Link href={`/services/${service.slug}`} passHref>
+                          <h3 className="text-lg font-semibold text-primary hover:underline">{service.service}</h3>
+                        </Link>
+                        <p className="text-sm text-muted-foreground mt-1">{service.shortDescription}</p>
+                        <div className="mt-2 space-x-1 space-y-1">
+                          {service.categories.map((category) => (
+                            <Badge key={category} variant="secondary" className="text-xs">
+                              {category}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <Link href={`/services/${service.slug}`} passHref>
+                        <Button variant="ghost" size="sm">
+                          Details <Info className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
                     </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link
-                      href={service.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-primary hover:underline flex items-center"
-                    >
-                      Learn More <ExternalLink className="ml-1 h-4 w-4" />
-                    </Link>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
+                  </Card>
+                ))}
+              </div>
+            )
           ) : (
             <div className="text-center py-12">
               <p className="text-xl text-muted-foreground">No services match your criteria.</p>
