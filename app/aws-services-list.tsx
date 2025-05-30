@@ -70,7 +70,7 @@ export default function AwsServicesList({
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start">
+        <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start md:sticky md:top-8 md:h-fit">
           <div>
             <h2 className="text-xl font-semibold mb-3">Search Services</h2>
             <Input
@@ -84,21 +84,30 @@ export default function AwsServicesList({
           <div>
             <h2 className="text-xl font-semibold mb-3">Filter by Category</h2>
             <div className="space-y-2 max-h-72 overflow-y-auto pr-2">
-              {awsServiceCategories.map((category) => (
-                <div key={category} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={`category-${category}`}
-                    checked={selectedCategories.includes(category)}
-                    onCheckedChange={() => handleCategoryChange(category)}
-                  />
-                  <Label
-                    htmlFor={`category-${category}`}
-                    className="text-sm font-medium cursor-pointer"
-                  >
-                    {category}
-                  </Label>
-                </div>
-              ))}
+              {awsServiceCategories.map((category) => {
+                // Count the number of services in this category
+                const count = services.filter((service) =>
+                  service.categories.includes(category)
+                ).length
+                return (
+                  <div key={category} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`category-${category}`}
+                      checked={selectedCategories.includes(category)}
+                      onCheckedChange={() => handleCategoryChange(category)}
+                    />
+                    <Label
+                      htmlFor={`category-${category}`}
+                      className="text-sm font-medium cursor-pointer"
+                    >
+                      {category}
+                      <span className="ml-2 text-xs text-muted-foreground">
+                        ({count})
+                      </span>
+                    </Label>
+                  </div>
+                )
+              })}
             </div>
             {selectedCategories.length > 0 && (
               <Button
@@ -144,7 +153,12 @@ export default function AwsServicesList({
                   >
                     <CardHeader>
                       <CardTitle className="text-lg">
-                        {service.service}
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="text-primary hover:underline"
+                        >
+                          {service.service}
+                        </Link>
                       </CardTitle>
                       <CardDescription className="text-xs h-10 overflow-hidden">
                         {service.shortDescription}
@@ -163,17 +177,6 @@ export default function AwsServicesList({
                         ))}
                       </div>
                     </CardContent>
-                    <CardFooter>
-                      <Link
-                        href={`/services/${service.slug}`}
-                        className="text-sm text-primary hover:underline flex items-center w-full"
-                        passHref
-                      >
-                        <Button variant="outline" className="w-full">
-                          <Info className="mr-2 h-4 w-4" /> View Details
-                        </Button>
-                      </Link>
-                    </CardFooter>
                   </Card>
                 ))}
               </div>
@@ -181,34 +184,29 @@ export default function AwsServicesList({
               <div className="space-y-4">
                 {filteredServices.map((service) => (
                   <Card key={service.id} className="p-0">
-                    <div className="flex items-center justify-between p-4">
-                      <div className="flex-grow">
-                        <Link href={`/services/${service.slug}`} passHref>
+                    <Link href={`/services/${service.slug}`} passHref>
+                      <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
+                        <div className="flex-grow">
                           <h3 className="text-lg font-semibold text-primary hover:underline">
                             {service.service}
                           </h3>
-                        </Link>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {service.shortDescription}
-                        </p>
-                        <div className="mt-2 space-x-1 space-y-1">
-                          {service.categories.map((category) => (
-                            <Badge
-                              key={category}
-                              variant="secondary"
-                              className="text-xs"
-                            >
-                              {category}
-                            </Badge>
-                          ))}
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {service.shortDescription}
+                          </p>
+                          <div className="mt-2 space-x-1 space-y-1">
+                            {service.categories.map((category) => (
+                              <Badge
+                                key={category}
+                                variant="secondary"
+                                className="text-xs"
+                              >
+                                {category}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                      <Link href={`/services/${service.slug}`} passHref>
-                        <Button variant="ghost" size="sm">
-                          Details <Info className="ml-2 h-4 w-4" />
-                        </Button>
-                      </Link>
-                    </div>
+                    </Link>
                   </Card>
                 ))}
               </div>

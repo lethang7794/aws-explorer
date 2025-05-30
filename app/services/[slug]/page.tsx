@@ -26,8 +26,10 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
-  const service = getServiceBySlug(params.slug)
+export default async function ServiceDetailPage({
+  params,
+}: ServiceDetailPageProps) {
+  const service = getServiceBySlug((await params).slug)
 
   if (!service) {
     notFound() // Triggers the not-found page
@@ -54,17 +56,17 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
         </CardHeader>
         <CardContent className="space-y-6">
           <div>
-            <h2 className="text-xl font-semibold mb-2">Categories</h2>
+            {/* <h2 className="text-xl font-semibold mb-2">Categories</h2> */}
             <div className="flex flex-wrap gap-2">
               {service.categories.map((category) => (
-                <Badge key={category} variant="default" className="text-sm">
+                <Badge key={category} variant="secondary" className="text-sm">
                   {category}
                 </Badge>
               ))}
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-2">Detailed Description</h2>
+            {/* <h2 className="text-xl font-semibold mb-2">Detailed Description</h2> */}
             <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-wrap">
               {service.detailDescription}
             </p>
