@@ -125,7 +125,7 @@ export default function AwsServicesList({ services: initialServices }: AwsServic
             layoutMode === "card" ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                  <Card key={service.id} className="flex flex-col">
+                  <Card key={service.id || service.slug} className="flex flex-col">
                     <CardHeader>
                       <CardTitle className="text-lg">{service.service}</CardTitle>
                       <CardDescription className="text-xs h-10 overflow-hidden">
