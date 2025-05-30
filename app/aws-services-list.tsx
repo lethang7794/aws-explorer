@@ -147,10 +147,7 @@ export default function AwsServicesList({
             layoutMode === 'card' ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                  <Card
-                    key={service.id || service.slug}
-                    className="flex flex-col"
-                  >
+                  <Card key={service.slug} className="flex flex-col">
                     <CardHeader>
                       <CardTitle className="text-lg">
                         <Link
@@ -183,7 +180,7 @@ export default function AwsServicesList({
             ) : (
               <div className="space-y-4">
                 {filteredServices.map((service) => (
-                  <Card key={service.id} className="p-0">
+                  <Card key={service.slug} className="p-0">
                     <Link href={`/services/${service.slug}`} passHref>
                       <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
                         <div className="flex-grow">
