@@ -92,7 +92,7 @@ export default function AwsServicesList({
             </h2>
             <Input
               type="text"
-              placeholder="Search by name..."
+              placeholder="Search by name or description ..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full"
