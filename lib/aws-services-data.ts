@@ -61,12 +61,7 @@ const awsIconsByName: Record<string, AwsIcon> = AWS_ICONS.data.reduce(
 
 export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
   const icon = awsIconsByName[s.service]
-  console.log(
-    'Processing service:',
-    s.service,
-    'Icon:',
-    icon ? icon.name : 'None'
-  )
+
   return {
     ...s,
     serviceSimpleName: simplifyServiceName(s.service).trim(),
@@ -102,6 +97,16 @@ function getAllCategories(services: Service[]): ServiceCategory[] {
 }
 
 export const awsServiceCategories = getAllCategories(awsServicesData)
+
+export const awsServiceCountByCategory = awsServiceCategories.reduce(
+  (acc, { name: category }) => {
+    const count = awsServicesData.filter((service) =>
+      service.categories.includes(category)
+    ).length
+    return { ...acc, [category]: count }
+  },
+  {} as Record<string, number>
+)
 
 export const getServiceBySlug = (slug: string): Service | undefined => {
   return awsServicesData.find((service) => service.slug === slug)

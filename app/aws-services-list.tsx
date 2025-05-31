@@ -16,7 +16,11 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { LayoutGrid, List, Info } from 'lucide-react'
-import { awsServiceCategories, type Service } from '@/lib/aws-services-data' // Import type
+import {
+  awsServiceCategories,
+  awsServiceCountByCategory,
+  type Service,
+} from '@/lib/aws-services-data' // Import type
 
 interface AwsServicesListProps {
   services: Service[]
@@ -58,6 +62,11 @@ export default function AwsServicesList({
     })
   }, [services, searchTerm, selectedCategories])
 
+  const serviceCountOfSelectedCategories = selectedCategories.reduce(
+    (acc, category) => acc + (awsServiceCountByCategory[category] || 0),
+    0
+  )
+
   return (
     <div className="container mx-auto p-4 md:p-8">
       <header className="mb-8 text-center">
@@ -72,7 +81,15 @@ export default function AwsServicesList({
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start md:sticky md:top-8 md:h-fit">
           <div>
-            <h2 className="text-xl font-semibold mb-3">Search Services</h2>
+            <h2 className="text-xl font-semibold mb-3">
+              Search{' '}
+              {selectedCategories.length > 0
+                ? `in ${serviceCountOfSelectedCategories} services`
+                : `in ${services.length} services`}
+              {selectedCategories.length > 0
+                ? ` (of ${selectedCategories.length} categories)`
+                : ''}
+            </h2>
             <Input
               type="text"
               placeholder="Search by name..."
