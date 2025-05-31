@@ -132,12 +132,12 @@ export default function AwsServicesList({
             <h2 className="text-xl font-semibold mb-3">
               Search{' '}
               {selectedCategories.length > 0
-                ? serviceCountOfSelectedCategories !== 1
-                  ? `in ${serviceCountOfSelectedCategories} services`
-                  : `in ${serviceCountOfSelectedCategories} service`
-                : initialServices.length !== 1
-                  ? `in ${initialServices.length} services`
-                  : `in ${initialServices.length} service`}
+                ? serviceCountOfSelectedCategories === 1
+                  ? `in 1 service`
+                  : `in ${serviceCountOfSelectedCategories} services`
+                : initialServices.length === 1
+                  ? `in 1 service`
+                  : `in ${initialServices.length} services`}
               {selectedCategories.length > 0 ? (
                 <span className="text-sm font-normal">
                   {selectedCategories.length === 1
@@ -376,19 +376,7 @@ function ServiceIconItem({ service }: { service: Service }) {
             </div>
           </Link>
         </CardTitle>
-        {/* <CardDescription className="text-xs h-10">
-          {service.shortDescription}
-        </CardDescription> */}
       </CardHeader>
-      {/* <CardContent className="flex-grow">
-        <div className="space-x-1 space-y-1">
-          {service.categories.map((category) => (
-            <Badge key={category} variant="secondary" className="text-xs">
-              {category}
-            </Badge>
-          ))}
-        </div>
-      </CardContent> */}
     </Card>
   )
 }
