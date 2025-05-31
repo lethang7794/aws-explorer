@@ -23,6 +23,7 @@ import {
 } from '@/lib/aws-services-data' // Import type
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
+import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 
 interface AwsServicesListProps {
   services: Service[]
@@ -374,6 +375,21 @@ function ServiceIconItem({ service }: { service: Service }) {
             <div className="text-center text-balance text-sm text-primary">
               {service.service}
             </div>
+            <ul className="flex gap-2 flex-wrap justify-center">
+              {service.iconResources?.map((r) => {
+                const resourceName = getResourceNameFromServiceName(r, service)
+                return (
+                  <li key={r} className="flex flex-col items-center p-1">
+                    <img
+                      src={`/aws/${r}.svg`}
+                      alt={`${resourceName} icon`}
+                      className="inline h-10 w-10"
+                    />
+                    {/* {resourceName} */}
+                  </li>
+                )
+              })}
+            </ul>
           </Link>
         </CardTitle>
       </CardHeader>
