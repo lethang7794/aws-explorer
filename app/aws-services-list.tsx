@@ -152,9 +152,25 @@ export default function AwsServicesList({
                       <CardTitle className="text-lg">
                         <Link
                           href={`/services/${service.slug}`}
-                          className="text-blue-600 hover:text-blue-700 hover:underline"
+                          className="flex flex-wrap justify-between text-blue-600 hover:text-blue-700 hover:underline"
                         >
-                          {service.serviceSimpleName}
+                          <div>{service.serviceSimpleName}</div>
+                          {service.iconService ? (
+                            <img
+                              src={`/aws/${service.iconService}.svg`}
+                              className="h-8 w-8"
+                            />
+                          ) : null}
+                          {service.iconServices ? (
+                            <div className="flex gap-2">
+                              {service.iconServices.map((icon) => (
+                                <img
+                                  src={`/aws/${icon}.svg`}
+                                  className="h-8 w-8"
+                                />
+                              ))}
+                            </div>
+                          ) : null}
                         </Link>
                       </CardTitle>
                       <CardDescription className="text-xs h-10 overflow-hidden">

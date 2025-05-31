@@ -66,6 +66,7 @@ type DataItem = {
         .replace('RA 3', 'RA3')
         .replace('EC2', 'EC2 ')
         .replace('Lo Ra WAN', 'LoRaWAN')
+        .replace('Siteto', 'Site to')
         .trim()}`
     )
 
@@ -113,6 +114,7 @@ type DataItem = {
 
     obj = {
       service: service || undefined,
+      // serviceAlternativeName: serviceNames[service] || undefined,
       type: type,
       categories: categories,
       name: name.trim(),

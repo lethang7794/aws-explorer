@@ -47,8 +47,24 @@ export default async function ServiceDetailPage({
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl md:text-4xl">
-            {service.service}
+          <CardTitle className="flex gap-2 text-3xl md:text-4xl">
+            {service.iconService ? (
+              <img
+                src={`/aws/${service.iconService}.svg`}
+                className="h-9 w-9 md:h-10 md:w-10"
+              />
+            ) : null}
+            {service.iconServices ? (
+              <div className="flex gap-2">
+                {service.iconServices.map((icon) => (
+                  <img
+                    src={`/aws/${icon}.svg`}
+                    className="h-9 w-9 md:h-10 md:w-10"
+                  />
+                ))}
+              </div>
+            ) : null}
+            <div>{service.service}</div>
           </CardTitle>
           <CardDescription className="text-lg text-muted-foreground pt-1">
             {service.shortDescription}
