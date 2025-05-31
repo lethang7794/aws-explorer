@@ -32,7 +32,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const service = getServiceBySlug(params.slug)
+  const service = getServiceBySlug((await params).slug)
   if (!service) return {}
 
   return {
