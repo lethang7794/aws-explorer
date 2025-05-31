@@ -171,7 +171,11 @@ export default function AwsServicesList({
                     htmlFor={`category-${category}`}
                     className="flex gap-2 text-sm font-medium cursor-pointer"
                   >
-                    <img src={`/aws/${icon}.svg`} className="h-5 w-5" />
+                    <img
+                      src={`/aws/${icon}.svg`}
+                      alt={icon}
+                      className="h-5 w-5"
+                    />
                     {category}
                     <span className="ml-0 text-sm text-muted-foreground">
                       ({categoryCounts[category]})
@@ -409,14 +413,27 @@ function ServiceIcons({
   return (
     <>
       {service.iconService ? (
-        <img src={`/aws/${service.iconService}.svg`} className={className} />
+        <img
+          src={`/aws/${service.iconService}.svg`}
+          alt={service.iconService}
+          className={className}
+        />
       ) : service.iconServices ? null : (
-        <img src={`/aws/GeneralResource.svg`} className={className} />
+        <img
+          src={`/aws/GeneralResource.svg`}
+          alt={service.iconService}
+          className={className}
+        />
       )}
       {service.iconServices ? (
         <div className="flex flex-wrap justify-center gap-2">
           {service.iconServices.map((icon) => (
-            <img key={icon} src={`/aws/${icon}.svg`} className={className} />
+            <img
+              key={icon}
+              src={`/aws/${icon}.svg`}
+              alt={icon}
+              className={className}
+            />
           ))}
         </div>
       ) : null}
