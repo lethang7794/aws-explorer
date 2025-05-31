@@ -17,7 +17,7 @@ import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { Footer } from '@/components/footer'
-import { pascalToSentenceAWS, pascalToTitleCase } from '@/lib/text'
+import { pascalToTitleCase } from '@/lib/text'
 
 interface ServiceDetailPageProps {
   params: {
