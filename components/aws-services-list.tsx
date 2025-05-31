@@ -121,9 +121,10 @@ export default function AwsServicesList({
         <h1 className="text-4xl text-gray-100 font-bold tracking-tight">
           AWS Explorer
         </h1>
-        <p className="text-gray-200 mt-2 text-balance">
-          Browse, explorer, and find your next AWS services... or quickly find
-          the docs you need.
+        <p className="text-gray-200 mt-2">
+          Browse, explorer, and find your next AWS services...
+          <br />
+          or quickly find the docs you need.
         </p>
       </header>
 
@@ -376,7 +377,7 @@ function ServiceIconItem({ service }: { service: Service }) {
             scroll={true}
           >
             <ServiceIcons service={service} size="large" />
-            <div className="text-center text-balance text-sm text-primary">
+            <div className="text-center text-sm text-primary">
               {service.service}
             </div>
             <ul className="flex gap-2 flex-wrap justify-center">
