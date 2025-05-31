@@ -94,9 +94,7 @@ export default function AwsServicesList({
   return (
     <div className="container mx-auto p-4 md:p-8">
       <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">
-          AWS Services Explorer
-        </h1>
+        <h1 className="text-4xl font-bold tracking-tight">AWS Explorer</h1>
         <p className="text-muted-foreground mt-2">
           Browse, explorer, and find your next AWS services... or quickly find
           the docs you need.
