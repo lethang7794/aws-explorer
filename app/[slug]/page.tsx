@@ -169,17 +169,22 @@ function getResourceNameFromServiceName(
   service: Service
 ): string {
   let resourceWithoutPrefix = resource.replace(service.iconService || '', '')
+  //
   // Special cases:
+  //
   // - SageMaker AI
   if (service.iconService === 'AmazonSageMakerAI') {
     resourceWithoutPrefix = resource.replace('AmazonSageMaker', '')
   }
+  // - VPC
   if (service.iconService === 'AmazonVirtualPrivateCloud') {
     resourceWithoutPrefix = resource.replace('AmazonVPC', '')
   }
+  // - IAM
   if (service.iconService === 'AWSIdentityandAccessManagement') {
     resourceWithoutPrefix = resource.replace('AWSIdentityAccessManagement', '')
   }
+  // - EFS
   if (service.iconService === 'AmazonEFS') {
     resourceWithoutPrefix = resource.replace('AmazonElasticFileSystem', '')
   }
