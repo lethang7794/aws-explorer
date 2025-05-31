@@ -124,8 +124,9 @@ async function extractDetailDescription(context, service) {
   // For Decision Guides, the description is in a different place
   if (service.categories.includes(DECISION_GUIDES_CATEGORY)) {
     try {
-      detailDescription = await detailPage.$eval('table tbody tr td p', (el) =>
-        el.innerText.trim()
+      detailDescription = await detailPage.$eval(
+        'table tbody tr td:nth-child(2) p',
+        (el) => el.innerText.trim()
       )
     } catch (e) {
       console.warn(

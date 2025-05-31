@@ -7,14 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "//": "",
+    "//": "Scripts to extract, transform, and load AWS icons for the project",
     "icons:extract": "bash ./scripts/aws-icons-extract.sh",
     "posticons:extract": "bash ./scripts/aws-icons-extract-post.sh",
     "icons:transform": "tsx ./scripts/aws-icons-transform.ts",
     "posticons:transform": "bash ./scripts/aws-icons-transform-post.sh",
     "icons:load": "tsx ./scripts/aws-icons-load.ts",
     "icons": "pnpm run icons:extract && pnpm run icons:transform && pnpm run icons:load",
-    "icons:post": "bash ./scripts/aws-icons-post.sh"
+    "icons:post": "bash ./scripts/aws-icons-post.sh",
+    "//": "Script to crawl the AWS docs",
+    "aws-docs-crawl": "node ./scripts/aws-services-docs-crawler.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
