@@ -45,13 +45,19 @@
 > [!NOTE]
 > AWS Explorer is not an official AWS product. For the most current and comprehensive list of services, always refer to [AWS Documentation](https://docs.aws.amazon.com/).
 
+## Roadmap
+
+- [ ] Show services resources in detail page.
+- [ ] Add CICD pipeline to crawl AWS docs every week.
+- [ ] Support update AWS architecture icons from CICD.
+
 ## License
 
 [MIT License](./LICENSE)
 
 ## Credits
 
-Inspired by the needs of the AWS developer community.
+Inspired by the needs of the AWS developer community:
 
 - [MKAbuMattar/aws-react-icons](https://github.com/MKAbuMattar/aws-react-icons) for source code to process the AWS Architecture Icons packages.
 - [AWS architecture icons](https://aws.amazon.com/architecture/icons/) for the icons.
