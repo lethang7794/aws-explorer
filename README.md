@@ -32,14 +32,16 @@
 | Fast, global search         | ✅                                                            | ✅                                                                                     |
 | Direct links to docs        | ✅                                                            | ✅                                                                                     |
 | Category filtering          | ✅ Support multi categories                                   | 🟡 Only support one category                                                           |
-| Service icons               | ✅ All services has icon. Even the categories                 | 🟡 Only for feature services                                                           |
+| Service icons               | ✅ All services have icon                                     | 🟡 Only for feature services                                                           |
+| Category icons              | 🚀 All categories have icon                                   | ❌ Not supported                                                                       |
+| Resources icons             | 🚀 Show resource icons in icon layout and detail page         | 🟡 Not supported                                                                       |
 | Preload detail page         | ✅ See it at a glance                                         | ❌ Needs a whole page load                                                             |
 | Support go back             | ✅ Continue where you are before checking detail of a service | ❌ Reset everything after you checking a service                                       |
 | Clean, minimal UI           | ✅                                                            | 🟡 There is a lot of information                                                       |
 | Show all services           | ✅ See all the matching services                              | ❌ Navigate between pages without hope                                                 |
 | No naming confusion         | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch               | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕 |
 | Alphabetical sorting        | ✅ VPC is near VPN, CloudTrail is next to CloudWatch          | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch         |
-| Layout mode                 | ✅ Grid, list view                                            | 🟡 Only one layout                                                                     |
+| Layout mode                 | 🚀 Grid, list, icon view                                      | 🟡 Only one layout                                                                     |
 | Up-to-date list of services | 🟡 Update frequently                                          | ✅ Always up-to-date                                                                   |
 
 > [!NOTE]
@@ -47,7 +49,7 @@
 
 ## Roadmap
 
-- [ ] Show services resources in detail page.
+- [x] Show services resources in detail page.
 - [ ] Add CICD pipeline to crawl AWS docs every week.
 - [ ] Support update AWS architecture icons from CICD.
 - [ ] Support copy/download SVG icon.
