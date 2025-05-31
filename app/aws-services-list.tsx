@@ -84,11 +84,21 @@ export default function AwsServicesList({
             <h2 className="text-xl font-semibold mb-3">
               Search{' '}
               {selectedCategories.length > 0
-                ? `in ${serviceCountOfSelectedCategories} services`
-                : `in ${services.length} services`}
-              {selectedCategories.length > 0
-                ? ` (of ${selectedCategories.length} categories)`
-                : ''}
+                ? serviceCountOfSelectedCategories !== 1
+                  ? `in ${serviceCountOfSelectedCategories} services`
+                  : `in ${serviceCountOfSelectedCategories} service`
+                : services.length !== 1
+                  ? `in ${services.length} services`
+                  : `in ${services.length} service`}
+              {selectedCategories.length > 0 ? (
+                <span className="text-sm font-normal">
+                  {selectedCategories.length === 1
+                    ? ` (of ${selectedCategories.length} category)`
+                    : ` (of ${selectedCategories.length} categories)`}
+                </span>
+              ) : (
+                ''
+              )}
             </h2>
             <Input
               type="text"
@@ -163,60 +173,67 @@ export default function AwsServicesList({
         <main className="md:col-span-3">
           {filteredServices.length > 0 ? (
             layoutMode === 'card' ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredServices.map((service) => (
-                  <Card key={service.slug} className="flex flex-col">
-                    <CardHeader>
-                      <CardTitle className="text-lg">
-                        <Link
-                          href={`/services/${service.slug}`}
-                          className="flex flex-wrap justify-between text-blue-600 hover:text-blue-700 hover:underline"
-                        >
-                          <div>{service.serviceSimpleName}</div>
-                          {service.iconService ? (
-                            <img
-                              src={`/aws/${service.iconService}.svg`}
-                              className="h-8 w-8"
-                            />
-                          ) : !service.iconServices ? (
-                            <img
-                              src={`/aws/GeneralResource.svg`}
-                              className="h-8 w-8"
-                            />
-                          ) : null}
-                          {service.iconServices ? (
-                            <div className="flex gap-2">
-                              {service.iconServices.map((icon) => (
-                                <img
-                                  key={icon}
-                                  src={`/aws/${icon}.svg`}
-                                  className="h-8 w-8"
-                                />
-                              ))}
-                            </div>
-                          ) : null}
-                        </Link>
-                      </CardTitle>
-                      <CardDescription className="text-xs h-10 overflow-hidden">
-                        {service.shortDescription}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="space-x-1 space-y-1">
-                        {service.categories.map((category) => (
-                          <Badge
-                            key={category}
-                            variant="secondary"
-                            className="text-xs"
+              <>
+                {searchTerm ? (
+                  <div className="mb-2">
+                    Found {filteredServices.length} services:
+                  </div>
+                ) : null}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredServices.map((service) => (
+                    <Card key={service.slug} className="flex flex-col">
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          <Link
+                            href={`/services/${service.slug}`}
+                            className="flex flex-wrap justify-between text-blue-600 hover:text-blue-700 hover:underline"
                           >
-                            {category}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                            <div>{service.serviceSimpleName}</div>
+                            {service.iconService ? (
+                              <img
+                                src={`/aws/${service.iconService}.svg`}
+                                className="h-8 w-8"
+                              />
+                            ) : !service.iconServices ? (
+                              <img
+                                src={`/aws/GeneralResource.svg`}
+                                className="h-8 w-8"
+                              />
+                            ) : null}
+                            {service.iconServices ? (
+                              <div className="flex flex-wrap gap-2">
+                                {service.iconServices.map((icon) => (
+                                  <img
+                                    key={icon}
+                                    src={`/aws/${icon}.svg`}
+                                    className="h-8 w-8"
+                                  />
+                                ))}
+                              </div>
+                            ) : null}
+                          </Link>
+                        </CardTitle>
+                        <CardDescription className="text-xs h-10">
+                          {service.shortDescription}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <div className="space-x-1 space-y-1">
+                          {service.categories.map((category) => (
+                            <Badge
+                              key={category}
+                              variant="secondary"
+                              className="text-xs"
+                            >
+                              {category}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </>
             ) : (
               <div className="space-y-4">
                 {filteredServices.map((service) => (
