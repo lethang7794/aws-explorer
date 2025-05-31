@@ -50,6 +50,8 @@
 - [ ] Show services resources in detail page.
 - [ ] Add CICD pipeline to crawl AWS docs every week.
 - [ ] Support update AWS architecture icons from CICD.
+- [ ] Support copy/download SVG icon.
+- [ ] Show related services in detail page.
 
 ## License
 
