@@ -1,7 +1,7 @@
-import awsServices from '../data/aws-services.json'
-import awsIcons from '../data/aws-icons.json'
-import { SERVICE_TO_ICON_FILENAME } from '@/scripts/service-names'
-import { AWS_CATEGORY_TO_ICON } from '@/data/aws-category-to-icon'
+import AWS_SERVICES from '@/data/aws-services.json'
+import AWS_ICONS from '@/data/aws-icons.json'
+import { SERVICE_TO_ICON_FILENAME } from '@/data/aws-service-icon-mapping'
+import { AWS_CATEGORY_TO_ICON } from '@/data/aws-icon-from-category'
 
 export interface Service {
   id?: string
@@ -49,7 +49,7 @@ function simplifyServiceName(service: string): string {
     .trim()
 }
 
-const awsIconsByName: Record<string, AwsIcon> = awsIcons.data.reduce(
+const awsIconsByName: Record<string, AwsIcon> = AWS_ICONS.data.reduce(
   (acc, s) => {
     if (s.service) {
       acc[s.service] = s
@@ -59,32 +59,30 @@ const awsIconsByName: Record<string, AwsIcon> = awsIcons.data.reduce(
   {} as Record<string, AwsIcon>
 )
 
-export const awsServicesData: Service[] = awsServices
-  .map((s) => {
-    const icon = awsIconsByName[s.service]
-    console.log(
-      'Processing service:',
-      s.service,
-      'Icon:',
-      icon ? icon.name : 'None'
-    )
-    return {
-      ...s,
-      serviceSimpleName: simplifyServiceName(s.service).trim(),
-      slug: generateSlug(s.service),
-      iconService:
-        icon?.name ||
-        ((typeof SERVICE_TO_ICON_FILENAME[s.service] === 'string'
-          ? SERVICE_TO_ICON_FILENAME[s.service]
-          : undefined) as string) ||
-        undefined,
-      iconServices: Array.isArray(SERVICE_TO_ICON_FILENAME[s.service])
-        ? (SERVICE_TO_ICON_FILENAME[s.service] as string[])
-        : undefined,
-      iconResources: icon ? icon.resources || [] : undefined,
-    }
-  })
-  .sort((a, b) => a.serviceSimpleName.localeCompare(b.serviceSimpleName))
+export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
+  const icon = awsIconsByName[s.service]
+  console.log(
+    'Processing service:',
+    s.service,
+    'Icon:',
+    icon ? icon.name : 'None'
+  )
+  return {
+    ...s,
+    serviceSimpleName: simplifyServiceName(s.service).trim(),
+    slug: generateSlug(s.service),
+    iconService:
+      icon?.name ||
+      ((typeof SERVICE_TO_ICON_FILENAME[s.service] === 'string'
+        ? SERVICE_TO_ICON_FILENAME[s.service]
+        : undefined) as string) ||
+      undefined,
+    iconServices: Array.isArray(SERVICE_TO_ICON_FILENAME[s.service])
+      ? (SERVICE_TO_ICON_FILENAME[s.service] as string[])
+      : undefined,
+    iconResources: icon ? icon.resources || [] : undefined,
+  }
+}).sort((a, b) => a.serviceSimpleName.localeCompare(b.serviceSimpleName))
 
 function getAllCategories(services: Service[]): ServiceCategory[] {
   const categoriesSet = new Set<string>()

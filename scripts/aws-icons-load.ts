@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { RecursiveDirectory, recursiveDirectory } from 'recursive-directory'
-import { ICON_FILENAME_TO_SERVICE } from './service-names'
+import { ICON_FILENAME_TO_SERVICE } from '../data/aws-service-icon-mapping'
 import {
   AWS_ICONS_DATA_PATH,
   AWS_ICONS_EXTRACT_PATH,
