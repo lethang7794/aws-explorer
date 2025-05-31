@@ -98,7 +98,8 @@ export default function AwsServicesList({
           AWS Services Explorer
         </h1>
         <p className="text-muted-foreground mt-2">
-          Browse, search, and filter AWS services.
+          Browse, explorer, and find your next AWS services... or quickly find
+          the docs you need.
         </p>
       </header>
 

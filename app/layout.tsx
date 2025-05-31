@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { AwsServicesFilterProvider } from '@/contexts/aws-services-filter-context'
+import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'AWS Explorer',
+  description:
+    'Browse, explorer, and find your next AWS services... or quickly find the docs you need.',
 }
 
 export default function RootLayout({
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AwsServicesFilterProvider>{children}</AwsServicesFilterProvider>
+        <Suspense>
+          <AwsServicesFilterProvider>{children}</AwsServicesFilterProvider>
+        </Suspense>
       </body>
     </html>
   )
