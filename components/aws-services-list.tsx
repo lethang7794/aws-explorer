@@ -118,15 +118,17 @@ export default function AwsServicesList({
   return (
     <div className="container mx-auto p-4 md:p-8">
       <header className="mb-4 md:mb-8 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">AWS Explorer</h1>
-        <p className="text-muted-foreground mt-2 text-balance">
+        <h1 className="text-4xl text-gray-100 font-bold tracking-tight">
+          AWS Explorer
+        </h1>
+        <p className="text-gray-200 mt-2 text-balance">
           Browse, explorer, and find your next AWS services... or quickly find
           the docs you need.
         </p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <aside className="flex flex-col-reverse md:block md:col-span-1 space-y-3 md:space-y-6 p-6 bg-card rounded-lg shadow self-start md:sticky md:top-8 md:h-fit">
+        <aside className="flex flex-col-reverse md:block md:col-span-1 space-y-3 md:space-y-6 p-6 pt-2 md:pt-6 bg-card rounded-lg shadow self-start md:sticky md:top-[136px] md:h-fit">
           <div className="mt-4 md:mt-0">
             <h2 className="text-xl font-semibold mb-3">
               Search{' '}
@@ -216,7 +218,7 @@ export default function AwsServicesList({
             layoutMode === 'card' ? (
               <>
                 {debouncedSearchTerm ? (
-                  <div className="mb-2">
+                  <div className="mb-2 text-gray-100">
                     Found {filteredServices.length} services:
                   </div>
                 ) : null}

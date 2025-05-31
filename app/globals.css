@@ -92,3 +92,28 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.gradient {
+  background-image: linear-gradient(
+    150deg,
+    hsl(36deg 100% 50%) 0%,
+    hsl(28deg 100% 57%) 8%,
+    hsl(20deg 100% 62%) 15%,
+    hsl(10deg 100% 66%) 22%,
+    hsl(358deg 100% 69%) 29%,
+    hsl(347deg 100% 68%) 36%,
+    hsl(338deg 100% 66%) 43%,
+    hsl(330deg 100% 66%) 50%,
+    hsl(323deg 100% 67%) 56%,
+    hsl(315deg 92% 67%) 62%,
+    hsl(308deg 78% 67%) 68%,
+    hsl(299deg 67% 67%) 73%,
+    hsl(288deg 72% 70%) 78%,
+    hsl(278deg 77% 72%) 83%,
+    hsl(268deg 81% 75%) 87%,
+    hsl(258deg 83% 76%) 91%,
+    hsl(248deg 84% 78%) 95%,
+    hsl(238deg 83% 78%) 98%,
+    hsl(230deg 82% 76%) 100%
+  );
+}

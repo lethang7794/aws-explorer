@@ -3,7 +3,7 @@ import { awsServicesData } from '@/lib/aws-services-data' // Import from central
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground gradient">
       <AwsServicesList services={awsServicesData} />
     </main>
   )

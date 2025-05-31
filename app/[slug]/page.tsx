@@ -58,75 +58,76 @@ export default async function ServiceDetailPage({
   }
 
   return (
-    <div className="container mx-auto p-4 md:p-8 max-w-4xl">
-      <div className="mb-6">
-        <Link href="/" passHref>
-          <Button variant="outline">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Services
-          </Button>
-        </Link>
-      </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex flex-wrap gap-2 items-center text-3xl md:text-4xl">
-            {service.iconService ? (
-              <img
-                src={`/aws/${service.iconService}.svg`}
-                className="h-20 w-20 md:h-24 md:w-24"
-                alt={`${service.iconService} icon`}
-              />
-            ) : null}
-            {service.iconServices ? (
+    <div className="min-h-screen bg-background text-foreground gradient">
+      <div className="container mx-auto p-4 md:p-8 max-w-4xl">
+        <div className="mb-6">
+          <Link href="/" passHref>
+            <Button variant="outline">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Services
+            </Button>
+          </Link>
+        </div>
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex flex-wrap gap-2 items-center text-3xl md:text-4xl">
+              {service.iconService ? (
+                <img
+                  src={`/aws/${service.iconService}.svg`}
+                  className="h-20 w-20 md:h-24 md:w-24"
+                  alt={`${service.iconService} icon`}
+                />
+              ) : null}
+              {service.iconServices ? (
+                <div className="flex flex-wrap gap-2">
+                  {service.iconServices.map((icon) => (
+                    <img
+                      key={icon}
+                      alt={`${icon} icon`}
+                      src={`/aws/${icon}.svg`}
+                      className="h-20 w-20 md:h-24 md:w-24"
+                    />
+                  ))}
+                </div>
+              ) : null}
+              <div>{service.service}</div>
+            </CardTitle>
+            <CardDescription className="text-lg text-muted-foreground pt-1">
+              {service.shortDescription}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              {/* <h2 className="text-xl font-semibold mb-2">Categories</h2> */}
               <div className="flex flex-wrap gap-2">
-                {service.iconServices.map((icon) => (
-                  <img
-                    key={icon}
-                    alt={`${icon} icon`}
-                    src={`/aws/${icon}.svg`}
-                    className="h-20 w-20 md:h-24 md:w-24"
-                  />
+                {service.categories.map((category) => (
+                  <Badge key={category} variant="secondary" className="text-sm">
+                    {category}
+                  </Badge>
                 ))}
               </div>
-            ) : null}
-            <div>{service.service}</div>
-          </CardTitle>
-          <CardDescription className="text-lg text-muted-foreground pt-1">
-            {service.shortDescription}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            {/* <h2 className="text-xl font-semibold mb-2">Categories</h2> */}
-            <div className="flex flex-wrap gap-2">
-              {service.categories.map((category) => (
-                <Badge key={category} variant="secondary" className="text-sm">
-                  {category}
-                </Badge>
-              ))}
             </div>
-          </div>
-          <div>
-            {/* <h2 className="text-xl font-semibold mb-2">Detailed Description</h2> */}
-            <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-wrap">
-              {service.detailDescription}
-            </p>
-          </div>
-        </CardContent>
-        <CardFooter>
-          <a
-            href={service.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <Button className="w-full" variant="outline">
-              View Documentation
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
-          </a>
-        </CardFooter>
-      </Card>
+            <div>
+              {/* <h2 className="text-xl font-semibold mb-2">Detailed Description</h2> */}
+              <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-wrap">
+                {service.detailDescription}
+              </p>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <a
+              href={service.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Button className="w-full" variant="outline">
+                View Documentation
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          </CardFooter>
+        </Card>
+      </div>
     </div>
   )
 }
