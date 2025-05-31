@@ -3,6 +3,7 @@ import './globals.css'
 import { AwsServicesFilterProvider } from '@/contexts/aws-services-filter-context'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   title: 'AWS Explorer',
@@ -22,6 +23,7 @@ export default function RootLayout({
           <AwsServicesFilterProvider>{children}</AwsServicesFilterProvider>
         </Suspense>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
