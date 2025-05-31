@@ -29,6 +29,7 @@ interface AwsServicesListProps {
 }
 
 const SEARCH_PARAM = 'q'
+const DEBOUNCE_TIME_MS = 300 // 300ms
 
 export default function AwsServicesList({
   services: initialServices,
@@ -46,13 +47,14 @@ export default function AwsServicesList({
   // Initialize searchTerm from URL
   const initialSearchTerm = searchParams.get(SEARCH_PARAM) || ''
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(initialSearchTerm)
+  const [debouncedSearchTerm, setDebouncedSearchTerm] =
+    useState(initialSearchTerm)
 
-  // Debounce searchTerm for 500ms
+  // Debounce searchTerm
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedSearchTerm(searchTerm)
-    }, 500)
+    }, DEBOUNCE_TIME_MS)
     return () => clearTimeout(handler)
   }, [searchTerm])
 
