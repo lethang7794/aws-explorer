@@ -186,9 +186,11 @@ export default function AwsServicesList({
                         <CardTitle className="text-lg">
                           <Link
                             href={`/services/${service.slug}`}
-                            className="flex flex-wrap justify-between text-blue-600 hover:text-blue-700 hover:underline"
+                            className="flex flex-wrap gap-1 justify-between text-blue-600 hover:text-blue-700 hover:underline"
                           >
-                            <div>{service.serviceSimpleName}</div>
+                            <div className="flex-1">
+                              {service.serviceSimpleName}
+                            </div>
                             {service.iconService ? (
                               <img
                                 src={`/aws/${service.iconService}.svg`}
