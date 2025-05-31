@@ -9,7 +9,7 @@ import React, {
 } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-type LayoutMode = 'card' | 'list'
+type LayoutMode = 'card' | 'list' | 'icon'
 
 interface AwsServicesFilterContextProps {
   selectedCategories: string[]

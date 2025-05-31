@@ -15,7 +15,7 @@ import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { LayoutGrid, List, Info } from 'lucide-react'
+import { LayoutGrid, List, Info, Grid } from 'lucide-react'
 import {
   awsServiceCategories,
   awsServiceCountByCategory,
@@ -181,7 +181,7 @@ export default function AwsServicesList({
             </div>
             {selectedCategories.length > 0 && (
               <Button
-                variant="link"
+                variant="outline"
                 onClick={() => setSelectedCategories([])}
                 className="mt-4 p-0 h-auto text-sm text-primary hover:underline"
               >
@@ -208,6 +208,14 @@ export default function AwsServicesList({
               >
                 <List className="h-5 w-5" />
               </Button>
+              <Button
+                variant={layoutMode === 'icon' ? 'secondary' : 'outline'}
+                size="icon"
+                onClick={() => setLayoutMode('icon')}
+                aria-label="Icon view"
+              >
+                <Grid className="h-5 w-5" />
+              </Button>
             </div>
           </div>
         </aside>
@@ -219,27 +227,17 @@ export default function AwsServicesList({
             </div>
           ) : null}
           {filteredServices.length > 0 ? (
-            layoutMode === 'card' ? (
-              <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredServices.map((service) => (
-                    <ServiceCartItem
-                      key={service?.id || `${service.slug}`}
-                      service={service}
-                    />
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="space-y-4">
-                {filteredServices.map((service) => (
-                  <ServiceListItem
-                    key={service?.id || `${service.slug}`}
-                    service={service}
-                  />
-                ))}
-              </div>
-            )
+            <>
+              {layoutMode === 'card' && (
+                <ServiceCartsList filteredServices={filteredServices} />
+              )}
+              {layoutMode === 'list' && (
+                <ServiceListItemsList filteredServices={filteredServices} />
+              )}
+              {layoutMode === 'icon' && (
+                <ServiceIconsList filteredServices={filteredServices} />
+              )}
+            </>
           ) : (
             <div className="text-center py-12">
               <p className="text-xl text-muted-foreground">
@@ -253,22 +251,20 @@ export default function AwsServicesList({
   )
 }
 
-function ServiceIcons({ service }: { service: Service }) {
+function ServiceCartsList({
+  filteredServices,
+}: {
+  filteredServices: Service[]
+}) {
   return (
-    <>
-      {service.iconService ? (
-        <img src={`/aws/${service.iconService}.svg`} className="h-12 w-12" />
-      ) : service.iconServices ? null : (
-        <img src={`/aws/GeneralResource.svg`} className="h-12 w-12" />
-      )}
-      {service.iconServices ? (
-        <div className="flex flex-wrap gap-2">
-          {service.iconServices.map((icon) => (
-            <img key={icon} src={`/aws/${icon}.svg`} className="h-12 w-12" />
-          ))}
-        </div>
-      ) : null}
-    </>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filteredServices.map((service) => (
+        <ServiceCartItem
+          key={service?.id || `${service.slug}`}
+          service={service}
+        />
+      ))}
+    </div>
   )
 }
 
@@ -303,6 +299,23 @@ function ServiceCartItem({ service }: { service: Service }) {
   )
 }
 
+function ServiceListItemsList({
+  filteredServices,
+}: {
+  filteredServices: Service[]
+}) {
+  return (
+    <div className="space-y-4">
+      {filteredServices.map((service) => (
+        <ServiceListItem
+          key={service?.id || `${service.slug}`}
+          service={service}
+        />
+      ))}
+    </div>
+  )
+}
+
 function ServiceListItem({ service }: { service: Service }) {
   return (
     <Card key={service.slug} className="p-0">
@@ -317,7 +330,7 @@ function ServiceListItem({ service }: { service: Service }) {
             </p>
             <div className="mt-2 space-x-1 space-y-1">
               {service.categories.map((category) => (
-                <Badge key={category} variant="secondary" className="text-xs">
+                <Badge key={category} variant="outline" className="text-xs">
                   {category}
                 </Badge>
               ))}
@@ -327,5 +340,82 @@ function ServiceListItem({ service }: { service: Service }) {
         </div>
       </Link>
     </Card>
+  )
+}
+
+function ServiceIconsList({
+  filteredServices,
+}: {
+  filteredServices: Service[]
+}) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filteredServices.map((service) => (
+        <ServiceIconItem
+          key={service?.id || `${service.slug}`}
+          service={service}
+        />
+      ))}
+    </div>
+  )
+}
+
+function ServiceIconItem({ service }: { service: Service }) {
+  return (
+    <Card key={service.slug} className="flex flex-col">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-lg">
+          <Link
+            href={`/${service.slug}`}
+            className="flex flex-col flex-wrap gap-1 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
+            scroll={true}
+          >
+            <ServiceIcons service={service} size="large" />
+            <div className="text-center text-balance text-sm text-primary">
+              {service.service}
+            </div>
+          </Link>
+        </CardTitle>
+        {/* <CardDescription className="text-xs h-10">
+          {service.shortDescription}
+        </CardDescription> */}
+      </CardHeader>
+      {/* <CardContent className="flex-grow">
+        <div className="space-x-1 space-y-1">
+          {service.categories.map((category) => (
+            <Badge key={category} variant="secondary" className="text-xs">
+              {category}
+            </Badge>
+          ))}
+        </div>
+      </CardContent> */}
+    </Card>
+  )
+}
+
+function ServiceIcons({
+  service,
+  size = 'small',
+}: {
+  service: Service
+  size?: 'small' | 'large'
+}) {
+  const className = size === 'large' ? 'h-24 w-24' : 'h-12 w-12'
+
+  return (
+    <>
+      {service.iconService ? (
+        <img src={`/aws/${service.iconService}.svg`} className={className} />
+      ) : service.iconServices ? null : (
+        <img src={`/aws/GeneralResource.svg`} className={className} />
+      )}
+      {service.iconServices ? (
+        <div className="flex flex-wrap justify-center gap-2">
+          {service.iconServices.map((icon) => (
+            <img key={icon} src={`/aws/${icon}.svg`} className={className} />
+          ))}
+        </div>
+      ) : null}
+    </>
   )
 }
