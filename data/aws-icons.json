@@ -107,7 +107,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonManagedServiceforApacheFlink"
     },
     {
-      "service": "Amazon Managed Streaming for Apache Kafka",
+      "service": "Amazon MSK",
       "type": "Architecture Service",
       "categories": [
         "Analytics"
@@ -116,7 +116,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonManagedStreamingforApacheKafka"
     },
     {
-      "service": "Amazon Open Search Service",
+      "service": "Amazon OpenSearch Service",
       "type": "Architecture Service",
       "categories": [
         "Analytics"
@@ -510,7 +510,7 @@
       "nameWithPrefix": "ResourceAWSLakeFormationDataLake"
     },
     {
-      "service": "Amazon App Flow",
+      "service": "Amazon AppFlow",
       "type": "Architecture Service",
       "categories": [
         "App Integration"
@@ -519,7 +519,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonAppFlow"
     },
     {
-      "service": "Amazon Event Bridge",
+      "service": "Amazon EventBridge",
       "type": "Architecture Service",
       "categories": [
         "App Integration"
@@ -539,7 +539,7 @@
       ]
     },
     {
-      "service": "Amazon Managed Workflows for Apache Airflow",
+      "service": "Amazon MWAA",
       "type": "Architecture Service",
       "categories": [
         "App Integration"
@@ -560,7 +560,7 @@
       ]
     },
     {
-      "service": "Amazon Simple Notification Service",
+      "service": "Amazon SNS",
       "type": "Architecture Service",
       "categories": [
         "App Integration"
@@ -574,7 +574,7 @@
       ]
     },
     {
-      "service": "Amazon Simple Queue Service",
+      "service": "Amazon SQS",
       "type": "Architecture Service",
       "categories": [
         "App Integration"
@@ -769,7 +769,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonBedrock"
     },
     {
-      "service": "Amazon Code Guru",
+      "service": "Amazon CodeGuru",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1016,7 +1016,7 @@
       "nameWithPrefix": "ArchitectureServiceApacheMXNetonAWS"
     },
     {
-      "service": "AWS Studio",
+      "service": "AWS App Studio",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1070,7 +1070,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSDeepRacer"
     },
     {
-      "service": "AWS Health Imaging",
+      "service": "AWS HealthImaging",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1079,7 +1079,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSHealthImaging"
     },
     {
-      "service": "AWS Health Lake",
+      "service": "AWS HealthLake",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1088,7 +1088,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSHealthLake"
     },
     {
-      "service": "AWS Health Omics",
+      "service": "AWS HealthOmics",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1124,7 +1124,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSPanorama"
     },
     {
-      "service": "Py Torchon AWS",
+      "service": "PyTorch on AWS",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1133,7 +1133,7 @@
       "nameWithPrefix": "ArchitectureServicePyTorchonAWS"
     },
     {
-      "service": "Tensor Flowon AWS",
+      "service": "TensorFlow on AWS",
       "type": "Architecture Service",
       "categories": [
         "Artificial Intelligence"
@@ -1363,7 +1363,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonWorkMail"
     },
     {
-      "service": "AWS App Fabric",
+      "service": "AWS AppFabric",
       "type": "Architecture Service",
       "categories": [
         "Business Applications"
@@ -1697,6 +1697,7 @@
     },
     {
       "service": "Bottlerocket",
+      "serviceAlternativeName": "Bottlerocket",
       "type": "Architecture Service",
       "categories": [
         "Compute"
@@ -1879,7 +1880,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonEKSDistro"
     },
     {
-      "service": "Amazon Elastic Container Registry",
+      "service": "Amazon ECR",
       "type": "Architecture Service",
       "categories": [
         "Containers"
@@ -1892,7 +1893,7 @@
       ]
     },
     {
-      "service": "Amazon Elastic Container Service",
+      "service": "Amazon ECS",
       "type": "Architecture Service",
       "categories": [
         "Containers"
@@ -1910,7 +1911,7 @@
       ]
     },
     {
-      "service": "Amazon Elastic Kubernetes Service",
+      "service": "Amazon EKS",
       "type": "Architecture Service",
       "categories": [
         "Containers"
@@ -2232,7 +2233,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonNeptune"
     },
     {
-      "service": "Amazon RDS",
+      "service": "Amazon Relational Database Service",
       "type": "Architecture Service",
       "categories": [
         "Database"
@@ -2580,7 +2581,7 @@
       "nameWithPrefix": "ResourceAmazonRDSTrustedLanguageExtensionsforPostgreSQL"
     },
     {
-      "service": "Amazon Code Catalyst",
+      "service": "Amazon CodeCatalyst",
       "type": "Architecture Service",
       "categories": [
         "Developer Tools"
@@ -2718,7 +2719,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSToolsandSDKs"
     },
     {
-      "service": "AWS XRay",
+      "service": "AWS X-Ray",
       "type": "Architecture Service",
       "categories": [
         "Developer Tools"
@@ -2743,7 +2744,7 @@
       "nameWithPrefix": "CategoryDeveloperTools"
     },
     {
-      "service": "Amazon AppStream2",
+      "service": "Amazon AppStream 2.0",
       "type": "Architecture Service",
       "categories": [
         "End User Computing"
@@ -2752,7 +2753,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonAppStream2"
     },
     {
-      "service": "Amazon Work Spaces Family",
+      "service": "Amazon WorkSpaces Family",
       "type": "Architecture Service",
       "categories": [
         "End User Computing"
@@ -2901,6 +2902,7 @@
     },
     {
       "service": "Open3DEngine",
+      "serviceAlternativeName": "Open3DEngine",
       "type": "Architecture Service",
       "categories": [
         "Games"
@@ -5420,7 +5422,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSPrivateLink"
     },
     {
-      "service": "AWS Siteto Site VPN",
+      "service": "AWS Site to Site VPN",
       "type": "Architecture Service",
       "categories": [
         "Networking Content Delivery"
@@ -5977,7 +5979,7 @@
       "nameWithPrefix": "CategoryQuantumTechnologies"
     },
     {
-      "service": "AWS Robo Maker",
+      "service": "AWS RoboMaker",
       "type": "Architecture Service",
       "categories": [
         "Robotics"
@@ -6076,7 +6078,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonDetective"
     },
     {
-      "service": "Amazon Guard Duty",
+      "service": "Amazon GuardDuty",
       "type": "Architecture Service",
       "categories": [
         "Security Identity Compliance"
@@ -6204,7 +6206,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSIdentityandAccessManagement"
     },
     {
-      "service": "AWS Key Management Service",
+      "service": "AWS KMS",
       "type": "Architecture Service",
       "categories": [
         "Security Identity Compliance"
@@ -6573,7 +6575,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonEFS"
     },
     {
-      "service": "Amazon Elastic Block Store",
+      "service": "Amazon EBS",
       "type": "Architecture Service",
       "categories": [
         "Storage"
@@ -6657,7 +6659,7 @@
       "nameWithPrefix": "ArchitectureServiceAmazonS3onOutposts"
     },
     {
-      "service": "Amazon Simple Storage Service",
+      "service": "Amazon S3",
       "type": "Architecture Service",
       "categories": [
         "Storage"
@@ -6695,7 +6697,7 @@
       ]
     },
     {
-      "service": "Amazon Simple Storage Service Glacier",
+      "service": "Amazon S3 Glacier",
       "type": "Architecture Service",
       "categories": [
         "Storage"
