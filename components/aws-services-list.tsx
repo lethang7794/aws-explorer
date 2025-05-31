@@ -253,6 +253,25 @@ export default function AwsServicesList({
   )
 }
 
+function ServiceIcons({ service }: { service: Service }) {
+  return (
+    <>
+      {service.iconService ? (
+        <img src={`/aws/${service.iconService}.svg`} className="h-12 w-12" />
+      ) : service.iconServices ? null : (
+        <img src={`/aws/GeneralResource.svg`} className="h-12 w-12" />
+      )}
+      {service.iconServices ? (
+        <div className="flex flex-wrap gap-2">
+          {service.iconServices.map((icon) => (
+            <img key={icon} src={`/aws/${icon}.svg`} className="h-12 w-12" />
+          ))}
+        </div>
+      ) : null}
+    </>
+  )
+}
+
 function ServiceCartItem({ service }: { service: Service }) {
   return (
     <Card key={service.slug} className="flex flex-col">
@@ -263,25 +282,7 @@ function ServiceCartItem({ service }: { service: Service }) {
             className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
             scroll={true}
           >
-            {service.iconService ? (
-              <img
-                src={`/aws/${service.iconService}.svg`}
-                className="h-12 w-12"
-              />
-            ) : !service.iconServices ? (
-              <img src={`/aws/GeneralResource.svg`} className="h-12 w-12" />
-            ) : null}
-            {service.iconServices ? (
-              <div className="flex flex-wrap gap-2">
-                {service.iconServices.map((icon) => (
-                  <img
-                    key={icon}
-                    src={`/aws/${icon}.svg`}
-                    className="h-12 w-12"
-                  />
-                ))}
-              </div>
-            ) : null}
+            <ServiceIcons service={service} />
             <div className="flex-1">{service.serviceSimpleName}</div>
           </Link>
         </CardTitle>
@@ -306,7 +307,7 @@ function ServiceListItem({ service }: { service: Service }) {
   return (
     <Card key={service.slug} className="p-0">
       <Link href={`/${service.slug}`} passHref scroll={true}>
-        <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
+        <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
           <div className="flex-grow">
             <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
               {service.serviceSimpleName}
@@ -322,6 +323,7 @@ function ServiceListItem({ service }: { service: Service }) {
               ))}
             </div>
           </div>
+          <ServiceIcons service={service} />
         </div>
       </Link>
     </Card>
