@@ -1,6 +1,8 @@
 # AWS Explorer
 
-[🟢 **Live Demo**](https://aws-explorer.vercel.app)
+**Live Demo** at [https://aws-explorer.vercel.app](https://aws-explorer.vercel.app)
+
+[![AWS Explorer demo](docs/demo.png)](https://aws-explorer.vercel.app)
 
 ## What is this project?
 
@@ -9,15 +11,15 @@
 ## Who should use it?
 
 - Developers, DevOps engineers, and cloud architects who frequently reference AWS documentation.
-- Anyone looking for a more streamlined and efficient way to discover AWS services and their official docs.
 - Teams who want a quick reference tool for AWS services without navigating the full AWS documentation site.
+- Anyone looking for a more streamlined and efficient way to discover AWS services and their official docs.
 
 ## Why you should use it
 
 - **No pagination:** Instantly see all AWS services at once - no clicking through pages.
 - **Alphabetical sorting:** Services are always sorted A–Z, so you can quickly find what you need.
 - **No naming confusion:**: Don’t wonder whether it’s "Amazon S3" or “AWS S3” - just search and find it.
-- **No distraction by “Amazon” or “AWS” prefixes**:Just the service name you expect.
+- **No distraction by “Amazon” or “AWS” prefixes**: Just the service name you expect.
 - **Faster navigation:** Quickly search and filter AWS services by name, category, or description.
 - **Better overview:** See all AWS services at a glance, with icons and short descriptions.
 - **Persistent filters:** Easily share filtered views or bookmark your favorite categories.
@@ -38,11 +40,21 @@
 | No naming confusion         | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch               | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕 |
 | Alphabetical sorting        | ✅ VPC is near VPN, CloudTrail is next to CloudWatch          | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch         |
 | Layout mode                 | ✅ Grid, list view                                            | 🟡 Only one layout                                                                     |
-| Up-to-date list of services | 🟡 Update every week                                          | ✅ Always up-to-date                                                                   |
+| Up-to-date list of services | 🟡 Update frequently                                          | ✅ Always up-to-date                                                                   |
 
 > [!NOTE]
 > AWS Explorer is not an official AWS product. For the most current and comprehensive list of services, always refer to [AWS Documentation](https://docs.aws.amazon.com/).
 
-## Credit
+## License
+
+[MIT License](./LICENSE)
+
+## Credits
 
 Inspired by the needs of the AWS developer community.
+
+- [MKAbuMattar/aws-react-icons](https://github.com/MKAbuMattar/aws-react-icons) for source code to process the AWS Architecture Icons packages.
+- [AWS architecture icons](https://aws.amazon.com/architecture/icons/) for the icons.
+- [AWS Documentation](https://docs.aws.amazon.com/) for the list of services and descriptions.
+- [Vercel's v0](https://v0.dev/) for providing the staring point.
+- And many [others open-sourced projects](./package.json)
