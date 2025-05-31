@@ -1,5 +1,4 @@
-import { Suspense } from 'react'
-import AwsServicesList from './aws-services-list'
+import AwsServicesList from '@/components/aws-services-list'
 import { awsServicesData } from '@/lib/aws-services-data' // Import from centralized data file
 
 export default function HomePage() {

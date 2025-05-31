@@ -210,7 +210,7 @@ export default function AwsServicesList({
                       <CardHeader className="pb-2">
                         <CardTitle className="text-lg">
                           <Link
-                            href={`/services/${service.slug}`}
+                            href={`/${service.slug}`}
                             className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
                           >
                             {service.iconService ? (
@@ -265,7 +265,7 @@ export default function AwsServicesList({
               <div className="space-y-4">
                 {filteredServices.map((service) => (
                   <Card key={service.slug} className="p-0">
-                    <Link href={`/services/${service.slug}`} passHref>
+                    <Link href={`/${service.slug}`} passHref>
                       <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
                         <div className="flex-grow">
                           <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
