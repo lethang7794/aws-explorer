@@ -115,7 +115,7 @@ export default function AwsServicesList({
   )
 
   return (
-    <div className="container mx-auto p-4 md:p-8">
+    <div className="min-h-screen container mx-auto p-4 md:p-8">
       <header className="mb-4 md:mb-8 text-center">
         <h1 className="text-4xl text-gray-100 font-bold tracking-tight">
           AWS Explorer
