@@ -26,6 +26,28 @@ export async function generateStaticParams() {
   }))
 }
 
+// Add this function for metadata
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  const service = getServiceBySlug(params.slug)
+  if (!service) return {}
+
+  return {
+    title: service.service,
+    description: service.shortDescription,
+    icons: {
+      icon: service.iconService
+        ? `/aws/${service.iconService}.svg`
+        : service.iconServices?.[0]
+          ? `/aws/${service.iconServices[0]}.svg`
+          : undefined,
+    },
+  }
+}
+
 export default async function ServiceDetailPage({
   params,
 }: ServiceDetailPageProps) {

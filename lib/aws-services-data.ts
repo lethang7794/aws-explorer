@@ -62,10 +62,11 @@ const awsIconsByName: Record<string, AwsIcon> = AWS_ICONS.data.reduce(
 export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
   const icon = awsIconsByName[s.service]
 
+  const simpleName = simplifyServiceName(s.service).trim()
   return {
     ...s,
-    serviceSimpleName: simplifyServiceName(s.service).trim(),
-    slug: generateSlug(s.service),
+    serviceSimpleName: simpleName,
+    slug: generateSlug(simpleName),
     iconService:
       icon?.name ||
       ((typeof SERVICE_TO_ICON_FILENAME[s.service] === 'string'
