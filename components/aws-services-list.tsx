@@ -61,7 +61,7 @@ export default function AwsServicesList({
   // Sync debouncedSearchTerm to URL (but not in context)
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString())
-    if (debouncedSearchTerm) {
+    if (typeof debouncedSearchTerm !== undefined) {
       params.set(SEARCH_PARAM, debouncedSearchTerm)
     } else {
       params.delete(SEARCH_PARAM)
