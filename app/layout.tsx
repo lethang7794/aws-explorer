@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { AwsServicesFilterProvider } from './aws-services-filter-context'
+import { AwsServicesFilterProvider } from '@/contexts/aws-services-filter-context'
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -16,9 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AwsServicesFilterProvider>
-          {children}
-        </AwsServicesFilterProvider>
+        <AwsServicesFilterProvider>{children}</AwsServicesFilterProvider>
       </body>
     </html>
   )

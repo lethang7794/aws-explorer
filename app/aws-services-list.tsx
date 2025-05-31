@@ -22,19 +22,13 @@ import {
   type Service,
 } from '@/lib/aws-services-data' // Import type
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useAwsServicesFilter } from './aws-services-filter-context'
+import { useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
 
 interface AwsServicesListProps {
   services: Service[]
 }
 
-type LayoutMode = 'card' | 'list'
-
-const QUERY_PARAMS = {
-  search: 'q',
-  categories: 'categories',
-  layout: 'view',
-}
+const SEARCH_PARAM = 'q'
 
 export default function AwsServicesList({
   services: initialServices,
@@ -50,7 +44,7 @@ export default function AwsServicesList({
   const searchParams = useSearchParams()
 
   // Initialize searchTerm from URL
-  const initialSearchTerm = searchParams.get('q') || ''
+  const initialSearchTerm = searchParams.get(SEARCH_PARAM) || ''
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
   const [services, setServices] = useState<Service[]>(initialServices)
 
@@ -62,9 +56,9 @@ export default function AwsServicesList({
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString())
     if (searchTerm) {
-      params.set('q', searchTerm)
+      params.set(SEARCH_PARAM, searchTerm)
     } else {
-      params.delete('q')
+      params.delete(SEARCH_PARAM)
     }
     router.replace(`?${params.toString()}`, { scroll: false })
     // eslint-disable-next-line react-hooks/exhaustive-deps
