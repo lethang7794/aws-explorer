@@ -78,7 +78,7 @@ export default function AwsServicesList({
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start md:sticky md:top-8 md:h-fit">
           <div>
             <h2 className="text-xl font-semibold mb-3">
@@ -170,7 +170,7 @@ export default function AwsServicesList({
           </div>
         </aside>
 
-        <main className="md:col-span-3">
+        <main className="md:col-span-2 lg:col-span-3">
           {filteredServices.length > 0 ? (
             layoutMode === 'card' ? (
               <>
