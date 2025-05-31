@@ -58,6 +58,7 @@ export default async function ServiceDetailPage({
               <div className="flex gap-2">
                 {service.iconServices.map((icon) => (
                   <img
+                    key={icon}
                     src={`/aws/${icon}.svg`}
                     className="h-9 w-9 md:h-10 md:w-10"
                   />

@@ -1,6 +1,7 @@
 import awsServices from '../data/aws-services.json'
 import awsIcons from '../data/aws-icons.json'
 import { SERVICE_TO_ICON_FILENAME } from '@/scripts/service-names'
+import { AWS_CATEGORY_TO_ICON } from '@/data/aws-category-to-icon'
 
 export interface Service {
   id?: string
@@ -14,6 +15,13 @@ export interface Service {
   iconService?: string
   iconServices?: string[]
   iconResources?: string[]
+}
+
+export interface ServiceCategory {
+  name: string
+  icon?: string
+  slug: string
+  services: Service[]
 }
 
 interface AwsIcon {
@@ -78,12 +86,21 @@ export const awsServicesData: Service[] = awsServices
   })
   .sort((a, b) => a.serviceSimpleName.localeCompare(b.serviceSimpleName))
 
-function getAllCategories(services: Service[]) {
+function getAllCategories(services: Service[]): ServiceCategory[] {
   const categoriesSet = new Set<string>()
   services.forEach((service) => {
     service.categories.forEach((category) => categoriesSet.add(category))
   })
-  return Array.from(categoriesSet).sort()
+  return Array.from(categoriesSet)
+    .sort()
+    .map((c) => {
+      return {
+        name: c,
+        slug: generateSlug(c),
+        services: services.filter((service) => service.categories.includes(c)),
+        icon: AWS_CATEGORY_TO_ICON[c] || undefined,
+      }
+    })
 }
 
 export const awsServiceCategories = getAllCategories(awsServicesData)

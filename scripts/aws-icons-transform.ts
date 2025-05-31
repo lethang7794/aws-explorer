@@ -81,7 +81,7 @@ async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
   const iconsDir = path.join(process.cwd(), AWS_ICONS_TRANSFORM_PATH)
   const iconsWithoutPrefixDir = path.join(
     process.cwd(),
-    AWS_ICONS_TRANSFORM_PATH + '-without-prefix'
+    `${AWS_ICONS_TRANSFORM_PATH}-without-prefix`
   )
 
   let prefix = ''
@@ -115,10 +115,10 @@ async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
       await copySvgFilesToIconsDirectory(entryPath)
     } else if (path.extname(entryPath).toLowerCase() === '.svg') {
       const targetPath = path.join(iconsDir, `${prefix}${entry.name}`)
-      const targetWithoutPrefixPath = path.join(
-        iconsDir + '-without-prefix',
-        `${entry.name}`
-      )
+      const targetWithoutPrefixPath =
+        prefix === 'Category'
+          ? path.join(`${iconsDir}-without-prefix`, `${prefix}${entry.name}`) // Keep prefix for Category icons
+          : path.join(`${iconsDir}-without-prefix`, `${entry.name}`)
 
       await fs.promises.copyFile(entryPath, targetPath)
       await fs.promises.copyFile(entryPath, targetWithoutPrefixPath)

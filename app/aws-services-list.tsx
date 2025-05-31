@@ -84,7 +84,7 @@ export default function AwsServicesList({
           <div>
             <h2 className="text-xl font-semibold mb-3">Filter by Category</h2>
             <div className="space-y-2 max-h-72 overflow-y-auto pr-2">
-              {awsServiceCategories.map((category) => {
+              {awsServiceCategories.map(({ name: category, icon }) => {
                 // Count the number of services in this category
                 const count = services.filter((service) =>
                   service.categories.includes(category)
@@ -98,10 +98,11 @@ export default function AwsServicesList({
                     />
                     <Label
                       htmlFor={`category-${category}`}
-                      className="text-sm font-medium cursor-pointer"
+                      className="flex gap-2 text-sm font-medium cursor-pointer"
                     >
+                      <img src={`/aws/${icon}.svg`} className="h-5 w-5" />
                       {category}
-                      <span className="ml-2 text-xs text-muted-foreground">
+                      <span className="ml-0 text-sm text-muted-foreground">
                         ({count})
                       </span>
                     </Label>
@@ -160,11 +161,17 @@ export default function AwsServicesList({
                               src={`/aws/${service.iconService}.svg`}
                               className="h-8 w-8"
                             />
+                          ) : !service.iconServices ? (
+                            <img
+                              src={`/aws/GeneralResource.svg`}
+                              className="h-8 w-8"
+                            />
                           ) : null}
                           {service.iconServices ? (
                             <div className="flex gap-2">
                               {service.iconServices.map((icon) => (
                                 <img
+                                  key={icon}
                                   src={`/aws/${icon}.svg`}
                                   className="h-8 w-8"
                                 />
