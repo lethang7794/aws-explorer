@@ -1,4 +1,4 @@
-export const serviceNames = {
+export const ICON_FILENAME_TO_SERVICE = {
   AmazonAthena: 'Amazon Athena',
   AmazonCloudSearch: 'Amazon CloudSearch',
   AmazonDataFirehose: 'Amazon Data Firehose',
@@ -317,7 +317,7 @@ export const serviceAlternativeNames = {
   'Elastic File System': 'Amazon EFS',
 } as Record<string, string>
 
-export const serviceNameToIcon = {
+export const SERVICE_TO_ICON_FILENAME = {
   'Amazon A2I': 'AmazonAugmentedAIA2I',
   'AWS Amplify (AWS Mobile SDK for Android)': 'AWSToolsandSDKs',
   'AWS AmplifyiOS (AWS Mobile SDK for iOS)': 'AWSToolsandSDKs',

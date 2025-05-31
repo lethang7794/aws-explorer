@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { RecursiveDirectory, recursiveDirectory } from 'recursive-directory'
-import { serviceNames } from './service-names'
+import { ICON_FILENAME_TO_SERVICE } from './service-names'
 import {
   AWS_ICONS_DATA_PATH,
   AWS_ICONS_EXTRACT_PATH,
@@ -153,8 +153,8 @@ function removeSpecialCharacters(str: string): string {
 function convertFilenameToServiceName(filename: string) {
   const processedServiceName = filename.replace(/\.[^/.]+$/, '') // Remove the extension
 
-  if (serviceNames[processedServiceName]) {
-    return serviceNames[processedServiceName]
+  if (ICON_FILENAME_TO_SERVICE[processedServiceName]) {
+    return ICON_FILENAME_TO_SERVICE[processedServiceName]
   }
 
   return processedServiceName

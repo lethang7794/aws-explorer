@@ -1,6 +1,6 @@
 import awsServices from '../data/aws-services.json'
 import awsIcons from '../data/aws-icons.json'
-import { serviceNameToIcon } from '@/scripts/service-names'
+import { SERVICE_TO_ICON_FILENAME } from '@/scripts/service-names'
 
 export interface Service {
   id?: string
@@ -66,12 +66,12 @@ export const awsServicesData: Service[] = awsServices
       slug: generateSlug(s.service),
       iconService:
         icon?.name ||
-        ((typeof serviceNameToIcon[s.service] === 'string'
-          ? serviceNameToIcon[s.service]
+        ((typeof SERVICE_TO_ICON_FILENAME[s.service] === 'string'
+          ? SERVICE_TO_ICON_FILENAME[s.service]
           : undefined) as string) ||
         undefined,
-      iconServices: Array.isArray(serviceNameToIcon[s.service])
-        ? (serviceNameToIcon[s.service] as string[])
+      iconServices: Array.isArray(SERVICE_TO_ICON_FILENAME[s.service])
+        ? (SERVICE_TO_ICON_FILENAME[s.service] as string[])
         : undefined,
       iconResources: icon ? icon.resources || [] : undefined,
     }
