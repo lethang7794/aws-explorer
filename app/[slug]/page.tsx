@@ -54,7 +54,6 @@ export default async function ServiceDetailPage({
   params,
 }: ServiceDetailPageProps) {
   const service = getServiceBySlug((await params).slug)
-  console.log('🚀 ~ service:', service)
 
   if (!service) {
     notFound() // Triggers the not-found page
