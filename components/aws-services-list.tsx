@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
@@ -46,49 +46,71 @@ export default function AwsServicesList({
   // Initialize searchTerm from URL
   const initialSearchTerm = searchParams.get(SEARCH_PARAM) || ''
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
-  const [services, setServices] = useState<Service[]>(initialServices)
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(initialSearchTerm)
 
+  // Debounce searchTerm for 500ms
   useEffect(() => {
-    setServices(initialServices)
-  }, [initialServices])
+    const handler = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm)
+    }, 500)
+    return () => clearTimeout(handler)
+  }, [searchTerm])
 
-  // Sync searchTerm to URL (but not in context)
+  // Sync debouncedSearchTerm to URL (but not in context)
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString())
-    if (searchTerm) {
-      params.set(SEARCH_PARAM, searchTerm)
+    if (debouncedSearchTerm) {
+      params.set(SEARCH_PARAM, debouncedSearchTerm)
     } else {
       params.delete(SEARCH_PARAM)
     }
     router.replace(`?${params.toString()}`, { scroll: false })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchTerm])
+  }, [debouncedSearchTerm])
 
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategories((prev: string[]) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category]
-    )
-  }
-
+  // Memoize filtered services
   const filteredServices = useMemo(() => {
-    return services.filter((service) => {
+    const search = debouncedSearchTerm.trim().toLowerCase()
+    return initialServices.filter((service) => {
       const matchesSearchTerm =
-        service.service.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.shortDescription
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
+        service.service.toLowerCase().includes(search) ||
+        service.shortDescription.toLowerCase().includes(search)
       const matchesCategories =
         selectedCategories.length === 0 ||
         selectedCategories.some((cat) => service.categories.includes(cat))
       return matchesSearchTerm && matchesCategories
     })
-  }, [services, searchTerm, selectedCategories])
+  }, [initialServices, debouncedSearchTerm, selectedCategories])
 
-  const serviceCountOfSelectedCategories = selectedCategories.reduce(
-    (acc, category) => acc + (awsServiceCountByCategory[category] || 0),
-    0
+  // Memoize category counts
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    for (const { name: category } of awsServiceCategories) {
+      counts[category] = initialServices.filter((service) =>
+        service.categories.includes(category)
+      ).length
+    }
+    return counts
+  }, [initialServices])
+
+  const serviceCountOfSelectedCategories = useMemo(
+    () =>
+      selectedCategories.reduce(
+        (acc, category) => acc + (awsServiceCountByCategory[category] || 0),
+        0
+      ),
+    [selectedCategories]
+  )
+
+  const handleCategoryChange = useCallback(
+    (category: string) => {
+      setSelectedCategories((prev: string[]) =>
+        prev.includes(category)
+          ? prev.filter((c) => c !== category)
+          : [...prev, category]
+      )
+    },
+    [setSelectedCategories]
   )
 
   return (
@@ -110,9 +132,9 @@ export default function AwsServicesList({
                 ? serviceCountOfSelectedCategories !== 1
                   ? `in ${serviceCountOfSelectedCategories} services`
                   : `in ${serviceCountOfSelectedCategories} service`
-                : services.length !== 1
-                  ? `in ${services.length} services`
-                  : `in ${services.length} service`}
+                : initialServices.length !== 1
+                  ? `in ${initialServices.length} services`
+                  : `in ${initialServices.length} service`}
               {selectedCategories.length > 0 ? (
                 <span className="text-sm font-normal">
                   {selectedCategories.length === 1
@@ -134,31 +156,25 @@ export default function AwsServicesList({
           <div>
             <h2 className="text-xl font-semibold mb-3">Filter by Category</h2>
             <div className="space-y-2 max-h-36 md:max-h-72 overflow-y-auto pr-2">
-              {awsServiceCategories.map(({ name: category, icon }) => {
-                // Count the number of services in this category
-                const count = services.filter((service) =>
-                  service.categories.includes(category)
-                ).length
-                return (
-                  <div key={category} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`category-${category}`}
-                      checked={selectedCategories.includes(category)}
-                      onCheckedChange={() => handleCategoryChange(category)}
-                    />
-                    <Label
-                      htmlFor={`category-${category}`}
-                      className="flex gap-2 text-sm font-medium cursor-pointer"
-                    >
-                      <img src={`/aws/${icon}.svg`} className="h-5 w-5" />
-                      {category}
-                      <span className="ml-0 text-sm text-muted-foreground">
-                        ({count})
-                      </span>
-                    </Label>
-                  </div>
-                )
-              })}
+              {awsServiceCategories.map(({ name: category, icon }) => (
+                <div key={category} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`category-${category}`}
+                    checked={selectedCategories.includes(category)}
+                    onCheckedChange={() => handleCategoryChange(category)}
+                  />
+                  <Label
+                    htmlFor={`category-${category}`}
+                    className="flex gap-2 text-sm font-medium cursor-pointer"
+                  >
+                    <img src={`/aws/${icon}.svg`} className="h-5 w-5" />
+                    {category}
+                    <span className="ml-0 text-sm text-muted-foreground">
+                      ({categoryCounts[category]})
+                    </span>
+                  </Label>
+                </div>
+              ))}
             </div>
             {selectedCategories.length > 0 && (
               <Button
@@ -197,7 +213,7 @@ export default function AwsServicesList({
           {filteredServices.length > 0 ? (
             layoutMode === 'card' ? (
               <>
-                {searchTerm ? (
+                {debouncedSearchTerm ? (
                   <div className="mb-2">
                     Found {filteredServices.length} services:
                   </div>
