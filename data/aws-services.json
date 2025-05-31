@@ -244,12 +244,10 @@
     "detailDescription": "Amazon Detective makes it easy to analyze, investigate, and quickly identify the root cause of security findings or suspicious activities. Detective automatically collects log data from your AWS resources and uses machine learning, statistical analysis, and graph theory to help you visualize and conduct faster and more efficient security investigations."
   },
   {
-    "service": "Amazon DevOps Guru",
+    "service": "Amazon DevOps Guru",
     "shortDescription": "Improve application availability with ML-powered cloud operations",
     "url": "https://docs.aws.amazon.com/devops-guru",
-    "categories": [
-      "Machine Learning"
-    ],
+    "categories": ["Machine Learning"],
     "detailDescription": "Amazon DevOps Guru generates operational insights using machine learning to help you improve the performance of your operational applications."
   },
   {
@@ -750,12 +748,10 @@
     "detailDescription": "Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational database and manages common database administration tasks. Amazon Aurora is a fully managed relational database engine that's built for the cloud and compatible with MySQL and PostgreSQL. Amazon Aurora is part of Amazon RDS."
   },
   {
-    "service": "Amazon Route 53",
+    "service": "Amazon Route 53",
     "shortDescription": "Highly available and scalable Domain Name System (DNS) web service",
     "url": "https://docs.aws.amazon.com/route53",
-    "categories": [
-      "Networking & Content Delivery"
-    ],
+    "categories": ["Networking & Content Delivery"],
     "detailDescription": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service."
   },
   {

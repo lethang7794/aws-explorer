@@ -7,7 +7,7 @@ import {
   AWS_ICONS_EXTRACT_PATH,
 } from '@/constants/aws-icons-etl'
 
-type DataItem = {
+type Icon = {
   service?: string
   type: string
   categories: string[]
@@ -25,7 +25,7 @@ type DataItem = {
     true
   )) as RecursiveDirectory
 
-  const items: DataItem[] = []
+  const items: Icon[] = []
 
   files.forEach((file) => {
     let name = ''
@@ -34,7 +34,7 @@ type DataItem = {
     let component = ''
     let importComponent = ''
     let categories: string[] = []
-    let obj: DataItem
+    let obj: Icon
     let prefix = ''
 
     const { fullpath, filename } = file
@@ -160,19 +160,37 @@ function convertFilenameToServiceName(filename: string) {
   return processedServiceName
 }
 
-function groupResourcesOfService(data: DataItem[]): DataItem[] {
+function groupResourcesOfService(data: Icon[]): Icon[] {
   const resources = data.filter((item) => item.type === 'Resource')
 
-  return data.map((item) => {
-    if (item.type === 'Architecture Service') {
+  return data.map((icon) => {
+    if (icon.type === 'Architecture Service') {
       const matchedResources = resources
-        .filter((resource) => resource.name.startsWith(item.name))
+        .filter((resource) => {
+          //
+          // Special cases:
+          //
+          // - SageMaker AI
+          if (icon.name === 'AmazonSageMakerAI') {
+            return resource.name.startsWith('AmazonSageMaker')
+          }
+          if (icon.name === 'AmazonVirtualPrivateCloud') {
+            return resource.name.startsWith('AmazonVPC')
+          }
+          if (icon.name === 'AWSIdentityandAccessManagement') {
+            return resource.name.startsWith('AWSIdentityAccessManagement')
+          }
+          if (icon.name === 'AmazonEFS') {
+            return resource.name.startsWith('AmazonElasticFileSystem')
+          }
+          return resource.name.startsWith(icon.name)
+        })
         .map((resource) => resource.name)
       return {
-        ...item,
+        ...icon,
         resources: matchedResources.length ? matchedResources : undefined,
       }
     }
-    return item
+    return icon
   })
 }

@@ -956,7 +956,15 @@
         "Artificial Intelligence"
       ],
       "name": "AmazonSageMakerAI",
-      "nameWithPrefix": "ArchitectureServiceAmazonSageMakerAI"
+      "nameWithPrefix": "ArchitectureServiceAmazonSageMakerAI",
+      "resources": [
+        "AmazonSageMakerCanvas",
+        "AmazonSageMakerGeospatialML",
+        "AmazonSageMakerModel",
+        "AmazonSageMakerNotebook",
+        "AmazonSageMakerShadowTesting",
+        "AmazonSageMakerTrain"
+      ]
     },
     {
       "service": "Amazon SageMaker Ground Truth",
@@ -2709,7 +2717,7 @@
       "nameWithPrefix": "ArchitectureServiceAWSInfrastructureComposer"
     },
     {
-      "service": "AWS Toolsand SDKs",
+      "service": "AWS Tools and SDKs",
       "type": "Architecture Service",
       "categories": [
         "Developer Tools"
@@ -5316,7 +5324,26 @@
         "Networking Content Delivery"
       ],
       "name": "AmazonVirtualPrivateCloud",
-      "nameWithPrefix": "ArchitectureServiceAmazonVirtualPrivateCloud"
+      "nameWithPrefix": "ArchitectureServiceAmazonVirtualPrivateCloud",
+      "resources": [
+        "AmazonVPCCarrierGateway",
+        "AmazonVPCCustomerGateway",
+        "AmazonVPCElasticNetworkAdapter",
+        "AmazonVPCElasticNetworkInterface",
+        "AmazonVPCEndpoints",
+        "AmazonVPCFlowLogs",
+        "AmazonVPCInternetGateway",
+        "AmazonVPCNATGateway",
+        "AmazonVPCNetworkAccessAnalyzer",
+        "AmazonVPCNetworkAccessControlList",
+        "AmazonVPCPeeringConnection",
+        "AmazonVPCReachabilityAnalyzer",
+        "AmazonVPCRouter",
+        "AmazonVPCTrafficMirroring",
+        "AmazonVPCVirtualprivatecloudVPC",
+        "AmazonVPCVPNConnection",
+        "AmazonVPCVPNGateway"
+      ]
     },
     {
       "service": "Amazon VPC Lattice",
@@ -6201,7 +6228,21 @@
         "Security Identity Compliance"
       ],
       "name": "AWSIdentityandAccessManagement",
-      "nameWithPrefix": "ArchitectureServiceAWSIdentityandAccessManagement"
+      "nameWithPrefix": "ArchitectureServiceAWSIdentityandAccessManagement",
+      "resources": [
+        "AWSIdentityAccessManagementAddon",
+        "AWSIdentityAccessManagementAWSSTS",
+        "AWSIdentityAccessManagementAWSSTSAlternate",
+        "AWSIdentityAccessManagementDataEncryptionKey",
+        "AWSIdentityAccessManagementEncryptedData",
+        "AWSIdentityAccessManagementIAMAccessAnalyzer",
+        "AWSIdentityAccessManagementIAMRolesAnywhere",
+        "AWSIdentityAccessManagementLongTermSecurityCredential",
+        "AWSIdentityAccessManagementMFAToken",
+        "AWSIdentityAccessManagementPermissions",
+        "AWSIdentityAccessManagementRole",
+        "AWSIdentityAccessManagementTemporarySecurityCredential"
+      ]
     },
     {
       "service": "AWS KMS",
@@ -6570,7 +6611,16 @@
         "Storage"
       ],
       "name": "AmazonEFS",
-      "nameWithPrefix": "ArchitectureServiceAmazonEFS"
+      "nameWithPrefix": "ArchitectureServiceAmazonEFS",
+      "resources": [
+        "AmazonElasticFileSystemEFSIntelligentTiering",
+        "AmazonElasticFileSystemEFSOneZone",
+        "AmazonElasticFileSystemEFSOneZoneInfrequentAccess",
+        "AmazonElasticFileSystemEFSStandard",
+        "AmazonElasticFileSystemEFSStandardInfrequentAccess",
+        "AmazonElasticFileSystemElasticThroughput",
+        "AmazonElasticFileSystemFileSystem"
+      ]
     },
     {
       "service": "Amazon EBS",

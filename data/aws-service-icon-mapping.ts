@@ -8,7 +8,7 @@ export const SERVICE_TO_ICON_FILENAME = {
     'AmazonSageMakerAI',
   ],
   'Amazon Data Lifecycle Manager': 'AWSDatabaseMigrationService',
-  'Amazon DevOps Guru': 'AmazonDevOpsGuru',
+  'Amazon DevOps Guru': 'AmazonDevOpsGuru',
   'Amazon DocumentDB (with MongoDB compatibility)': 'AmazonDocumentDB',
   'Amazon Elastic File System': 'AmazonEFS',
   'Amazon GameLift Servers': 'AmazonGameLift',
@@ -19,7 +19,7 @@ export const SERVICE_TO_ICON_FILENAME = {
   'Amazon Machine Learning': 'CategoryArtificialIntelligence',
   'Amazon Q Developer in chat applications': 'AmazonQ',
   'Amazon QLDB': 'AmazonQuantumLedgerDatabase',
-  'Amazon Route 53': 'AmazonRoute53',
+  'Amazon Route 53': 'AmazonRoute53',
   'Amazon Silk': '',
   'Amazon SQS, Amazon SNS, or Amazon EventBridge?': [
     'AmazonSimpleQueueService',

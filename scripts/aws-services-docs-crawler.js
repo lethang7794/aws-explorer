@@ -42,7 +42,7 @@ const OUTPUT_PATH = 'data/aws-services.json'
           try {
             // Extract basic service info
             const serviceName = await card.$eval('h5', (el) =>
-              el.innerText.trim()
+              el.innerText.trim().replace(' ', '')
             )
             const shortDescription = await card.$eval('h5 ~ div', (el) =>
               el.innerText.trim()

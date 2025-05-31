@@ -60,9 +60,17 @@ const awsIconsByName: Record<string, AwsIcon> = AWS_ICONS.data.reduce(
 )
 
 export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
-  const icon = awsIconsByName[s.service]
+  let icon = awsIconsByName[s.service]
+
+  if (s.service === 'Amazon VPC') {
+    icon = awsIconsByName['Amazon Virtual Private Cloud']
+  }
+  if (s.service === 'Amazon Elastic File System') {
+    icon = awsIconsByName['Amazon EFS']
+  }
 
   const simpleName = simplifyServiceName(s.service).trim()
+
   return {
     ...s,
     serviceSimpleName: simpleName,
