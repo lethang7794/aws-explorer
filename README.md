@@ -2,7 +2,15 @@
 
 **Live Demo** at [https://aws-explorer.vercel.app](https://aws-explorer.vercel.app)
 
-[![AWS Explorer demo](docs/demo.png)](https://aws-explorer.vercel.app)
+[![AWS Explorer Homepage](docs/homepage.png)](https://aws-explorer.vercel.app)
+
+[![Icon layout](docs/icon-layout.png)](https://aws-explorer.vercel.app/?categories=Machine%20Learning&view=icon)
+
+[![List layout](docs/list-layout.png)](https://aws-explorer.vercel.app/?categories=Decision%20Guides&view=list)
+
+[![Resources in icon layout](docs/resources-in-icon-layout.png)](https://aws-explorer.vercel.app/?categories=Networking%20%26%20Content%20Delivery&view=icon)
+
+[![Detail page with resources](docs/detail-page-with-resources.png)](https://aws-explorer.vercel.app/vpc)
 
 ## What is this project?
 

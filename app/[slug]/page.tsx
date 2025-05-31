@@ -133,13 +133,13 @@ export default async function ServiceDetailPage({
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-2">Resources:</h2>
-            <ul className="flex gap-8 flex-wrap justify-center">
+            <ul className="flex gap-4 flex-wrap justify-center">
               {service.iconResources?.map((r) => {
                 const resourceName = getResourceNameFromServiceName(r, service)
                 return (
                   <li
                     key={r}
-                    className="flex flex-col items-center border-2 border-gray-200 p-4 rounded-lg"
+                    className="flex flex-col items-center border-2 border-gray-200 p-2 rounded-lg"
                   >
                     <img
                       src={`/aws/${r}.svg`}
