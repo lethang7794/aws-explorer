@@ -61,13 +61,12 @@ export default function AwsServicesList({
   // Sync debouncedSearchTerm to URL (but not in context)
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString())
-    if (typeof debouncedSearchTerm !== undefined) {
+    if (debouncedSearchTerm) {
       params.set(SEARCH_PARAM, debouncedSearchTerm)
     } else {
       params.delete(SEARCH_PARAM)
     }
     router.replace(`?${params.toString()}`, { scroll: false })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearchTerm])
 
   // Memoize filtered services
@@ -214,99 +213,30 @@ export default function AwsServicesList({
         </aside>
 
         <main className="md:col-span-2 lg:col-span-3">
+          {debouncedSearchTerm ? (
+            <div className="mb-2 text-gray-100">
+              Found {filteredServices.length} services:
+            </div>
+          ) : null}
           {filteredServices.length > 0 ? (
             layoutMode === 'card' ? (
               <>
-                {debouncedSearchTerm ? (
-                  <div className="mb-2 text-gray-100">
-                    Found {filteredServices.length} services:
-                  </div>
-                ) : null}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredServices.map((service) => (
-                    <Card key={service.slug} className="flex flex-col">
-                      <CardHeader className="pb-2">
-                        <CardTitle className="text-lg">
-                          <Link
-                            href={`/${service.slug}`}
-                            className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
-                          >
-                            {service.iconService ? (
-                              <img
-                                src={`/aws/${service.iconService}.svg`}
-                                className="h-12 w-12"
-                              />
-                            ) : !service.iconServices ? (
-                              <img
-                                src={`/aws/GeneralResource.svg`}
-                                className="h-12 w-12"
-                              />
-                            ) : null}
-                            {service.iconServices ? (
-                              <div className="flex flex-wrap gap-2">
-                                {service.iconServices.map((icon) => (
-                                  <img
-                                    key={icon}
-                                    src={`/aws/${icon}.svg`}
-                                    className="h-12 w-12"
-                                  />
-                                ))}
-                              </div>
-                            ) : null}
-                            <div className="flex-1">
-                              {service.serviceSimpleName}
-                            </div>
-                          </Link>
-                        </CardTitle>
-                        <CardDescription className="text-xs h-10">
-                          {service.shortDescription}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="flex-grow">
-                        <div className="space-x-1 space-y-1">
-                          {service.categories.map((category) => (
-                            <Badge
-                              key={category}
-                              variant="secondary"
-                              className="text-xs"
-                            >
-                              {category}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <ServiceCartItem
+                      key={service?.id || `${service.slug}`}
+                      service={service}
+                    />
                   ))}
                 </div>
               </>
             ) : (
               <div className="space-y-4">
                 {filteredServices.map((service) => (
-                  <Card key={service.slug} className="p-0">
-                    <Link href={`/${service.slug}`} passHref>
-                      <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
-                        <div className="flex-grow">
-                          <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-                            {service.serviceSimpleName}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {service.shortDescription}
-                          </p>
-                          <div className="mt-2 space-x-1 space-y-1">
-                            {service.categories.map((category) => (
-                              <Badge
-                                key={category}
-                                variant="secondary"
-                                className="text-xs"
-                              >
-                                {category}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </Card>
+                  <ServiceListItem
+                    key={service?.id || `${service.slug}`}
+                    service={service}
+                  />
                 ))}
               </div>
             )
@@ -320,5 +250,80 @@ export default function AwsServicesList({
         </main>
       </div>
     </div>
+  )
+}
+
+function ServiceCartItem({ service }: { service: Service }) {
+  return (
+    <Card key={service.slug} className="flex flex-col">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-lg">
+          <Link
+            href={`/${service.slug}`}
+            className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
+            scroll={true}
+          >
+            {service.iconService ? (
+              <img
+                src={`/aws/${service.iconService}.svg`}
+                className="h-12 w-12"
+              />
+            ) : !service.iconServices ? (
+              <img src={`/aws/GeneralResource.svg`} className="h-12 w-12" />
+            ) : null}
+            {service.iconServices ? (
+              <div className="flex flex-wrap gap-2">
+                {service.iconServices.map((icon) => (
+                  <img
+                    key={icon}
+                    src={`/aws/${icon}.svg`}
+                    className="h-12 w-12"
+                  />
+                ))}
+              </div>
+            ) : null}
+            <div className="flex-1">{service.serviceSimpleName}</div>
+          </Link>
+        </CardTitle>
+        <CardDescription className="text-xs h-10">
+          {service.shortDescription}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow">
+        <div className="space-x-1 space-y-1">
+          {service.categories.map((category) => (
+            <Badge key={category} variant="secondary" className="text-xs">
+              {category}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+function ServiceListItem({ service }: { service: Service }) {
+  return (
+    <Card key={service.slug} className="p-0">
+      <Link href={`/${service.slug}`} passHref scroll={true}>
+        <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
+          <div className="flex-grow">
+            <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
+              {service.serviceSimpleName}
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              {service.shortDescription}
+            </p>
+            <div className="mt-2 space-x-1 space-y-1">
+              {service.categories.map((category) => (
+                <Badge key={category} variant="secondary" className="text-xs">
+                  {category}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Link>
+    </Card>
   )
 }

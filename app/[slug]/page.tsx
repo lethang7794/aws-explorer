@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { Footer } from '@/components/footer'
 
 interface ServiceDetailPageProps {
   params: {
@@ -58,8 +59,8 @@ export default async function ServiceDetailPage({
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground gradient">
-      <div className="container mx-auto p-4 md:p-8 max-w-4xl">
+    <div className="h-full bg-background text-foreground gradient">
+      <div className="h-full container mx-auto p-4 md:p-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/" passHref>
             <Button variant="outline">
@@ -128,6 +129,7 @@ export default async function ServiceDetailPage({
           </CardFooter>
         </Card>
       </div>
+      <Footer />
     </div>
   )
 }

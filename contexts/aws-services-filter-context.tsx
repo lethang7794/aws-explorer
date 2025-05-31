@@ -1,6 +1,12 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 type LayoutMode = 'card' | 'list'
@@ -46,18 +52,19 @@ export function AwsServicesFilterProvider({
       params.set(QUERY_PARAMS.categories, selectedCategories.join(','))
     if (layoutMode !== 'card') params.set(QUERY_PARAMS.layout, layoutMode)
     router.replace(`?${params.toString()}`, { scroll: false })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategories, layoutMode])
+
+  const contextValue = useMemo(() => {
+    return {
+      selectedCategories,
+      setSelectedCategories,
+      layoutMode,
+      setLayoutMode,
+    }
   }, [selectedCategories, layoutMode])
 
   return (
-    <AwsServicesFilterContext.Provider
-      value={{
-        selectedCategories,
-        setSelectedCategories,
-        layoutMode,
-        setLayoutMode,
-      }}
-    >
+    <AwsServicesFilterContext.Provider value={contextValue}>
       {children}
     </AwsServicesFilterContext.Provider>
   )
