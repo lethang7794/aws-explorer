@@ -21,6 +21,8 @@ import {
   awsServiceCountByCategory,
   type Service,
 } from '@/lib/aws-services-data' // Import type
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useAwsServicesFilter } from './aws-services-filter-context'
 
 interface AwsServicesListProps {
   services: Service[]
@@ -28,20 +30,48 @@ interface AwsServicesListProps {
 
 type LayoutMode = 'card' | 'list'
 
+const QUERY_PARAMS = {
+  search: 'q',
+  categories: 'categories',
+  layout: 'view',
+}
+
 export default function AwsServicesList({
   services: initialServices,
 }: AwsServicesListProps) {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const {
+    selectedCategories,
+    setSelectedCategories,
+    layoutMode,
+    setLayoutMode,
+  } = useAwsServicesFilter()
+
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  // Initialize searchTerm from URL
+  const initialSearchTerm = searchParams.get('q') || ''
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
   const [services, setServices] = useState<Service[]>(initialServices)
-  const [layoutMode, setLayoutMode] = useState<LayoutMode>('card')
 
   useEffect(() => {
     setServices(initialServices)
   }, [initialServices])
 
+  // Sync searchTerm to URL (but not in context)
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString())
+    if (searchTerm) {
+      params.set('q', searchTerm)
+    } else {
+      params.delete('q')
+    }
+    router.replace(`?${params.toString()}`, { scroll: false })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm])
+
   const handleCategoryChange = (category: string) => {
-    setSelectedCategories((prev) =>
+    setSelectedCategories((prev: string[]) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
         : [...prev, category]
