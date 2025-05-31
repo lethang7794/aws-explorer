@@ -79,8 +79,8 @@ export default function AwsServicesList({
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <aside className="md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start md:sticky md:top-8 md:h-fit">
-          <div>
+        <aside className="flex flex-col-reverse md:block md:col-span-1 space-y-6 p-6 bg-card rounded-lg shadow self-start md:sticky md:top-8 md:h-fit">
+          <div className="mt-4 md:mt-0">
             <h2 className="text-xl font-semibold mb-3">
               Search{' '}
               {selectedCategories.length > 0
@@ -182,24 +182,21 @@ export default function AwsServicesList({
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredServices.map((service) => (
                     <Card key={service.slug} className="flex flex-col">
-                      <CardHeader>
+                      <CardHeader className="pb-2">
                         <CardTitle className="text-lg">
                           <Link
                             href={`/services/${service.slug}`}
-                            className="flex flex-wrap gap-1 justify-between text-blue-600 hover:text-blue-700 hover:underline"
+                            className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
                           >
-                            <div className="flex-1">
-                              {service.serviceSimpleName}
-                            </div>
                             {service.iconService ? (
                               <img
                                 src={`/aws/${service.iconService}.svg`}
-                                className="h-8 w-8"
+                                className="h-12 w-12"
                               />
                             ) : !service.iconServices ? (
                               <img
                                 src={`/aws/GeneralResource.svg`}
-                                className="h-8 w-8"
+                                className="h-12 w-12"
                               />
                             ) : null}
                             {service.iconServices ? (
@@ -208,11 +205,14 @@ export default function AwsServicesList({
                                   <img
                                     key={icon}
                                     src={`/aws/${icon}.svg`}
-                                    className="h-8 w-8"
+                                    className="h-12 w-12"
                                   />
                                 ))}
                               </div>
                             ) : null}
+                            <div className="flex-1">
+                              {service.serviceSimpleName}
+                            </div>
                           </Link>
                         </CardTitle>
                         <CardDescription className="text-xs h-10">

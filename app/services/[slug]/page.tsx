@@ -47,11 +47,12 @@ export default async function ServiceDetailPage({
 
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap gap-2 text-3xl md:text-4xl">
+          <CardTitle className="flex flex-wrap gap-2 items-center text-3xl md:text-4xl">
             {service.iconService ? (
               <img
                 src={`/aws/${service.iconService}.svg`}
-                className="h-9 w-9 md:h-10 md:w-10"
+                className="h-20 w-20 md:h-24 md:w-24"
+                alt={`${service.iconService} icon`}
               />
             ) : null}
             {service.iconServices ? (
@@ -59,8 +60,9 @@ export default async function ServiceDetailPage({
                 {service.iconServices.map((icon) => (
                   <img
                     key={icon}
+                    alt={`${icon} icon`}
                     src={`/aws/${icon}.svg`}
-                    className="h-9 w-9 md:h-10 md:w-10"
+                    className="h-20 w-20 md:h-24 md:w-24"
                   />
                 ))}
               </div>
@@ -96,8 +98,8 @@ export default async function ServiceDetailPage({
             rel="noopener noreferrer"
             className="w-full"
           >
-            <Button className="w-full">
-              View Official Documentation{' '}
+            <Button className="w-full" variant="outline">
+              View Documentation
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
