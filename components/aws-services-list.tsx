@@ -140,7 +140,7 @@ export default function AwsServicesList({
   // Pagination controls
 
   return (
-    <div className="min-h-screen container mx-auto p-4 md:p-8">
+    <div className="min-h-screen container mx-auto p-4 md:py-8 md:px-0">
       <header className="mb-4 md:mb-8 text-center">
         <h1 className="text-4xl text-gray-100 font-bold tracking-tight">
           AWS Explorer
@@ -184,7 +184,7 @@ export default function AwsServicesList({
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-3">Filter by Category</h2>
-            <div className="space-y-2 max-h-36 md:max-h-72 overflow-y-auto pr-2">
+            <div className="space-y-2 max-h-36 md:max-h-96 overflow-y-auto pr-2">
               {awsServiceCategories.map(({ name: category, icon }) => (
                 <div key={category} className="flex items-center space-x-2">
                   <Checkbox
@@ -194,14 +194,14 @@ export default function AwsServicesList({
                   />
                   <Label
                     htmlFor={`category-${category}`}
-                    className="flex gap-2 text-sm font-medium cursor-pointer"
+                    className="flex-grow flex items-center gap-2 text-sm font-medium cursor-pointer"
                   >
                     <img
                       src={`/aws/${icon}.svg`}
                       alt={icon}
                       className="h-5 w-5"
                     />
-                    {category}
+                    <div className="flex-grow">{category}</div>
                     <span className="ml-0 text-sm text-muted-foreground">
                       ({categoryCounts[category]})
                     </span>
@@ -299,7 +299,9 @@ export default function AwsServicesList({
                 >
                   Clear search
                 </Button>
-                <div className="-ml-3 -mr-2 text-white">, select more or</div>
+                <div className="-ml-3 -mr-2 text-white text-sm">
+                  , select more or
+                </div>
                 <Button
                   variant="ghost"
                   onClick={() => {
@@ -410,7 +412,7 @@ function ServiceIconsList({
   filteredServices: Service[]
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {filteredServices.map((service) => (
         <ServiceIconItem key={service.service} service={service} />
       ))}
@@ -421,7 +423,7 @@ function ServiceIconsList({
 function ServiceIconItem({ service }: { service: Service }) {
   return (
     <Card className="flex flex-col">
-      <CardHeader className="pb-2">
+      <CardHeader className="p-3 pb-1 md:p-4 md:pb-2 lg:p-6 lg:pb-4">
         <CardTitle className="text-lg">
           <Link
             href={`/${service.slug}`}
@@ -440,7 +442,7 @@ function ServiceIconItem({ service }: { service: Service }) {
                     <img
                       src={`/aws/${r}.svg`}
                       alt={`${resourceName} icon`}
-                      className="inline h-10 w-10"
+                      className="inline h-5 w-5 lg:h-10 lg:w-10"
                     />
                     {/* {resourceName} */}
                   </li>
@@ -461,7 +463,7 @@ function ServiceIcons({
   service: Service
   size?: 'small' | 'large'
 }) {
-  const className = size === 'large' ? 'h-24 w-24' : 'h-12 w-12'
+  const className = size === 'large' ? 'h-16 w-16 lg:h-24 lg:w-24' : 'h-12 w-12'
 
   return (
     <>

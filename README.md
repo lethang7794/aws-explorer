@@ -2,19 +2,45 @@
 
 **Live Demo** at [https://aws-explorer.vercel.app](https://aws-explorer.vercel.app)
 
-[![AWS Explorer Homepage](docs/homepage.png)](https://aws-explorer.vercel.app)
-
-[![Icon layout](docs/icon-layout.png)](https://aws-explorer.vercel.app/?categories=Machine%20Learning&view=icon)
-
-[![List layout](docs/list-layout.png)](https://aws-explorer.vercel.app/?categories=Decision%20Guides&view=list)
-
-[![Resources in icon layout](docs/resources-in-icon-layout.png)](https://aws-explorer.vercel.app/?categories=Networking%20%26%20Content%20Delivery&view=icon)
-
-[![Detail page with resources](docs/detail-page-with-resources.png)](https://aws-explorer.vercel.app/vpc)
-
 ## What is this project?
 
-**AWS Explorer** is a web application that provides a fast, searchable, and user-friendly interface to explore Amazon Web Services (AWS) documentation. It organizes AWS services, their categories, and documentation links in a way that is easy to browse and filter.
+**AWS Explorer** is a web application that provides a fast, user-friendly interface to explore:
+
+- Amazon Web Services (AWS) services
+- architecture service/resources icons
+- documentations
+
+## Features
+
+- **Homepage with search and filter**: Showing AWS services with short description and categories.
+
+  [![AWS Explorer Homepage](docs/homepage.png)](https://aws-explorer.vercel.app)
+
+- **Icon Layout**: Just as in AWS architecture diagram
+
+  [![Icon layout](docs/icon-layout.png)](https://aws-explorer.vercel.app/?categories=Machine%20Learning&view=icon)
+
+- **List Layout**: Quickly navigate between services
+
+  [![List layout](docs/list-layout.png)](https://aws-explorer.vercel.app/?categories=Decision%20Guides&view=list)
+
+- **Resources of services**: Take a glance at the resources of each service
+
+  [![Resources in icon layout](docs/resources-in-icon-layout.png)](https://aws-explorer.vercel.app/?categories=Networking%20%26%20Content%20Delivery&view=icon)
+
+- **Detail page**: More detail about the service and its resources
+
+  [![Detail page with resources](docs/detail-page-with-resources.png)](https://aws-explorer.vercel.app/vpc)
+
+- **Docs**: Each service is linked to docs without distraction
+
+  [![Detail page with docs](docs/detail-page-with-docs.png)](https://aws-explorer.vercel.app/vpc)
+
+- **Responsive**: Use it at work, on the road, or at home
+
+  | Mobile                                                                         | Table                                                                          |
+  | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+  | <img alt="Responsive Mobile" src="docs/responsive-mobile.png" width="300px" /> | <img alt="Responsive Tablet" src="docs/responsive-tablet.png" width="600px" /> |
 
 ## Who should use it?
 
@@ -24,7 +50,6 @@
 
 ## Why you should use it
 
-- **No pagination:** Instantly see all AWS services at once - no clicking through pages.
 - **Alphabetical sorting:** Services are always sorted A–Z, so you can quickly find what you need.
 - **No naming confusion:**: Don’t wonder whether it’s "Amazon S3" or “AWS S3” - just search and find it.
 - **No distraction by “Amazon” or “AWS” prefixes**: Just the service name you expect.
@@ -44,9 +69,9 @@
 | Category icons              | 🚀 All categories have icon                                   | ❌ Not supported                                                                       |
 | Resources icons             | 🚀 Show resource icons in icon layout and detail page         | 🟡 Not supported                                                                       |
 | Preload detail page         | ✅ See it at a glance                                         | ❌ Needs a whole page load                                                             |
+| Links to docs               | 🚀 Show all docs of the services without distraction          | ✅ Show all docs of the services                                                       |
 | Support go back             | ✅ Continue where you are before checking detail of a service | ❌ Reset everything after you checking a service                                       |
 | Clean, minimal UI           | ✅                                                            | 🟡 There is a lot of information                                                       |
-| Show all services           | ✅ See all the matching services                              | ❌ Navigate between pages without hope                                                 |
 | No naming confusion         | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch               | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕 |
 | Alphabetical sorting        | ✅ VPC is near VPN, CloudTrail is next to CloudWatch          | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch         |
 | Layout mode                 | 🚀 Grid, list, icon view                                      | 🟡 Only one layout                                                                     |
@@ -58,8 +83,9 @@
 ## Roadmap
 
 - [x] Show services resources in detail page.
-- [ ] Add CICD pipeline to crawl AWS docs every week.
-- [ ] Support update AWS architecture icons from CICD.
+- [x] Show docs in detail page.
+- [ ] Add CI/CD pipeline to crawl AWS docs every week.
+- [ ] Support update AWS architecture icons from CI/CD.
 - [ ] Support copy/download SVG icon.
 - [ ] Show related services in detail page.
 

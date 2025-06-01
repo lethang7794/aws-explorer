@@ -155,9 +155,9 @@ export default async function ServiceDetailPage({
                     <img
                       src={`/aws/${r}.svg`}
                       alt={`${resourceName} icon`}
-                      className="inline h-20 w-20"
+                      className="inline h-12 w-12 lg:h-20 lg:w-20"
                     />
-                    {resourceName}
+                    <div className="text-xs  lg:text-base">{resourceName}</div>
                   </li>
                 )
               })}
