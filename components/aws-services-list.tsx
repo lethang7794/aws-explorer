@@ -126,6 +126,8 @@ export default function AwsServicesList({
 
   const handleCategoryChange = useCallback(
     (category: string) => {
+      setPage(1) // Reset to first page on category change
+      scrollTop()
       setSelectedCategories((prev: string[]) =>
         prev.includes(category)
           ? prev.filter((c) => c !== category)
@@ -210,8 +212,12 @@ export default function AwsServicesList({
             {selectedCategories.length > 0 && (
               <Button
                 variant="outline"
-                onClick={() => setSelectedCategories([])}
-                className="mt-4 p-0 h-auto text-sm text-primary hover:underline"
+                onClick={() => {
+                  setSelectedCategories([])
+                  setPage(1) // Reset to first page
+                  scrollTop()
+                }}
+                className="mt-4 p-1 h-auto text-sm text-primary hover:underline"
               >
                 Clear all filters
               </Button>
@@ -248,10 +254,11 @@ export default function AwsServicesList({
           </div>
         </aside>
 
-        <main className="md:col-span-2 lg:col-span-3">
-          {debouncedSearchTerm ? (
+        <main id="main-content" className="md:col-span-2 lg:col-span-3">
+          {debouncedSearchTerm && filteredServices.length ? (
             <div className="mb-2 text-gray-100">
-              Found {filteredServices.length} services:
+              Found {filteredServices.length} services match your search and
+              categories.
             </div>
           ) : null}
           {filteredServices.length > 0 ? (
@@ -278,10 +285,31 @@ export default function AwsServicesList({
               />
             </>
           ) : (
-            <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">
-                No services match your criteria.
+            <div className="flex flex-col items-center text-center py-12">
+              <p className="text-xl text-white">
+                No services match your search and filters.
               </p>
+              <div className="mt-2 flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setSearchTerm('')
+                  }}
+                  className="p-1 h-auto text-sm text-white italic underline hover:underline"
+                >
+                  Clear search
+                </Button>
+                <div className="-ml-3 -mr-2 text-white">, select more or</div>
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setSelectedCategories([])
+                  }}
+                  className="p-1 h-auto text-sm text-white italic underline hover:underline"
+                >
+                  all categories
+                </Button>
+              </div>
             </div>
           )}
         </main>
@@ -510,43 +538,45 @@ function Pagination({
         onClick={() => {
           setPage((p) => Math.max(1, p - 1))
           if (scrollToTop) {
-            window.scrollTo({ top: 0 })
+            scrollTop()
           }
         }}
         disabled={page === 1}
       >
         Previous
       </Button>
-      {pages.map((p, idx) =>
-        p === -1 ? (
-          <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">
-            ...
-          </span>
-        ) : (
-          <Button
-            key={p}
-            variant={p === page ? 'secondary' : 'outline'}
-            size="sm"
-            onClick={() => {
-              setPage(p)
-              if (scrollToTop) {
-                window.scrollTo({ top: 0 })
-              }
-            }}
-            aria-current={p === page ? 'page' : undefined}
-            className={p === page ? 'font-bold' : ''}
-          >
-            {p}
-          </Button>
-        )
-      )}
+      <>
+        {pages.map((p, idx) =>
+          p === -1 ? (
+            <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">
+              ...
+            </span>
+          ) : (
+            <Button
+              key={p}
+              variant={p === page ? 'secondary' : 'outline'}
+              size="sm"
+              onClick={() => {
+                setPage(p)
+                if (scrollToTop) {
+                  scrollTop()
+                }
+              }}
+              aria-current={p === page ? 'page' : undefined}
+              className={p === page ? 'font-bold' : ''}
+            >
+              {p}
+            </Button>
+          )
+        )}
+      </>
       <Button
         variant="outline"
         size="sm"
         onClick={() => {
           setPage((p) => Math.min(totalPages, p + 1))
           if (scrollToTop) {
-            window.scrollTo({ top: 0 })
+            scrollTop()
           }
         }}
         disabled={page === totalPages}
@@ -555,4 +585,8 @@ function Pagination({
       </Button>
     </div>
   )
+}
+
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: 'instant' })
 }

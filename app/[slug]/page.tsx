@@ -125,6 +125,21 @@ export default async function ServiceDetailPage({
               </p>
             </div>
           </CardContent>
+          {service.sections?.length ? null : (
+            <CardFooter>
+              <a
+                href={service.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button className="w-full" variant="outline">
+                  View Documentation
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+            </CardFooter>
+          )}
         </Card>
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
