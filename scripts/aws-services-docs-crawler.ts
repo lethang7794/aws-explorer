@@ -67,7 +67,7 @@ async function main() {
       }
     }
 
-    await runInBatches(servicesData, 10, async (service: ServiceCrawl) => {
+    await runInBatches(servicesData, 1, async (service: ServiceCrawl) => {
       try {
         // Extract detailed description from service page
         const { detailDescription, sections } = await extractDetailInfo(
@@ -111,10 +111,10 @@ async function extractServiceData(
   try {
     // Extract basic service info
     const serviceName = await card.$eval('h5', (el: HTMLElement) =>
-      el.innerText.trim().replace(' ', '')
+      el.innerText.trim().replace(' ', ' ')
     )
     const shortDescription = await card.$eval('h5 ~ div', (el: HTMLElement) =>
-      el.innerText.trim()
+      el.innerText.trim().replace(' ', ' ')
     )
 
     const categories = await card.$$eval(

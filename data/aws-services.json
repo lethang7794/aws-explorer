@@ -1393,6 +1393,31 @@
   {
     "service": "Amazon DevOpsGuru",
     "shortDescription": "Improve application availability with ML-powered cloud operations",
+    "url": "https://docs.aws.amazon.com/detective",
+    "categories": [
+      "Machine Learning"
+    ],
+    "detailDescription": "Amazon Detective makes it easy to analyze, investigate, and quickly identify the root cause of security findings or suspicious activities. Detective automatically collects log data from your AWS resources and uses machine learning, statistical analysis, and graph theory to help you visualize and conduct faster and more efficient security investigations.",
+    "sections": [
+      {
+        "items": [
+          {
+            "name": "User Guide",
+            "link": "/detective/latest/userguide/index.html",
+            "description": "Detective makes it easy to analyze, investigate, and identify the root cause of security findings or suspicious activities. Detective uses machine learning to build a behavior graph."
+          },
+          {
+            "name": "API Reference",
+            "link": "/detective/latest/APIReference/index.html",
+            "description": "Describes the API operations for Amazon Detective. Provides example requests and responses for each operation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "service": "Amazon DevOpsGuru",
+    "shortDescription": "Improve application availability with ML-powered cloud operations",
     "url": "https://docs.aws.amazon.com/devops-guru",
     "categories": [
       "Machine Learning"
@@ -2396,6 +2421,56 @@
     ]
   },
   {
+    "service": "Amazon GameLift Servers",
+    "shortDescription": "Simple, fast, cost-effective dedicated game server hosting",
+    "url": "https://docs.aws.amazon.com/gamelift",
+    "categories": [
+      "Game Development"
+    ],
+    "detailDescription": "Amazon GameLift is a fully-managed service with game streaming and multiplayer game server hosting capabilities. Using the AWS global footprint and game optimized GPU instances, publishers can deploy and stream their game content in minutes, and players can start gaming in seconds without perceivable lag or having to wait for installs. With high-scaling game server and smooth gameplay streaming capabilities, Amazon GameLift helps developers to build, scale, and deliver the world's most demanding games.",
+    "sections": [
+      {
+        "name": "Amazon GameLift Streams",
+        "items": []
+      },
+      {
+        "name": "Amazon GameLift Servers",
+        "items": [
+          {
+            "name": "Amazon GameLift Servers Hosting Developer Guide",
+            "link": "/gamelift/latest/developerguide/",
+            "description": "Learn how to integrate and deploy games for hosting on Amazon GameLift Servers. The service manages game server deployment, operation, and scaling. You can deploy custom-built game servers or use Amazon GameLift Servers Realtime to configure lightweight game servers for your game."
+          },
+          {
+            "name": "Amazon GameLift Servers FlexMatch Developer Guide",
+            "link": "/gamelift/latest/flexmatchguide/match-intro.html",
+            "description": "Learn how to build custom matchmakers using Amazon GameLift Servers FlexMatch. Work with the FlexMatch rules language to fine-tune how players are matched into game sessions. Set up FlexMatch for games that use Amazon GameLift Servers managed hosting, or build a standalone FlexMatch solution to work with other hosting solutions."
+          },
+          {
+            "name": "Amazon GameLift Servers FleetIQ Developer Guide",
+            "link": "/gamelift/latest/fleetiqguide/gsg-intro.html",
+            "description": "Learn how to use FleetIQ with games that are already hosted on Amazon EC2 with Auto Scaling. FleetIQ optimizations for server availabililty make game hosting viable on low-cost Amazon EC2 Spot Instances."
+          },
+          {
+            "name": "Amazon GameLift Servers API Reference",
+            "link": "/gamelift/latest/apireference/index.html",
+            "description": "Look up all AWS SDK operations and data types for Amazon GameLift Servers. The API supports all Amazon GameLift Servers features, including managed hosting, Realtime, FleetIQ, and FlexMatch."
+          },
+          {
+            "name": "AWS CLI Reference for Amazon GameLift Servers",
+            "link": "/cli/latest/reference/gamelift/index.html",
+            "description": "Look up all AWS CLI commands for Amazon GameLift Servers features, including managed hosting, Realtime, FleetIQ, and FlexMatch."
+          },
+          {
+            "name": "SDK References",
+            "link": "/gamelift/latest/developerguide/reference-intro.html",
+            "description": "Look up complete documentation on the SDK for Amazon GameLift Servers. Use the server SDK to set up your custom-built game servers for hosting with Amazon GameLift Servers. Use the Realtime client SDK with your game clients to enable them to interact with Realtime Servers hosted on Amazon GameLift Servers."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "service": "Amazon GameLift Streams",
     "shortDescription": "High frame rate, low-latency game streaming to devices at global scale",
     "url": "https://docs.aws.amazon.com/gameliftstreams",
@@ -2834,168 +2909,6 @@
             "name": "API Reference",
             "link": "/lightsail/2016-11-28/api-reference/API_Amazon_Lightsail_for_Research.html",
             "description": "Describes the API operations for Lightsail for Research. Lightsail for Research uses API operations from the Amazon Lightsail service."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "service": "Amazon Linux",
-    "shortDescription": "Portfolio of modern Linux-based high performance operating systems",
-    "url": "https://docs.aws.amazon.com/linux",
-    "categories": [
-      "Compute"
-    ],
-    "detailDescription": "Amazon Linux is a portfolio of modern Linux-based high performance operating systems that are security-focused and stable.",
-    "sections": [
-      {
-        "name": "Amazon Linux 2023",
-        "items": [
-          {
-            "name": "Amazon Linux 2023 User Guide",
-            "link": "/linux/al2023/ug/index.html",
-            "description": "Describes key concepts of Amazon Linux 2023 (AL2023) and provides instructions for using the features of AL2023."
-          },
-          {
-            "name": "Amazon Linux 2023 Release Notes",
-            "link": "/linux/al2023/release-notes/index.html",
-            "description": "Describes features and changes included with Amazon Linux 2023 releases."
-          }
-        ]
-      },
-      {
-        "name": "Previous generations of Amazon Linux",
-        "items": [
-          {
-            "name": "Amazon Linux 2 User Guide",
-            "link": "/linux/al2/ug/index.html",
-            "description": "Describes key concepts of Amazon Linux 2 (AL2) and provides instructions for using the features of AL2. AL2 is no longer the current version of Amazon Linux."
-          },
-          {
-            "name": "Amazon Linux 2 Release Notes",
-            "link": "/AL2/latest/relnotes/index.html",
-            "description": "Describes features and changes included with Amazon Linux 2 releases."
-          },
-          {
-            "name": "Amazon Linux 1 User Guide",
-            "link": "/linux/al1/ug/index.html",
-            "description": "Describes key concepts of Amazon Linux 1 (AL1). AL1 is no longer supported. If you are moving from another version of Linux, use AL2023."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "service": "Amazon Location Service",
-    "shortDescription": "Securely and easily add location data to applications",
-    "url": "https://docs.aws.amazon.com/location",
-    "categories": [
-      "Front-End Web & Mobile"
-    ],
-    "detailDescription": "Use Amazon Location Service to easily and securely add maps, places, routes, geofences, and trackers, to your applications. With Amazon Location Service, you safeguard customer data, reduce cost, and easily integrate with other AWS services.",
-    "sections": [
-      {
-        "name": "Latest Version",
-        "items": [
-          {
-            "name": "Maps",
-            "link": "/location/latest/developerguide/maps.html",
-            "description": "Amazon Location Maps lets you create beautiful map-enabled visualizations, including embedding interactive dynamic maps, or static map imagery in your apps and even layering your own data on top of the base map."
-          },
-          {
-            "name": "Places",
-            "link": "/location/latest/developerguide/places.html",
-            "description": "Amazon Location Places enables searching and geocoding of geographic data, including addresses, points of interest, and business info such as categories, food types, brands, and opening hours."
-          },
-          {
-            "name": "Routes",
-            "link": "/location/latest/developerguide/routes.html",
-            "description": "Amazon Location Routes calculates travel routes, estimate trip time, and optimizes travel itineraries and logistics problems using up-to-date road network data, live traffic, and rich road and vehicle attributes."
-          },
-          {
-            "name": "Geofences",
-            "link": "/location/latest/developerguide/geofences.html",
-            "description": "Amazon Location Geofences allows setting up and managing virtual boundaries for monitoring when devices enter or leave specific areas, useful for asset tracking and alerts."
-          },
-          {
-            "name": "Trackers",
-            "link": "/location/latest/developerguide/trackers.html",
-            "description": "Amazon Location Trackers lets you track the location of devices in near real-time, visualize movements on maps, and integrate tracking data with geofences for automated alerts."
-          },
-          {
-            "name": "Authentication",
-            "link": "/location/latest/developerguide/access.html",
-            "description": "Learn how to authenticate with Amazon Location through API keys, IAM roles, and Amazon Cognito, ensuring secure access to your location-based applications."
-          }
-        ]
-      },
-      {
-        "name": "Developer Tools",
-        "items": [
-          {
-            "name": "Amazon Location SDKs",
-            "link": "/location/latest/developerguide/dev-sdks.html",
-            "description": "Access SDKs that offer programmatic interaction with Amazon Location, allowing integration of location-based services into apps using various programming languages."
-          },
-          {
-            "name": "API reference",
-            "link": "/location/latest/APIReference/welcome.html",
-            "description": "The Amazon Location API offers programmatic access to location-based features such as maps, geocoding, geofences, tracking, and routing services."
-          },
-          {
-            "name": "CLI reference",
-            "link": "/cli/latest/reference/location/index.html",
-            "description": "Use the AWS CLI to manage Amazon Location resources, including commands for maps, places, geofences, trackers, and routing operations, with example usage."
-          }
-        ]
-      },
-      {
-        "name": "Related Documentation",
-        "items": [
-          {
-            "name": "Best practices",
-            "link": "/location/latest/developerguide/what-is-learn-more.html",
-            "description": "Discover best practices for optimizing your use of Amazon Location to enhance performance, ensure security, and maximize the value of your location-based solutions."
-          },
-          {
-            "name": "Integrations with AWS services",
-            "link": "/location/latest/developerguide/integration.html",
-            "description": "Learn about integrating Amazon Location with other AWS services to automate workflows and monitor your resources using tools like CloudWatch."
-          },
-          {
-            "name": "Security",
-            "link": "/location/latest/developerguide/security.html",
-            "description": "Understand how Amazon Location approaches data security, with best practices for protecting your information and complying with privacy standards."
-          }
-        ]
-      },
-      {
-        "name": "Resources",
-        "items": [
-          {
-            "name": "Samples and Demos ",
-            "link": "https://location.aws.com/samples",
-            "description": "Access various code samples and tutorials to help you quickly learn and start building applications with Amazon Location geospatial features."
-          },
-          {
-            "name": "Engage with the Community ",
-            "link": "https://github.com/aws-geospatial",
-            "description": "Amazon Location provides a collaborative platforms for developers to ask questions, share knowledge, and contribute to GitHub to advance their understanding of Amazon Location."
-          },
-          {
-            "name": "Amazon Location Pricing ",
-            "link": "https://aws.amazon.com/location/pricing/",
-            "description": "Use the pricing tool to estimate costs for Amazon Location services based on projected usage, such as map requests, geofencing evaluations, and tracking updates."
-          }
-        ]
-      },
-      {
-        "name": "Previous Versions",
-        "items": [
-          {
-            "name": "Developer Guide",
-            "link": "/location/previous/developerguide/",
-            "description": "Access the previous version of the Amazon Location Service developer guide for legacy documentation, practical examples, and older feature details."
           }
         ]
       }
@@ -6270,7 +6183,7 @@
           {
             "name": "",
             "link": "/apprunner/latest/dg/index.html",
-            "description": "Provides a conceptual overview of AWS App Runner, detailed feature descriptions, and instructions on how to use the service and deploy web applications."
+            "description": ""
           },
           {
             "name": "API Reference",
@@ -6283,9 +6196,9 @@
             "description": "Documents the AWS App Runner commands available in the AWS Command Line Interface (AWS CLI)."
           },
           {
-            "name": "Release Notes",
+            "name": "",
             "link": "/apprunner/latest/relnotes/index.html",
-            "description": "Provides details about AWS App Runner releases—new features, updates, and fixes related to the service, runtimes, and console."
+            "description": ""
           }
         ]
       }

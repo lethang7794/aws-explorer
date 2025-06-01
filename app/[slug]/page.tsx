@@ -185,7 +185,7 @@ export default async function ServiceDetailPage({
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
-                                {item.name}
+                                {item.name || item.link}
                               </a>
                             </li>
                           )
