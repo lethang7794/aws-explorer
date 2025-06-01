@@ -47,6 +47,15 @@ export async function generateMetadata({
           ? `/aws/${service.iconServices[0]}.svg`
           : undefined,
     },
+    openGraph: {
+      title: service.service,
+      description: service.shortDescription,
+      images: service.iconService
+        ? [`/aws/${service.iconService}.svg`]
+        : service.iconServices?.length
+          ? service.iconServices.map((icon) => `/aws/${icon}.svg`)
+          : [],
+    },
   }
 }
 
