@@ -265,10 +265,7 @@ function ServiceCartsList({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredServices.map((service) => (
-        <ServiceCartItem
-          key={service.service + service.slug}
-          service={service}
-        />
+        <ServiceCartItem key={service.service} service={service} />
       ))}
     </div>
   )
@@ -313,10 +310,7 @@ function ServiceListItemsList({
   return (
     <div className="space-y-4">
       {filteredServices.map((service) => (
-        <ServiceListItem
-          key={service.service + service.slug}
-          service={service}
-        />
+        <ServiceListItem key={service.service} service={service} />
       ))}
     </div>
   )
@@ -357,10 +351,7 @@ function ServiceIconsList({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredServices.map((service) => (
-        <ServiceIconItem
-          key={service.service + service.slug}
-          service={service}
-        />
+        <ServiceIconItem key={service.service} service={service} />
       ))}
     </div>
   )

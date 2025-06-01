@@ -152,7 +152,7 @@ function cleanPath(urlPath?: string) {
 }
 
 // Function to extract detailed description from service page
-async function extractDetailInfo(
+export async function extractDetailInfo(
   context: BrowserContext,
   service: ServiceCrawl
 ) {
@@ -162,7 +162,7 @@ async function extractDetailInfo(
   // Open a new page for the service detail
   const detailPage = await context.newPage()
   await detailPage.goto(url, {
-    // waitUntil: 'domcontentloaded',
+    waitUntil: 'domcontentloaded',
   })
 
   // Extract detailed description

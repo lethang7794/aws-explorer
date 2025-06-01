@@ -167,9 +167,9 @@ export default async function ServiceDetailPage({
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-2">Docs</h2>
             <ul className="flex flex-col gap-6 flex-wrap justify-center">
-              {service.sections?.map((docSection) => {
+              {service.sections?.map((docSection, idx) => {
                 return (
-                  <div key={docSection.name}>
+                  <div key={idx}>
                     <div className="italic">{docSection.name}</div>
                     <li
                       key={docSection.name}
