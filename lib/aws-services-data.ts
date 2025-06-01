@@ -2,16 +2,12 @@ import AWS_SERVICES from '@/data/aws-services.json'
 import AWS_ICONS from '@/data/aws-icons.json'
 import { SERVICE_TO_ICON_FILENAME } from '@/data/aws-service-icon-mapping'
 import { AWS_CATEGORY_TO_ICON } from '@/data/aws-icon-from-category'
+import { ServiceCrawl } from '@/scripts/aws-services-docs-crawler'
 
-export interface Service {
+export interface Service extends ServiceCrawl {
   id?: string
   slug?: string
-  service: string
   serviceSimpleName?: string
-  shortDescription: string
-  url: string
-  categories: string[]
-  detailDescription: string
   iconService?: string
   iconServices?: string[]
   iconResources?: string[]

@@ -3,17 +3,17 @@ import { writeFileSync } from 'fs'
 
 const AWS_DOCS_URL = 'https://docs.aws.amazon.com/'
 
-type Service = {
+export type ServiceCrawl = {
   service: string
   shortDescription: string
   detailDescription?: string
   url: string
   categories: string[]
-  sections?: Section[]
+  sections?: ServiceCrawlSection[]
 }
 
-type Section = {
-  name: string
+export type ServiceCrawlSection = {
+  name?: string
   items: {
     name?: string | null
     link?: string | null
@@ -42,7 +42,7 @@ async function main() {
     console.log('Loaded AWS docs main page')
 
     // Extract service categories and cards
-    const servicesData: Service[] = []
+    const servicesData: ServiceCrawl[] = []
 
     // TODO: remove this limit when scraping all services
     for (let i = 0; i < PAGINATION_SIZE; i++) {
@@ -67,7 +67,7 @@ async function main() {
       }
     }
 
-    await runInBatches(servicesData, 10, async (service: Service) => {
+    await runInBatches(servicesData, 10, async (service: ServiceCrawl) => {
       try {
         // Extract detailed description from service page
         const { detailDescription, sections } = await extractDetailInfo(
@@ -107,7 +107,7 @@ async function main() {
 async function extractServiceData(
   card: ElementHandle<SVGElement | HTMLElement>
 ) {
-  let serviceData: Service
+  let serviceData: ServiceCrawl
   try {
     // Extract basic service info
     const serviceName = await card.$eval('h5', (el: HTMLElement) =>
@@ -152,7 +152,10 @@ function cleanPath(urlPath?: string) {
 }
 
 // Function to extract detailed description from service page
-async function extractDetailInfo(context: BrowserContext, service: Service) {
+async function extractDetailInfo(
+  context: BrowserContext,
+  service: ServiceCrawl
+) {
   const url = service.url
   const serviceName = service.service
 
@@ -181,7 +184,7 @@ async function extractDetailInfo(context: BrowserContext, service: Service) {
 
     // Iterate through each section
     for (const sectionEl of sectionsEl) {
-      let section: Section
+      let section: ServiceCrawlSection
 
       // Get section name
       const sectionNameEl = await sectionEl.$('h2')

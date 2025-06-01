@@ -14,6 +14,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { Footer } from '@/components/footer'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
+import { AWS_DOCS_URL } from '@/constants/aws-docs'
 
 interface ServiceDetailPageProps {
   params: {
@@ -140,7 +141,7 @@ export default async function ServiceDetailPage({
         </Card>
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Resources:</h2>
+            <h2 className="text-xl font-semibold mb-2">Resources</h2>
             <ul className="flex gap-4 flex-wrap justify-center">
               {service.iconResources?.map((r) => {
                 const resourceName = getResourceNameFromServiceName(r, service)
@@ -156,6 +157,42 @@ export default async function ServiceDetailPage({
                     />
                     {resourceName}
                   </li>
+                )
+              })}
+            </ul>
+          </div>
+        ) : null}
+
+        {service.sections && service.sections.length > 0 ? (
+          <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-2">Docs</h2>
+            <ul className="flex flex-col gap-6 flex-wrap justify-center">
+              {service.sections?.map((docSection) => {
+                return (
+                  <div key={docSection.name}>
+                    <div className="italic">{docSection.name}</div>
+                    <li
+                      key={docSection.name}
+                      className="mt-2 flex flex-col gap-2 items-start"
+                    >
+                      <ul className="list-disc pl-5">
+                        {docSection.items.map((item) => {
+                          return (
+                            <li key={item.name} className="mt-2">
+                              <a
+                                href={AWS_DOCS_URL + item.link || '#'}
+                                className="text-blue-500 hover:underline "
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {item.name}
+                              </a>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </li>
+                  </div>
                 )
               })}
             </ul>

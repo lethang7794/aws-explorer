@@ -265,7 +265,10 @@ function ServiceCartsList({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredServices.map((service) => (
-        <ServiceCartItem key={service.url} service={service} />
+        <ServiceCartItem
+          key={service.service + service.slug}
+          service={service}
+        />
       ))}
     </div>
   )
@@ -273,7 +276,7 @@ function ServiceCartsList({
 
 function ServiceCartItem({ service }: { service: Service }) {
   return (
-    <Card key={service.url} className="flex flex-col">
+    <Card className="flex flex-col">
       <CardHeader className="pb-2">
         <CardTitle className="text-lg">
           <Link
@@ -310,7 +313,10 @@ function ServiceListItemsList({
   return (
     <div className="space-y-4">
       {filteredServices.map((service) => (
-        <ServiceListItem key={service.url} service={service} />
+        <ServiceListItem
+          key={service.service + service.slug}
+          service={service}
+        />
       ))}
     </div>
   )
@@ -318,7 +324,7 @@ function ServiceListItemsList({
 
 function ServiceListItem({ service }: { service: Service }) {
   return (
-    <Card key={service.url} className="p-0">
+    <Card className="p-0">
       <Link href={`/${service.slug}`} passHref scroll={true}>
         <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
           <div className="flex-grow">
@@ -351,7 +357,10 @@ function ServiceIconsList({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredServices.map((service) => (
-        <ServiceIconItem key={service.url} service={service} />
+        <ServiceIconItem
+          key={service.service + service.slug}
+          service={service}
+        />
       ))}
     </div>
   )
@@ -359,7 +368,7 @@ function ServiceIconsList({
 
 function ServiceIconItem({ service }: { service: Service }) {
   return (
-    <Card key={service.url} className="flex flex-col">
+    <Card className="flex flex-col">
       <CardHeader className="pb-2">
         <CardTitle className="text-lg">
           <Link
