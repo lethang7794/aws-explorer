@@ -1,10 +1,18 @@
-const { chromium } = require('playwright')
-const fs = require('fs')
+import { BrowserContext, chromium } from 'playwright'
+import { writeFileSync } from 'fs'
 
 const AWS_DOCS_URL = 'https://docs.aws.amazon.com/'
 
-const PAGINATION_SIZE = 30
-function getPaginationAriaLabel(i) {
+type Service = {
+  service: string
+  shortDescription: string
+  detailDescription?: string
+  url: string
+  categories: string[]
+}
+
+const PAGINATION_SIZE = 1
+function getPaginationAriaLabel(i: number) {
   return `Page ${i + 1} of all pages`
 }
 const OUTPUT_PATH = 'data/aws-services.json'
@@ -22,11 +30,11 @@ const OUTPUT_PATH = 'data/aws-services.json'
     console.log('Loaded AWS docs main page')
 
     // Extract service categories and cards
-    const servicesData = []
+    const servicesData: Service[] = []
 
     // TODO: remove this limit when scraping all services
     for (let i = 0; i < PAGINATION_SIZE; i++) {
-      buttonArialLabel = getPaginationAriaLabel(i)
+      const buttonArialLabel = getPaginationAriaLabel(i)
       const paginationButton = await page.$(
         `button[aria-label="${buttonArialLabel}"]`
       )
@@ -41,22 +49,27 @@ const OUTPUT_PATH = 'data/aws-services.json'
         for (const card of serviceCards) {
           try {
             // Extract basic service info
-            const serviceName = await card.$eval('h5', (el) =>
+            const serviceName = await card.$eval('h5', (el: HTMLElement) =>
               el.innerText.trim().replace(' ', '')
             )
-            const shortDescription = await card.$eval('h5 ~ div', (el) =>
-              el.innerText.trim()
+            const shortDescription = await card.$eval(
+              'h5 ~ div',
+              (el: HTMLElement) => el.innerText.trim()
             )
 
-            const categories = await card.$$eval('ul > li > span', (els) =>
-              els.map((el) => el.innerText.trim())
+            const categories = await card.$$eval(
+              'ul > li > span',
+              (els: HTMLElement[]) => els.map((el) => el.innerText.trim())
             )
 
             // Get service detail URL
             const detailUrl = await card.$eval('h5 > a', (el) =>
               el.getAttribute('href')
             )
-            const absoluteUrl = new URL(cleanPath(detailUrl), AWS_DOCS_URL).href
+            const absoluteUrl = new URL(
+              cleanPath(detailUrl || ''),
+              AWS_DOCS_URL
+            ).href
 
             // Store collected data
             servicesData.push({
@@ -68,7 +81,11 @@ const OUTPUT_PATH = 'data/aws-services.json'
 
             console.log(`Processed: ${serviceName}`)
           } catch (cardError) {
-            console.error(`Error processing card: ${cardError.message}`)
+            if (cardError instanceof Error) {
+              console.error(`Error processing card: ${cardError.message}`)
+            } else {
+              console.log(`Unexpected error processing card: ${cardError}`)
+            }
           }
         }
       } else {
@@ -76,7 +93,7 @@ const OUTPUT_PATH = 'data/aws-services.json'
       }
     }
 
-    await runInBatches(servicesData, 10, async (service) => {
+    await runInBatches(servicesData, 10, async (service: Service) => {
       try {
         // Extract detailed description from service page
         service.detailDescription = await extractDetailDescription(
@@ -85,33 +102,46 @@ const OUTPUT_PATH = 'data/aws-services.json'
         )
         console.log(`Extracted detail for ${service.service}`)
       } catch (detailError) {
-        console.error(
-          `Error extracting detail for ${service.service}: ${detailError.message}`
-        )
+        if (detailError instanceof Error) {
+          console.error(
+            `Error extracting detail for ${service.service}: ${detailError.message}`
+          )
+        } else {
+          console.log(
+            `Unexpected error extracting detail for ${service.service}: ${detailError}`
+          )
+        }
       }
     })
 
     // Save results to JSON file
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(servicesData, null, 2))
+    writeFileSync(OUTPUT_PATH, JSON.stringify(servicesData, null, 2))
     console.log(`Saved data for ${servicesData.length} services`)
   } catch (mainError) {
-    console.error(`Main error: ${mainError.message}`)
+    if (mainError instanceof Error) {
+      console.error(`Main error: ${mainError.message}`)
+    } else {
+      console.log(`Unexpected main error: ${mainError}`)
+    }
   } finally {
     await browser.close()
   }
 })()
 
 // Utility function to clean up URL paths
-function cleanPath(urlPath) {
-  return urlPath.split('/?')[0].split('?')[0]
+function cleanPath(urlPath?: string) {
+  return urlPath?.split('/?')[0].split('?')[0] || ''
 }
 
 // Function to extract detailed description from service page
-async function extractDetailDescription(context, service) {
+async function extractDetailDescription(
+  context: BrowserContext,
+  service: Service
+) {
   const DECISION_GUIDES_CATEGORY = 'Decision Guides'
 
   const url = service.url
-  const serviceName = service.serviceName
+  const serviceName = service.service
 
   // Open a new page for the service detail
   const detailPage = await context.newPage()
@@ -126,22 +156,27 @@ async function extractDetailDescription(context, service) {
     try {
       detailDescription = await detailPage.$eval(
         'table tbody tr td:nth-child(2) p',
-        (el) => el.innerText.trim()
+        (el: HTMLElement) => el.innerText.trim()
       )
     } catch (e) {
-      console.warn(
-        `No description found for ${JSON.stringify(service)} ${serviceName}: ${e.message}`
-      )
+      if (e instanceof Error) {
+        console.warn(
+          `No description found for ${JSON.stringify(service)} ${serviceName}: ${e.message}`
+        )
+      }
     }
   } else {
     try {
-      detailDescription = await detailPage.$eval('h1 ~ div', (el) =>
-        el.innerText.trim()
+      detailDescription = await detailPage.$eval(
+        'h1 ~ div',
+        (el: HTMLElement) => el.innerText.trim()
       )
     } catch (e) {
-      console.warn(
-        `No description found for ${JSON.stringify(service)} ${serviceName}: ${e.message}`
-      )
+      if (e instanceof Error) {
+        console.warn(
+          `No description found for ${JSON.stringify(service)} ${serviceName}: ${e.message}`
+        )
+      }
     }
   }
 
@@ -152,7 +187,11 @@ async function extractDetailDescription(context, service) {
 }
 
 // Function to run async operations in batches
-async function runInBatches(items, batchSize, asyncFn) {
+async function runInBatches(
+  items: any[],
+  batchSize: number,
+  asyncFn: (item: any) => Promise<void>
+) {
   for (let i = 0; i < items.length; i += batchSize) {
     const batch = items.slice(i, i + batchSize)
     await Promise.all(batch.map((item) => asyncFn(item)))

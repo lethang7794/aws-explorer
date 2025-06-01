@@ -19,7 +19,7 @@
     "icons": "pnpm run icons:extract && pnpm run icons:transform && pnpm run icons:load",
     "icons:post": "bash ./scripts/aws-icons-post.sh",
     "// AWS docs": "Script to crawl the AWS docs",
-    "aws-docs-crawl": "node ./scripts/aws-services-docs-crawler.js"
+    "aws-docs-crawl": "tsx ./scripts/aws-services-docs-crawler.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
