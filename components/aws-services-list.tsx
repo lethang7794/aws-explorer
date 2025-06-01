@@ -30,6 +30,8 @@ interface AwsServicesListProps {
 }
 
 const SEARCH_PARAM = 'q'
+const PAGE_PARAM = 'page'
+const PAGE_SIZE = 50
 const DEBOUNCE_TIME_MS = 300 // 300ms
 
 export default function AwsServicesList({
@@ -45,21 +47,26 @@ export default function AwsServicesList({
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  // Initialize searchTerm from URL
+  // Initialize searchTerm and page from URL
   const initialSearchTerm = searchParams.get(SEARCH_PARAM) || ''
+  const initialPage = parseInt(searchParams.get(PAGE_PARAM) || '1', 10)
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
   const [debouncedSearchTerm, setDebouncedSearchTerm] =
     useState(initialSearchTerm)
+  const [page, setPage] = useState(
+    isNaN(initialPage) || initialPage < 1 ? 1 : initialPage
+  )
 
   // Debounce searchTerm
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedSearchTerm(searchTerm)
+      searchTerm && setPage(1) // Reset to first page on new search
     }, DEBOUNCE_TIME_MS)
     return () => clearTimeout(handler)
   }, [searchTerm])
 
-  // Sync debouncedSearchTerm to URL (but not in context)
+  // Sync debouncedSearchTerm and page to URL (but not in context)
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString())
     if (debouncedSearchTerm) {
@@ -67,8 +74,14 @@ export default function AwsServicesList({
     } else {
       params.delete(SEARCH_PARAM)
     }
+    if (page > 1) {
+      params.set(PAGE_PARAM, String(page))
+    } else {
+      params.delete(PAGE_PARAM)
+    }
     router.replace(`?${params.toString()}`, { scroll: false })
-  }, [debouncedSearchTerm])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearchTerm, page])
 
   // Memoize filtered services
   const filteredServices = useMemo(() => {
@@ -83,6 +96,13 @@ export default function AwsServicesList({
       return matchesSearchTerm && matchesCategories
     })
   }, [initialServices, debouncedSearchTerm, selectedCategories])
+
+  // Pagination logic
+  const totalPages = Math.max(1, Math.ceil(filteredServices.length / PAGE_SIZE))
+  const paginatedServices = useMemo(
+    () => filteredServices.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [filteredServices, page]
+  )
 
   // Memoize category counts
   const categoryCounts = useMemo(() => {
@@ -114,6 +134,8 @@ export default function AwsServicesList({
     },
     [setSelectedCategories]
   )
+
+  // Pagination controls
 
   return (
     <div className="min-h-screen container mx-auto p-4 md:p-8">
@@ -234,15 +256,26 @@ export default function AwsServicesList({
           ) : null}
           {filteredServices.length > 0 ? (
             <>
+              <Pagination
+                totalPages={totalPages}
+                page={page}
+                setPage={setPage}
+              />
               {layoutMode === 'card' && (
-                <ServiceCartsList filteredServices={filteredServices} />
+                <ServiceCartsList filteredServices={paginatedServices} />
               )}
               {layoutMode === 'list' && (
-                <ServiceListItemsList filteredServices={filteredServices} />
+                <ServiceListItemsList filteredServices={paginatedServices} />
               )}
               {layoutMode === 'icon' && (
-                <ServiceIconsList filteredServices={filteredServices} />
+                <ServiceIconsList filteredServices={paginatedServices} />
               )}
+              <Pagination
+                totalPages={totalPages}
+                page={page}
+                setPage={setPage}
+                scrollToTop={true}
+              />
             </>
           ) : (
             <div className="text-center py-12">
@@ -430,5 +463,96 @@ function ServiceIcons({
         </div>
       ) : null}
     </>
+  )
+}
+
+function Pagination({
+  totalPages,
+  page,
+  setPage,
+  scrollToTop = false,
+}: {
+  totalPages: number
+  page: number
+  setPage: React.Dispatch<React.SetStateAction<number>>
+  scrollToTop?: boolean
+}) {
+  if (totalPages <= 1) return null
+
+  // Helper to generate page numbers to display
+  const getPages = () => {
+    const pages: number[] = []
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i)
+    } else {
+      pages.push(1)
+      if (page > 3) pages.push(-1) // -1 means ellipsis
+      for (
+        let i = Math.max(2, page - 1);
+        i <= Math.min(totalPages - 1, page + 1);
+        i++
+      ) {
+        pages.push(i)
+      }
+      if (page < totalPages - 2) pages.push(-1)
+      pages.push(totalPages)
+    }
+    return pages
+  }
+
+  const pages = getPages()
+
+  return (
+    <div className="flex justify-center items-center gap-2 my-6 flex-wrap">
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => {
+          setPage((p) => Math.max(1, p - 1))
+          if (scrollToTop) {
+            window.scrollTo({ top: 0 })
+          }
+        }}
+        disabled={page === 1}
+      >
+        Previous
+      </Button>
+      {pages.map((p, idx) =>
+        p === -1 ? (
+          <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">
+            ...
+          </span>
+        ) : (
+          <Button
+            key={p}
+            variant={p === page ? 'secondary' : 'outline'}
+            size="sm"
+            onClick={() => {
+              setPage(p)
+              if (scrollToTop) {
+                window.scrollTo({ top: 0 })
+              }
+            }}
+            aria-current={p === page ? 'page' : undefined}
+            className={p === page ? 'font-bold' : ''}
+          >
+            {p}
+          </Button>
+        )
+      )}
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => {
+          setPage((p) => Math.min(totalPages, p + 1))
+          if (scrollToTop) {
+            window.scrollTo({ top: 0 })
+          }
+        }}
+        disabled={page === totalPages}
+      >
+        Next
+      </Button>
+    </div>
   )
 }

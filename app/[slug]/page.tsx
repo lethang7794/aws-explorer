@@ -167,7 +167,11 @@ export default async function ServiceDetailPage({
                           return (
                             <li key={item.name} className="mt-2">
                               <a
-                                href={AWS_DOCS_URL + item.link || '#'}
+                                href={
+                                  item.link?.startsWith('/')
+                                    ? AWS_DOCS_URL + item.link
+                                    : item.link || '#'
+                                }
                                 className="text-blue-500 hover:underline "
                                 target="_blank"
                                 rel="noopener noreferrer"
