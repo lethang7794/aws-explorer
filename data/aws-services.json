@@ -1240,6 +1240,37 @@
     ]
   },
   {
+    "service": "Amazon Data Firehose",
+    "shortDescription": "Fully managed real-time streaming data delivery service",
+    "url": "https://docs.aws.amazon.com/firehose",
+    "categories": [
+      "Analytics"
+    ],
+    "detailDescription": "Collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.",
+    "sections": [
+      {
+        "name": "Amazon Data Firehose",
+        "items": [
+          {
+            "name": "Developer Guide",
+            "link": "/firehose/latest/dev/what-is-this-service.html",
+            "description": "Provides a conceptual overview of Amazon Data Firehose and includes detailed instructions for using the service."
+          },
+          {
+            "name": "API Reference",
+            "link": "/firehose/latest/APIReference/Welcome.html",
+            "description": "Describes all the API operations for Amazon Data Firehose in detail. Also provides sample requests, responses, and errors for the supported web services protocols."
+          },
+          {
+            "name": "Amazon Data Firehose section of the AWS CLI Reference",
+            "link": "/cli/latest/reference/firehose/index.html",
+            "description": "Describes the command line interface for Firehose. Provides basic syntax, options, and usage examples for each command."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "service": "Amazon Data Lifecycle Manager",
     "shortDescription": "Automate management of Amazon EBS snapshots and Amazon EBS-backed AMIs",
     "url": "https://docs.aws.amazon.com/dlm",
@@ -1391,32 +1422,7 @@
     ]
   },
   {
-    "service": "Amazon DevOpsGuru",
-    "shortDescription": "Improve application availability with ML-powered cloud operations",
-    "url": "https://docs.aws.amazon.com/detective",
-    "categories": [
-      "Machine Learning"
-    ],
-    "detailDescription": "Amazon Detective makes it easy to analyze, investigate, and quickly identify the root cause of security findings or suspicious activities. Detective automatically collects log data from your AWS resources and uses machine learning, statistical analysis, and graph theory to help you visualize and conduct faster and more efficient security investigations.",
-    "sections": [
-      {
-        "items": [
-          {
-            "name": "User Guide",
-            "link": "/detective/latest/userguide/index.html",
-            "description": "Detective makes it easy to analyze, investigate, and identify the root cause of security findings or suspicious activities. Detective uses machine learning to build a behavior graph."
-          },
-          {
-            "name": "API Reference",
-            "link": "/detective/latest/APIReference/index.html",
-            "description": "Describes the API operations for Amazon Detective. Provides example requests and responses for each operation."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "service": "Amazon DevOpsGuru",
+    "service": "Amazon DevOps Guru",
     "shortDescription": "Improve application availability with ML-powered cloud operations",
     "url": "https://docs.aws.amazon.com/devops-guru",
     "categories": [
@@ -4517,7 +4523,7 @@
     ]
   },
   {
-    "service": "Amazon Route53",
+    "service": "Amazon Route 53",
     "shortDescription": "Highly available and scalable Domain Name System (DNS) web service",
     "url": "https://docs.aws.amazon.com/route53",
     "categories": [
@@ -6196,9 +6202,9 @@
             "description": "Documents the AWS App Runner commands available in the AWS Command Line Interface (AWS CLI)."
           },
           {
-            "name": "",
+            "name": "Release Notes",
             "link": "/apprunner/latest/relnotes/index.html",
-            "description": ""
+            "description": "Provides details about AWS App Runner releases—new features, updates, and fixes related to the service, runtimes, and console."
           }
         ]
       }
@@ -12168,7 +12174,7 @@
           {
             "name": "AWS Tools and SDKs Shared Configuration and Credentials Reference\n              Guide",
             "link": "/credref/latest/refdocs/index.html",
-            "description": ""
+            "description": "A guide to common features and functionality of the AWS SDKs and developer tools. Includes maintenance and support policies, as well as a complete reference for configuring your AWS credentials and other settings."
           },
           {
             "name": "Code Sample Catalog",
