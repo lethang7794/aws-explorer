@@ -125,19 +125,6 @@ export default async function ServiceDetailPage({
               </p>
             </div>
           </CardContent>
-          <CardFooter>
-            <a
-              href={service.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button className="w-full" variant="outline">
-                View Documentation
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
-            </a>
-          </CardFooter>
         </Card>
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
@@ -165,15 +152,15 @@ export default async function ServiceDetailPage({
 
         {service.sections && service.sections.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Docs</h2>
-            <ul className="flex flex-col gap-6 flex-wrap justify-center">
+            <h2 className="text-xl font-semibold">Docs</h2>
+            <ul className="mt-4 flex flex-col gap-6 flex-wrap justify-center">
               {service.sections?.map((docSection, idx) => {
                 return (
                   <div key={idx}>
-                    <div className="italic">{docSection.name}</div>
+                    <div className="italic text-lg">{docSection.name}</div>
                     <li
                       key={docSection.name}
-                      className="mt-2 flex flex-col gap-2 items-start"
+                      className="mt-1 flex flex-col gap-2 items-start"
                     >
                       <ul className="list-disc pl-5">
                         {docSection.items.map((item) => {
@@ -196,6 +183,17 @@ export default async function ServiceDetailPage({
                 )
               })}
             </ul>
+            <a
+              href={service.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full mt-8"
+            >
+              <Button className="w-full" variant="outline">
+                View Official Documentation
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
           </div>
         ) : null}
       </div>
