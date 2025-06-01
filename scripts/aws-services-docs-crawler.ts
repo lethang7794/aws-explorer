@@ -1,4 +1,4 @@
-import { BrowserContext, chromium } from 'playwright'
+import { BrowserContext, chromium, ElementHandle } from 'playwright'
 import { writeFileSync } from 'fs'
 
 const AWS_DOCS_URL = 'https://docs.aws.amazon.com/'
@@ -9,15 +9,27 @@ type Service = {
   detailDescription?: string
   url: string
   categories: string[]
+  sections?: Section[]
 }
 
-const PAGINATION_SIZE = 1
+type Section = {
+  name: string
+  items: {
+    name?: string | null
+    link?: string | null
+    description?: string | null
+  }[]
+}
+
+const PAGINATION_SIZE = 30
 function getPaginationAriaLabel(i: number) {
   return `Page ${i + 1} of all pages`
 }
 const OUTPUT_PATH = 'data/aws-services.json'
 
-;(async () => {
+main()
+
+async function main() {
   const browser = await chromium.launch({ headless: true })
   const context = await browser.newContext()
   const page = await context.newPage()
@@ -47,46 +59,8 @@ const OUTPUT_PATH = 'data/aws-services.json'
         const serviceCards = await page.$$('li[data-selection-item]')
 
         for (const card of serviceCards) {
-          try {
-            // Extract basic service info
-            const serviceName = await card.$eval('h5', (el: HTMLElement) =>
-              el.innerText.trim().replace(' ', '')
-            )
-            const shortDescription = await card.$eval(
-              'h5 ~ div',
-              (el: HTMLElement) => el.innerText.trim()
-            )
-
-            const categories = await card.$$eval(
-              'ul > li > span',
-              (els: HTMLElement[]) => els.map((el) => el.innerText.trim())
-            )
-
-            // Get service detail URL
-            const detailUrl = await card.$eval('h5 > a', (el) =>
-              el.getAttribute('href')
-            )
-            const absoluteUrl = new URL(
-              cleanPath(detailUrl || ''),
-              AWS_DOCS_URL
-            ).href
-
-            // Store collected data
-            servicesData.push({
-              service: serviceName,
-              shortDescription,
-              url: absoluteUrl,
-              categories,
-            })
-
-            console.log(`Processed: ${serviceName}`)
-          } catch (cardError) {
-            if (cardError instanceof Error) {
-              console.error(`Error processing card: ${cardError.message}`)
-            } else {
-              console.log(`Unexpected error processing card: ${cardError}`)
-            }
-          }
+          const serviceData = await extractServiceData(card)
+          servicesData.push(serviceData!)
         }
       } else {
         console.warn(`No pagination button found for ${buttonArialLabel}`)
@@ -96,10 +70,12 @@ const OUTPUT_PATH = 'data/aws-services.json'
     await runInBatches(servicesData, 10, async (service: Service) => {
       try {
         // Extract detailed description from service page
-        service.detailDescription = await extractDetailDescription(
+        const { detailDescription, sections } = await extractDetailInfo(
           context,
           service
         )
+        service.detailDescription = detailDescription
+        service.sections = sections
         console.log(`Extracted detail for ${service.service}`)
       } catch (detailError) {
         if (detailError instanceof Error) {
@@ -126,7 +102,49 @@ const OUTPUT_PATH = 'data/aws-services.json'
   } finally {
     await browser.close()
   }
-})()
+}
+
+async function extractServiceData(
+  card: ElementHandle<SVGElement | HTMLElement>
+) {
+  let serviceData: Service
+  try {
+    // Extract basic service info
+    const serviceName = await card.$eval('h5', (el: HTMLElement) =>
+      el.innerText.trim().replace(' ', '')
+    )
+    const shortDescription = await card.$eval('h5 ~ div', (el: HTMLElement) =>
+      el.innerText.trim()
+    )
+
+    const categories = await card.$$eval(
+      'ul > li > span',
+      (els: HTMLElement[]) => els.map((el) => el.innerText.trim())
+    )
+
+    // Get service detail URL
+    const detailUrl = await card.$eval('h5 > a', (el) =>
+      el.getAttribute('href')
+    )
+    const absoluteUrl = new URL(cleanPath(detailUrl || ''), AWS_DOCS_URL).href
+
+    console.log(`Processed: ${serviceName}`)
+    // Store collected data
+    serviceData = {
+      service: serviceName,
+      shortDescription,
+      url: absoluteUrl,
+      categories,
+    }
+    return serviceData
+  } catch (cardError) {
+    if (cardError instanceof Error) {
+      console.error(`Error processing card: ${cardError.message}`)
+    } else {
+      console.log(`Unexpected error processing card: ${cardError}`)
+    }
+  }
+}
 
 // Utility function to clean up URL paths
 function cleanPath(urlPath?: string) {
@@ -134,10 +152,7 @@ function cleanPath(urlPath?: string) {
 }
 
 // Function to extract detailed description from service page
-async function extractDetailDescription(
-  context: BrowserContext,
-  service: Service
-) {
+async function extractDetailInfo(context: BrowserContext, service: Service) {
   const DECISION_GUIDES_CATEGORY = 'Decision Guides'
 
   const url = service.url
@@ -151,6 +166,8 @@ async function extractDetailDescription(
 
   // Extract detailed description
   let detailDescription = ''
+  const sections = []
+
   // For Decision Guides, the description is in a different place
   if (service.categories.includes(DECISION_GUIDES_CATEGORY)) {
     try {
@@ -171,6 +188,57 @@ async function extractDetailDescription(
         'h1 ~ div',
         (el: HTMLElement) => el.innerText.trim()
       )
+
+      // Find all sections
+      const sectionsEl = await detailPage.$$('section')
+
+      // Iterate through each section
+      for (const sectionEl of sectionsEl) {
+        let section: Section
+
+        // Get section name
+        const sectionNameEl = await sectionEl.$('h2')
+        const sectionName = await sectionNameEl?.textContent()
+
+        // Find all items in the section
+        const itemsEl = await sectionEl.$$('li[data-selection-item]')
+        const items = []
+
+        // Iterate through each item
+        for (const itemEl of itemsEl) {
+          // Get item link
+          const itemLinkEl = await itemEl.$('h3 a')
+          const itemLink = await itemLinkEl?.getAttribute('href')
+
+          // Get item name
+          const itemNameEl = await itemEl.$('h3 a span, h3')
+          const itemName = await itemNameEl?.textContent()
+
+          // Get item description
+          const itemDescription = await itemEl.$eval(
+            'div div:nth-child(2) div div div',
+            (el: HTMLElement) => el.innerText.trim()
+          )
+
+          // Collect item data
+          const item = {
+            name: itemName,
+            link: itemLink,
+            description: itemDescription,
+          }
+          // Push item data to items array
+          items.push(item)
+        }
+
+        // Collect section data
+        section = {
+          name: sectionName!,
+          items: items,
+        }
+
+        // Push section data to sections array
+        sections.push(section)
+      }
     } catch (e) {
       if (e instanceof Error) {
         console.warn(
@@ -183,7 +251,10 @@ async function extractDetailDescription(
   // Close detail page
   await detailPage.close()
 
-  return detailDescription
+  return {
+    detailDescription: detailDescription || undefined,
+    sections: sections.length > 0 ? sections : undefined,
+  }
 }
 
 // Function to run async operations in batches
