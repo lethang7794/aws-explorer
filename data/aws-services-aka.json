@@ -1,13 +1,17 @@
 {
   "comment": "This file is auto-generated - DO NOT EDIT IT",
-  "generatedAt": "2025-06-02T11:15:40.313Z",
+  "generatedAt": "2025-06-02T13:53:58.644Z",
   "generatedBy": "generate-aka-names.ts",
   "description": "Generated AKA names for AWS services based on the provided service list.",
   "data": {
-    "Amazon A2I": [],
+    "Amazon A2I": [
+      "Augmented AI"
+    ],
     "Amazon API Gateway": [],
     "Amazon AppFlow": [],
-    "Amazon Application Recovery Controller (ARC)": [],
+    "Amazon Application Recovery Controller (ARC)": [
+      "ARC"
+    ],
     "Amazon AppStream 2.0": [],
     "Amazon Athena": [],
     "Amazon Aurora": [],
@@ -63,12 +67,16 @@
     "Amazon FinSpace": [],
     "Amazon Forecast": [],
     "Amazon Fraud Detector": [],
-    "Amazon FSx": [],
+    "Amazon FSx": [
+      "\"File System performance\""
+    ],
     "Amazon GameLift Servers": [],
     "Amazon GameLift Streams": [],
     "Amazon GuardDuty": [],
     "Amazon Inspector": [],
-    "Amazon Interactive Video Service": [],
+    "Amazon Interactive Video Service": [
+      "IVS"
+    ],
     "Amazon Kendra": [],
     "Amazon Keyspaces (for Apache Cassandra)": [],
     "Amazon Kinesis": [],
@@ -82,7 +90,9 @@
     "Amazon Lumberyard": [],
     "Amazon Machine Learning": [],
     "Amazon Macie": [],
-    "Amazon Managed Blockchain": [],
+    "Amazon Managed Blockchain": [
+      "AMB"
+    ],
     "Amazon Managed Grafana": [],
     "Amazon Managed Service for Apache Flink": [],
     "Amazon Managed Service for Prometheus": [],
@@ -101,8 +111,12 @@
     "Amazon Personalize": [],
     "Amazon Pinpoint": [],
     "Amazon Polly": [],
-    "Amazon Q Developer in chat applications": [],
-    "Amazon QLDB": [],
+    "Amazon Q Developer in chat applications": [
+      "AWS Chatbot"
+    ],
+    "Amazon QLDB": [
+      "Quantum Ledger Database"
+    ],
     "Amazon QuickSight": [],
     "Amazon Redshift": [],
     "Amazon Rekognition": [],
@@ -167,11 +181,17 @@
     "AWS Amplify": [],
     "AWS App Mesh": [],
     "AWS App Runner": [],
-    "AWS App2Container": [],
+    "AWS App2Container": [
+      "A2C"
+    ],
     "AWS AppConfig": [],
     "AWS AppFabric": [],
-    "AWS Application Discovery Service": [],
-    "AWS Application Migration Service": [],
+    "AWS Application Discovery Service": [
+      "ADS"
+    ],
+    "AWS Application Migration Service": [
+      "MGN"
+    ],
     "AWS AppSync": [],
     "AWS Artifact": [],
     "AWS Audit Manager": [],
@@ -182,7 +202,9 @@
     "AWS Clean Rooms": [],
     "AWS CLI": [],
     "AWS Cloud Control API": [],
-    "AWS Cloud Digital Interface SDK": [],
+    "AWS Cloud Digital Interface SDK": [
+      "CDI"
+    ],
     "AWS Cloud Map": [],
     "AWS Cloud9": [],
     "AWS CloudFormation": [],
@@ -210,7 +232,9 @@
     "AWS Direct Connect": [],
     "AWS Directory Service": [],
     "AWS Elastic Beanstalk": [],
-    "AWS Elastic Disaster Recovery": [],
+    "AWS Elastic Disaster Recovery": [
+      "DRS"
+    ],
     "AWS Elemental MediaConnect": [],
     "AWS Elemental MediaConvert": [],
     "AWS Elemental MediaLive": [],
@@ -231,7 +255,9 @@
     "AWS HealthImaging": [],
     "AWS HealthLake": [],
     "AWS HealthOmics": [],
-    "AWS IAM Identity Center": [],
+    "AWS IAM Identity Center": [
+      "Single-Sign On"
+    ],
     "AWS Identity and Access Management": [
       "IAM"
     ],
@@ -255,7 +281,9 @@
     "AWS Launch Wizard": [],
     "AWS License Manager": [],
     "AWS Mainframe Modernization": [],
-    "AWS Managed Services": [],
+    "AWS Managed Services": [
+      "AMS"
+    ],
     "AWS Management Console": [],
     "AWS Marketplace": [],
     "AWS Microservice Extractor for .NET": [],
@@ -268,7 +296,9 @@
     "AWS ParallelCluster": [],
     "AWS Payment Cryptography": [],
     "AWS Pricing Calculator": [],
-    "AWS Private Certificate Authority": [],
+    "AWS Private Certificate Authority": [
+      "Private CA"
+    ],
     "AWS Proton": [],
     "AWS re:Post Private": [],
     "AWS Resilience Hub": [],
@@ -297,7 +327,9 @@
     "AWS Security Incident Response": [],
     "AWS Serverless Application Repository": [],
     "AWS Service Catalog": [],
-    "AWS Service Management Connector": [],
+    "AWS Service Management Connector": [
+      "SMC"
+    ],
     "AWS Shield": [],
     "AWS Sign-In": [],
     "AWS Signer": [],
@@ -309,7 +341,9 @@
     "AWS Support": [],
     "AWS Systems Manager": [],
     "AWS Systems Manager Incident Manager": [],
-    "AWS Telco Network Builder": [],
+    "AWS Telco Network Builder": [
+      "TNB"
+    ],
     "AWS Toolkit for Azure DevOps": [],
     "AWS Toolkit for JetBrains": [],
     "AWS Toolkit for Visual Studio Code": [],
@@ -318,7 +352,9 @@
     "AWS Trusted Advisor": [],
     "AWS User Notifications": [],
     "AWS Verified Access": [],
-    "AWS VPN": [],
+    "AWS VPN": [
+      "Virtual Private Network"
+    ],
     "AWS WAF": [
       "Web Application Firewall"
     ],
@@ -332,7 +368,9 @@
     "FreeRTOS": [],
     "Oracle Database@AWS": [],
     "Porting Assistant for .NET": [],
-    "Red Hat OpenShift Service on AWS": [],
+    "Red Hat OpenShift Service on AWS": [
+      "ROSA"
+    ],
     "Research and Engineering Studio on AWS": [],
     "Savings Plans": [],
     "SDK for Rust": [],

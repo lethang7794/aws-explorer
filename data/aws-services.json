@@ -58,6 +58,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Augmented AI"
     ]
   },
   {
@@ -214,6 +217,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "ARC"
     ]
   },
   {
@@ -2448,6 +2454,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "\"File System performance\""
     ]
   },
   {
@@ -2755,6 +2764,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "IVS"
     ]
   },
   {
@@ -3522,6 +3534,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "AMB"
     ]
   },
   {
@@ -4116,6 +4131,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "AWS Chatbot"
     ]
   },
   {
@@ -4141,6 +4159,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Quantum Ledger Database"
     ]
   },
   {
@@ -6244,9 +6265,9 @@
       {
         "items": [
           {
-            "name": "",
+            "name": "Developer Guide",
             "link": "/apprunner/latest/dg/index.html",
-            "description": ""
+            "description": "Provides a conceptual overview of AWS App Runner, detailed feature descriptions, and instructions on how to use the service and deploy web applications."
           },
           {
             "name": "API Reference",
@@ -6285,6 +6306,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "A2C"
     ]
   },
   {
@@ -6365,6 +6389,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "ADS"
     ]
   },
   {
@@ -6390,6 +6417,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "MGN"
     ]
   },
   {
@@ -6799,6 +6829,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "CDI"
     ]
   },
   {
@@ -7613,6 +7646,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "DRS"
     ]
   },
   {
@@ -8318,6 +8354,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Single-Sign On"
     ]
   },
   {
@@ -9195,6 +9234,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "AMS"
     ]
   },
   {
@@ -9693,6 +9735,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Private CA"
     ]
   },
   {
@@ -10733,6 +10778,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "SMC"
     ]
   },
   {
@@ -11322,6 +11370,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "TNB"
     ]
   },
   {
@@ -11680,6 +11731,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Virtual Private Network"
     ]
   },
   {
@@ -12048,6 +12102,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "ROSA"
     ]
   },
   {
