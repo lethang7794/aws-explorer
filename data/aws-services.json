@@ -6110,7 +6110,7 @@
           {
             "name": "AWS SDKs and Tools Reference Guide",
             "link": "/sdkref/latest/guide/index.html",
-            "description": "A guide to common features and functionality of the AWS SDKs and developer tools. Includes maintenance and support policies, as well as a complete reference for configuring your AWS credentials and other settings."
+            "description": ""
           },
           {
             "name": "AWS Code Examples GitHub Repository ",
@@ -9249,8 +9249,7 @@
     "categories": [
       "AWS Management Console",
       "Management & Governance"
-    ],
-    "detailDescription": "The AWS Management Console is a web-based application that contains and provides centralized access to all individual AWS service consoles. You can use Unified Navigation in the AWS Management Console to search for services, view notifications, access AWS CloudShell, access account and billing information, and customize your general console settings. The home page of the AWS Management Console is called AWS Console Home. From AWS Console Home, you can manage your AWS applications and access all other individual service consoles. You can also customize AWS Console Home to show other helpful information about AWS and your resources by using widgets. You can add, remove, and rearrange widgets such as Recently visited, AWS Health, and more."
+    ]
   },
   {
     "service": "AWS Marketplace",
@@ -10821,8 +10820,7 @@
     "url": "https://docs.aws.amazon.com/signin/latest/userguide/what-is-sign-in.html",
     "categories": [
       "AWS Management Console"
-    ],
-    "detailDescription": "This guide helps you understand the different ways that you can sign in to Amazon Web Services (AWS), depending on what type of user you are. For more information about how to sign in based on your user type and the AWS resources that you want to access, see one of the following tutorials."
+    ]
   },
   {
     "service": "AWS Signer",
@@ -12334,7 +12332,12 @@
       "Decision Guides"
     ],
     "detailDescription": "Amazon Web Services (AWS) offers a suite of services to help you build machine learning (ML) and generative AI applications. It’s helpful to understand how these services work together to form a generative AI stack, including:",
-    "imgUrl": "/images/decision-guides/latest/bedrock-or-sagemaker/images/gen-ai-stack-dec-2024.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/bedrock-or-sagemaker/images/gen-ai-stack-dec-2024.png",
+        "alt": "Diagram showing the AWS generative AI stack. This diagram shows the infrastructure to build and train AI models at the bottom of the stack, models and tools to build generative AI apps in the middle, and applications that use LLMs and other FMs to boost productivity, at the top."
+      }
+    ]
   },
   {
     "service": "Amazon Chime SDK",
@@ -12411,8 +12414,7 @@
     "url": "https://docs.aws.amazon.com/one-enterprise/latest/userguide",
     "categories": [
       "Business Applications"
-    ],
-    "detailDescription": "Amazon One Enterprise is a new palm-based authentication service that provides employees with secure access to buildings and enterprise assets, without the use of badges, PINs, or passcodes."
+    ]
   },
   {
     "service": "Amazon Q",
@@ -12602,7 +12604,16 @@
       "Decision Guides"
     ],
     "detailDescription": "Before you get started exploring whether you choose AWS Lambda or AWS Fargate as your serverless compute service, you probably have considered the broader range of AWS compute services (covered in the Choosing an AWS compute service decision guide) and narrowed it down to these two choices because they provide:",
-    "imgUrl": "/images/decision-guides/latest/fargate-or-lambda/images/task-launches.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/fargate-or-lambda/images/task-launches.png",
+        "alt": "Diagram showing task launch differences between Fargate and Lambda."
+      },
+      {
+        "url": "/images/decision-guides/latest/fargate-or-lambda/images/instance-throttling.png",
+        "alt": "Bar graph showing how instances are throttled when number exceeds 1000."
+      }
+    ]
   },
   {
     "service": "AWS Glossary",
@@ -12610,8 +12621,7 @@
     "url": "https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html",
     "categories": [
       "General Reference"
-    ],
-    "detailDescription": "Numbers and symbols | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X, Y, Z"
+    ]
   },
   {
     "service": "AWS Incident Detection and Response",
@@ -12769,8 +12779,7 @@
     "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html",
     "categories": [
       "General Reference"
-    ],
-    "detailDescription": "When you interact with AWS, you specify your AWS security credentials to verify who you are and whether you have permission to access the resources that you are requesting. AWS uses the security credentials to authenticate and authorize your requests."
+    ]
   },
   {
     "service": "AWS Service Endpoints",
@@ -12778,8 +12787,7 @@
     "url": "https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html",
     "categories": [
       "General Reference"
-    ],
-    "detailDescription": "The following pages describe the service endpoints and service quotas for AWS services. To connect programmatically to an AWS service, you use an endpoint. For more information, see AWS service endpoints. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your AWS account. For more information, see AWS service quotas."
+    ]
   },
   {
     "service": "AWS Training and Certification",
@@ -12852,7 +12860,32 @@
       "Decision Guides"
     ],
     "detailDescription": "Generative AI is a set of artificial intelligence (AI) systems and models designed to generate content such as code, text, images, music, or other forms of data. These systems can produce new content based on patterns and knowledge learned from existing data. Increasingly, organizations and businesses are using generative AI to:",
-    "imgUrl": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/gen-ai-stack-dec-2024.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/gen-ai-stack-dec-2024.png",
+        "alt": "Diagram showing the AWS generative AI stack. This diagram shows the infrastructure to build and train AI models at the bottom of the stack, models and tools to build generative AI apps in the middle, and applications that use LLMs and other FMs to boost productivity, at the top."
+      },
+      {
+        "url": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/amazon-bedrock-models-feb-2025.jpg",
+        "alt": "Diagram showing Amazon Bedrock's broad choice of models, from Amazon and leading model providers."
+      },
+      {
+        "url": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/sagemaker-ai-overview.jpg",
+        "alt": "Diagram that provides an overview of SageMaker AI's key features, including access to foundatio models (FMs), building and customizing FMs, running inference, and implementing FMOps and governance"
+      },
+      {
+        "url": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/sagemaker-jumpstart-console.jpg",
+        "alt": "Diagram showing Amazon SageMaker JumpStart in the AWS Management Console, including a broad choice of models from Amazon and leading model providers."
+      },
+      {
+        "url": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/sagemaker-bedrock-scenario.jpg",
+        "alt": "Diagram showing Amazon SageMaker Canvas and Amazon Bedrock used together to fine-tune and deploy language models."
+      },
+      {
+        "url": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/sagemaker-jumpstart-console.jpg",
+        "alt": "Diagram showing Amazon SageMaker JumpStart in the AWS Management Console, including a broad choice of models from Amazon and leading model providers."
+      }
+    ]
   },
   {
     "service": "Choosing a modern application strategy",
@@ -12863,7 +12896,12 @@
       "Serverless"
     ],
     "detailDescription": "Amazon Web Services (AWS) provides you with the flexibility to choose different compute options to build and run modern applications that map to your business needs. We provide you with access to the right operational model for your compute choice.",
-    "imgUrl": "/images/decision-guides/latest/modern-apps-strategy-on-aws-how-to-choose/images/operational-models-for-modular-architecture.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/modern-apps-strategy-on-aws-how-to-choose/images/operational-models-for-modular-architecture.png",
+        "alt": "Diagram showing the operational models for modular architecture patterns."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS analytics service",
@@ -12874,7 +12912,12 @@
       "Decision Guides"
     ],
     "detailDescription": "Data is foundational to modern business. People and applications need to securely access and analyze data, which comes from new and diverse sources. The volume of data is also constantly increasing, which can cause organizations to struggle with capturing, storing, and analyzing all the necessary data.",
-    "imgUrl": "/images/decision-guides/latest/analytics-on-aws-how-to-choose/images/analytics-services.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/analytics-on-aws-how-to-choose/images/analytics-services.png",
+        "alt": "Diagram showing the AWS analytics services"
+      }
+    ]
   },
   {
     "service": "Choosing an AWS application integration service",
@@ -12885,7 +12928,12 @@
       "Decision Guides"
     ],
     "detailDescription": "Application integration is a suite of services that enables communication between decoupled components within microservices, distributed systems, and serverless applications. Amazon Web Services (AWS) offers more than half a dozen application integration services to support a diverse set of workloads running in the cloud.",
-    "imgUrl": "/images/decision-guides/latest/application-integration-on-aws-how-to-choose/images/operational-responsibility.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/application-integration-on-aws-how-to-choose/images/operational-responsibility.png",
+        "alt": "Diagram showing operational responsibility between AWS application integration services."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS cloud governance service",
@@ -12895,7 +12943,12 @@
       "Decision Guides"
     ],
     "detailDescription": "Cloud governance is a set of rules, processes, and reports that helps you align your AWS Cloud use toward your business objectives.",
-    "imgUrl": "/images/decision-guides/latest/cloud-governance-on-aws-how-to-choose/images/cloudgov-understanding.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/cloud-governance-on-aws-how-to-choose/images/cloudgov-understanding.png",
+        "alt": "Diagram showing AWS services used in cloud governance applications, including defining requirements, deploying and operating, and measuring and assessing."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS compute service",
@@ -12906,7 +12959,12 @@
       "Decision Guides"
     ],
     "detailDescription": "AWS compute services are designed to meet the varied demands of modern applications, from small-scale projects to enterprise-grade solutions. These services provide scalable computing power that helps you to build, deploy, and manage applications.",
-    "imgUrl": "/images/decision-guides/latest/compute-on-aws-how-to-choose/images/understand.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/compute-on-aws-how-to-choose/images/understand.png",
+        "alt": "AWS Compute Services overview showing EC2, Containers, Serverless, On-premises/Edge, Cost, and ELB categories."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS container service",
@@ -12917,7 +12975,12 @@
       "Decision Guides"
     ],
     "detailDescription": "Containers are a key component of modern application development. They are the standard for organizing compute resources, and managing the content of your application deployments.",
-    "imgUrl": "/images/decision-guides/latest/containers-on-aws-how-to-choose/images/container-options-on-aws.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/containers-on-aws-how-to-choose/images/container-options-on-aws.png",
+        "alt": "Diagram showing the options available for running containers on AWS"
+      }
+    ]
   },
   {
     "service": "Choosing an AWS cost management strategy",
@@ -12928,7 +12991,16 @@
       "Decision Guides"
     ],
     "detailDescription": "Cost management and optimization in the cloud are important for businesses of all sizes. An effective cost management strategy ensures that you only pay for what you need and that you maximize the return on your cloud investment.",
-    "imgUrl": "/images/decision-guides/latest/cost-management-on-aws-how-to-choose/images/cfm-portfolio.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/cost-management-on-aws-how-to-choose/images/cfm-portfolio.png",
+        "alt": "Diagram showing the AWS Cloud Financial Management Portfolio."
+      },
+      {
+        "url": "/images/decision-guides/latest/cost-management-on-aws-how-to-choose/images/billing-console-cost-profiler.png",
+        "alt": "Diagram showing the AWS Billing Conductor and AWS Application Cost Profiler."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS cryptography service",
@@ -12939,7 +13011,12 @@
       "Decision Guides"
     ],
     "detailDescription": "Cryptography is a cornerstone of security in cloud computing, helping to ensure data confidentiality, integrity, and authenticity. In a cloud environment, sensitive data may traverse public networks and reside on shared infrastructure, making robust cryptographic measures essential for protecting against unauthorized access or tampering.",
-    "imgUrl": "/images/decision-guides/latest/cryptography-on-aws-how-to-choose/images/data-protection-on-aws-jan-2024.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/cryptography-on-aws-how-to-choose/images/data-protection-on-aws-jan-2024.png",
+        "alt": "A diagram showing the suite of AWS services that enable data protection on AWS."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS database service",
@@ -12950,7 +13027,16 @@
       "Decision Guides"
     ],
     "detailDescription": "AWS oﬀers a growing number of database options (15+) with diverse data models to support a variety of workloads. These include relational, key-value, document, in-memory, graph, time series, vector, and wide-column.",
-    "imgUrl": "/images/decision-guides/latest/databases-on-aws-how-to-choose/images/aws-database-services.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/databases-on-aws-how-to-choose/images/aws-database-services.png",
+        "alt": "Overview of AWS database services."
+      },
+      {
+        "url": "/images/decision-guides/latest/databases-on-aws-how-to-choose/images/vector-db-new.png",
+        "alt": "AWS vector databases and vector search."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS identity service",
@@ -12960,7 +13046,28 @@
       "Decision Guides"
     ],
     "detailDescription": "Identity and access management helps ensure that only authenticated and authorized users can access only the cloud resources that they need to perform their tasks, and that they can do it in a secure and compliant way.",
-    "imgUrl": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/understand-identity-services.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/understand-identity-services.png",
+        "alt": "Diagram showing identity, authentication, and authorization."
+      },
+      {
+        "url": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/iam-authentication-flow.png",
+        "alt": "Diagram showing authentication flow from user through client application to AWS services. Identity provider (Okta) authenticates user via IAM Identity Center, enabling access to AWS services and data based on user permissions."
+      },
+      {
+        "url": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/external-access-findings-dashboard.png",
+        "alt": "Dashboard showing external access findings analysis with 100 active findings total, 90% access outside organization and 10% public access."
+      },
+      {
+        "url": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/unused-access-analyzer-dashboard.png",
+        "alt": "Dashboard showing unused access findings analysis with 100 active findings, including 40 unused roles, 15 unused credentials, and 45 unused permissions."
+      },
+      {
+        "url": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/customer-data-policy.png",
+        "alt": "An AWS policy configuration showing a permission that allows SalesTeam members to maintain customer account data."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS IoT service",
@@ -12971,7 +13078,20 @@
       "Internet of Things (IoT)"
     ],
     "detailDescription": "Internet of Things (IoT) technologies have become a transformative force in the business world. They offer a wide range of opportunities for innovation, efficiency, and customer-centric strategies. IoT provides the foundation for smart devices, smart homes, smart buildings, next-generation vehicles, smart manufacturing, and public infrastructure. Businesses can use IoT technologies to increase efficiency with automation, gain visibility into their supply chains, get insights from their data, and offer smart connected experiences for their customers.",
-    "imgUrl": "/images/decision-guides/latest/iot-on-aws-how-to-choose/images/what-is-iot.jpg"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/iot-on-aws-how-to-choose/images/what-is-iot.jpg",
+        "alt": "Diagram showing an introduction to Internet of Things (IoT)."
+      },
+      {
+        "url": "/images/decision-guides/latest/iot-on-aws-how-to-choose/images/IoT-stack.png",
+        "alt": "Diagram showing the AWS IoT stack."
+      },
+      {
+        "url": "/images/decision-guides/latest/iot-on-aws-how-to-choose/images/iot-services.png",
+        "alt": "Diagram showing a comprehensive set of AWS IoT services."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS machine learning service",
@@ -12982,7 +13102,12 @@
       "Machine Learning"
     ],
     "detailDescription": "At its most basic, machine learning (ML) is designed to provide digital tools and services to learn from data, identify patterns, make predictions, and then act on those predictions. Almost all artificial intelligence (AI) systems today are created using ML. ML uses large amounts of data to create and validate decision logic. This decision logic forms the basis of the AI model.",
-    "imgUrl": "/images/decision-guides/latest/machine-learning-on-aws-how-to-choose/images/what-is-ai-ml.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/machine-learning-on-aws-how-to-choose/images/what-is-ai-ml.png",
+        "alt": "Diagram describing how machine learning (ML) and generative AI fit within artificial intelligence (AI)."
+      }
+    ]
   },
   {
     "service": "Choosing an AWS monitoring and observability service",
@@ -12993,7 +13118,12 @@
       "Management & Governance"
     ],
     "detailDescription": "Monitoring and observability are critical components for ensuring the availability, performance, reliability, and security of your cloud-based workloads and data.",
-    "imgUrl": "/images/decision-guides/latest/monitoring-on-aws-how-to-choose/images/monitoring-and-observability.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/monitoring-on-aws-how-to-choose/images/monitoring-and-observability.png",
+        "alt": "Diagram showing the available options for AWS monitoring and observability"
+      }
+    ]
   },
   {
     "service": "Choosing an AWS networking and content delivery service",
@@ -13004,7 +13134,12 @@
       "Networking & Content Delivery"
     ],
     "detailDescription": "What you build in AWS depends on your business needs. In this guide, we use the term workloads to refer to any collection of resources and code that delivers business value, such as a customer-facing application or a backend process.",
-    "imgUrl": "/images/decision-guides/latest/networking-on-aws-how-to-choose/images/cloud-networking-from-aws.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/networking-on-aws-how-to-choose/images/cloud-networking-from-aws.png",
+        "alt": "Diagram showing AWS networking services for every application and workload"
+      }
+    ]
   },
   {
     "service": "Choosing an AWS storage service",
@@ -13015,7 +13150,12 @@
       "Storage"
     ],
     "detailDescription": "AWS offers a broad portfolio of reliable, scalable, and secure storage services for storing, accessing, protecting, and analyzing your data. This makes it easier to match your storage methods with your needs, and provides storage options that are not easily achievable with on-premises infrastructure. When selecting a storage service, ensuring that it aligns with your access patterns will be critical to achieving the performance you want.",
-    "imgUrl": "/images/decision-guides/latest/storage-on-aws-how-to-choose/images/amazon-fsx-data-storage-family.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/storage-on-aws-how-to-choose/images/amazon-fsx-data-storage-family.png",
+        "alt": "Diagram showing data protection, data at work, and data in motion with the Amazon FSx data storage family."
+      }
+    ]
   },
   {
     "service": "Choosing AWS frontend and mobile services",
@@ -13026,7 +13166,12 @@
       "Front-End Web & Mobile"
     ],
     "detailDescription": "AWS offers purpose-built tools and services to support frontend development workflows for native iOS, Android, React Native, and JavaScript developers. You can use these tools to develop, deploy, test, operate, and monitor your app.",
-    "imgUrl": "/images/decision-guides/latest/front-end-on-aws-how-to-choose/images/front-end-mobile-services.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/front-end-on-aws-how-to-choose/images/front-end-mobile-services.png",
+        "alt": "Diagram showing the options available for running front-end and mobile services on AWS"
+      }
+    ]
   },
   {
     "service": "Choosing AWS migration services and tools",
@@ -13037,7 +13182,12 @@
       "Migration & Transfer"
     ],
     "detailDescription": "Migration and modernization in the Amazon Web Services (AWS) cloud involves the process of relocating an organization's digital infrastructure, applications, and data to AWS. This shift allows you to not only modernize applications, but also use the range of scalable and secure cloud services and infrastructure offered by AWS to reduce reliance on physical hardware and optimize resource allocation.",
-    "imgUrl": "/images/decision-guides/latest/migration-on-aws-how-to-choose/images/data-migration-services.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/migration-on-aws-how-to-choose/images/data-migration-services.png",
+        "alt": "Diagram showing AWS data migration services"
+      }
+    ]
   },
   {
     "service": "Choosing AWS security, identity, and governance services",
@@ -13048,7 +13198,12 @@
       "Security, Identity, & Compliance"
     ],
     "detailDescription": "Security, identity, and governance in the cloud are important components for you in achieving and maintaining integrity and safety for your data and services. This is especially relevant as more businesses migrate to cloud providers such as Amazon Web Services (AWS).",
-    "imgUrl": "/images/decision-guides/latest/security-on-aws-how-to-choose/images/security-identity-governance-services.png"
+    "images": [
+      {
+        "url": "/images/decision-guides/latest/security-on-aws-how-to-choose/images/security-identity-governance-services.png",
+        "alt": "The five domains across security, identity, and governance include identity and access management, network and app protection, data protection, detection and response, and governance and compliance."
+      }
+    ]
   },
   {
     "service": "SDKs and Tools Reference Guide",
@@ -13056,8 +13211,7 @@
     "url": "https://docs.aws.amazon.com/sdkref/latest/guide/overview.html",
     "categories": [
       "Developer Tools"
-    ],
-    "detailDescription": "Many SDKs and tools share some common functionality, either through shared design specifications or through a shared library."
+    ]
   },
   {
     "service": "Security Documentation",
@@ -13166,8 +13320,7 @@
     "url": "https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html",
     "categories": [
       "General Reference"
-    ],
-    "detailDescription": "Your AWS account has default quotas, formerly referred to as limits, for each AWS service. Unless otherwise noted, each quota is Region-specific. You can request increases for some quotas, but not all quotas can be increased."
+    ]
   },
   {
     "service": "Tag Editor",
@@ -13266,8 +13419,7 @@
     "url": "https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html",
     "categories": [
       "General Reference"
-    ],
-    "detailDescription": "AWS has moved Tag Editor tag management functionality from the AWS Resource Groups console to the AWS Resource Explorer console. \n            With Resource Explorer, you can search and filter resources and then manage resource tags from a single console. To learn more about managing resource tags in Resource Explorer, \n            review Managing resources \n            in the Resource Explorer user guide. "
+    ]
   },
   {
     "service": "Toolkit for .NET Refactoring",

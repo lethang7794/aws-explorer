@@ -18,7 +18,7 @@ export async function extractDetailInfo(
 
   // Extract detailed description
   let detailDescription = ''
-  let imgUrl = ''
+  let images = []
   const sections = []
 
   try {
@@ -29,11 +29,16 @@ export async function extractDetailInfo(
       detailDescriptionEl = await detailPage.$(
         '#main-col-body h2:first-of-type ~ p'
       )
-      const imgEl = await detailPage.$(
-        'img.aws-docs-img-whiteBg.aws-docs-img-padding'
+      const imgEls = await detailPage.$$(
+        '.awsdocs-container img.aws-docs-img-whiteBg.aws-docs-img-padding'
       )
-      imgUrl = (await imgEl?.getAttribute('src')) || ''
-      console.log(`Extracted image URL: ${imgUrl} for service: ${serviceName}`)
+      for (const imgEl of imgEls) {
+        const imgUrl = await imgEl.getAttribute('src')
+        const imgAlt = await imgEl.getAttribute('alt')
+        if (imgUrl) {
+          images.push({ url: imgUrl, alt: imgAlt || '' })
+        }
+      }
     } else if (url.includes('developerguide')) {
       // Developer guide: First paragraph of the main content, e.g. https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html
       detailDescriptionEl = await detailPage.$(
@@ -110,6 +115,6 @@ export async function extractDetailInfo(
   return {
     detailDescription: detailDescription || undefined,
     sections: sections.length > 0 ? sections : undefined,
-    imgUrl: imgUrl || undefined,
+    images: images.length > 0 ? images : undefined,
   }
 }

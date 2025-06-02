@@ -378,6 +378,7 @@ export default function AwsServicesList({
                 totalPages={totalPages}
                 page={page}
                 setPage={setPage}
+                className="mb-4 md:mb-6"
               />
               {layoutMode === 'card' && (
                 <ServiceCartsList filteredServices={paginatedServices} />
@@ -393,6 +394,7 @@ export default function AwsServicesList({
                 page={page}
                 setPage={setPage}
                 scrollToTop={true}
+                className="mt-4 md:mt-6"
               />
             </>
           ) : (
@@ -446,6 +448,7 @@ function ServiceCartsList({
 }
 
 import { usePrefixDisplay } from '@/hooks/use-prefix-display'
+import { AWS_DOCS_URL } from '@/constants/aws-docs'
 
 function ServiceCartItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
@@ -485,6 +488,16 @@ function ServiceCartItem({ service }: { service: Service }) {
             </Badge>
           ))}
         </div>
+        {service.images && service.images.length > 0
+          ? service.images.slice(0, 3).map((img) => (
+              <div className="mt-4 w-full">
+                <img
+                  className="aspect-auto object-center w-full max-w-2xl rounded-lg"
+                  src={AWS_DOCS_URL + img.url}
+                />
+              </div>
+            ))
+          : null}
       </CardContent>
     </Card>
   )
@@ -548,6 +561,16 @@ function ServiceListItem({ service }: { service: Service }) {
           </div>
           <ServiceIcons service={service} />
         </div>
+        {service.images && service.images.length > 0 ? (
+          <div className="flex flex-col gap-4 items-center justify-center px-4 pb-4">
+            {service.images.slice(0, 3).map((img) => (
+              <img
+                className="aspect-auto object-center w-full max-w-2xl rounded-md"
+                src={AWS_DOCS_URL + img.url}
+              />
+            ))}
+          </div>
+        ) : null}
       </Link>
     </Card>
   )
@@ -653,11 +676,13 @@ function Pagination({
   page,
   setPage,
   scrollToTop = false,
+  className,
 }: {
   totalPages: number
   page: number
   setPage: React.Dispatch<React.SetStateAction<number>>
   scrollToTop?: boolean
+  className?: string
 }) {
   if (totalPages <= 1) return null
 
@@ -685,7 +710,9 @@ function Pagination({
   const pages = getPages()
 
   return (
-    <div className="flex justify-center items-center gap-2 my-6 flex-wrap">
+    <div
+      className={`flex justify-center items-center gap-2 flex-wrap ${className}`}
+    >
       <Button
         variant="outline"
         size="sm"

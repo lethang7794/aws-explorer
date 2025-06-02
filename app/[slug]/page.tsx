@@ -225,6 +225,25 @@ export default async function ServiceDetailPage({
             </a>
           </div>
         ) : null}
+
+        {service.images && service.images.length > 0 ? (
+          <div className="mt-8 flex flex-col gap-6">
+            {service.images.map((img) => (
+              <div key={img.url} className="w-full">
+                <img
+                  alt={img.alt}
+                  className="aspect-auto object-center w-full rounded-lg"
+                  src={AWS_DOCS_URL + img.url}
+                />
+                {img.alt ? (
+                  <div className="text-center text-base text-white mt-2">
+                    {img.alt}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
       <Footer />
     </div>

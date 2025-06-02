@@ -18,7 +18,12 @@ export type ServiceCrawl = {
   url: string
   categories: string[]
   sections?: ServiceCrawlSection[]
-  imgUrl?: string
+  images?: Image[]
+}
+
+type Image = {
+  url: string
+  alt?: string
 }
 
 export type ServiceCrawlSection = {
@@ -75,13 +80,11 @@ async function main() {
       async (service: ServiceCrawl) => {
         try {
           // Extract detailed description from service page
-          const { detailDescription, sections, imgUrl } = await extractDetailInfo(
-            context,
-            service
-          )
+          const { detailDescription, sections, images } =
+            await extractDetailInfo(context, service)
           service.detailDescription = detailDescription
           service.sections = sections
-          service.imgUrl = imgUrl
+          service.images = images
           console.log(`Extracted detail for ${service.service}`)
         } catch (detailError) {
           if (detailError instanceof Error) {
