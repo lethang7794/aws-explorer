@@ -10,6 +10,7 @@ import React, {
 import { useRouter, useSearchParams } from 'next/navigation'
 
 export type SortType = 'alphabet' | 'category'
+export type PrefixDisplayType = 'with' | 'without'
 
 type LayoutMode = 'card' | 'list' | 'icon'
 
@@ -20,11 +21,14 @@ interface AwsServicesFilterContextProps {
   setLayoutMode: (v: LayoutMode) => void
   sortType: SortType
   setSortType: React.Dispatch<React.SetStateAction<SortType>>
+  prefixDisplay: PrefixDisplayType
+  setPrefixDisplay: React.Dispatch<React.SetStateAction<PrefixDisplayType>>
 }
 
 const QUERY_PARAMS = {
   categories: 'categories',
   layout: 'view',
+  prefixDisplay: 'prefix',
 }
 
 const AwsServicesFilterContext = createContext<
@@ -46,11 +50,14 @@ export function AwsServicesFilterProvider({
     (searchParams.get(QUERY_PARAMS.layout) as LayoutMode) || 'card'
   const initialSortType =
     (searchParams.get('sort') as SortType) || 'alphabet'
+  const initialPrefixDisplay =
+    (searchParams.get(QUERY_PARAMS.prefixDisplay) as PrefixDisplayType) || 'with'
 
   const [selectedCategories, setSelectedCategories] =
     useState<string[]>(initialCategories)
   const [layoutMode, setLayoutMode] = useState<LayoutMode>(initialLayoutMode)
   const [sortType, setSortType] = useState<SortType>(initialSortType)
+  const [prefixDisplay, setPrefixDisplay] = useState<PrefixDisplayType>(initialPrefixDisplay)
 
   // Sync state to URL
   useEffect(() => {
@@ -59,8 +66,9 @@ export function AwsServicesFilterProvider({
       params.set(QUERY_PARAMS.categories, selectedCategories.join(','))
     if (layoutMode !== 'card') params.set(QUERY_PARAMS.layout, layoutMode)
     if (sortType !== 'alphabet') params.set('sort', sortType)
+    if (prefixDisplay !== 'with') params.set(QUERY_PARAMS.prefixDisplay, prefixDisplay)
     router.replace(`?${params.toString()}`, { scroll: false })
-  }, [selectedCategories, layoutMode, sortType])
+  }, [selectedCategories, layoutMode, sortType, prefixDisplay])
 
   const contextValue = useMemo(() => {
     return {
@@ -70,8 +78,10 @@ export function AwsServicesFilterProvider({
       setLayoutMode,
       sortType,
       setSortType,
+      prefixDisplay,
+      setPrefixDisplay,
     }
-  }, [selectedCategories, layoutMode, sortType])
+  }, [selectedCategories, layoutMode, sortType, prefixDisplay])
 
   return (
     <AwsServicesFilterContext.Provider value={contextValue}>

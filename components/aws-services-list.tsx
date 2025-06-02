@@ -22,7 +22,7 @@ import {
   type Service,
 } from '@/lib/aws-services-data' // Import type
 import { useRouter, useSearchParams } from 'next/navigation'
-import { SortType, useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
+import { SortType, PrefixDisplayType, useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
@@ -45,6 +45,8 @@ export default function AwsServicesList({
     setLayoutMode,
     sortType,
     setSortType,
+    prefixDisplay,
+    setPrefixDisplay,
   } = useAwsServicesFilter()
 
   const router = useRouter()
@@ -86,7 +88,7 @@ export default function AwsServicesList({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearchTerm, page])
 
-  // Memoize filtered and sorted services
+  // Memoize filtered, sorted, and prefix-adjusted services
   const filteredServices = useMemo(() => {
     const search = debouncedSearchTerm.trim().toLowerCase()
     let filtered = initialServices.filter((service) => {
@@ -110,8 +112,16 @@ export default function AwsServicesList({
       })
     }
 
+    // Adjust service names based on prefixDisplay
+    if (prefixDisplay === 'without') {
+      filtered = filtered.map(service => ({
+        ...service,
+        service: service.serviceSimpleName || service.service
+      }))
+    }
+
     return filtered
-  }, [initialServices, debouncedSearchTerm, selectedCategories])
+  }, [initialServices, debouncedSearchTerm, selectedCategories, sortType, prefixDisplay])
 
   // Pagination logic
   const totalPages = Math.max(1, Math.ceil(filteredServices.length / PAGE_SIZE))
@@ -262,6 +272,27 @@ export default function AwsServicesList({
               </RadioGroup>
             </div>
           </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Prefix Display</h2>
+            <div className="flex flex-wrap gap-2">
+              <RadioGroup
+                value={prefixDisplay}
+                onValueChange={(value: PrefixDisplayType) => {
+                  setPrefixDisplay(value)
+                }}
+                className="flex gap-2"
+              >
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="with" id="prefix-with" />
+                  <Label htmlFor="prefix-with">With prefix</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="without" id="prefix-without" />
+                  <Label htmlFor="prefix-without">Without prefix</Label>
+                </div>
+              </RadioGroup>
+            </div>
+          </div>
 
           <div>
             <h2 className="text-xl font-semibold mb-3">View Mode</h2>
@@ -385,7 +416,7 @@ function ServiceCartItem({ service }: { service: Service }) {
             scroll={true}
           >
             <ServiceIcons service={service} />
-            <div className="flex-1">{service.serviceSimpleName}</div>
+            <div className="flex-1">{service.service}</div>
           </Link>
         </CardTitle>
         <CardDescription className="text-xs h-10">
@@ -426,7 +457,7 @@ function ServiceListItem({ service }: { service: Service }) {
         <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
           <div className="flex-grow">
             <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-              {service.serviceSimpleName}
+              {service.service}
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
               {service.shortDescription}
