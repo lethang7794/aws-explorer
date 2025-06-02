@@ -81,7 +81,7 @@ export default async function ServiceDetailPage({
         </div>
         <Card>
           <CardHeader>
-            <CardTitle className="flex flex-wrap gap-2 items-center text-3xl md:text-4xl">
+            <CardTitle className="flex flex-wrap gap-2 items-center">
               {service.iconService ? (
                 <img
                   src={`/aws/${service.iconService}.svg`}
@@ -101,16 +101,16 @@ export default async function ServiceDetailPage({
                   ))}
                 </div>
               ) : null}
-              <div className="flex gap-2">
+              <div className="flex gap-2 text-3xl md:text-4xl">
                 <div>{service.service}</div>
-                {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
-                  <div className="font-normal">
-                    {'('}
-                    {`${service.alsoKnownAs.map((aka) => aka)}`}
-                    {')'}
-                  </div>
-                ) : null}
               </div>
+              {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
+                <div className="font-normal text-lg md:text-4xl">
+                  {'('}
+                  {`${service.alsoKnownAs.map((aka) => aka)}`}
+                  {')'}
+                </div>
+              ) : null}
             </CardTitle>
 
             <CardDescription className="text-lg text-muted-foreground pt-1">
