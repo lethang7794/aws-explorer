@@ -507,11 +507,16 @@ function ServiceListItem({ service }: { service: Service }) {
       <Link href={`/${service.slug}`} passHref scroll={true} target="_blank">
         <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
           <div className="flex-grow">
-            <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-              {displayName}
+            <h3>
+              <span className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
+                {displayName}{' '}
+              </span>
+              <span className="italic text-lg mt-1">
+                {service.shortDescription}
+              </span>
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              {service.shortDescription}
+              {service.detailDescription}
             </p>
             <div className="mt-2 space-x-1 space-y-1">
               {service.categories.map((category) => (
