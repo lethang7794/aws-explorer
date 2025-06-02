@@ -2,6 +2,13 @@ import { BrowserContext, chromium, ElementHandle } from 'playwright'
 import { writeFileSync } from 'fs'
 
 const AWS_DOCS_URL = 'https://docs.aws.amazon.com/'
+const OUTPUT_PATH = 'data/aws-services.json'
+const BATCH_SIZE = 10
+const PAGINATION_SIZE = 30
+
+function getPaginationAriaLabel(i: number) {
+  return `Page ${i + 1} of all pages`
+}
 
 export type ServiceCrawl = {
   service: string
@@ -21,12 +28,6 @@ export type ServiceCrawlSection = {
   }[]
 }
 
-const PAGINATION_SIZE = 30
-function getPaginationAriaLabel(i: number) {
-  return `Page ${i + 1} of all pages`
-}
-const OUTPUT_PATH = 'data/aws-services.json'
-
 main()
 
 async function main() {
@@ -44,7 +45,6 @@ async function main() {
     // Extract service categories and cards
     const servicesData: ServiceCrawl[] = []
 
-    // TODO: remove this limit when scraping all services
     for (let i = 0; i < PAGINATION_SIZE; i++) {
       const buttonArialLabel = getPaginationAriaLabel(i)
       const paginationButton = await page.$(
@@ -67,28 +67,32 @@ async function main() {
       }
     }
 
-    await runInBatches(servicesData, 1, async (service: ServiceCrawl) => {
-      try {
-        // Extract detailed description from service page
-        const { detailDescription, sections } = await extractDetailInfo(
-          context,
-          service
-        )
-        service.detailDescription = detailDescription
-        service.sections = sections
-        console.log(`Extracted detail for ${service.service}`)
-      } catch (detailError) {
-        if (detailError instanceof Error) {
-          console.error(
-            `Error extracting detail for ${service.service}: ${detailError.message}`
+    await runInBatches(
+      servicesData,
+      BATCH_SIZE,
+      async (service: ServiceCrawl) => {
+        try {
+          // Extract detailed description from service page
+          const { detailDescription, sections } = await extractDetailInfo(
+            context,
+            service
           )
-        } else {
-          console.log(
-            `Unexpected error extracting detail for ${service.service}: ${detailError}`
-          )
+          service.detailDescription = detailDescription
+          service.sections = sections
+          console.log(`Extracted detail for ${service.service}`)
+        } catch (detailError) {
+          if (detailError instanceof Error) {
+            console.error(
+              `Error extracting detail for ${service.service}: ${detailError.message}`
+            )
+          } else {
+            console.log(
+              `Unexpected error extracting detail for ${service.service}: ${detailError}`
+            )
+          }
         }
       }
-    })
+    )
 
     // Save results to JSON file
     writeFileSync(OUTPUT_PATH, JSON.stringify(servicesData, null, 2))
