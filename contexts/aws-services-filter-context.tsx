@@ -9,7 +9,7 @@ import React, {
 } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-export type SortType = 'alphabet' | 'category'
+export type SortType = 'simpleName' | 'category' | 'fullName'
 export type PrefixDisplayType = 'with' | 'without'
 
 type LayoutMode = 'card' | 'list' | 'icon'
@@ -31,7 +31,7 @@ const QUERY_PARAMS = {
   prefixDisplay: 'prefix',
 }
 
-const AwsServicesFilterContext = createContext<
+export const AwsServicesFilterContext = createContext<
   AwsServicesFilterContextProps | undefined
 >(undefined)
 
@@ -49,7 +49,7 @@ export function AwsServicesFilterProvider({
   const initialLayoutMode =
     (searchParams.get(QUERY_PARAMS.layout) as LayoutMode) || 'card'
   const initialSortType =
-    (searchParams.get('sort') as SortType) || 'alphabet'
+    (searchParams.get('sort') as SortType) || 'simpleName'
   const initialPrefixDisplay =
     (searchParams.get(QUERY_PARAMS.prefixDisplay) as PrefixDisplayType) || 'with'
 
@@ -65,7 +65,7 @@ export function AwsServicesFilterProvider({
     if (selectedCategories.length > 0)
       params.set(QUERY_PARAMS.categories, selectedCategories.join(','))
     if (layoutMode !== 'card') params.set(QUERY_PARAMS.layout, layoutMode)
-    if (sortType !== 'alphabet') params.set('sort', sortType)
+    if (sortType !== 'simpleName') params.set('sort', sortType)
     if (prefixDisplay !== 'with') params.set(QUERY_PARAMS.prefixDisplay, prefixDisplay)
     router.replace(`?${params.toString()}`, { scroll: false })
   }, [selectedCategories, layoutMode, sortType, prefixDisplay])
@@ -92,9 +92,8 @@ export function AwsServicesFilterProvider({
 
 export function useAwsServicesFilter() {
   const ctx = useContext(AwsServicesFilterContext)
-  if (!ctx)
-    throw new Error(
-      'useAwsServicesFilter must be used within AwsServicesFilterProvider'
-    )
+  if (!ctx) {
+    throw new Error('useAwsServicesFilter must be used within AwsServicesFilterProvider')
+  }
   return ctx
 }

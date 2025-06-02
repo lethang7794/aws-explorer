@@ -39,9 +39,9 @@ const generateSlug = (name: string) => {
 
 function simplifyServiceName(service: string): string {
   return service
-    .replace(/AWS /g, '')
-    .replace(/AWS\n/g, '')
-    .replace(/Amazon /g, '')
+    .replace(/$AWS /, '')
+    .replace(/$AWS\n/, '')
+    .replace(/$Amazon /, '')
     .trim()
 }
 
