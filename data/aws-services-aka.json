@@ -1,6 +1,6 @@
 {
   "comment": "This file is auto-generated - DO NOT EDIT IT",
-  "generatedAt": "2025-06-02T15:03:29.023Z",
+  "generatedAt": "2025-06-02T15:40:50.562Z",
   "generatedBy": "generate-aka-names.ts",
   "description": "Generated AKA names for AWS services based on the provided service list.",
   "data": {
@@ -107,7 +107,9 @@
     ],
     "Amazon Neptune": [],
     "Amazon Nova": [],
-    "Amazon OpenSearch Service": [],
+    "Amazon OpenSearch Service": [
+      "Elasticsearch Service"
+    ],
     "Amazon Personalize": [],
     "Amazon Pinpoint": [],
     "Amazon Polly": [],

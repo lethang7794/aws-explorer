@@ -4029,6 +4029,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elasticsearch Service"
     ]
   },
   {

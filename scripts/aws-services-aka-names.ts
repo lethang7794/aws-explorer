@@ -138,7 +138,7 @@ const AKA = {
   'Amazon MWAA': ['Managed Workflows for Apache Airflow'],
   'Amazon Neptune': [],
   'Amazon Nova': [],
-  'Amazon OpenSearch Service': [],
+  'Amazon OpenSearch Service': ['Elasticsearch Service'],
   'Amazon Personalize': [],
   'Amazon Pinpoint': [],
   'Amazon Polly': [],
