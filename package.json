@@ -21,7 +21,8 @@
     "// AWS docs": "Script to crawl the AWS docs",
     "aws-services-docs-crawl": "tsx ./scripts/aws-services-docs-crawler.ts",
     "aws-services-aka-names": "tsx ./scripts/aws-services-aka-names.ts",
-    "aws-services-merge-alternatives": "tsx ./scripts/aws-services-merge-alternatives.ts"
+    "aws-services-merge-alternatives": "tsx ./scripts/aws-services-merge-alternatives.ts",
+    "aws-services-etl": "pnpm run aws-services-docs-crawl && pnpm run aws-services-aka-names && pnpm run aws-services-merge-alternatives"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -6107,7 +6107,7 @@
           {
             "name": "AWS SDKs and Tools Reference Guide",
             "link": "/sdkref/latest/guide/index.html",
-            "description": ""
+            "description": "A guide to common features and functionality of the AWS SDKs and developer tools. Includes maintenance and support policies, as well as a complete reference for configuring your AWS credentials and other settings."
           },
           {
             "name": "AWS Code Examples GitHub Repository ",
@@ -12330,7 +12330,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "Amazon Web Services (AWS) offers a suite of services to help you build machine learning (ML) and generative AI applications. It’s helpful to understand how these services work together to form a generative AI stack, including:"
   },
   {
     "service": "Amazon Chime SDK",
@@ -12399,7 +12399,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "Amazon Web Services (AWS) offers services that can meet your needs for a cloud platform or compute web service. Three services that are often considered alongside one another are:"
   },
   {
     "service": "Amazon One Enterprise",
@@ -12463,7 +12463,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "When building applications on AWS, you might want help in choosing the right service for handling messaging, event-driven architectures, and decoupling components. AWS offers three key services for these purposes—Amazon Simple Queue Service (Amazon SQS), Amazon Simple Notification Service (Amazon SNS), and Amazon EventBridge (formerly known as CloudWatch Events)."
   },
   {
     "service": "Apache MXNet on AWS",
@@ -12542,7 +12542,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "When deploying critical business workloads to the AWS Cloud, it is essential to maintain visibility, security, and operational efficiency in your cloud environment. There are a number of key areas to address:"
   },
   {
     "service": "AWS Diagnostic Tools",
@@ -12597,7 +12597,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "Before you get started exploring whether you choose AWS Lambda or AWS Fargate as your serverless compute service, you probably have considered the broader range of AWS compute services (covered in the Choosing an AWS compute service decision guide) and narrowed it down to these two choices because they provide:"
   },
   {
     "service": "AWS Glossary",
@@ -12792,7 +12792,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "AWS WAF (Web Application Firewall) and AWS Shield can help you protect your web applications against various types of cyberattacks, such as Distributed Denial of Service (DDoS) attacks and other web application vulnerabilities."
   },
   {
     "service": "Choosing a database for your generative AI applications",
@@ -12846,7 +12846,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Generative AI is a set of artificial intelligence (AI) systems and models designed to generate content such as code, text, images, music, or other forms of data. These systems can produce new content based on patterns and knowledge learned from existing data. Increasingly, organizations and businesses are using generative AI to:"
   },
   {
     "service": "Choosing a modern application strategy",
@@ -12856,7 +12856,7 @@
       "Decision Guides",
       "Serverless"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Amazon Web Services (AWS) provides you with the flexibility to choose different compute options to build and run modern applications that map to your business needs. We provide you with access to the right operational model for your compute choice."
   },
   {
     "service": "Choosing an AWS analytics service",
@@ -12866,7 +12866,7 @@
       "Analytics",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Data is foundational to modern business. People and applications need to securely access and analyze data, which comes from new and diverse sources. The volume of data is also constantly increasing, which can cause organizations to struggle with capturing, storing, and analyzing all the necessary data."
   },
   {
     "service": "Choosing an AWS application integration service",
@@ -12876,7 +12876,7 @@
       "Application Integration",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Application integration is a suite of services that enables communication between decoupled components within microservices, distributed systems, and serverless applications. Amazon Web Services (AWS) offers more than half a dozen application integration services to support a diverse set of workloads running in the cloud."
   },
   {
     "service": "Choosing an AWS cloud governance service",
@@ -12885,7 +12885,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Cloud governance is a set of rules, processes, and reports that helps you align your AWS Cloud use toward your business objectives."
   },
   {
     "service": "Choosing an AWS compute service",
@@ -12895,7 +12895,7 @@
       "Compute",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "AWS compute services are designed to meet the varied demands of modern applications, from small-scale projects to enterprise-grade solutions. These services provide scalable computing power that helps you to build, deploy, and manage applications."
   },
   {
     "service": "Choosing an AWS container service",
@@ -12905,7 +12905,7 @@
       "Containers",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Containers are a key component of modern application development. They are the standard for organizing compute resources, and managing the content of your application deployments."
   },
   {
     "service": "Choosing an AWS cost management strategy",
@@ -12915,7 +12915,7 @@
       "Cloud Financial Management",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Cost management and optimization in the cloud are important for businesses of all sizes. An effective cost management strategy ensures that you only pay for what you need and that you maximize the return on your cloud investment."
   },
   {
     "service": "Choosing an AWS cryptography service",
@@ -12925,7 +12925,7 @@
       "Cryptography & PKI",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Cryptography is a cornerstone of security in cloud computing, helping to ensure data confidentiality, integrity, and authenticity. In a cloud environment, sensitive data may traverse public networks and reside on shared infrastructure, making robust cryptographic measures essential for protecting against unauthorized access or tampering."
   },
   {
     "service": "Choosing an AWS database service",
@@ -12935,7 +12935,7 @@
       "Database",
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "AWS oﬀers a growing number of database options (15+) with diverse data models to support a variety of workloads. These include relational, key-value, document, in-memory, graph, time series, vector, and wide-column."
   },
   {
     "service": "Choosing an AWS identity service",
@@ -12944,7 +12944,7 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Identity and access management helps ensure that only authenticated and authorized users can access only the cloud resources that they need to perform their tasks, and that they can do it in a secure and compliant way."
   },
   {
     "service": "Choosing an AWS IoT service",
@@ -12954,7 +12954,7 @@
       "Decision Guides",
       "Internet of Things (IoT)"
     ],
-    "detailDescription": "Understand the differences and pick the one that's right for you"
+    "detailDescription": "Internet of Things (IoT) technologies have become a transformative force in the business world. They offer a wide range of opportunities for innovation, efficiency, and customer-centric strategies. IoT provides the foundation for smart devices, smart homes, smart buildings, next-generation vehicles, smart manufacturing, and public infrastructure. Businesses can use IoT technologies to increase efficiency with automation, gain visibility into their supply chains, get insights from their data, and offer smart connected experiences for their customers."
   },
   {
     "service": "Choosing an AWS machine learning service",
@@ -12964,7 +12964,7 @@
       "Decision Guides",
       "Machine Learning"
     ],
-    "detailDescription": "Pick the right ML services and frameworks to support your work"
+    "detailDescription": "At its most basic, machine learning (ML) is designed to provide digital tools and services to learn from data, identify patterns, make predictions, and then act on those predictions. Almost all artificial intelligence (AI) systems today are created using ML. ML uses large amounts of data to create and validate decision logic. This decision logic forms the basis of the AI model."
   },
   {
     "service": "Choosing an AWS monitoring and observability service",
@@ -12974,7 +12974,7 @@
       "Decision Guides",
       "Management & Governance"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Monitoring and observability are critical components for ensuring the availability, performance, reliability, and security of your cloud-based workloads and data."
   },
   {
     "service": "Choosing an AWS networking and content delivery service",
@@ -12984,7 +12984,7 @@
       "Decision Guides",
       "Networking & Content Delivery"
     ],
-    "detailDescription": "Purpose:"
+    "detailDescription": "What you build in AWS depends on your business needs. In this guide, we use the term workloads to refer to any collection of resources and code that delivers business value, such as a customer-facing application or a backend process."
   },
   {
     "service": "Choosing an AWS storage service",
@@ -12994,7 +12994,7 @@
       "Decision Guides",
       "Storage"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "AWS offers a broad portfolio of reliable, scalable, and secure storage services for storing, accessing, protecting, and analyzing your data. This makes it easier to match your storage methods with your needs, and provides storage options that are not easily achievable with on-premises infrastructure. When selecting a storage service, ensuring that it aligns with your access patterns will be critical to achieving the performance you want."
   },
   {
     "service": "Choosing AWS frontend and mobile services",
@@ -13004,7 +13004,7 @@
       "Decision Guides",
       "Front-End Web & Mobile"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "AWS offers purpose-built tools and services to support frontend development workflows for native iOS, Android, React Native, and JavaScript developers. You can use these tools to develop, deploy, test, operate, and monitor your app."
   },
   {
     "service": "Choosing AWS migration services and tools",
@@ -13014,7 +13014,7 @@
       "Decision Guides",
       "Migration & Transfer"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Migration and modernization in the Amazon Web Services (AWS) cloud involves the process of relocating an organization's digital infrastructure, applications, and data to AWS. This shift allows you to not only modernize applications, but also use the range of scalable and secure cloud services and infrastructure offered by AWS to reduce reliance on physical hardware and optimize resource allocation."
   },
   {
     "service": "Choosing AWS security, identity, and governance services",
@@ -13024,7 +13024,7 @@
       "Decision Guides",
       "Security, Identity, & Compliance"
     ],
-    "detailDescription": "Taking the first step"
+    "detailDescription": "Security, identity, and governance in the cloud are important components for you in achieving and maintaining integrity and safety for your data and services. This is especially relevant as more businesses migrate to cloud providers such as Amazon Web Services (AWS)."
   },
   {
     "service": "SDKs and Tools Reference Guide",
