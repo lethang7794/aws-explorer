@@ -9,6 +9,8 @@ import React, {
 } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
+export type SortType = 'alphabet' | 'category'
+
 type LayoutMode = 'card' | 'list' | 'icon'
 
 interface AwsServicesFilterContextProps {
@@ -16,6 +18,8 @@ interface AwsServicesFilterContextProps {
   setSelectedCategories: React.Dispatch<React.SetStateAction<string[]>>
   layoutMode: LayoutMode
   setLayoutMode: (v: LayoutMode) => void
+  sortType: SortType
+  setSortType: React.Dispatch<React.SetStateAction<SortType>>
 }
 
 const QUERY_PARAMS = {
@@ -40,10 +44,13 @@ export function AwsServicesFilterProvider({
     : []
   const initialLayoutMode =
     (searchParams.get(QUERY_PARAMS.layout) as LayoutMode) || 'card'
+  const initialSortType =
+    (searchParams.get('sort') as SortType) || 'alphabet'
 
   const [selectedCategories, setSelectedCategories] =
     useState<string[]>(initialCategories)
   const [layoutMode, setLayoutMode] = useState<LayoutMode>(initialLayoutMode)
+  const [sortType, setSortType] = useState<SortType>(initialSortType)
 
   // Sync state to URL
   useEffect(() => {
@@ -51,8 +58,9 @@ export function AwsServicesFilterProvider({
     if (selectedCategories.length > 0)
       params.set(QUERY_PARAMS.categories, selectedCategories.join(','))
     if (layoutMode !== 'card') params.set(QUERY_PARAMS.layout, layoutMode)
+    if (sortType !== 'alphabet') params.set('sort', sortType)
     router.replace(`?${params.toString()}`, { scroll: false })
-  }, [selectedCategories, layoutMode])
+  }, [selectedCategories, layoutMode, sortType])
 
   const contextValue = useMemo(() => {
     return {
@@ -60,8 +68,10 @@ export function AwsServicesFilterProvider({
       setSelectedCategories,
       layoutMode,
       setLayoutMode,
+      sortType,
+      setSortType,
     }
-  }, [selectedCategories, layoutMode])
+  }, [selectedCategories, layoutMode, sortType])
 
   return (
     <AwsServicesFilterContext.Provider value={contextValue}>

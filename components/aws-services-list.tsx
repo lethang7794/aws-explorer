@@ -15,15 +15,16 @@ import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { LayoutGrid, List, Info, Grid } from 'lucide-react'
+import { LayoutGrid, List, Info, Grid, ArrowLeft, ArrowRight } from 'lucide-react'
 import {
   awsServiceCategories,
   awsServiceCountByCategory,
   type Service,
 } from '@/lib/aws-services-data' // Import type
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
+import { SortType, useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
 interface AwsServicesListProps {
   services: Service[]
@@ -42,6 +43,8 @@ export default function AwsServicesList({
     setSelectedCategories,
     layoutMode,
     setLayoutMode,
+    sortType,
+    setSortType,
   } = useAwsServicesFilter()
 
   const router = useRouter()
@@ -83,10 +86,10 @@ export default function AwsServicesList({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearchTerm, page])
 
-  // Memoize filtered services
+  // Memoize filtered and sorted services
   const filteredServices = useMemo(() => {
     const search = debouncedSearchTerm.trim().toLowerCase()
-    return initialServices.filter((service) => {
+    let filtered = initialServices.filter((service) => {
       const matchesSearchTerm =
         service.service.toLowerCase().includes(search) ||
         service.shortDescription.toLowerCase().includes(search)
@@ -95,6 +98,19 @@ export default function AwsServicesList({
         selectedCategories.some((cat) => service.categories.includes(cat))
       return matchesSearchTerm && matchesCategories
     })
+
+    // Sort the filtered services based on sortType
+    if (sortType === 'alphabet') {
+      filtered = filtered.sort((a, b) => a.service.localeCompare(b.service))
+    } else if (sortType === 'category') {
+      filtered = filtered.sort((a, b) => {
+        const aCat = a.categories[0] || ''
+        const bCat = b.categories[0] || ''
+        return aCat.localeCompare(bCat)
+      })
+    }
+
+    return filtered
   }, [initialServices, debouncedSearchTerm, selectedCategories])
 
   // Pagination logic
@@ -223,6 +239,30 @@ export default function AwsServicesList({
               </Button>
             )}
           </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Sort Mode</h2>
+            <div className="flex flex-wrap gap-2">
+              <RadioGroup
+                value={sortType}
+                onValueChange={(value: SortType) => {
+                  setSortType(value)
+                  setPage(1) // Reset to first page
+                  scrollTop()
+                }}
+                className="flex gap-2"
+              >
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="alphabet" id="sort-alphabet" />
+                  <Label htmlFor="sort-alphabet">Alphabet</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="category" id="sort-category" />
+                  <Label htmlFor="sort-category">Category</Label>
+                </div>
+              </RadioGroup>
+            </div>
+          </div>
+
           <div>
             <h2 className="text-xl font-semibold mb-3">View Mode</h2>
             <div className="flex space-x-2">
@@ -545,7 +585,7 @@ function Pagination({
         }}
         disabled={page === 1}
       >
-        Previous
+        <ArrowLeft className="h-5 w-5" />
       </Button>
       <>
         {pages.map((p, idx) =>
@@ -583,7 +623,7 @@ function Pagination({
         }}
         disabled={page === totalPages}
       >
-        Next
+        <ArrowRight className="h-5 w-5" />
       </Button>
     </div>
   )
