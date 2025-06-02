@@ -1,3 +1,5 @@
+![AWS Explorer](docs/opengraph-image.png)
+
 # AWS Explorer
 
 **Live Demo** at [https://aws-explorer.vercel.app](https://aws-explorer.vercel.app)
