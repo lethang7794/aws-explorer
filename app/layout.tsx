@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AWS Explorer',
   description:
     'Browse, explorer, and find your next AWS services... or quickly find the docs you need.',
+  metadataBase: new URL(
+    process.env.METADATA_BASE_URL || 'https://aws-explorer.vercel.app'
+  ),
 }
 
 export default function RootLayout({
