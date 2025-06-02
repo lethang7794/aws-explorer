@@ -215,7 +215,21 @@ export default function AwsServicesList({
             />
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-3">Filter by Category</h2>
+            <h2 className="text-xl font-semibold mb-3">Filter by Category 
+              {selectedCategories.length > 0 && (
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSelectedCategories([])
+                    setPage(1) // Reset to first page
+                    scrollTop()
+                  }}
+                  className="ml-2 py-1 h-auto text-sm text-primary hover:underline"
+                >
+                  Clear all filters
+                </Button>
+              )}
+            </h2>
             <div className="space-y-2 max-h-36 md:max-h-96 overflow-y-auto pr-2">
               {awsServiceCategories.map(({ name: category, icon }) => (
                 <div key={category} className="flex items-center space-x-2">
@@ -241,19 +255,7 @@ export default function AwsServicesList({
                 </div>
               ))}
             </div>
-            {selectedCategories.length > 0 && (
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setSelectedCategories([])
-                  setPage(1) // Reset to first page
-                  scrollTop()
-                }}
-                className="mt-4 p-1 h-auto text-sm text-primary hover:underline"
-              >
-                Clear all filters
-              </Button>
-            )}
+            
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-3">Sort Mode</h2>
