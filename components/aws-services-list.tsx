@@ -15,14 +15,25 @@ import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { LayoutGrid, List, Info, Grid, ArrowLeft, ArrowRight } from 'lucide-react'
+import {
+  LayoutGrid,
+  List,
+  Info,
+  Grid,
+  ArrowLeft,
+  ArrowRight,
+} from 'lucide-react'
 import {
   awsServiceCategories,
   awsServiceCountByCategory,
   type Service,
 } from '@/lib/aws-services-data' // Import type
 import { useRouter, useSearchParams } from 'next/navigation'
-import { SortType, PrefixDisplayType, useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
+import {
+  SortType,
+  PrefixDisplayType,
+  useAwsServicesFilter,
+} from '@/contexts/aws-services-filter-context'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
@@ -120,14 +131,20 @@ export default function AwsServicesList({
 
     // Adjust service names based on prefixDisplay
     if (prefixDisplay === 'without') {
-      filtered = filtered.map(service => ({
+      filtered = filtered.map((service) => ({
         ...service,
-        service: service.serviceSimpleName || service.service
+        service: service.serviceSimpleName || service.service,
       }))
     }
 
     return filtered
-  }, [initialServices, debouncedSearchTerm, selectedCategories, sortType, prefixDisplay])
+  }, [
+    initialServices,
+    debouncedSearchTerm,
+    selectedCategories,
+    sortType,
+    prefixDisplay,
+  ])
 
   // Pagination logic
   const totalPages = Math.max(1, Math.ceil(filteredServices.length / PAGE_SIZE))
@@ -178,7 +195,8 @@ export default function AwsServicesList({
           AWS Explorer
         </h1>
         <p className="text-gray-200 mt-2">
-          Browse, explorer, and find your next AWS services...or quickly find the docs you need.
+          Browse, explorer, and find your next AWS services...or quickly find
+          the docs you need.
         </p>
       </header>
 
@@ -213,7 +231,8 @@ export default function AwsServicesList({
             />
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-3">Filter by Category 
+            <h2 className="text-xl font-semibold mb-3">
+              Filter by Category
               {selectedCategories.length > 0 && (
                 <Button
                   variant="outline"
@@ -253,7 +272,6 @@ export default function AwsServicesList({
                 </div>
               ))}
             </div>
-            
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-3">Sort Mode</h2>
@@ -277,7 +295,9 @@ export default function AwsServicesList({
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="fullName" id="sort-fullName" />
-                  <Label htmlFor="sort-fullName">Alphabet (with Amazon/AWS)</Label>
+                  <Label htmlFor="sort-fullName">
+                    Alphabet (with Amazon/AWS)
+                  </Label>
                 </div>
               </RadioGroup>
             </div>
@@ -314,7 +334,7 @@ export default function AwsServicesList({
                 aria-label="Card view"
                 className="w-fit px-2"
               >
-                <LayoutGrid className="h-5 w-5" /> 
+                <LayoutGrid className="h-5 w-5" />
                 Grid
               </Button>
               <Button
@@ -324,7 +344,7 @@ export default function AwsServicesList({
                 aria-label="List view"
                 className="w-fit px-2"
               >
-                <List className="h-5 w-5" /> List   
+                <List className="h-5 w-5" /> List
               </Button>
               <Button
                 variant={layoutMode === 'icon' ? 'secondary' : 'outline'}
@@ -423,7 +443,8 @@ import { usePrefixDisplay } from '@/hooks/use-prefix-display'
 
 function ServiceCartItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
-  const displayName = prefixDisplay === 'with' ? service.service : service.serviceSimpleName
+  const displayName =
+    prefixDisplay === 'with' ? service.service : service.serviceSimpleName
 
   return (
     <Card className="flex flex-col">
@@ -433,6 +454,7 @@ function ServiceCartItem({ service }: { service: Service }) {
             href={`/${service.slug}`}
             className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
             scroll={true}
+            target="_blank"
           >
             <ServiceIcons service={service} />
             <div className="flex-1 min-w-48">{displayName}</div>
@@ -471,11 +493,12 @@ function ServiceListItemsList({
 
 function ServiceListItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
-  const displayName = prefixDisplay === 'with' ? service.service : service.serviceSimpleName
+  const displayName =
+    prefixDisplay === 'with' ? service.service : service.serviceSimpleName
 
   return (
     <Card className="p-0">
-      <Link href={`/${service.slug}`} passHref scroll={true}>
+      <Link href={`/${service.slug}`} passHref scroll={true} target="_blank">
         <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
           <div className="flex-grow">
             <h3 className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
@@ -522,6 +545,7 @@ function ServiceIconItem({ service }: { service: Service }) {
             href={`/${service.slug}`}
             className="flex flex-col flex-wrap gap-1 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
             scroll={true}
+            target="_blank"
           >
             <ServiceIcons service={service} size="large" />
             <div className="text-center text-sm text-primary">
