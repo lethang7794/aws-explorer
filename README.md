@@ -60,24 +60,27 @@
 
 ## Comparison to the official AWS documentation page
 
-| Feature                     | AWS Docs Explorer                                             | Official AWS Documentation                                                             |
-| --------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| Fast, global search         | ✅                                                            | ✅                                                                                     |
-| Direct links to docs        | ✅                                                            | ✅                                                                                     |
-| Category filtering          | ✅ Support multi categories                                   | 🟡 Only support one category                                                           |
-| Service icons               | ✅ All services have icon                                     | 🟡 Only for feature services                                                           |
-| Category icons              | 🚀 All categories have icon                                   | ❌ Not supported                                                                       |
-| Resources icons             | 🚀 Show resource icons in icon layout and detail page         | 🟡 Not supported                                                                       |
-| Service aka                 | ✅ Support aka for services, e.g. RDS, ELB, EFS               | ❌ Not supported                                                                       |
-| Preload detail page         | ✅ See it at a glance                                         | ❌ Needs a whole page load                                                             |
-| Links to docs               | 🚀 Show all docs of the services without distraction          | ✅ Show all docs of the services wit                                                   |
-| Support go back             | ✅ Continue where you are before checking detail of a service | ❌ Reset everything after you checking a service                                       |
-| Clean, minimal UI           | ✅                                                            | 🟡 There is a lot of information                                                       |
-| Hide/show prefix AWS/Amazon | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch               | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕 |
-| Sort                        | ✅ By category, service name (without/with AWS/Amazon)        | ❌ Services are sorted by name with AWS/Amazon prefix                                  |
-| Alphabet sorting            | ✅ VPC is near VPN, CloudTrail is next to CloudWatch          | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch         |
-| Layout mode                 | 🚀 Grid, list, icon view                                      | 🟡 Only one layout                                                                     |
-| Up-to-date list of services | 🟡 Update frequently                                          | ✅ Always up-to-date                                                                   |
+| Feature                     | AWS Explorer                                                                                                | Official AWS Documentation                                                                             |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Fast, global search         | ✅                                                                                                          | ✅                                                                                                     |
+| Support abbr.               | 🚀 A2C, ADS, AMB, AMS, ARC, CDI, DLM, DMS, DRS, EFS, ELB, IAM, IVS, MGN, RAM, RDS, ROSA, SCT, SES, SMC, TNB | 🟡 Only if you're lucky                                                                                |
+| Support historical name     | 🚀 CloudWatch Events, Elasticsearch Service, AWS Chatbot...                                                 | ❌ History is erased: X ~~(formerly known as Twitter)~~                                                |
+| Support full name           | 🚀 Elastic Computing Cloud, Virtual Private Cloud...                                                        | ❌ I'm the captain know (EBS, EC2, ECS, ECR, EKS, EMR, MSK, MWAA, QLDB, SNS, SQS, SAM, S3 VPN, WAF...) |
+| Direct links to docs        | ✅                                                                                                          | ✅                                                                                                     |
+| Category filtering          | ✅ Support multi categories                                                                                 | 🟡 Only support one category                                                                           |
+| Service icons               | ✅ All services have icon                                                                                   | 🟡 Only for feature services                                                                           |
+| Category icons              | 🚀 All categories have icon                                                                                 | ❌ Not supported                                                                                       |
+| Resources icons             | 🚀 Show resource icons in icon layout and detail page                                                       | ❌ Not supported                                                                                       |
+| Service aka                 | ✅ Support aka for services, e.g. RDS, ELB, EFS                                                             | ❌ Not supported                                                                                       |
+| Preload detail page         | ✅ See it at a glance                                                                                       | ❌ Needs a whole page load                                                                             |
+| Links to docs               | 🚀 Show all docs of the services without distraction                                                        | ✅ Show all docs of the services wit                                                                   |
+| Support go back             | ✅ Continue where you are before checking detail of a service                                               | ❌ Reset everything after you checking a service                                                       |
+| Clean, minimal UI           | ✅                                                                                                          | 🟡 There is a lot of information                                                                       |
+| Hide/show prefix AWS/Amazon | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch                                                             | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕                 |
+| Sort                        | ✅ By category, service name (without/with AWS/Amazon)                                                      | ❌ Services are sorted by name with AWS/Amazon prefix                                                  |
+| Alphabet sorting            | ✅ VPC is near VPN, CloudTrail is next to CloudWatch                                                        | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch                         |
+| Layout mode                 | 🚀 Grid, list, icon view                                                                                    | 🟡 Only one layout                                                                                     |
+| Up-to-date list of services | 🟡 Update frequently                                                                                        | ✅ Always up-to-date                                                                                   |
 
 > [!NOTE]
 > AWS Explorer is not an official AWS product. For the most current and comprehensive list of services, always refer to [AWS Documentation](https://docs.aws.amazon.com/).
@@ -86,6 +89,9 @@
 
 - [x] Show services resources in detail page.
 - [x] Show docs in detail page.
+- [x] Hide/show prefix Amazon/AWS.
+- [x] Support sort by category.
+- [x] Support abbr, historical name, fullname.
 - [ ] Add CI/CD pipeline to crawl AWS docs every week.
 - [ ] Support update AWS architecture icons from CI/CD.
 - [ ] Support copy/download SVG icon.
