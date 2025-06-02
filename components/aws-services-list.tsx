@@ -452,6 +452,8 @@ function ServiceCartItem({ service }: { service: Service }) {
   const displayName =
     prefixDisplay === 'with' ? service.service : service.serviceSimpleName
 
+  const akaText = getAkaText(service)
+
   return (
     <Card className="flex flex-col">
       <CardHeader className="pb-2">
@@ -463,7 +465,12 @@ function ServiceCartItem({ service }: { service: Service }) {
             target="_blank"
           >
             <ServiceIcons service={service} />
-            <div className="flex-1 min-w-48">{displayName}</div>
+            <div className="flex-1 min-w-48">
+              {displayName}
+              <p className="whitespace-pre overflow-hidden truncate">
+                {akaText}
+              </p>
+            </div>
           </Link>
         </CardTitle>
         <CardDescription className="text-xs h-10">
@@ -481,6 +488,16 @@ function ServiceCartItem({ service }: { service: Service }) {
       </CardContent>
     </Card>
   )
+}
+
+function getAkaText(service: Service) {
+  const aka = service.alsoKnownAs?.[0]
+  const akaText =
+    (aka && aka?.length === 3) ||
+    (aka && service.serviceSimpleName && service.serviceSimpleName?.length <= 4)
+      ? `(${aka})`
+      : ''
+  return akaText
 }
 
 function ServiceListItemsList({
@@ -501,6 +518,7 @@ function ServiceListItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
   const displayName =
     prefixDisplay === 'with' ? service.service : service.serviceSimpleName
+  const akaText = getAkaText(service)
 
   return (
     <Card className="p-0">
@@ -509,7 +527,9 @@ function ServiceListItem({ service }: { service: Service }) {
           <div className="flex-grow">
             <h3>
               <span className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-                {displayName}{' '}
+                {displayName}
+                {akaText && ' '}
+                {akaText}{' '}
               </span>
               <span className="italic text-lg mt-1">
                 {service.shortDescription}
@@ -548,6 +568,8 @@ function ServiceIconsList({
 }
 
 function ServiceIconItem({ service }: { service: Service }) {
+  const akaText = getAkaText(service)
+
   return (
     <Card className="flex flex-col">
       <CardHeader className="p-3 pb-1 md:p-4 md:pb-2 lg:p-6 lg:pb-4">
@@ -561,6 +583,8 @@ function ServiceIconItem({ service }: { service: Service }) {
             <ServiceIcons service={service} size="large" />
             <div className="text-center text-sm text-primary">
               {service.service}
+              {akaText && ' '}
+              <span className="whitespace-pre">{akaText}</span>
             </div>
             <ul className="flex gap-2 flex-wrap justify-center">
               {service.iconResources?.map((r) => {

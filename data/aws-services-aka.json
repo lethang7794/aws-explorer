@@ -1,6 +1,6 @@
 {
   "comment": "This file is auto-generated - DO NOT EDIT IT",
-  "generatedAt": "2025-06-02T14:58:00.719Z",
+  "generatedAt": "2025-06-02T15:03:29.023Z",
   "generatedBy": "generate-aka-names.ts",
   "description": "Generated AKA names for AWS services based on the provided service list.",
   "data": {
@@ -9,9 +9,7 @@
     ],
     "Amazon API Gateway": [],
     "Amazon AppFlow": [],
-    "Amazon Application Recovery Controller (ARC)": [
-      "ARC"
-    ],
+    "Amazon Application Recovery Controller (ARC)": [],
     "Amazon AppStream 2.0": [],
     "Amazon Athena": [],
     "Amazon Aurora": [],

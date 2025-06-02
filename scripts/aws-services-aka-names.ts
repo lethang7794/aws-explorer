@@ -68,7 +68,7 @@ const AKA = {
   'Amazon A2I': ['Augmented AI'],
   'Amazon API Gateway': [],
   'Amazon AppFlow': [],
-  'Amazon Application Recovery Controller (ARC)': ['ARC'],
+  'Amazon Application Recovery Controller (ARC)': [],
   'Amazon AppStream 2.0': [],
   'Amazon Athena': [],
   'Amazon Aurora': [],
