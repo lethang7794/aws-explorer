@@ -1,6 +1,6 @@
 import { chromium, ElementHandle } from 'playwright'
 import { writeFileSync } from 'fs'
-import { extractDetailInfo } from './extractDetailInfo'
+import { extractDetailInfo } from './aws-service-crawl-detail'
 
 const AWS_DOCS_URL = 'https://docs.aws.amazon.com/'
 const OUTPUT_PATH = 'data/aws-services.json'
@@ -18,6 +18,7 @@ export type ServiceCrawl = {
   url: string
   categories: string[]
   sections?: ServiceCrawlSection[]
+  imgUrl?: string
 }
 
 export type ServiceCrawlSection = {
@@ -74,12 +75,13 @@ async function main() {
       async (service: ServiceCrawl) => {
         try {
           // Extract detailed description from service page
-          const { detailDescription, sections } = await extractDetailInfo(
+          const { detailDescription, sections, imgUrl } = await extractDetailInfo(
             context,
             service
           )
           service.detailDescription = detailDescription
           service.sections = sections
+          service.imgUrl = imgUrl
           console.log(`Extracted detail for ${service.service}`)
         } catch (detailError) {
           if (detailError instanceof Error) {

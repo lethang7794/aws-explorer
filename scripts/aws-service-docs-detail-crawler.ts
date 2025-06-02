@@ -1,5 +1,5 @@
 import { chromium } from 'playwright'
-import { extractDetailInfo } from './extractDetailInfo'
+import { extractDetailInfo } from './aws-service-crawl-detail'
 
 const TEST_DOC_PAGES = [
   'https://docs.aws.amazon.com/decision-guides/latest/modern-apps-strategy-on-aws-how-to-choose/modern-apps-strategy-on-aws-how-to-choose.html',

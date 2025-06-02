@@ -217,9 +217,6 @@
           }
         ]
       }
-    ],
-    "alsoKnownAs": [
-      "ARC"
     ]
   },
   {
@@ -12336,7 +12333,8 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Amazon Web Services (AWS) offers a suite of services to help you build machine learning (ML) and generative AI applications. It’s helpful to understand how these services work together to form a generative AI stack, including:"
+    "detailDescription": "Amazon Web Services (AWS) offers a suite of services to help you build machine learning (ML) and generative AI applications. It’s helpful to understand how these services work together to form a generative AI stack, including:",
+    "imgUrl": "/images/decision-guides/latest/bedrock-or-sagemaker/images/gen-ai-stack-dec-2024.png"
   },
   {
     "service": "Amazon Chime SDK",
@@ -12603,7 +12601,8 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Before you get started exploring whether you choose AWS Lambda or AWS Fargate as your serverless compute service, you probably have considered the broader range of AWS compute services (covered in the Choosing an AWS compute service decision guide) and narrowed it down to these two choices because they provide:"
+    "detailDescription": "Before you get started exploring whether you choose AWS Lambda or AWS Fargate as your serverless compute service, you probably have considered the broader range of AWS compute services (covered in the Choosing an AWS compute service decision guide) and narrowed it down to these two choices because they provide:",
+    "imgUrl": "/images/decision-guides/latest/fargate-or-lambda/images/task-launches.png"
   },
   {
     "service": "AWS Glossary",
@@ -12852,7 +12851,8 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Generative AI is a set of artificial intelligence (AI) systems and models designed to generate content such as code, text, images, music, or other forms of data. These systems can produce new content based on patterns and knowledge learned from existing data. Increasingly, organizations and businesses are using generative AI to:"
+    "detailDescription": "Generative AI is a set of artificial intelligence (AI) systems and models designed to generate content such as code, text, images, music, or other forms of data. These systems can produce new content based on patterns and knowledge learned from existing data. Increasingly, organizations and businesses are using generative AI to:",
+    "imgUrl": "/images/decision-guides/latest/generative-ai-on-aws-how-to-choose/images/gen-ai-stack-dec-2024.png"
   },
   {
     "service": "Choosing a modern application strategy",
@@ -12862,7 +12862,8 @@
       "Decision Guides",
       "Serverless"
     ],
-    "detailDescription": "Amazon Web Services (AWS) provides you with the flexibility to choose different compute options to build and run modern applications that map to your business needs. We provide you with access to the right operational model for your compute choice."
+    "detailDescription": "Amazon Web Services (AWS) provides you with the flexibility to choose different compute options to build and run modern applications that map to your business needs. We provide you with access to the right operational model for your compute choice.",
+    "imgUrl": "/images/decision-guides/latest/modern-apps-strategy-on-aws-how-to-choose/images/operational-models-for-modular-architecture.png"
   },
   {
     "service": "Choosing an AWS analytics service",
@@ -12872,7 +12873,8 @@
       "Analytics",
       "Decision Guides"
     ],
-    "detailDescription": "Data is foundational to modern business. People and applications need to securely access and analyze data, which comes from new and diverse sources. The volume of data is also constantly increasing, which can cause organizations to struggle with capturing, storing, and analyzing all the necessary data."
+    "detailDescription": "Data is foundational to modern business. People and applications need to securely access and analyze data, which comes from new and diverse sources. The volume of data is also constantly increasing, which can cause organizations to struggle with capturing, storing, and analyzing all the necessary data.",
+    "imgUrl": "/images/decision-guides/latest/analytics-on-aws-how-to-choose/images/analytics-services.png"
   },
   {
     "service": "Choosing an AWS application integration service",
@@ -12882,7 +12884,8 @@
       "Application Integration",
       "Decision Guides"
     ],
-    "detailDescription": "Application integration is a suite of services that enables communication between decoupled components within microservices, distributed systems, and serverless applications. Amazon Web Services (AWS) offers more than half a dozen application integration services to support a diverse set of workloads running in the cloud."
+    "detailDescription": "Application integration is a suite of services that enables communication between decoupled components within microservices, distributed systems, and serverless applications. Amazon Web Services (AWS) offers more than half a dozen application integration services to support a diverse set of workloads running in the cloud.",
+    "imgUrl": "/images/decision-guides/latest/application-integration-on-aws-how-to-choose/images/operational-responsibility.png"
   },
   {
     "service": "Choosing an AWS cloud governance service",
@@ -12891,7 +12894,8 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Cloud governance is a set of rules, processes, and reports that helps you align your AWS Cloud use toward your business objectives."
+    "detailDescription": "Cloud governance is a set of rules, processes, and reports that helps you align your AWS Cloud use toward your business objectives.",
+    "imgUrl": "/images/decision-guides/latest/cloud-governance-on-aws-how-to-choose/images/cloudgov-understanding.png"
   },
   {
     "service": "Choosing an AWS compute service",
@@ -12901,7 +12905,8 @@
       "Compute",
       "Decision Guides"
     ],
-    "detailDescription": "AWS compute services are designed to meet the varied demands of modern applications, from small-scale projects to enterprise-grade solutions. These services provide scalable computing power that helps you to build, deploy, and manage applications."
+    "detailDescription": "AWS compute services are designed to meet the varied demands of modern applications, from small-scale projects to enterprise-grade solutions. These services provide scalable computing power that helps you to build, deploy, and manage applications.",
+    "imgUrl": "/images/decision-guides/latest/compute-on-aws-how-to-choose/images/understand.png"
   },
   {
     "service": "Choosing an AWS container service",
@@ -12911,7 +12916,8 @@
       "Containers",
       "Decision Guides"
     ],
-    "detailDescription": "Containers are a key component of modern application development. They are the standard for organizing compute resources, and managing the content of your application deployments."
+    "detailDescription": "Containers are a key component of modern application development. They are the standard for organizing compute resources, and managing the content of your application deployments.",
+    "imgUrl": "/images/decision-guides/latest/containers-on-aws-how-to-choose/images/container-options-on-aws.png"
   },
   {
     "service": "Choosing an AWS cost management strategy",
@@ -12921,7 +12927,8 @@
       "Cloud Financial Management",
       "Decision Guides"
     ],
-    "detailDescription": "Cost management and optimization in the cloud are important for businesses of all sizes. An effective cost management strategy ensures that you only pay for what you need and that you maximize the return on your cloud investment."
+    "detailDescription": "Cost management and optimization in the cloud are important for businesses of all sizes. An effective cost management strategy ensures that you only pay for what you need and that you maximize the return on your cloud investment.",
+    "imgUrl": "/images/decision-guides/latest/cost-management-on-aws-how-to-choose/images/cfm-portfolio.png"
   },
   {
     "service": "Choosing an AWS cryptography service",
@@ -12931,7 +12938,8 @@
       "Cryptography & PKI",
       "Decision Guides"
     ],
-    "detailDescription": "Cryptography is a cornerstone of security in cloud computing, helping to ensure data confidentiality, integrity, and authenticity. In a cloud environment, sensitive data may traverse public networks and reside on shared infrastructure, making robust cryptographic measures essential for protecting against unauthorized access or tampering."
+    "detailDescription": "Cryptography is a cornerstone of security in cloud computing, helping to ensure data confidentiality, integrity, and authenticity. In a cloud environment, sensitive data may traverse public networks and reside on shared infrastructure, making robust cryptographic measures essential for protecting against unauthorized access or tampering.",
+    "imgUrl": "/images/decision-guides/latest/cryptography-on-aws-how-to-choose/images/data-protection-on-aws-jan-2024.png"
   },
   {
     "service": "Choosing an AWS database service",
@@ -12941,7 +12949,8 @@
       "Database",
       "Decision Guides"
     ],
-    "detailDescription": "AWS oﬀers a growing number of database options (15+) with diverse data models to support a variety of workloads. These include relational, key-value, document, in-memory, graph, time series, vector, and wide-column."
+    "detailDescription": "AWS oﬀers a growing number of database options (15+) with diverse data models to support a variety of workloads. These include relational, key-value, document, in-memory, graph, time series, vector, and wide-column.",
+    "imgUrl": "/images/decision-guides/latest/databases-on-aws-how-to-choose/images/aws-database-services.png"
   },
   {
     "service": "Choosing an AWS identity service",
@@ -12950,7 +12959,8 @@
     "categories": [
       "Decision Guides"
     ],
-    "detailDescription": "Identity and access management helps ensure that only authenticated and authorized users can access only the cloud resources that they need to perform their tasks, and that they can do it in a secure and compliant way."
+    "detailDescription": "Identity and access management helps ensure that only authenticated and authorized users can access only the cloud resources that they need to perform their tasks, and that they can do it in a secure and compliant way.",
+    "imgUrl": "/images/decision-guides/latest/identity-on-aws-how-to-choose/images/understand-identity-services.png"
   },
   {
     "service": "Choosing an AWS IoT service",
@@ -12960,7 +12970,8 @@
       "Decision Guides",
       "Internet of Things (IoT)"
     ],
-    "detailDescription": "Internet of Things (IoT) technologies have become a transformative force in the business world. They offer a wide range of opportunities for innovation, efficiency, and customer-centric strategies. IoT provides the foundation for smart devices, smart homes, smart buildings, next-generation vehicles, smart manufacturing, and public infrastructure. Businesses can use IoT technologies to increase efficiency with automation, gain visibility into their supply chains, get insights from their data, and offer smart connected experiences for their customers."
+    "detailDescription": "Internet of Things (IoT) technologies have become a transformative force in the business world. They offer a wide range of opportunities for innovation, efficiency, and customer-centric strategies. IoT provides the foundation for smart devices, smart homes, smart buildings, next-generation vehicles, smart manufacturing, and public infrastructure. Businesses can use IoT technologies to increase efficiency with automation, gain visibility into their supply chains, get insights from their data, and offer smart connected experiences for their customers.",
+    "imgUrl": "/images/decision-guides/latest/iot-on-aws-how-to-choose/images/what-is-iot.jpg"
   },
   {
     "service": "Choosing an AWS machine learning service",
@@ -12970,7 +12981,8 @@
       "Decision Guides",
       "Machine Learning"
     ],
-    "detailDescription": "At its most basic, machine learning (ML) is designed to provide digital tools and services to learn from data, identify patterns, make predictions, and then act on those predictions. Almost all artificial intelligence (AI) systems today are created using ML. ML uses large amounts of data to create and validate decision logic. This decision logic forms the basis of the AI model."
+    "detailDescription": "At its most basic, machine learning (ML) is designed to provide digital tools and services to learn from data, identify patterns, make predictions, and then act on those predictions. Almost all artificial intelligence (AI) systems today are created using ML. ML uses large amounts of data to create and validate decision logic. This decision logic forms the basis of the AI model.",
+    "imgUrl": "/images/decision-guides/latest/machine-learning-on-aws-how-to-choose/images/what-is-ai-ml.png"
   },
   {
     "service": "Choosing an AWS monitoring and observability service",
@@ -12980,7 +12992,8 @@
       "Decision Guides",
       "Management & Governance"
     ],
-    "detailDescription": "Monitoring and observability are critical components for ensuring the availability, performance, reliability, and security of your cloud-based workloads and data."
+    "detailDescription": "Monitoring and observability are critical components for ensuring the availability, performance, reliability, and security of your cloud-based workloads and data.",
+    "imgUrl": "/images/decision-guides/latest/monitoring-on-aws-how-to-choose/images/monitoring-and-observability.png"
   },
   {
     "service": "Choosing an AWS networking and content delivery service",
@@ -12990,7 +13003,8 @@
       "Decision Guides",
       "Networking & Content Delivery"
     ],
-    "detailDescription": "What you build in AWS depends on your business needs. In this guide, we use the term workloads to refer to any collection of resources and code that delivers business value, such as a customer-facing application or a backend process."
+    "detailDescription": "What you build in AWS depends on your business needs. In this guide, we use the term workloads to refer to any collection of resources and code that delivers business value, such as a customer-facing application or a backend process.",
+    "imgUrl": "/images/decision-guides/latest/networking-on-aws-how-to-choose/images/cloud-networking-from-aws.png"
   },
   {
     "service": "Choosing an AWS storage service",
@@ -13000,7 +13014,8 @@
       "Decision Guides",
       "Storage"
     ],
-    "detailDescription": "AWS offers a broad portfolio of reliable, scalable, and secure storage services for storing, accessing, protecting, and analyzing your data. This makes it easier to match your storage methods with your needs, and provides storage options that are not easily achievable with on-premises infrastructure. When selecting a storage service, ensuring that it aligns with your access patterns will be critical to achieving the performance you want."
+    "detailDescription": "AWS offers a broad portfolio of reliable, scalable, and secure storage services for storing, accessing, protecting, and analyzing your data. This makes it easier to match your storage methods with your needs, and provides storage options that are not easily achievable with on-premises infrastructure. When selecting a storage service, ensuring that it aligns with your access patterns will be critical to achieving the performance you want.",
+    "imgUrl": "/images/decision-guides/latest/storage-on-aws-how-to-choose/images/amazon-fsx-data-storage-family.png"
   },
   {
     "service": "Choosing AWS frontend and mobile services",
@@ -13010,7 +13025,8 @@
       "Decision Guides",
       "Front-End Web & Mobile"
     ],
-    "detailDescription": "AWS offers purpose-built tools and services to support frontend development workflows for native iOS, Android, React Native, and JavaScript developers. You can use these tools to develop, deploy, test, operate, and monitor your app."
+    "detailDescription": "AWS offers purpose-built tools and services to support frontend development workflows for native iOS, Android, React Native, and JavaScript developers. You can use these tools to develop, deploy, test, operate, and monitor your app.",
+    "imgUrl": "/images/decision-guides/latest/front-end-on-aws-how-to-choose/images/front-end-mobile-services.png"
   },
   {
     "service": "Choosing AWS migration services and tools",
@@ -13020,7 +13036,8 @@
       "Decision Guides",
       "Migration & Transfer"
     ],
-    "detailDescription": "Migration and modernization in the Amazon Web Services (AWS) cloud involves the process of relocating an organization's digital infrastructure, applications, and data to AWS. This shift allows you to not only modernize applications, but also use the range of scalable and secure cloud services and infrastructure offered by AWS to reduce reliance on physical hardware and optimize resource allocation."
+    "detailDescription": "Migration and modernization in the Amazon Web Services (AWS) cloud involves the process of relocating an organization's digital infrastructure, applications, and data to AWS. This shift allows you to not only modernize applications, but also use the range of scalable and secure cloud services and infrastructure offered by AWS to reduce reliance on physical hardware and optimize resource allocation.",
+    "imgUrl": "/images/decision-guides/latest/migration-on-aws-how-to-choose/images/data-migration-services.png"
   },
   {
     "service": "Choosing AWS security, identity, and governance services",
@@ -13030,7 +13047,8 @@
       "Decision Guides",
       "Security, Identity, & Compliance"
     ],
-    "detailDescription": "Security, identity, and governance in the cloud are important components for you in achieving and maintaining integrity and safety for your data and services. This is especially relevant as more businesses migrate to cloud providers such as Amazon Web Services (AWS)."
+    "detailDescription": "Security, identity, and governance in the cloud are important components for you in achieving and maintaining integrity and safety for your data and services. This is especially relevant as more businesses migrate to cloud providers such as Amazon Web Services (AWS).",
+    "imgUrl": "/images/decision-guides/latest/security-on-aws-how-to-choose/images/security-identity-governance-services.png"
   },
   {
     "service": "SDKs and Tools Reference Guide",

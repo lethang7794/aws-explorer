@@ -18,17 +18,22 @@ export async function extractDetailInfo(
 
   // Extract detailed description
   let detailDescription = ''
+  let imgUrl = ''
   const sections = []
 
   try {
     // The detail description can be in various places, so we try multiple selectors
-
     let detailDescriptionEl: ElementHandle<HTMLElement | SVGElement> | null
     if (url.includes('decision-guides')) {
       // Decision guide: First paragraph, e.g. https://docs.aws.amazon.com/decision-guides/latest/modern-apps-strategy-on-aws-how-to-choose/modern-apps-strategy-on-aws-how-to-choose.html
       detailDescriptionEl = await detailPage.$(
         '#main-col-body h2:first-of-type ~ p'
       )
+      const imgEl = await detailPage.$(
+        'img.aws-docs-img-whiteBg.aws-docs-img-padding'
+      )
+      imgUrl = (await imgEl?.getAttribute('src')) || ''
+      console.log(`Extracted image URL: ${imgUrl} for service: ${serviceName}`)
     } else if (url.includes('developerguide')) {
       // Developer guide: First paragraph of the main content, e.g. https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html
       detailDescriptionEl = await detailPage.$(
@@ -105,5 +110,6 @@ export async function extractDetailInfo(
   return {
     detailDescription: detailDescription || undefined,
     sections: sections.length > 0 ? sections : undefined,
+    imgUrl: imgUrl || undefined,
   }
 }
