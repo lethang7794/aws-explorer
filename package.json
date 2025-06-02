@@ -5,7 +5,8 @@
   "scripts": {
     "// Next": "Next.js scripts",
     "dev": "next dev",
-    "build": "next build && next-sitemap",
+    "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "// Chore": "",
