@@ -104,7 +104,7 @@ const AKA = {
   'Amazon Elastic Transcoder': [],
   'Amazon ElastiCache': [],
   'Amazon EMR': ['Elastic MapReduce'],
-  'Amazon EventBridge': [],
+  'Amazon EventBridge': ['CloudWatch Events'],
   'Amazon FinSpace': [],
   'Amazon Forecast': [],
   'Amazon Fraud Detector': [],
