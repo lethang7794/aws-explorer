@@ -68,12 +68,14 @@
 | Service icons               | ✅ All services have icon                                     | 🟡 Only for feature services                                                           |
 | Category icons              | 🚀 All categories have icon                                   | ❌ Not supported                                                                       |
 | Resources icons             | 🚀 Show resource icons in icon layout and detail page         | 🟡 Not supported                                                                       |
+| Service aka                 | ✅ Support aka for services, e.g. RDS, ELB, EFS               | ❌ Not supported                                                                       |
 | Preload detail page         | ✅ See it at a glance                                         | ❌ Needs a whole page load                                                             |
-| Links to docs               | 🚀 Show all docs of the services without distraction          | ✅ Show all docs of the services                                                       |
+| Links to docs               | 🚀 Show all docs of the services without distraction          | ✅ Show all docs of the services wit                                                   |
 | Support go back             | ✅ Continue where you are before checking detail of a service | ❌ Reset everything after you checking a service                                       |
 | Clean, minimal UI           | ✅                                                            | 🟡 There is a lot of information                                                       |
-| No naming confusion         | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch               | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕 |
-| Alphabetical sorting        | ✅ VPC is near VPN, CloudTrail is next to CloudWatch          | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch         |
+| Hide/show prefix AWS/Amazon | ✅ VPC, EC2, S3, Lambda, CloudTrail, CloudWatch               | ❌ Amazon VPC, Amazon VPC, Amazon S3, AWS Lambda, AWS CloudTrail, Amazon CloudWatch 😕 |
+| Sort                        | ✅ By category, service name (without/with AWS/Amazon)        | ❌ Services are sorted by name with AWS/Amazon prefix                                  |
+| Alphabet sorting            | ✅ VPC is near VPN, CloudTrail is next to CloudWatch          | ❌ Amazon VPC don't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch         |
 | Layout mode                 | 🚀 Grid, list, icon view                                      | 🟡 Only one layout                                                                     |
 | Up-to-date list of services | 🟡 Update frequently                                          | ✅ Always up-to-date                                                                   |
 
