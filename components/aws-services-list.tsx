@@ -278,7 +278,7 @@ export default function AwsServicesList({
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-3">Sort Mode</h2>
+            <h2 className="text-xl font-semibold mb-3">Sort by</h2>
             <div className="flex flex-wrap gap-2">
               <RadioGroup
                 value={sortType}
@@ -307,7 +307,9 @@ export default function AwsServicesList({
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-3">Service name</h2>
+            <h2 className="text-xl font-semibold mb-3">
+              Amazon/AWS in Service Name
+            </h2>
             <div className="flex flex-wrap gap-2">
               <RadioGroup
                 value={prefixDisplay}
@@ -318,18 +320,18 @@ export default function AwsServicesList({
               >
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="without" id="prefix-without" />
-                  <Label htmlFor="prefix-without">Without Amazon/AWS</Label>
+                  <Label htmlFor="prefix-without">Without</Label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="with" id="prefix-with" />
-                  <Label htmlFor="prefix-with">With Amazon/AWS</Label>
+                  <Label htmlFor="prefix-with">With</Label>
                 </div>
               </RadioGroup>
             </div>
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold mb-3">View Mode</h2>
+            <h2 className="text-xl font-semibold mb-3">Layout</h2>
             <div className="flex flex-wrap gap-2">
               <Button
                 variant={layoutMode === 'card' ? 'secondary' : 'outline'}
