@@ -490,10 +490,11 @@ function ServiceCartItem({ service }: { service: Service }) {
         </div>
         {service.images && service.images.length > 0
           ? service.images.slice(0, 3).map((img) => (
-              <div className="mt-4 w-full">
+              <div key={img.url} className="mt-4 w-full">
                 <img
                   className="aspect-auto object-center w-full max-w-2xl rounded-lg"
                   src={AWS_DOCS_URL + img.url}
+                  alt={img.alt}
                 />
               </div>
             ))
@@ -565,6 +566,8 @@ function ServiceListItem({ service }: { service: Service }) {
           <div className="flex flex-col gap-4 items-center justify-center px-4 pb-4">
             {service.images.slice(0, 3).map((img) => (
               <img
+                key={img.url}
+                alt={img.alt}
                 className="aspect-auto object-center w-full max-w-2xl rounded-md"
                 src={AWS_DOCS_URL + img.url}
               />
