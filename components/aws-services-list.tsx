@@ -178,9 +178,7 @@ export default function AwsServicesList({
           AWS Explorer
         </h1>
         <p className="text-gray-200 mt-2">
-          Browse, explorer, and find your next AWS services...
-          <br />
-          or quickly find the docs you need.
+          Browse, explorer, and find your next AWS services...or quickly find the docs you need.
         </p>
       </header>
 
@@ -267,7 +265,7 @@ export default function AwsServicesList({
                   setPage(1) // Reset to first page
                   scrollTop()
                 }}
-                className="flex gap-2"
+                className="flex flex-wrap gap-2"
               >
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="category" id="sort-category" />
@@ -292,7 +290,7 @@ export default function AwsServicesList({
                 onValueChange={(value: PrefixDisplayType) => {
                   setPrefixDisplay(value)
                 }}
-                className="flex gap-3"
+                className="flex flex-wrap gap-3"
               >
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="without" id="prefix-without" />
@@ -308,30 +306,34 @@ export default function AwsServicesList({
 
           <div>
             <h2 className="text-xl font-semibold mb-3">View Mode</h2>
-            <div className="flex space-x-2">
+            <div className="flex flex-wrap gap-2">
               <Button
                 variant={layoutMode === 'card' ? 'secondary' : 'outline'}
                 size="icon"
                 onClick={() => setLayoutMode('card')}
                 aria-label="Card view"
+                className="w-fit px-2"
               >
-                <LayoutGrid className="h-5 w-5" />
+                <LayoutGrid className="h-5 w-5" /> 
+                Grid
               </Button>
               <Button
                 variant={layoutMode === 'list' ? 'secondary' : 'outline'}
                 size="icon"
                 onClick={() => setLayoutMode('list')}
                 aria-label="List view"
+                className="w-fit px-2"
               >
-                <List className="h-5 w-5" />
+                <List className="h-5 w-5" /> List   
               </Button>
               <Button
                 variant={layoutMode === 'icon' ? 'secondary' : 'outline'}
                 size="icon"
                 onClick={() => setLayoutMode('icon')}
                 aria-label="Icon view"
+                className="w-fit px-2"
               >
-                <Grid className="h-5 w-5" />
+                <Grid className="h-5 w-5" /> Icon
               </Button>
             </div>
           </div>
