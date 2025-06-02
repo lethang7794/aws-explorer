@@ -60,7 +60,7 @@
 
 ## Comparison to the official AWS documentation page
 
-| Feature                     | AWS Explorer                                                                                                | Official AWS Documentation                                                                             |
+| Feature                     | [AWS Explorer](https://aws-explorer.vercel.app)                                                             | [Official AWS Documentation](https://docs.aws.amazon.com/)                                             |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | Fast, global search         | ✅                                                                                                          | ✅                                                                                                     |
 | Support abbr.               | 🚀 A2C, ADS, AMB, AMS, ARC, CDI, DLM, DMS, DRS, EFS, ELB, IAM, IVS, MGN, RAM, RDS, ROSA, SCT, SES, SMC, TNB | 🟡 Only if you're lucky                                                                                |
