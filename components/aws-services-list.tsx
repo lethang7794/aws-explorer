@@ -270,12 +270,12 @@ export default function AwsServicesList({
                 className="flex gap-2"
               >
                 <div className="flex items-center gap-2">
-                  <RadioGroupItem value="simpleName" id="sort-simpleName" />
-                  <Label htmlFor="sort-simpleName">Alphabet</Label>
-                </div>
-                <div className="flex items-center gap-2">
                   <RadioGroupItem value="category" id="sort-category" />
                   <Label htmlFor="sort-category">Category</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="simpleName" id="sort-simpleName" />
+                  <Label htmlFor="sort-simpleName">Alphabet</Label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="fullName" id="sort-fullName" />
@@ -295,12 +295,12 @@ export default function AwsServicesList({
                 className="flex gap-3"
               >
                 <div className="flex items-center gap-2">
-                  <RadioGroupItem value="with" id="prefix-with" />
-                  <Label htmlFor="prefix-with">With Amazon/AWS</Label>
-                </div>
-                <div className="flex items-center gap-2">
                   <RadioGroupItem value="without" id="prefix-without" />
                   <Label htmlFor="prefix-without">Without Amazon/AWS</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem value="with" id="prefix-with" />
+                  <Label htmlFor="prefix-with">With Amazon/AWS</Label>
                 </div>
               </RadioGroup>
             </div>
@@ -433,7 +433,7 @@ function ServiceCartItem({ service }: { service: Service }) {
             scroll={true}
           >
             <ServiceIcons service={service} />
-            <div className="flex-1">{displayName}</div>
+            <div className="flex-1 min-w-48">{displayName}</div>
           </Link>
         </CardTitle>
         <CardDescription className="text-xs h-10">

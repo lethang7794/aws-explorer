@@ -42,6 +42,8 @@ function simplifyServiceName(service: string): string {
     .replace(/^AWS /, '')
     .replace(/^AWS\n/, '')
     .replace(/^Amazon /, '')
+    .replace(/or AWS /g, 'or ')
+    .replace(/or Amazon /g, 'or ')
     .trim()
 }
 

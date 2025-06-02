@@ -49,9 +49,9 @@ export function AwsServicesFilterProvider({
   const initialLayoutMode =
     (searchParams.get(QUERY_PARAMS.layout) as LayoutMode) || 'card'
   const initialSortType =
-    (searchParams.get('sort') as SortType) || 'simpleName'
+    (searchParams.get('sort') as SortType) || 'category'
   const initialPrefixDisplay =
-    (searchParams.get(QUERY_PARAMS.prefixDisplay) as PrefixDisplayType) || 'with'
+    (searchParams.get(QUERY_PARAMS.prefixDisplay) as PrefixDisplayType) || 'without'
 
   const [selectedCategories, setSelectedCategories] =
     useState<string[]>(initialCategories)
