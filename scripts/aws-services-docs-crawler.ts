@@ -175,7 +175,7 @@ export async function extractDetailInfo(
     // - or in the second cell of the first row of the table, e.g. https://docs.aws.amazon.com/decision-guides/latest/modern-apps-strategy-on-aws-how-to-choose/modern-apps-strategy-on-aws-how-to-choose.html
     // - or in the first paragraph of the main content, e.g. https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html
     const detailDescriptionEl = await detailPage.$(
-      'h1 ~ div, table tbody tr td:nth-child(2) p, div#main-content div#main-col-body p:first-of-type'
+      'table tbody tr td:nth-child(2) p, h1 ~ div, div#main-content div#main-col-body p:first-of-type'
     )
     detailDescription = (await detailDescriptionEl?.innerText()) || ''
 
