@@ -101,8 +101,18 @@ export default async function ServiceDetailPage({
                   ))}
                 </div>
               ) : null}
-              <div>{service.service}</div>
+              <div className="flex gap-2">
+                <div>{service.service}</div>
+                {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
+                  <div className="font-normal">
+                    {'('}
+                    {`${service.alsoKnownAs.map((aka) => aka)}`}
+                    {')'}
+                  </div>
+                ) : null}
+              </div>
             </CardTitle>
+
             <CardDescription className="text-lg text-muted-foreground pt-1">
               {service.shortDescription}
             </CardDescription>

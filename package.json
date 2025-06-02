@@ -18,6 +18,8 @@
     "icons:load": "tsx ./scripts/aws-icons-load.ts",
     "icons": "pnpm run icons:extract && pnpm run icons:transform && pnpm run icons:load",
     "icons:post": "bash ./scripts/aws-icons-post.sh",
+    "merge-alternatives": "tsx ./scripts/merge-alternatives.ts",
+    "generate-aka-names": "tsx ./scripts/generate-aka-names.ts",
     "// AWS docs": "Script to crawl the AWS docs",
     "aws-docs-crawl": "tsx ./scripts/aws-services-docs-crawler.ts"
   },

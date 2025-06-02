@@ -11,6 +11,7 @@ export interface Service extends ServiceCrawl {
   iconService?: string
   iconServices?: string[]
   iconResources?: string[]
+  alsoKnownAs?: string[]
 }
 
 export interface ServiceCategory {

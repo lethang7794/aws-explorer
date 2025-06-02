@@ -105,7 +105,8 @@ export default function AwsServicesList({
     let filtered = initialServices.filter((service) => {
       const matchesSearchTerm =
         service.service.toLowerCase().includes(search) ||
-        service.shortDescription.toLowerCase().includes(search)
+        service.shortDescription.toLowerCase().includes(search) ||
+        service.alsoKnownAs?.some((aka) => aka.toLowerCase().includes(search))
       const matchesCategories =
         selectedCategories.length === 0 ||
         selectedCategories.some((cat) => service.categories.includes(cat))

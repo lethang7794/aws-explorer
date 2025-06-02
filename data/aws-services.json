@@ -1298,6 +1298,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "DLM"
     ]
   },
   {
@@ -1617,6 +1620,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elastic Block Store"
     ]
   },
   {
@@ -1713,6 +1719,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elastic Compute Cloud"
     ]
   },
   {
@@ -1764,6 +1773,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elastic Container Registry"
     ]
   },
   {
@@ -1880,6 +1892,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elastic Container Service"
     ]
   },
   {
@@ -1955,6 +1970,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elastic Kubernetes Service"
     ]
   },
   {
@@ -1975,6 +1993,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "EFS"
     ]
   },
   {
@@ -2091,6 +2112,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Elastic MapReduce"
     ]
   },
   {
@@ -3719,6 +3743,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Managed Streaming for Apache Kafka"
     ]
   },
   {
@@ -3749,6 +3776,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Managed Workflows for Apache Airflow"
     ]
   },
   {
@@ -4520,6 +4550,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "RDS"
     ]
   },
   {
@@ -4622,6 +4655,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Simple Storage Service"
     ]
   },
   {
@@ -4678,6 +4714,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Simple Storage Service Glacier"
     ]
   },
   {
@@ -4955,6 +4994,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "SES"
     ]
   },
   {
@@ -4986,6 +5028,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Simple Notification Service"
     ]
   },
   {
@@ -5017,6 +5062,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Simple Queue Service"
     ]
   },
   {
@@ -5058,6 +5106,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Simple Workflow Service"
     ]
   },
   {
@@ -5355,6 +5406,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Virtual Private Cloud"
     ]
   },
   {
@@ -5386,6 +5440,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Video Private Cloud Lattice"
     ]
   },
   {
@@ -7269,6 +7326,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "DMS"
     ]
   },
   {
@@ -8364,6 +8424,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "IAM"
     ]
   },
   {
@@ -8800,6 +8863,9 @@
         "name": "Learn About AWS Cryptography Services",
         "items": []
       }
+    ],
+    "alsoKnownAs": [
+      "Key Management Service"
     ]
   },
   {
@@ -9808,6 +9874,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "RAM"
     ]
   },
   {
@@ -10035,6 +10104,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "Serverless Application Model"
     ]
   },
   {
@@ -10055,6 +10127,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "SCT"
     ]
   },
   {
@@ -11634,6 +11709,9 @@
         "name": "Related Services",
         "items": []
       }
+    ],
+    "alsoKnownAs": [
+      "Web Application Firewall"
     ]
   },
   {
@@ -11876,6 +11954,9 @@
           }
         ]
       }
+    ],
+    "alsoKnownAs": [
+      "ELB"
     ]
   },
   {
