@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { type Service } from '@/lib/aws-services-data'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
-import { ServiceIcons } from './ServiceIcons'
+import { ServiceIcons } from './service-icons'
 
 export function ServiceIconItem({ service }: { service: Service }) {
   const akaText = getServiceAkaText(service)

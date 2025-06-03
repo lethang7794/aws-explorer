@@ -17,9 +17,9 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { useAwsServicesFilter } from '@/contexts/aws-services-filter-context'
 import { scrollTop } from '@/helpers/scroll-top'
 import { Pagination } from './pagination'
-import { ServiceListItem } from './ServiceListItem'
-import { ServiceCartItem } from './ServiceCartItem'
-import { ServiceIconItem } from './ServiceIconItem'
+import { ServiceListItem } from './service-list-item'
+import { ServiceCardItem } from './service-card-item'
+import { ServiceIconItem } from './service-icon-item'
 import { SearchFilterSection } from './search-filter-section'
 
 interface ServicesListProps {
@@ -196,7 +196,7 @@ export default function ServicesList({
               {layoutMode === 'card' && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredServices.map((service) => (
-                    <ServiceCartItem key={service.service} service={service} />
+                    <ServiceCardItem key={service.service} service={service} />
                   ))}
                 </div>
               )}

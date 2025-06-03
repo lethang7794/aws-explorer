@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { type Service } from '@/lib/aws-services-data'
 import { usePrefixDisplay } from '@/hooks/use-prefix-display'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
-import { ServiceIcons } from './ServiceIcons'
+import { ServiceIcons } from './service-icons'
 import { getServiceImageUrl } from '@/helpers/get-service-image-url'
+
 export function ServiceListItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
   const displayName =
