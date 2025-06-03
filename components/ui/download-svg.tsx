@@ -13,7 +13,7 @@ interface Props {
 export function DownloadSvg({ id, filename, name, buttonText = 'SVG' }: Props) {
   return (
     <Button
-      variant="outline"
+      variant="default"
       size="icon"
       className="w-fit px-2"
       onClick={async () => {

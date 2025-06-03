@@ -108,27 +108,34 @@ export default async function ServiceDetailPage({
                   ))}
                 </div>
               ) : null}
-              <div className="flex gap-2 text-3xl md:text-4xl">
+              <div className="flex items-center justify-between flex-grow gap-2 text-3xl md:text-4xl">
                 <div className="mr-2">{service.service}</div>
                 {service.iconService ? (
-                  <>
-                    <DownloadSvg
-                      id={service.iconService}
-                      filename={service.iconService}
-                      name={service.service}
-                    />
-                    <DownloadPng
-                      id={service.iconService}
-                      filename={service.iconService}
-                      name={service.service}
-                    />
-                    <CopySvg id={service.iconService} name={service.service} />
-                    <CopyPng
-                      id={service.iconService}
-                      name={service.service}
-                      targetSize={512}
-                    />
-                  </>
+                  <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2 w-min">
+                      <DownloadSvg
+                        id={service.iconService}
+                        filename={service.iconService}
+                        name={service.service}
+                      />
+                      <DownloadPng
+                        id={service.iconService}
+                        filename={service.iconService}
+                        name={service.service}
+                      />
+                    </div>
+                    <div className="flex flex-wrap gap-2 w-min">
+                      <CopySvg
+                        id={service.iconService}
+                        name={service.service}
+                      />
+                      <CopyPng
+                        id={service.iconService}
+                        name={service.service}
+                        targetSize={512}
+                      />
+                    </div>
+                  </div>
                 ) : null}
               </div>
               {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
