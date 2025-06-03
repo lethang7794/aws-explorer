@@ -98,13 +98,8 @@ export function CopyPng({
               'image/png': pngBlob,
             }),
           ])
-
-          alert(`PNG for ${name || 'image'} copied to clipboard`)
         } catch (error) {
           console.error('Error copying PNG:', error)
-          alert(
-            `Failed to copy PNG: ${error instanceof Error ? error.message : String(error)}`
-          )
         }
       }}
     >

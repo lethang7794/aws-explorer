@@ -48,8 +48,6 @@ export function DownloadSvg({
           a.click()
           document.body.removeChild(a)
           URL.revokeObjectURL(url)
-
-          alert(`SVG for ${name} downloaded successfully`)
         } catch (error) {
           console.error('Error downloading SVG:', error)
         }

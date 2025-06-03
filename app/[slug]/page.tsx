@@ -117,12 +117,12 @@ export default async function ServiceDetailPage({
                         id={service.iconService}
                         filename={service.iconService}
                         name={service.service}
+                        className="hidden md:flex"
                       />
                       <DownloadPng
                         id={service.iconService}
                         filename={service.iconService}
                         name={service.service}
-                        className="hidden md:flex"
                       />
                     </div>
                     <div className="flex flex-wrap gap-2 w-min">

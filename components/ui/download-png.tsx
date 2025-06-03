@@ -101,7 +101,6 @@ export function DownloadPng({
           document.body.removeChild(a)
           URL.revokeObjectURL(url)
 
-          alert(`PNG for ${name} downloaded successfully`)
         } catch (error) {
           console.error('Error downloading PNG:', error)
         }
