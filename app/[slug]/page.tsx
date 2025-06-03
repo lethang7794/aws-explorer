@@ -122,17 +122,20 @@ export default async function ServiceDetailPage({
                         id={service.iconService}
                         filename={service.iconService}
                         name={service.service}
+                        className="hidden md:flex"
                       />
                     </div>
                     <div className="flex flex-wrap gap-2 w-min">
                       <CopySvg
                         id={service.iconService}
                         name={service.service}
+                        className="hidden md:flex"
                       />
                       <CopyPng
                         id={service.iconService}
                         name={service.service}
                         targetSize={512}
+                        className="hidden md:flex"
                       />
                     </div>
                   </div>

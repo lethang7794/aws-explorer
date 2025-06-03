@@ -2,20 +2,28 @@
 
 import { Download } from 'lucide-react'
 import { Button } from './button'
+import { cn } from '@/lib/utils'
 
 interface Props {
   id: string
   filename: string
   name?: string
   buttonText?: string
+  className?: string
 }
 
-export function DownloadSvg({ id, filename, name, buttonText = 'SVG' }: Props) {
+export function DownloadSvg({
+  id,
+  filename,
+  name,
+  buttonText = 'SVG',
+  className,
+}: Props) {
   return (
     <Button
       variant="default"
       size="icon"
-      className="w-fit px-2"
+      className={cn('w-fit px-2', className)}
       onClick={async () => {
         const iconElement = document.getElementById(id) as HTMLImageElement
         console.log(iconElement)

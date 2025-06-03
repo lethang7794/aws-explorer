@@ -2,12 +2,14 @@
 
 import { Copy } from 'lucide-react'
 import { Button } from './button'
+import { cn } from '@/lib/utils'
 
 interface Props {
   id: string
   name?: string
   targetSize?: number
   buttonText?: string
+  className?: string
 }
 
 export function CopyPng({
@@ -15,12 +17,13 @@ export function CopyPng({
   name,
   targetSize = 512,
   buttonText = 'PNG',
+  className,
 }: Props) {
   return (
     <Button
       variant="default"
       size="icon"
-      className="w-fit px-2"
+      className={cn('w-fit px-2', className)}
       onClick={async () => {
         const iconElement = document.getElementById(id) as HTMLImageElement
         if (!iconElement) return
