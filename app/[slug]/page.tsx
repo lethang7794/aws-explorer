@@ -15,6 +15,7 @@ import { notFound } from 'next/navigation'
 import { Footer } from '@/components/footer'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { AWS_DOCS_URL } from '@/constants/aws-docs'
+import { DownloadSvg } from '@/components/ui/download-svg'
 
 interface ServiceDetailPageProps {
   params: {
@@ -83,11 +84,19 @@ export default async function ServiceDetailPage({
           <CardHeader>
             <CardTitle className="flex flex-wrap gap-2 items-center">
               {service.iconService ? (
-                <img
-                  src={`/aws/${service.iconService}.svg`}
-                  className="h-20 w-20 md:h-24 md:w-24"
-                  alt={`${service.iconService} icon`}
-                />
+                <div className="flex flex-col gap-2">
+                  <img
+                    src={`/aws/${service.iconService}.svg`}
+                    className="h-20 w-20 md:h-24 md:w-24"
+                    alt={`${service.iconService} icon`}
+                    id={service.iconService}
+                  />
+                  <DownloadSvg
+                    id={service.iconService}
+                    filename={service.iconService}
+                    name={service.service}
+                  />
+                </div>
               ) : null}
               {service.iconServices ? (
                 <div className="flex flex-wrap gap-2">
