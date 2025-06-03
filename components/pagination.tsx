@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { type Service } from '@/lib/aws-services-data' // Import type
+import { type Service } from '@/lib/aws-services-data'
 import { scrollTop } from '@/helpers/scroll-top'
 
 export function Pagination({

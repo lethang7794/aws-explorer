@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
-import { type Service } from '@/lib/aws-services-data' // Import type
+import { type Service } from '@/lib/aws-services-data'
 import { usePrefixDisplay } from '@/hooks/use-prefix-display'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
 import { ServiceIcons } from './ServiceIcons'

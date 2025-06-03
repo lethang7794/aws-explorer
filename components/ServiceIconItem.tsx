@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
-import { type Service } from '@/lib/aws-services-data' // Import type
+import { type Service } from '@/lib/aws-services-data'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
 import { ServiceIcons } from './ServiceIcons'

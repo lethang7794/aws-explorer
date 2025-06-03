@@ -11,8 +11,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 
 export type SortType = 'simpleName' | 'category' | 'fullName'
 export type PrefixDisplayType = 'with' | 'without'
-
-type LayoutMode = 'card' | 'list' | 'icon'
+export type LayoutMode = 'card' | 'list' | 'icon'
 
 interface AwsServicesFilterContextProps {
   selectedCategories: string[]
@@ -48,16 +47,17 @@ export function AwsServicesFilterProvider({
     : []
   const initialLayoutMode =
     (searchParams.get(QUERY_PARAMS.layout) as LayoutMode) || 'card'
-  const initialSortType =
-    (searchParams.get('sort') as SortType) || 'category'
+  const initialSortType = (searchParams.get('sort') as SortType) || 'category'
   const initialPrefixDisplay =
-    (searchParams.get(QUERY_PARAMS.prefixDisplay) as PrefixDisplayType) || 'without'
+    (searchParams.get(QUERY_PARAMS.prefixDisplay) as PrefixDisplayType) ||
+    'without'
 
   const [selectedCategories, setSelectedCategories] =
     useState<string[]>(initialCategories)
   const [layoutMode, setLayoutMode] = useState<LayoutMode>(initialLayoutMode)
   const [sortType, setSortType] = useState<SortType>(initialSortType)
-  const [prefixDisplay, setPrefixDisplay] = useState<PrefixDisplayType>(initialPrefixDisplay)
+  const [prefixDisplay, setPrefixDisplay] =
+    useState<PrefixDisplayType>(initialPrefixDisplay)
 
   // Sync state to URL
   useEffect(() => {
@@ -66,7 +66,8 @@ export function AwsServicesFilterProvider({
       params.set(QUERY_PARAMS.categories, selectedCategories.join(','))
     if (layoutMode !== 'card') params.set(QUERY_PARAMS.layout, layoutMode)
     if (sortType !== 'simpleName') params.set('sort', sortType)
-    if (prefixDisplay !== 'with') params.set(QUERY_PARAMS.prefixDisplay, prefixDisplay)
+    if (prefixDisplay !== 'with')
+      params.set(QUERY_PARAMS.prefixDisplay, prefixDisplay)
     router.replace(`?${params.toString()}`, { scroll: false })
   }, [selectedCategories, layoutMode, sortType, prefixDisplay])
 
@@ -93,7 +94,9 @@ export function AwsServicesFilterProvider({
 export function useAwsServicesFilter() {
   const ctx = useContext(AwsServicesFilterContext)
   if (!ctx) {
-    throw new Error('useAwsServicesFilter must be used within AwsServicesFilterProvider')
+    throw new Error(
+      'useAwsServicesFilter must be used within AwsServicesFilterProvider'
+    )
   }
   return ctx
 }
