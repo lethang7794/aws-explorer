@@ -3,26 +3,9 @@
 import { useState, useMemo, useEffect, useCallback } from 'react'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import {
-  LayoutGrid,
-  List,
-  Info,
-  Grid,
-  ArrowLeft,
-  ArrowRight,
-} from 'lucide-react'
+import { LayoutGrid, List, Grid } from 'lucide-react'
 import {
   awsServiceCategories,
   awsServiceCountByCategory,
@@ -34,8 +17,12 @@ import {
   PrefixDisplayType,
   useAwsServicesFilter,
 } from '@/contexts/aws-services-filter-context'
-import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { scrollTop } from '@/helpers/scroll-top'
+import { Pagination } from './pagination'
+import { ServiceListItem } from './ServiceListItem'
+import { ServiceCartItem } from './ServiceCartItem'
+import { ServiceIconItem } from './ServiceIconItem'
 
 interface AwsServicesListProps {
   services: Service[]
@@ -381,13 +368,25 @@ export default function AwsServicesList({
                 className="mb-4 md:mb-6"
               />
               {layoutMode === 'card' && (
-                <ServiceCartsList filteredServices={paginatedServices} />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredServices.map((service) => (
+                    <ServiceCartItem key={service.service} service={service} />
+                  ))}
+                </div>
               )}
               {layoutMode === 'list' && (
-                <ServiceListItemsList filteredServices={paginatedServices} />
+                <div className="space-y-4">
+                  {filteredServices.map((service) => (
+                    <ServiceListItem key={service.service} service={service} />
+                  ))}
+                </div>
               )}
               {layoutMode === 'icon' && (
-                <ServiceIconsList filteredServices={paginatedServices} />
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {filteredServices.map((service) => (
+                    <ServiceIconItem key={service.service} service={service} />
+                  ))}
+                </div>
               )}
               <Pagination
                 totalPages={totalPages}
@@ -431,346 +430,4 @@ export default function AwsServicesList({
       </div>
     </div>
   )
-}
-
-function ServiceCartsList({
-  filteredServices,
-}: {
-  filteredServices: Service[]
-}) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {filteredServices.map((service) => (
-        <ServiceCartItem key={service.service} service={service} />
-      ))}
-    </div>
-  )
-}
-
-import { usePrefixDisplay } from '@/hooks/use-prefix-display'
-import { AWS_DOCS_URL } from '@/constants/aws-docs'
-
-function ServiceCartItem({ service }: { service: Service }) {
-  const prefixDisplay = usePrefixDisplay()
-  const displayName =
-    prefixDisplay === 'with' ? service.service : service.serviceSimpleName
-
-  const akaText = getAkaText(service)
-
-  return (
-    <Card className="flex flex-col">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-lg">
-          <Link
-            href={`/${service.slug}`}
-            className="flex flex-wrap gap-2 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
-            scroll={true}
-            target="_blank"
-          >
-            <ServiceIcons service={service} />
-            <div className="flex-1 min-w-48">
-              {displayName}
-              <p className="whitespace-pre overflow-hidden truncate">
-                {akaText}
-              </p>
-            </div>
-          </Link>
-        </CardTitle>
-        <CardDescription className="text-xs h-10">
-          {service.shortDescription}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <div className="space-x-1 space-y-1">
-          {service.categories.map((category) => (
-            <Badge key={category} variant="secondary" className="text-xs">
-              {category}
-            </Badge>
-          ))}
-        </div>
-        {service.images && service.images.length > 0
-          ? service.images.slice(0, 3).map((img) => (
-              <div key={img.url} className="mt-4 w-full">
-                <img
-                  className="aspect-auto object-center w-full max-w-2xl rounded-lg"
-                  src={AWS_DOCS_URL + img.url}
-                  alt={img.alt}
-                />
-              </div>
-            ))
-          : null}
-      </CardContent>
-    </Card>
-  )
-}
-
-function getAkaText(service: Service) {
-  const aka = service.alsoKnownAs?.[0]
-  const akaText =
-    (aka && aka?.length === 3) ||
-    (aka && service.serviceSimpleName && service.serviceSimpleName?.length <= 4)
-      ? `(${aka})`
-      : ''
-  return akaText
-}
-
-function ServiceListItemsList({
-  filteredServices,
-}: {
-  filteredServices: Service[]
-}) {
-  return (
-    <div className="space-y-4">
-      {filteredServices.map((service) => (
-        <ServiceListItem key={service.service} service={service} />
-      ))}
-    </div>
-  )
-}
-
-function ServiceListItem({ service }: { service: Service }) {
-  const prefixDisplay = usePrefixDisplay()
-  const displayName =
-    prefixDisplay === 'with' ? service.service : service.serviceSimpleName
-  const akaText = getAkaText(service)
-
-  return (
-    <Card className="p-0">
-      <Link href={`/${service.slug}`} passHref scroll={true} target="_blank">
-        <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
-          <div className="flex-grow">
-            <h3>
-              <span className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-                {displayName}
-                {akaText && ' '}
-                {akaText}{' '}
-              </span>
-              <span className="italic text-lg mt-1">
-                {service.shortDescription}
-              </span>
-            </h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              {service.detailDescription}
-            </p>
-            <div className="mt-2 space-x-1 space-y-1">
-              {service.categories.map((category) => (
-                <Badge key={category} variant="outline" className="text-xs">
-                  {category}
-                </Badge>
-              ))}
-            </div>
-          </div>
-          <ServiceIcons service={service} />
-        </div>
-        {service.images && service.images.length > 0 ? (
-          <div className="flex flex-col gap-4 items-center justify-center px-4 pb-4">
-            {service.images.slice(0, 3).map((img) => (
-              <img
-                key={img.url}
-                alt={img.alt}
-                className="aspect-auto object-center w-full max-w-2xl rounded-md"
-                src={AWS_DOCS_URL + img.url}
-              />
-            ))}
-          </div>
-        ) : null}
-      </Link>
-    </Card>
-  )
-}
-
-function ServiceIconsList({
-  filteredServices,
-}: {
-  filteredServices: Service[]
-}) {
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {filteredServices.map((service) => (
-        <ServiceIconItem key={service.service} service={service} />
-      ))}
-    </div>
-  )
-}
-
-function ServiceIconItem({ service }: { service: Service }) {
-  const akaText = getAkaText(service)
-
-  return (
-    <Card className="flex flex-col">
-      <CardHeader className="p-3 pb-1 md:p-4 md:pb-2 lg:p-6 lg:pb-4">
-        <CardTitle className="text-lg">
-          <Link
-            href={`/${service.slug}`}
-            className="flex flex-col flex-wrap gap-1 items-center justify-between text-blue-600 hover:text-blue-700 hover:underline"
-            scroll={true}
-            target="_blank"
-          >
-            <ServiceIcons service={service} size="large" />
-            <div className="text-center text-sm text-primary">
-              {service.service}
-              {akaText && ' '}
-              <span className="whitespace-pre">{akaText}</span>
-            </div>
-            <ul className="flex gap-2 flex-wrap justify-center">
-              {service.iconResources?.map((r) => {
-                const resourceName = getResourceNameFromServiceName(r, service)
-                return (
-                  <li key={r} className="flex flex-col items-center p-1">
-                    <img
-                      src={`/aws/${r}.svg`}
-                      alt={`${resourceName} icon`}
-                      className="inline h-5 w-5 lg:h-10 lg:w-10"
-                    />
-                    {/* {resourceName} */}
-                  </li>
-                )
-              })}
-            </ul>
-          </Link>
-        </CardTitle>
-      </CardHeader>
-    </Card>
-  )
-}
-
-function ServiceIcons({
-  service,
-  size = 'small',
-}: {
-  service: Service
-  size?: 'small' | 'large'
-}) {
-  const className = size === 'large' ? 'h-16 w-16 lg:h-24 lg:w-24' : 'h-12 w-12'
-
-  return (
-    <>
-      {service.iconService ? (
-        <img
-          src={`/aws/${service.iconService}.svg`}
-          alt={service.iconService}
-          className={className}
-        />
-      ) : service.iconServices ? null : (
-        <img
-          src={`/aws/GeneralResource.svg`}
-          alt={service.iconService}
-          className={className}
-        />
-      )}
-      {service.iconServices ? (
-        <div className="flex flex-wrap justify-center gap-2">
-          {service.iconServices.map((icon) => (
-            <img
-              key={icon}
-              src={`/aws/${icon}.svg`}
-              alt={icon}
-              className={className}
-            />
-          ))}
-        </div>
-      ) : null}
-    </>
-  )
-}
-
-function Pagination({
-  totalPages,
-  page,
-  setPage,
-  scrollToTop = false,
-  className,
-}: {
-  totalPages: number
-  page: number
-  setPage: React.Dispatch<React.SetStateAction<number>>
-  scrollToTop?: boolean
-  className?: string
-}) {
-  if (totalPages <= 1) return null
-
-  // Helper to generate page numbers to display
-  const getPages = () => {
-    const pages: number[] = []
-    if (totalPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i)
-    } else {
-      pages.push(1)
-      if (page > 3) pages.push(-1) // -1 means ellipsis
-      for (
-        let i = Math.max(2, page - 1);
-        i <= Math.min(totalPages - 1, page + 1);
-        i++
-      ) {
-        pages.push(i)
-      }
-      if (page < totalPages - 2) pages.push(-1)
-      pages.push(totalPages)
-    }
-    return pages
-  }
-
-  const pages = getPages()
-
-  return (
-    <div
-      className={`flex justify-center items-center gap-2 flex-wrap ${className}`}
-    >
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={() => {
-          setPage((p) => Math.max(1, p - 1))
-          if (scrollToTop) {
-            scrollTop()
-          }
-        }}
-        disabled={page === 1}
-      >
-        <ArrowLeft className="h-5 w-5" />
-      </Button>
-      <>
-        {pages.map((p, idx) =>
-          p === -1 ? (
-            <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">
-              ...
-            </span>
-          ) : (
-            <Button
-              key={p}
-              variant={p === page ? 'secondary' : 'outline'}
-              size="sm"
-              onClick={() => {
-                setPage(p)
-                if (scrollToTop) {
-                  scrollTop()
-                }
-              }}
-              aria-current={p === page ? 'page' : undefined}
-              className={p === page ? 'font-bold' : ''}
-            >
-              {p}
-            </Button>
-          )
-        )}
-      </>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={() => {
-          setPage((p) => Math.min(totalPages, p + 1))
-          if (scrollToTop) {
-            scrollTop()
-          }
-        }}
-        disabled={page === totalPages}
-      >
-        <ArrowRight className="h-5 w-5" />
-      </Button>
-    </div>
-  )
-}
-
-const scrollTop = () => {
-  window.scrollTo({ top: 0, behavior: 'instant' })
 }
