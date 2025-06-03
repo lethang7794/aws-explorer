@@ -17,6 +17,8 @@ import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from
 import { AWS_DOCS_URL } from '@/constants/aws-docs'
 import { DownloadSvg } from '@/components/ui/download-svg'
 import { DownloadPng } from '@/components/ui/download-png'
+import { CopyPng } from '@/components/ui/copy-png'
+import { CopySvg } from '@/components/ui/copy-svg'
 
 interface ServiceDetailPageProps {
   params: {
@@ -119,6 +121,12 @@ export default async function ServiceDetailPage({
                       id={service.iconService}
                       filename={service.iconService}
                       name={service.service}
+                    />
+                    <CopySvg id={service.iconService} name={service.service} />
+                    <CopyPng
+                      id={service.iconService}
+                      name={service.service}
+                      targetSize={512}
                     />
                   </>
                 ) : null}
