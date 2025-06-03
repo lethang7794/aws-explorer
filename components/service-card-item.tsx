@@ -30,7 +30,7 @@ export function ServiceCardItem({ service }: { service: Service }) {
             scroll={true}
             target="_blank"
           >
-            <ServiceIcons service={service} />
+            <ServiceIcons service={service} classNameWrapper='justify-start flex-shrink' />
             <div className="flex-1 min-w-48">
               {displayName}
               <p className="whitespace-pre overflow-hidden truncate">

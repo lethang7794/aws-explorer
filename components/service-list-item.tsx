@@ -17,7 +17,7 @@ export function ServiceListItem({ service }: { service: Service }) {
     <Card className="p-0">
       <Link href={`/${service.slug}`} passHref scroll={true} target="_blank">
         <div className="flex justify-between p-4 cursor-pointer hover:bg-accent transition-colors rounded">
-          <div className="flex-grow">
+          <div className="flex-grow mr-2">
             <h3>
               <span className="text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
                 {displayName}
@@ -28,9 +28,6 @@ export function ServiceListItem({ service }: { service: Service }) {
                 {service.shortDescription}
               </span>
             </h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              {service.detailDescription}
-            </p>
             <div className="mt-2 space-x-1 space-y-1">
               {service.categories.map((category) => (
                 <Badge key={category} variant="outline" className="text-xs">
@@ -38,8 +35,11 @@ export function ServiceListItem({ service }: { service: Service }) {
                 </Badge>
               ))}
             </div>
+            <p className="text-sm text-muted-foreground mt-3">
+              {service.detailDescription}
+            </p>
           </div>
-          <ServiceIcons service={service} />
+          <ServiceIcons service={service} classNameWrapper='justify-end' />
         </div>
         {service.images && service.images.length > 0 ? (
           <div className="flex flex-col gap-4 items-center justify-center px-4 pb-4">

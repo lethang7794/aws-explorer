@@ -19,10 +19,13 @@ export function ServiceIconItem({ service }: { service: Service }) {
             target="_blank"
           >
             <ServiceIcons service={service} size="large" />
-            <div className="text-center text-sm text-primary">
-              {service.service}
-              {akaText && ' '}
-              <span className="whitespace-pre">{akaText}</span>
+            <div className="w-full text-center text-sm text-primary">
+              <div>{service.service}</div>
+              {akaText && (
+                <div className="whitespace overflow-hidden truncate">
+                  {akaText}
+                </div>
+              )}
             </div>
             <ul className="flex gap-2 flex-wrap justify-center">
               {service.iconResources?.map((r) => {
