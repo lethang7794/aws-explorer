@@ -134,6 +134,10 @@ export default function ServicesList({
 
   // Pagination logic
   const totalPages = Math.max(1, Math.ceil(filteredServices.length / PAGE_SIZE))
+  const paginatedServices = useMemo(
+    () => filteredServices.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [filteredServices, page]
+  )
 
   const serviceCountOfSelectedCategories = useMemo(
     () =>
@@ -171,7 +175,7 @@ export default function ServicesList({
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <SearchFilterSection
-          services={initialServices}
+          services={filteredServices}
           selectedCategories={selectedCategories}
           handleCategoryChange={handleCategoryChange}
           searchTerm={searchTerm}
@@ -195,21 +199,21 @@ export default function ServicesList({
               />
               {layoutMode === 'card' && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredServices.map((service) => (
+                  {paginatedServices.map((service) => (
                     <ServiceCardItem key={service.service} service={service} />
                   ))}
                 </div>
               )}
               {layoutMode === 'list' && (
                 <div className="space-y-4">
-                  {filteredServices.map((service) => (
+                  {paginatedServices.map((service) => (
                     <ServiceListItem key={service.service} service={service} />
                   ))}
                 </div>
               )}
               {layoutMode === 'icon' && (
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {filteredServices.map((service) => (
+                  {paginatedServices.map((service) => (
                     <ServiceIconItem key={service.service} service={service} />
                   ))}
                 </div>
