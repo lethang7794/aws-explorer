@@ -123,6 +123,7 @@ export default async function ServiceDetailPage({
                         id={service.iconService}
                         filename={service.iconService}
                         name={service.service}
+                        targetSize={1024}
                       />
                     </div>
                     <div className="flex flex-wrap gap-2 w-min">
@@ -134,7 +135,7 @@ export default async function ServiceDetailPage({
                       <CopyPng
                         id={service.iconService}
                         name={service.service}
-                        targetSize={512}
+                        targetSize={1024}
                         className="hidden md:flex"
                       />
                     </div>
