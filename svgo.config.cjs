@@ -11,6 +11,5 @@ module.exports = {
     },
     'convertStyleToAttrs',
     'prefixIds',
-    'removeDimensions',
   ],
 }
