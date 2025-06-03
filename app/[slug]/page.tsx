@@ -16,6 +16,7 @@ import { Footer } from '@/components/footer'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { AWS_DOCS_URL } from '@/constants/aws-docs'
 import { DownloadSvg } from '@/components/ui/download-svg'
+import { DownloadPng } from '@/components/ui/download-png'
 
 interface ServiceDetailPageProps {
   params: {
@@ -91,11 +92,6 @@ export default async function ServiceDetailPage({
                     alt={`${service.iconService} icon`}
                     id={service.iconService}
                   />
-                  <DownloadSvg
-                    id={service.iconService}
-                    filename={service.iconService}
-                    name={service.service}
-                  />
                 </div>
               ) : null}
               {service.iconServices ? (
@@ -111,7 +107,21 @@ export default async function ServiceDetailPage({
                 </div>
               ) : null}
               <div className="flex gap-2 text-3xl md:text-4xl">
-                <div>{service.service}</div>
+                <div className="mr-2">{service.service}</div>
+                {service.iconService ? (
+                  <>
+                    <DownloadSvg
+                      id={service.iconService}
+                      filename={service.iconService}
+                      name={service.service}
+                    />
+                    <DownloadPng
+                      id={service.iconService}
+                      filename={service.iconService}
+                      name={service.service}
+                    />
+                  </>
+                ) : null}
               </div>
               {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
                 <div className="font-normal text-lg md:text-4xl">
