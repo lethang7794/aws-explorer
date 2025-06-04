@@ -11,8 +11,8 @@ type Icon = {
   service?: string
   type: string
   categories: string[]
-  name: string
-  nameWithPrefix: string
+  iconName: string
+  iconNameWithPrefix: string
   component?: string
   importComponent?: string
   resources?: string[]
@@ -28,7 +28,7 @@ type Icon = {
   const items: Icon[] = []
 
   files.forEach((file) => {
-    let name = ''
+    let processedFilename = ''
     let service = ''
     let type = ''
     let component = ''
@@ -50,32 +50,33 @@ type Icon = {
       prefix = 'Resource'
     }
 
-    name = removeSpecialCharacters(
-      `${filename
-        .replace(/([A-Z]+)(?=[A-Z][a-z0-9])/g, (match) =>
-          match.length > 1 ? match.charAt(0) + match.slice(1) + ' ' : match
-        )
-        .replace(/([a-z])([A-Z])/g, '$1 $2')
-        .replace('.svg', '')
-        .replace('32', '')
-        .replaceAll('Io T', 'IoT ')
-        .replace('AP Is', 'APIs')
-        .replace('HTTP 2', 'HTTP2 ')
-        .replace('S3', 'S3 ')
-        .replace('FSxfor', 'FSx for')
-        .replace('RA 3', 'RA3')
-        .replace('EC2', 'EC2 ')
-        .replace('Lo Ra WAN', 'LoRaWAN')
-        .replace('Siteto', 'Site to')
-        .trim()}`
-    )
+    // processedFilename = removeSpecialCharacters(
+    //   `${filename
+    //     .replace(/([A-Z]+)(?=[A-Z][a-z0-9])/g, (match) =>
+    //       match.length > 1 ? match.charAt(0) + match.slice(1) + ' ' : match
+    //     )
+    //     .replace(/([a-z])([A-Z])/g, '$1 $2')
+    //     .replace('.svg', '')
+    //     .replace('32', '')
+    //     .replaceAll('Io T', 'IoT ')
+    //     .replace('AP Is', 'APIs')
+    //     .replace('HTTP 2', 'HTTP2 ')
+    //     .replace('S3', 'S3 ')
+    //     .replace('FSxfor', 'FSx for')
+    //     .replace('RA 3', 'RA3')
+    //     .replace('EC2', 'EC2 ')
+    //     .replace('Lo Ra WAN', 'LoRaWAN')
+    //     .replace('Siteto', 'Site to')
+    //     .trim()}`
+    // )
+    processedFilename = filename.replace('.svg', '')
 
-    component = removeSpecialCharacters(
-      `${prefix}${filename.replace('.svg', '')}`
-    )
+    // component = removeSpecialCharacters(
+    //   `${prefix}${filename.replace('.svg', '')}`
+    // )
 
-    // TODO: update path to match the new import structure
-    importComponent = `import ${component} from 'aws-react-icons/icons/${component}';`
+    // // TODO: update path to match the new import structure
+    // importComponent = `import ${component} from 'aws-react-icons/icons/${component}';`
 
     if (fullpath.includes('Architecture-Group-Icons')) {
       prefix = 'ArchitectureGroup-'
@@ -103,22 +104,22 @@ type Icon = {
         fullpath.split('Res_')[1].split('/')[0].replace(/-/g, ' ').trim()
       )
     } else if (fullpath.includes('Arch-')) {
-      categories.push(`${name}`)
+      categories.push(`${processedFilename}`)
     }
 
-    if (
-      component.toLowerCase().includes('DatabaseMigrationService'.toLowerCase())
-    ) {
-      categories.push('DMS')
-    }
+    // if (
+    //   component.toLowerCase().includes('DatabaseMigrationService'.toLowerCase())
+    // ) {
+    //   categories.push('DMS')
+    // }
 
     obj = {
       service: service || undefined,
       // serviceAlternativeName: serviceNames[service] || undefined,
       type: type,
       categories: categories,
-      name: name.trim(),
-      nameWithPrefix: `${prefix}${name}`,
+      iconName: processedFilename.trim(),
+      // iconNameWithPrefix: `${prefix}${processedFilename}`,
       // component: component,
       // importComponent: importComponent,
     }
@@ -151,11 +152,13 @@ function removeSpecialCharacters(str: string): string {
 }
 
 function convertFilenameToServiceName(filename: string) {
-  const processedServiceName = filename.replace(/\.[^/.]+$/, '') // Remove the extension
+  const processedServiceName = filename
+    .replace(/\.[^/.]+$/, '') // Remove the extension
+    .replaceAll('-', ' ')
 
-  if (ICON_FILENAME_TO_SERVICE[processedServiceName]) {
-    return ICON_FILENAME_TO_SERVICE[processedServiceName]
-  }
+  // if (ICON_FILENAME_TO_SERVICE[processedServiceName]) {
+  //   return ICON_FILENAME_TO_SERVICE[processedServiceName]
+  // }
 
   return processedServiceName
 }
@@ -171,21 +174,21 @@ function groupResourcesOfService(data: Icon[]): Icon[] {
           // Special cases:
           //
           // - SageMaker AI
-          if (icon.name === 'AmazonSageMakerAI') {
-            return resource.name.startsWith('AmazonSageMaker')
+          if (icon.iconName === 'AmazonSageMakerAI') {
+            return resource.iconName.startsWith('AmazonSageMaker')
           }
-          if (icon.name === 'AmazonVirtualPrivateCloud') {
-            return resource.name.startsWith('AmazonVPC')
+          if (icon.iconName === 'AmazonVirtualPrivateCloud') {
+            return resource.iconName.startsWith('AmazonVPC')
           }
-          if (icon.name === 'AWSIdentityandAccessManagement') {
-            return resource.name.startsWith('AWSIdentityAccessManagement')
+          if (icon.iconName === 'AWSIdentityandAccessManagement') {
+            return resource.iconName.startsWith('AWSIdentityAccessManagement')
           }
-          if (icon.name === 'AmazonEFS') {
-            return resource.name.startsWith('AmazonElasticFileSystem')
+          if (icon.iconName === 'AmazonEFS') {
+            return resource.iconName.startsWith('AmazonElasticFileSystem')
           }
-          return resource.name.startsWith(icon.name)
+          return resource.iconName.startsWith(icon.iconName)
         })
-        .map((resource) => resource.name)
+        .map((resource) => resource.iconName)
       return {
         ...icon,
         resources: matchedResources.length ? matchedResources : undefined,

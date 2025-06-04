@@ -62,10 +62,8 @@ async function renameFiles(mainDir: string): Promise<void> {
     const ext = path.extname(entryPath)
     const baseName = path.basename(entryPath, ext)
     const newName =
-      baseName.replace(
-        /^Arch_|_48|32|Arch-Category_|Res_|_Light|-|_|&| |\./g,
-        ''
-      ) + ext
+      baseName.replace(/^Arch_|_48|32|Arch-Category_|Res_|_Light|&| |\./g, '') +
+      ext
 
     if (entry.isDirectory()) {
       await renameFiles(entryPath)
