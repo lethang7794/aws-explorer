@@ -100,7 +100,7 @@ export function CopyPng({
             }),
           ])
 
-          toast(`${name} (PNG) copied 🎊`, {
+          toast(`PNG for "${name}" copied 🎊`, {
             description:
               'You can paste it to draw.io, Whatsapp, Word, Google Docs...',
           })

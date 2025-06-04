@@ -50,12 +50,8 @@ export function DownloadSvg({
           document.body.removeChild(a)
           URL.revokeObjectURL(url)
 
-          toast(`${name} (SVG) downloaded 🎊`, {
-            description: (
-              <>
-                It's <b>{filename}.svg</b>
-              </>
-            ),
+          toast(`SVG for "${name}" downloaded 🎊`, {
+            description: <>{filename}.svg</>,
           })
         } catch (error) {
           if (error instanceof Error)

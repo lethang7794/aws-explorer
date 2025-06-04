@@ -102,12 +102,8 @@ export function DownloadPng({
           document.body.removeChild(a)
           URL.revokeObjectURL(url)
 
-          toast(`${name} (PNG) downloaded 🎊`, {
-            description: (
-              <>
-                It's <b>{filename}.png</b>
-              </>
-            ),
+          toast(`PNG for "${name}" downloaded 🎊`, {
+            description: <>{filename}.png</>,
           })
         } catch (error) {
           if (error instanceof Error)

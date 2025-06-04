@@ -49,7 +49,7 @@ export function CopySvg({
             console.log('SVG copied as source code')
           }
 
-          toast(`${name} (SVG) copied 🎊`, {
+          toast(`SVG "${name}" copied 🎊`, {
             description:
               'You can paste it to draw.io, Whatsapp, Word, Google Docs...',
           })
