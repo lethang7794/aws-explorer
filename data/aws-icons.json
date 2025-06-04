@@ -229,7 +229,7 @@
       "categories": [
         "Analytics"
       ],
-      "iconName": "Analytics"
+      "iconName": "Category_Analytics"
     },
     {
       "type": "Resource",
@@ -668,7 +668,7 @@
       "categories": [
         "Application-Integration"
       ],
-      "iconName": "Application-Integration"
+      "iconName": "Category_Application-Integration"
     },
     {
       "service": "Amazon Augmented AI A2I",
@@ -1094,7 +1094,7 @@
       "categories": [
         "Artificial-Intelligence"
       ],
-      "iconName": "Artificial-Intelligence"
+      "iconName": "Category_Artificial-Intelligence"
     },
     {
       "service": "Amazon Managed Blockchain",
@@ -1120,7 +1120,7 @@
       "categories": [
         "Blockchain"
       ],
-      "iconName": "Blockchain"
+      "iconName": "Category_Blockchain"
     },
     {
       "type": "Resource",
@@ -1266,7 +1266,7 @@
       "categories": [
         "Business-Applications"
       ],
-      "iconName": "Business-Applications"
+      "iconName": "Category_Business-Applications"
     },
     {
       "service": "AWS Billing Conductor",
@@ -1321,7 +1321,7 @@
       "categories": [
         "Cloud-Financial-Management"
       ],
-      "iconName": "Cloud-Financial-Management"
+      "iconName": "Category_Cloud-Financial-Management"
     },
     {
       "service": "Amazon DCV",
@@ -1539,7 +1539,7 @@
       "categories": [
         "Compute"
       ],
-      "iconName": "Compute"
+      "iconName": "Category_Compute"
     },
     {
       "type": "Resource",
@@ -1637,7 +1637,7 @@
       "categories": [
         "Contact-Center"
       ],
-      "iconName": "Contact-Center"
+      "iconName": "Category_Contact-Center"
     },
     {
       "service": "Amazon ECS Anywhere",
@@ -1732,7 +1732,7 @@
       "categories": [
         "Containers"
       ],
-      "iconName": "Containers"
+      "iconName": "Category_Containers"
     },
     {
       "type": "Resource",
@@ -1873,7 +1873,7 @@
       "categories": [
         "Customer-Enablement"
       ],
-      "iconName": "Customer-Enablement"
+      "iconName": "Category_Customer-Enablement"
     },
     {
       "service": "Amazon Aurora",
@@ -2019,7 +2019,7 @@
       "categories": [
         "Database"
       ],
-      "iconName": "Database"
+      "iconName": "Category_Database"
     },
     {
       "type": "Resource",
@@ -2437,7 +2437,7 @@
       "categories": [
         "Developer-Tools"
       ],
-      "iconName": "Developer-Tools"
+      "iconName": "Category_Developer-Tools"
     },
     {
       "service": "Amazon AppStream 2",
@@ -2486,7 +2486,7 @@
       "categories": [
         "End-User-Computing"
       ],
-      "iconName": "End-User-Computing"
+      "iconName": "Category_End-User-Computing"
     },
     {
       "service": "Amazon Location Service",
@@ -2569,7 +2569,7 @@
       "categories": [
         "Front-End-Web-Mobile"
       ],
-      "iconName": "Front-End-Web-Mobile"
+      "iconName": "Category_Front-End-Web-Mobile"
     },
     {
       "service": "Amazon GameLift",
@@ -2592,7 +2592,7 @@
       "categories": [
         "Games"
       ],
-      "iconName": "Games"
+      "iconName": "Category_Games"
     },
     {
       "service": "AWS Marketplace_Dark",
@@ -3089,7 +3089,7 @@
       "categories": [
         "Internet-of-Things"
       ],
-      "iconName": "Internet-of-Things"
+      "iconName": "Category_Internet-of-Things"
     },
     {
       "type": "Resource",
@@ -4241,7 +4241,7 @@
       "categories": [
         "Management-Governance"
       ],
-      "iconName": "Management-Governance"
+      "iconName": "Category_Management-Governance"
     },
     {
       "service": "Amazon Elastic Transcoder",
@@ -4441,7 +4441,7 @@
       "categories": [
         "Media-Services"
       ],
-      "iconName": "Media-Services"
+      "iconName": "Category_Media-Services"
     },
     {
       "service": "Amazon Elastic VMware Service",
@@ -4665,7 +4665,7 @@
       "categories": [
         "Migration-Modernization"
       ],
-      "iconName": "Migration-Modernization"
+      "iconName": "Category_Migration-Modernization"
     },
     {
       "service": "Amazon API Gateway",
@@ -5185,7 +5185,7 @@
       "categories": [
         "Networking-Content-Delivery"
       ],
-      "iconName": "Networking-Content-Delivery"
+      "iconName": "Category_Networking-Content-Delivery"
     },
     {
       "service": "Amazon Braket",
@@ -5306,7 +5306,7 @@
       "categories": [
         "Quantum-Technologies"
       ],
-      "iconName": "Quantum-Technologies"
+      "iconName": "Category_Quantum-Technologies"
     },
     {
       "service": "AWS RoboMaker",
@@ -5327,7 +5327,7 @@
       "categories": [
         "Robotics"
       ],
-      "iconName": "Robotics"
+      "iconName": "Category_Robotics"
     },
     {
       "type": "Resource",
@@ -5370,7 +5370,7 @@
       "categories": [
         "Satellite"
       ],
-      "iconName": "Satellite"
+      "iconName": "Category_Satellite"
     },
     {
       "service": "Amazon Cloud Directory",
@@ -5821,14 +5821,14 @@
       "categories": [
         "Security-Identity-Compliance"
       ],
-      "iconName": "Security-Identity-Compliance"
+      "iconName": "Category_Security-Identity-Compliance"
     },
     {
       "type": "Category",
       "categories": [
         "Serverless"
       ],
-      "iconName": "Serverless"
+      "iconName": "Category_Serverless"
     },
     {
       "service": "Amazon EFS",
@@ -6042,7 +6042,7 @@
       "categories": [
         "Storage"
       ],
-      "iconName": "Storage"
+      "iconName": "Category_Storage"
     },
     {
       "type": "Resource",
@@ -6537,77 +6537,77 @@
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Auto-Scaling-group_"
+      "iconName": "ArchitectureGroup_Auto-Scaling-group"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "AWS-Account_"
+      "iconName": "ArchitectureGroup_AWS-Account"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "AWS-Cloud__Dark"
+      "iconName": "ArchitectureGroup_AWS-Cloud_Dark"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "AWS-Cloud_"
+      "iconName": "ArchitectureGroup_AWS-Cloud-logo_Dark"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "AWS-Cloud-logo__Dark"
+      "iconName": "ArchitectureGroup_AWS-Cloud-logo"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "AWS-Cloud-logo_"
+      "iconName": "ArchitectureGroup_AWS-Cloud"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "AWS-IoT-Greengrass-Deployment_"
+      "iconName": "ArchitectureGroup_AWS-IoT-Greengrass-Deployment"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Corporate-data-center_"
+      "iconName": "ArchitectureGroup_Corporate-data-center"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "EC2-instance-contents_"
+      "iconName": "ArchitectureGroup_EC2-instance-contents"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Private-subnet_"
+      "iconName": "ArchitectureGroup_Private-subnet"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Public-subnet_"
+      "iconName": "ArchitectureGroup_Public-subnet"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Region_"
+      "iconName": "ArchitectureGroup_Region"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Server-contents_"
+      "iconName": "ArchitectureGroup_Server-contents"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Spot-Fleet_"
+      "iconName": "ArchitectureGroup_Spot-Fleet"
     },
     {
       "type": "Architecture Group",
       "categories": [],
-      "iconName": "Virtual-private-cloud-VPC_"
+      "iconName": "ArchitectureGroup_Virtual-private-cloud-VPC"
     }
   ]
 }
