@@ -19,6 +19,7 @@ import { DownloadSvg } from '@/components/ui/download-svg'
 import { DownloadPng } from '@/components/ui/download-png'
 import { CopyPng } from '@/components/ui/copy-png'
 import { CopySvg } from '@/components/ui/copy-svg'
+import { ServiceIcons } from '@/components/service-icons'
 
 interface ServiceDetailPageProps {
   params: {
@@ -72,6 +73,29 @@ export default async function ServiceDetailPage({
   if (!service) {
     notFound() // Triggers the not-found page
   }
+
+  // Sort related services to maintain consistent order
+  const sortedServices = [...service.othersInCategory].sort((a, b) =>
+    a.service.localeCompare(b.service)
+  )
+
+  // Find current service index in the sorted list
+  const currentIndex = sortedServices.findIndex((s) => s.slug === service.slug)
+
+  // Get previous 3 and next 3 services (wrapping around if needed)
+  const related = []
+  const total = sortedServices.length
+
+  for (let i = -3; i <= 3; i++) {
+    if (i === 0) continue // Skip current service
+    const index = (currentIndex + i + total) % total
+    related.push(sortedServices[index])
+  }
+
+  // Remove duplicates that might occur when total services < 7
+  const uniqueRelated = Array.from(
+    new Map(related.map((s) => [s.slug, s])).values()
+  )
 
   return (
     <div className="bg-background text-foreground gradient">
@@ -313,7 +337,42 @@ export default async function ServiceDetailPage({
             ))}
           </div>
         ) : null}
+
+        {uniqueRelated && uniqueRelated.length > 0 && (
+          <div className="mt-8">
+            <h2 className="text-2xl font-semibold mb-4 text-white">
+              Other services in the same category
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {uniqueRelated.slice(0, 6).map((relatedService) => (
+                <Link
+                  key={relatedService.slug}
+                  href={`/${relatedService.slug}`}
+                  className="block"
+                >
+                  <Card className="h-full hover:bg-accent/50 transition-colors">
+                    <CardHeader className="flex flex-row flex-wrap items-center gap-2 pt-3 pb-2">
+                      <ServiceIcons
+                        service={relatedService}
+                        classNameWrapper="justify-start flex-shrink"
+                      />
+                      <CardTitle className="text-lg">
+                        {relatedService.service}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pb-3">
+                      <div className="line-clamp-2 text-muted-foreground">
+                        {relatedService.shortDescription}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
+
       <Footer />
     </div>
   )

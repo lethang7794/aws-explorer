@@ -14,6 +14,10 @@ export interface Service extends ServiceCrawl {
   alsoKnownAs?: string[]
 }
 
+interface ServiceWithRelated extends Service {
+  othersInCategory: Service[]
+}
+
 export interface ServiceCategory {
   name: string
   icon?: string
@@ -39,7 +43,8 @@ const generateSlug = (name: string) => {
 }
 
 function simplifyServiceName(service: string): string {
-  return service.trim()
+  return service
+    .trim()
     .replace(/^AWS /, '')
     .replace(/^AWS\n/, '')
     .replace(/^Amazon /, '')
@@ -116,6 +121,15 @@ export const awsServiceCountByCategory = awsServiceCategories.reduce(
   {} as Record<string, number>
 )
 
-export const getServiceBySlug = (slug: string): Service | undefined => {
-  return awsServicesData.find((service) => service.slug === slug)
+export const getServiceBySlug = (
+  slug: string
+): ServiceWithRelated | undefined => {
+  const service = awsServicesData.find((service) => service.slug === slug)
+  if (!service) return undefined
+  return {
+    ...service,
+    othersInCategory: awsServicesData.filter((s) =>
+      s.categories.includes(service.categories[0])
+    ),
+  }
 }
