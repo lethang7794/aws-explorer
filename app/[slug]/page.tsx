@@ -108,45 +108,38 @@ export default async function ServiceDetailPage({
                   ))}
                 </div>
               ) : null}
-              <div className="flex items-center justify-between flex-grow gap-2 text-3xl md:text-4xl">
+              <div className="flex items-center justify-between gap-2 text-3xl md:text-4xl">
                 <div className="mr-2">{service.service}</div>
-                {service.iconService ? (
-                  <div className="flex gap-2">
-                    <div className="flex flex-wrap gap-2 w-min">
-                      <DownloadSvg
-                        id={service.iconService}
-                        filename={service.iconService}
-                        name={service.service}
-                        className="hidden md:flex"
-                      />
-                      <DownloadPng
-                        id={service.iconService}
-                        filename={service.iconService}
-                        name={service.service}
-                        targetSize={1024}
-                      />
-                    </div>
-                    <div className="flex flex-wrap gap-2 w-min">
-                      <CopySvg
-                        id={service.iconService}
-                        name={service.service}
-                        className="hidden md:flex"
-                      />
-                      <CopyPng
-                        id={service.iconService}
-                        name={service.service}
-                        targetSize={1024}
-                        className="hidden md:flex"
-                      />
-                    </div>
-                  </div>
-                ) : null}
               </div>
               {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
-                <div className="font-normal text-lg md:text-4xl">
+                <div className="flex-grow font-normal text-lg md:text-4xl">
                   {'('}
                   {`${service.alsoKnownAs.map((aka) => aka)}`}
                   {')'}
+                </div>
+              ) : null}
+              {service.iconService ? (
+                <div className="flex-grow justify-end flex gap-2">
+                  <div className="flex flex-wrap gap-2 w-min">
+                    <DownloadSvg
+                      id={service.iconService}
+                      filename={service.iconService}
+                      name={service.service}
+                      className="hidden md:flex"
+                    />
+                    <DownloadPng
+                      id={service.iconService}
+                      filename={service.iconService}
+                      name={service.service}
+                      targetSize={1024}
+                    />
+                    <CopyPng
+                      id={service.iconService}
+                      name={service.service}
+                      targetSize={1024}
+                      className="hidden md:flex"
+                    />
+                  </div>
                 </div>
               ) : null}
             </CardTitle>
