@@ -3,6 +3,7 @@
 import { Copy } from 'lucide-react'
 import { Button } from './button'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
 
 interface Props {
   id: string
@@ -98,8 +99,16 @@ export function CopyPng({
               'image/png': pngBlob,
             }),
           ])
+
+          toast(`${name} (PNG) copied 🎊`, {
+            description:
+              'You can paste it to draw.io, Whatsapp, Word, Google Docs...',
+          })
         } catch (error) {
-          console.error('Error copying PNG:', error)
+          if (error instanceof Error)
+            toast(`Failed to copy ${name} (PNG) `, {
+              description: `{${error.name}: ${error.message}`,
+            })
         }
       }}
     >

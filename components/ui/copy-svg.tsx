@@ -3,6 +3,7 @@
 import { Copy } from 'lucide-react'
 import { Button } from './button'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
 
 interface Props {
   id: string
@@ -30,31 +31,33 @@ export function CopySvg({
 
         try {
           const data = await fetch(iconElement.src)
-          try {
-            if (
-              ClipboardItem.supports('image/svg+xml') &&
-              'write' in navigator.clipboard
-            ) {
-              const blob = await data.blob()
-              await navigator.clipboard.write([
-                new ClipboardItem({
-                  [blob.type]: blob,
-                }),
-              ])
-              console.log('SVG copied as image')
-            } else {
-              console.log('SVG images are not supported by the clipboard.')
-              const text = await data.text()
-              await navigator.clipboard.writeText(text)
-              console.log('SVG copied as source code')
-            }
-          } catch (err) {
-            if (err instanceof Error) {
-              console.error(err.name, err.message)
-            }
+          if (
+            ClipboardItem.supports('image/svg+xml') &&
+            'write' in navigator.clipboard
+          ) {
+            const blob = await data.blob()
+            await navigator.clipboard.write([
+              new ClipboardItem({
+                [blob.type]: blob,
+              }),
+            ])
+            console.log('SVG copied as image')
+          } else {
+            console.log('SVG images are not supported by the clipboard.')
+            const text = await data.text()
+            await navigator.clipboard.writeText(text)
+            console.log('SVG copied as source code')
           }
-        } catch (error) {
-          console.error('Error copying SVG:', error)
+
+          toast(`${name} (SVG) copied 🎊`, {
+            description:
+              'You can paste it to draw.io, Whatsapp, Word, Google Docs...',
+          })
+        } catch (err) {
+          if (err instanceof Error)
+            toast(`Failed to copy ${name} (SVG) `, {
+              description: `{${err.name}: ${err.message}`,
+            })
         }
       }}
     >

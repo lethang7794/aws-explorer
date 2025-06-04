@@ -3,6 +3,7 @@
 import { Download } from 'lucide-react'
 import { Button } from './button'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
 
 interface Props {
   id: string
@@ -48,8 +49,19 @@ export function DownloadSvg({
           a.click()
           document.body.removeChild(a)
           URL.revokeObjectURL(url)
+
+          toast(`${name} (SVG) downloaded 🎊`, {
+            description: (
+              <>
+                It's <b>{filename}.svg</b>
+              </>
+            ),
+          })
         } catch (error) {
-          console.error('Error downloading SVG:', error)
+          if (error instanceof Error)
+            toast(`Failed to download ${name} (SVG) `, {
+              description: `{${error.name}: ${error.message}`,
+            })
         }
       }}
     >

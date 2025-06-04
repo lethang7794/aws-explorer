@@ -3,6 +3,7 @@
 import { Download } from 'lucide-react'
 import { Button } from './button'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
 
 interface Props {
   id: string
@@ -101,8 +102,18 @@ export function DownloadPng({
           document.body.removeChild(a)
           URL.revokeObjectURL(url)
 
+          toast(`${name} (PNG) downloaded 🎊`, {
+            description: (
+              <>
+                It's <b>{filename}.png</b>
+              </>
+            ),
+          })
         } catch (error) {
-          console.error('Error downloading PNG:', error)
+          if (error instanceof Error)
+            toast(`Failed to download ${name} (PNG) `, {
+              description: `{${error.name}: ${error.message}`,
+            })
         }
       }}
     >

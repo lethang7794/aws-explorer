@@ -4,6 +4,7 @@ import { AwsServicesFilterProvider } from '@/contexts/aws-services-filter-contex
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
   title: 'AWS Explorer',
@@ -33,6 +34,7 @@ export default function RootLayout({
         </Suspense>
         <Analytics />
         <SpeedInsights />
+        <Toaster />
       </body>
     </html>
   )
