@@ -104,7 +104,7 @@ function getAllCategories(services: Service[]): ServiceCategory[] {
         name: c,
         slug: generateSlug(c),
         services: services.filter((service) => service.categories.includes(c)),
-        icon: AWS_CATEGORY_TO_ICON[c] || undefined,
+        icon: `Category_${c.replaceAll(' & ', '-').replaceAll(' ', '-')}`,
       }
     })
 }
