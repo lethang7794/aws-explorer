@@ -1,5 +1,5 @@
 export const SERVICE_TO_ICON_FILENAME = {
-  'Amazon A2I': 'AmazonAugmentedAIA2I',
+  // 'Amazon A2I': 'AmazonAugmentedAIA2I',
   'Amazon Application Recovery Controller (ARC)':
     'AmazonApplicationRecoveryController',
   'Amazon Aurora DSQL': 'AmazonAurora',
@@ -16,7 +16,7 @@ export const SERVICE_TO_ICON_FILENAME = {
   'Amazon Keyspaces (for Apache Cassandra)': 'AmazonKeyspaces',
   'Amazon Lightsail or Amazon EC2?': ['AmazonLightsail', 'AmazonEC2'],
   'Amazon Linux': '',
-  'Amazon Machine Learning': 'CategoryArtificialIntelligence',
+  'Amazon Machine Learning': 'CategoryArtificial-Intelligence',
   'Amazon Q Developer in chat applications': 'AmazonQ',
   'Amazon QLDB': 'AmazonQuantumLedgerDatabase',
   'Amazon Route 53': 'AmazonRoute53',

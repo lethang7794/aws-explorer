@@ -12,14 +12,14 @@ type Icon = {
   type: string
   categories: string[]
   iconName: string
-  iconNameWithPrefix: string
+  iconNameWithPrefix?: string
   component?: string
   importComponent?: string
   resources?: string[]
 }
+main()
 
-//
-;(async () => {
+async function main() {
   const files: RecursiveDirectory = (await recursiveDirectory(
     AWS_ICONS_EXTRACT_PATH,
     true
@@ -38,17 +38,6 @@ type Icon = {
     let prefix = ''
 
     const { fullpath, filename } = file
-
-    if (fullpath.includes('Architecture-Group-Icons')) {
-      prefix = 'ArchitectureGroup'
-    } else if (fullpath.includes('Architecture-Service-Icons')) {
-      prefix = 'ArchitectureService'
-      service = convertFilenameToServiceName(filename)
-    } else if (fullpath.includes('Category-Icons')) {
-      prefix = 'Category'
-    } else if (fullpath.includes('Resource-Icons')) {
-      prefix = 'Resource'
-    }
 
     // processedFilename = removeSpecialCharacters(
     //   `${filename
@@ -79,14 +68,18 @@ type Icon = {
     // importComponent = `import ${component} from 'aws-react-icons/icons/${component}';`
 
     if (fullpath.includes('Architecture-Group-Icons')) {
-      prefix = 'ArchitectureGroup-'
+      prefix = 'ArchitectureGroup_'
       type = 'Architecture Group'
     } else if (fullpath.includes('Architecture-Service-Icons')) {
       type = 'Architecture Service'
+      prefix = ''
+      service = convertFilenameToServiceName(filename)
     } else if (fullpath.includes('Category-Icons')) {
       type = 'Category'
+      prefix = 'Category_'
     } else if (fullpath.includes('Resource-Icons')) {
       type = 'Resource'
+      prefix = ''
     }
 
     if (fullpath.includes('Arch_')) {
@@ -118,7 +111,7 @@ type Icon = {
       // serviceAlternativeName: serviceNames[service] || undefined,
       type: type,
       categories: categories,
-      iconName: processedFilename.trim(),
+      iconName: [prefix, processedFilename.trim()].filter(Boolean).join(''),
       // iconNameWithPrefix: `${prefix}${processedFilename}`,
       // component: component,
       // importComponent: importComponent,
@@ -145,7 +138,7 @@ type Icon = {
       2
     )
   )
-})()
+}
 
 function removeSpecialCharacters(str: string): string {
   return str.replace(/[^a-zA-Z0-9]/g, '')

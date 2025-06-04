@@ -29,9 +29,9 @@ interface AwsIcon {
   service?: string
   type: string
   categories: string[]
-  name: string
-  names?: string[]
-  nameWithPrefix: string
+  iconName: string
+  iconNames?: string[]
+  iconNameWithPrefix?: string
   resources?: string[]
 }
 
@@ -80,7 +80,7 @@ export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
     serviceSimpleName: simpleName,
     slug: generateSlug(simpleName),
     iconService:
-      icon?.name ||
+      icon?.iconName ||
       ((typeof SERVICE_TO_ICON_FILENAME[s.service] === 'string'
         ? SERVICE_TO_ICON_FILENAME[s.service]
         : undefined) as string) ||
