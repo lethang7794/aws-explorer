@@ -184,21 +184,41 @@ export default async function ServiceDetailPage({
         </Card>
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Resources</h2>
+            <h2 className="flex justify-between items-baseline text-xl font-semibold mb-2">
+              <span>Resources</span>{' '}
+              <span className="text-sm font-normal italic">
+                (Hover over the resource to download/copy)
+              </span>
+            </h2>
             <ul className="flex gap-4 flex-wrap justify-center">
               {service.iconResources?.map((r) => {
                 const resourceName = getResourceNameFromServiceName(r, service)
                 return (
                   <li
                     key={r}
-                    className="flex flex-col items-center border-2 border-gray-200 p-2 rounded-lg"
+                    className="group relative flex flex-col items-center border-2 border-gray-200 p-2 rounded-lg"
                   >
                     <img
+                      id={r}
                       src={`/aws/${r}.svg`}
                       alt={`${resourceName} icon`}
                       className="inline h-12 w-12 lg:h-20 lg:w-20"
                     />
-                    <div className="text-xs  lg:text-base">{resourceName}</div>
+                    <div className="text-xs lg:text-base">{resourceName}</div>
+                    <div className="absolute inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
+                      <DownloadSvg
+                        id={r}
+                        filename={r}
+                        name={resourceName}
+                        className="hidden md:flex"
+                      />
+                      <CopyPng
+                        id={r}
+                        name={resourceName}
+                        targetSize={1024}
+                        className="hidden md:flex"
+                      />
+                    </div>
                   </li>
                 )
               })}
