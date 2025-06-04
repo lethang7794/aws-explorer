@@ -80,6 +80,9 @@ async function main() {
     } else if (fullpath.includes('Resource-Icons')) {
       type = 'Resource'
       prefix = ''
+    } else if (fullpath.includes('General-Icons')) {
+      type = 'General Resource'
+      prefix = 'General_'
     }
 
     if (fullpath.includes('Arch_')) {
