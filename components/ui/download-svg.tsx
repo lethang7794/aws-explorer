@@ -1,15 +1,16 @@
 'use client'
 
 import { Download } from 'lucide-react'
-import { Button } from './button'
+import { Button, buttonVariants } from './button'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
+import { VariantProps } from 'class-variance-authority'
 
 interface Props {
   id: string
   filename: string
   name?: string
-  buttonText?: string
+  buttonText?: React.ReactNode
   className?: string
 }
 
@@ -22,7 +23,7 @@ export function DownloadSvg({
 }: Props) {
   return (
     <Button
-      variant="default"
+      variant="outline"
       size="icon"
       className={cn('w-fit px-2', className)}
       onClick={async () => {

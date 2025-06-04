@@ -9,7 +9,7 @@ interface Props {
   id: string
   name?: string
   targetSize?: number
-  buttonText?: string
+  buttonText?: React.ReactNode
   className?: string
 }
 

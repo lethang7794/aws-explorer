@@ -9,7 +9,7 @@ interface Props {
   id: string
   name?: string
   targetSize?: number
-  buttonText?: string
+  buttonText?: React.ReactNode
   className?: string
 }
 
@@ -22,7 +22,7 @@ export function CopyPng({
 }: Props) {
   return (
     <Button
-      variant="default"
+      variant="outline"
       size="icon"
       className={cn('w-fit px-2', className)}
       onClick={async () => {

@@ -10,7 +10,7 @@ interface Props {
   filename: string
   name?: string
   targetSize?: number
-  buttonText?: string
+  buttonText?: React.ReactNode
   className?: string
 }
 

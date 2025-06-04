@@ -10,7 +10,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Star } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { Footer } from '@/components/footer'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
@@ -118,30 +118,6 @@ export default async function ServiceDetailPage({
                   {')'}
                 </div>
               ) : null}
-              {service.iconService ? (
-                <div className="flex-grow justify-end flex gap-2">
-                  <div className="flex flex-wrap gap-2 w-min">
-                    <DownloadSvg
-                      id={service.iconService}
-                      filename={service.iconService}
-                      name={service.service}
-                      className="hidden md:flex"
-                    />
-                    <DownloadPng
-                      id={service.iconService}
-                      filename={service.iconService}
-                      name={service.service}
-                      targetSize={1024}
-                    />
-                    <CopyPng
-                      id={service.iconService}
-                      name={service.service}
-                      targetSize={1024}
-                      className="hidden md:flex"
-                    />
-                  </div>
-                </div>
-              ) : null}
             </CardTitle>
 
             <CardDescription className="text-lg text-muted-foreground pt-1">
@@ -182,6 +158,43 @@ export default async function ServiceDetailPage({
             </CardFooter>
           )}
         </Card>
+
+        {service.iconService && service.iconService != 'Toolkit' ? (
+          <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
+            <h2 className="flex justify-between items-baseline text-xl font-semibold mb-2">
+              <span>Icon</span>{' '}
+              <span className="text-sm font-normal italic"></span>
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              <DownloadSvg
+                id={service.iconService}
+                filename={service.iconService}
+                name={service.service}
+                className="hidden md:flex"
+                buttonText={
+                  <>
+                    Download SVG <Star fill="yellow" strokeWidth={1} />
+                  </>
+                }
+              />
+              <DownloadPng
+                id={service.iconService}
+                filename={service.iconService}
+                name={service.service}
+                targetSize={1024}
+                buttonText="Download PNG"
+              />
+              <CopyPng
+                id={service.iconService}
+                name={service.service}
+                targetSize={1024}
+                className="hidden md:flex"
+                buttonText="Copy PNG"
+              />
+            </div>
+          </div>
+        ) : null}
+
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
             <h2 className="flex justify-between items-baseline text-xl font-semibold mb-2">
@@ -211,6 +224,11 @@ export default async function ServiceDetailPage({
                         filename={r}
                         name={resourceName}
                         className="hidden md:flex"
+                        buttonText={
+                          <>
+                            SVG <Star fill="yellow" strokeWidth={1} />
+                          </>
+                        }
                       />
                       <CopyPng
                         id={r}
