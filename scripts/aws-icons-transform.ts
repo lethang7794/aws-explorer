@@ -102,11 +102,11 @@ async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
     const entryPath = path.join(mainDir, entry.name)
 
     if (entryPath.includes('Architecture-Group-Icons')) {
-      prefix = 'ArchitectureGroup'
+      prefix = 'ArchitectureGroup_'
     } else if (entryPath.includes('Architecture-Service-Icons')) {
       prefix = 'ArchitectureService'
     } else if (entryPath.includes('Category-Icons')) {
-      prefix = 'Category'
+      prefix = 'Category_'
     } else if (entryPath.includes('Resource-Icons')) {
       prefix = 'Resource'
     }
@@ -116,8 +116,8 @@ async function copySvgFilesToIconsDirectory(mainDir: string): Promise<void> {
     } else if (path.extname(entryPath).toLowerCase() === '.svg') {
       const targetPath = path.join(iconsDir, `${prefix}${entry.name}`)
       const targetWithoutPrefixPath =
-        prefix === 'Category'
-          ? path.join(`${iconsDir}-without-prefix`, `${prefix}${entry.name}`) // Keep prefix for Category icons
+        prefix === 'Category_' || prefix === 'ArchitectureGroup_'
+          ? path.join(`${iconsDir}-without-prefix`, `${prefix}${entry.name}`) // Keep prefix for Category icons and Architecture-Group
           : path.join(`${iconsDir}-without-prefix`, `${entry.name}`)
 
       await fs.promises.copyFile(entryPath, targetPath)
