@@ -94,7 +94,7 @@ export default async function ServiceDetailPage({
 
   // Remove duplicates that might occur when total services < 7
   const uniqueRelated = Array.from(
-    new Map(related.map((s) => [s.slug, s])).values()
+    new Map(related.map((s) => [s?.slug, s])).values()
   )
 
   return (
@@ -347,33 +347,38 @@ export default async function ServiceDetailPage({
         {uniqueRelated && uniqueRelated.length > 0 && (
           <div className="mt-8">
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              Other services in the same category
+              Services in same category
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {uniqueRelated.slice(0, 6).map((relatedService) => (
-                <Link
-                  key={relatedService.slug}
-                  href={`/${relatedService.slug}`}
-                  className="block"
-                >
-                  <Card className="h-full hover:bg-accent/50 transition-colors">
-                    <CardHeader className="flex flex-row flex-wrap items-center gap-2 pt-3 pb-2">
-                      <ServiceIcons
-                        service={relatedService}
-                        classNameWrapper="justify-start flex-shrink"
-                      />
-                      <CardTitle className="text-lg">
-                        {relatedService.service}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pb-3">
-                      <div className="line-clamp-2 text-muted-foreground">
-                        {relatedService.shortDescription}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+              {uniqueRelated.slice(0, 6).map((relatedService) => {
+                if (!relatedService?.slug) {
+                  return null
+                }
+                return (
+                  <Link
+                    key={relatedService.slug}
+                    href={`/${relatedService.slug}`}
+                    className="block"
+                  >
+                    <Card className="h-full hover:bg-accent/50 transition-colors">
+                      <CardHeader className="flex flex-row flex-wrap items-center gap-2 pt-3 pb-2">
+                        <ServiceIcons
+                          service={relatedService}
+                          classNameWrapper="justify-start flex-shrink"
+                        />
+                        <CardTitle className="text-lg">
+                          {relatedService.service}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pb-3">
+                        <div className="line-clamp-2 text-muted-foreground">
+                          {relatedService.shortDescription}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                )
+              })}
             </div>
           </div>
         )}
