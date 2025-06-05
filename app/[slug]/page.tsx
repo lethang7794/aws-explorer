@@ -216,14 +216,17 @@ export default async function ServiceDetailPage({
                 buttonText="Copy PNG"
               />
             </div>
+            <div className="md:hidden mt-2 text-sm font-normal italic text-center">
+              (See more on desktop 💻🖥️)
+            </div>
           </div>
         ) : null}
 
         {service.iconResources && service.iconResources.length > 0 ? (
           <div className="bg-white p-6 mt-8 rounded-lg shadow-md">
-            <h2 className="flex justify-between items-baseline text-xl font-semibold mb-2">
+            <h2 className="flex justify-between gap-2 items-baseline text-xl font-semibold mb-2">
               <span>Resources</span>{' '}
-              <span className="text-sm font-normal italic">
+              <span className="hidden md:block text-sm font-normal italic text-balance text-right">
                 (Hover over the resource to download/copy)
               </span>
             </h2>
@@ -265,6 +268,9 @@ export default async function ServiceDetailPage({
                 )
               })}
             </ul>
+            <div className="md:hidden mt-2 text-sm font-normal italic text-center">
+              (Resources can be downloaded on desktop 💻🖥️)
+            </div>
           </div>
         ) : null}
 
