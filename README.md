@@ -73,6 +73,7 @@
 | Service icons               | ✅ All services have icon                                                                                   | 🟡 Only for feature services                                                                           |
 | Category icons              | 🚀 All categories have icon                                                                                 | ❌ Not supported                                                                                       |
 | Resources icons             | 🚀 Show resource icons in icon layout and detail page                                                       | ❌ Not supported                                                                                       |
+| Downloadable icons          | 🚀 Spent time drawing architecture diagram instead of searching for the icons                               | ❌ Not supported                                                                                       |
 | Service aka                 | ✅ Support aka for services, e.g. RDS, ELB, EFS                                                             | ❌ Not supported                                                                                       |
 | Preload detail page         | ✅ See it at a glance                                                                                       | ❌ Needs a whole page load                                                                             |
 | Links to docs               | 🚀 Show all docs of the services without distraction                                                        | ✅ Show all docs of the services but also overwhelm you with so much information                       |
@@ -94,10 +95,10 @@
 - [x] Hide/show prefix Amazon/AWS.
 - [x] Support sort by category.
 - [x] Support abbr, historical name, fullname.
+- [x] Support copy/download SVG icon.
+- [x] Show related services in detail page.
 - [ ] Add CI/CD pipeline to crawl AWS docs every week.
 - [ ] Support update AWS architecture icons from CI/CD.
-- [ ] Support copy/download SVG icon.
-- [ ] Show related services in detail page.
 
 ## License
 
@@ -107,7 +108,7 @@
 
 Inspired by the needs of the AWS developer community:
 
-- [MKAbuMattar/aws-react-icons](https://github.com/MKAbuMattar/aws-react-icons) for source code to process the AWS Architecture Icons packages.
+- [MKAbuMattar/aws-react-icons](https://github.com/MKAbuMattar/aws-react-icons) for the source code to process the AWS Architecture Icons packages.
 - [AWS architecture icons](https://aws.amazon.com/architecture/icons/) for the icons.
 - [AWS Documentation](https://docs.aws.amazon.com/) for the list of services and descriptions.
 - [Vercel's v0](https://v0.dev/) for providing the staring point.
