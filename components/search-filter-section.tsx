@@ -26,6 +26,7 @@ export function SearchFilterSection({
   pageSize,
   handlePageSizeChange,
   className,
+  totalServices,
 }: {
   handleCategoryChange: (c: string) => void
   services: Service[]
@@ -37,6 +38,7 @@ export function SearchFilterSection({
   pageSize: number
   handlePageSizeChange: (p: number) => void
   className?: string
+  totalServices: number
 }) {
   return (
     <aside
@@ -63,7 +65,7 @@ export function SearchFilterSection({
       <PageSizeInputSection
         pageSize={pageSize}
         handlePageSizeChange={handlePageSizeChange}
-        totalServices={services.length}
+        totalServices={totalServices}
       />
     </aside>
   )

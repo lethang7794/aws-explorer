@@ -218,6 +218,7 @@ export default function ServicesList({
           serviceCountOfSelectedCategories={serviceCountOfSelectedCategories}
           pageSize={pageSize}
           handlePageSizeChange={handlePageSizeChange}
+          totalServices={initialServices.length}
         />
 
         <main
