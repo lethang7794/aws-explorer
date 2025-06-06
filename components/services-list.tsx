@@ -28,7 +28,9 @@ interface ServicesListProps {
 
 const SEARCH_PARAM = 'q'
 const PAGE_PARAM = 'page'
-const PAGE_SIZE = 50
+const PAGE_SIZE_PARAM = 'pageSize'
+const DEFAULT_PAGE_SIZE = 50
+export const PAGE_SIZES = [20, 50, 100, 500]
 const DEBOUNCE_TIME_MS = 300 // 300ms
 
 export default function ServicesList({
@@ -45,14 +47,39 @@ export default function ServicesList({
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  // Initialize searchTerm and page from URL
+  // Initialize searchTerm, page, and pageSize from URL
   const initialSearchTerm = searchParams.get(SEARCH_PARAM) || ''
   const initialPage = parseInt(searchParams.get(PAGE_PARAM) || '1', 10)
+  const initialPageSize = parseInt(
+    searchParams.get(PAGE_SIZE_PARAM) || DEFAULT_PAGE_SIZE.toString(),
+    10
+  )
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
   const [debouncedSearchTerm, setDebouncedSearchTerm] =
     useState(initialSearchTerm)
-  const [page, setPage] = useState(
-    isNaN(initialPage) || initialPage < 1 ? 1 : initialPage
+  const [page, setPage] = useState(initialPage)
+  const [pageSize, setPageSize] = useState(initialPageSize)
+
+  // Handle page size change
+  const handlePageSizeChange = useCallback(
+    (newPageSize: number) => {
+      setPageSize(newPageSize)
+      setPage(1) // Reset to first page when changing page size
+
+      // Update URL
+      const params = new URLSearchParams(searchParams.toString())
+      if (newPageSize !== DEFAULT_PAGE_SIZE) {
+        params.set(PAGE_SIZE_PARAM, newPageSize.toString())
+      } else {
+        params.delete(PAGE_SIZE_PARAM)
+      }
+      // Reset to first page
+      params.delete(PAGE_PARAM)
+
+      router.push(`?${params.toString()}`, { scroll: false })
+      scrollTop()
+    },
+    [searchParams, router]
   )
 
   // Debounce searchTerm
@@ -64,7 +91,7 @@ export default function ServicesList({
     return () => clearTimeout(handler)
   }, [searchTerm])
 
-  // Sync debouncedSearchTerm and page to URL (but not in context)
+  // Sync debouncedSearchTerm, page, and pageSize to URL (but not in context)
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString())
     if (debouncedSearchTerm) {
@@ -77,9 +104,15 @@ export default function ServicesList({
     } else {
       params.delete(PAGE_PARAM)
     }
+    if (pageSize !== DEFAULT_PAGE_SIZE) {
+      params.set(PAGE_SIZE_PARAM, pageSize.toString())
+    } else {
+      params.delete(PAGE_SIZE_PARAM)
+    }
     router.replace(`?${params.toString()}`, { scroll: false })
+    scrollTop()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedSearchTerm, page])
+  }, [debouncedSearchTerm, page, pageSize])
 
   // Memoize filtered, sorted, and prefix-adjusted services
   const filteredServices = useMemo(() => {
@@ -133,10 +166,10 @@ export default function ServicesList({
   ])
 
   // Pagination logic
-  const totalPages = Math.max(1, Math.ceil(filteredServices.length / PAGE_SIZE))
+  const totalPages = Math.ceil(filteredServices.length / pageSize)
   const paginatedServices = useMemo(
-    () => filteredServices.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
-    [filteredServices, page]
+    () => filteredServices.slice((page - 1) * pageSize, page * pageSize),
+    [filteredServices, page, pageSize]
   )
 
   const serviceCountOfSelectedCategories = useMemo(
@@ -182,6 +215,8 @@ export default function ServicesList({
           setSearchTerm={setSearchTerm}
           setPage={setPage}
           serviceCountOfSelectedCategories={serviceCountOfSelectedCategories}
+          pageSize={pageSize}
+          handlePageSizeChange={handlePageSizeChange}
         />
 
         <main id="main-content" className="md:col-span-2 lg:col-span-3">

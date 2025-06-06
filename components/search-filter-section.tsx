@@ -12,6 +12,7 @@ import {
 } from '@/contexts/aws-services-filter-context'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { scrollTop } from '@/helpers/scroll-top'
+import { PAGE_SIZES } from '@/components/services-list'
 
 export function SearchFilterSection({
   handleCategoryChange,
@@ -21,6 +22,8 @@ export function SearchFilterSection({
   serviceCountOfSelectedCategories,
   setPage,
   setSearchTerm,
+  pageSize,
+  handlePageSizeChange,
 }: {
   handleCategoryChange: (c: string) => void
   services: Service[]
@@ -29,6 +32,8 @@ export function SearchFilterSection({
   serviceCountOfSelectedCategories: number
   setPage: (p: number) => void
   setSearchTerm: (s: string) => void
+  pageSize: number
+  handlePageSizeChange: (p: number) => void
 }) {
   return (
     <aside className="flex flex-col-reverse md:block md:col-span-1 space-y-3 md:space-y-6 p-6 pt-2 md:pt-6 bg-card rounded-lg shadow self-start md:sticky md:top-[136px] md:h-fit">
@@ -47,6 +52,10 @@ export function SearchFilterSection({
       <SortInputSection setPage={setPage} />
       <ServiceNamePrefixInputSection />
       <LayoutInputSection />
+      <PageSizeInputSection
+        pageSize={pageSize}
+        handlePageSizeChange={handlePageSizeChange}
+      />
     </aside>
   )
 }
@@ -278,6 +287,33 @@ function LayoutInputSection() {
         >
           <Grid className="h-5 w-5" /> Icon
         </Button>
+      </div>
+    </div>
+  )
+}
+
+function PageSizeInputSection({
+  pageSize,
+  handlePageSizeChange,
+}: {
+  pageSize: number
+  handlePageSizeChange: (size: number) => void
+}) {
+  return (
+    <div>
+      <h2 className="text-xl font-semibold mb-3">Items per page</h2>
+      <div className="flex flex-wrap gap-2">
+        {PAGE_SIZES.map((size) => (
+          <Button
+            key={size}
+            variant={pageSize === size ? 'secondary' : 'outline'}
+            size="sm"
+            onClick={() => handlePageSizeChange(size)}
+            className="w-fit px-2"
+          >
+            {size}
+          </Button>
+        ))}
       </div>
     </div>
   )
