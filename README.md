@@ -83,6 +83,7 @@
 | Sort                        | ✅ By category, service name (without/with AWS/Amazon)                                                      | ❌ Services are sorted by name with AWS/Amazon prefix                                                  |
 | Alphabet sorting            | ✅ VPC is near VPN, CloudTrail is next to CloudWatch                                                        | ❌ Amazon VPC doesn't know AWS VPN, AWS CloudTrail never meets Amazon CloudWatch                       |
 | Layout mode                 | 🚀 Grid, list, icon view                                                                                    | 🟡 Only one layout                                                                                     |
+| Page size                   | 🚀 Show all the services if your machine can handle it                                                      | 🟡 Only one page size (18). Is it weird?                                                               |
 | Up-to-date list of services | 🟡 Update frequently                                                                                        | ✅ Always up-to-date                                                                                   |
 
 > [!NOTE]
