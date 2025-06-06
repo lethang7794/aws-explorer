@@ -156,7 +156,7 @@ function CategoriesInputSection({
           </Button>
         )}
       </h2>
-      <div className="space-y-2 max-h-36 md:max-h-96 overflow-y-auto pr-2">
+      <div className="space-y-2 max-h-36 md:max-h-72 overflow-y-auto pr-2">
         {awsServiceCategories.map(({ name: category, icon }) => (
           <div key={category} className="flex items-center space-x-2">
             <Checkbox
