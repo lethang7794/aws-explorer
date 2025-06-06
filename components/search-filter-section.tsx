@@ -55,6 +55,7 @@ export function SearchFilterSection({
       <PageSizeInputSection
         pageSize={pageSize}
         handlePageSizeChange={handlePageSizeChange}
+        totalServices={services.length}
       />
     </aside>
   )
@@ -295,15 +296,17 @@ function LayoutInputSection() {
 function PageSizeInputSection({
   pageSize,
   handlePageSizeChange,
+  totalServices,
 }: {
   pageSize: number
   handlePageSizeChange: (size: number) => void
+  totalServices: number
 }) {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-3">Items per page</h2>
       <div className="flex flex-wrap gap-2">
-        {PAGE_SIZES.map((size) => (
+        {[...PAGE_SIZES, totalServices].map((size) => (
           <Button
             key={size}
             variant={pageSize === size ? 'secondary' : 'outline'}
@@ -311,7 +314,7 @@ function PageSizeInputSection({
             onClick={() => handlePageSizeChange(size)}
             className="w-fit px-2"
           >
-            {size}
+            {size === totalServices ? `All ${size} services` : size}
           </Button>
         ))}
       </div>

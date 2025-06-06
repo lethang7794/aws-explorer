@@ -30,7 +30,7 @@ const SEARCH_PARAM = 'q'
 const PAGE_PARAM = 'page'
 const PAGE_SIZE_PARAM = 'pageSize'
 const DEFAULT_PAGE_SIZE = 50
-export const PAGE_SIZES = [20, 50, 100, 500]
+export const PAGE_SIZES = [20, 50, 100]
 const DEBOUNCE_TIME_MS = 300 // 300ms
 
 export default function ServicesList({
