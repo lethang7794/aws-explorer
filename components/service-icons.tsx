@@ -14,7 +14,9 @@ export function ServiceIcons({
 }) {
   const classNames = 'flex-shrink-0'
   const sizeClasses =
-    size === 'large' ? `h-16 w-16 lg:h-24 lg:w-24` : 'h-12 w-12'
+    size === 'large'
+      ? `h-16 w-16 lg:h-24 lg:w-24 min-[3839px]:h-32 min-[3839px]:w-32 min-[4000px]:h-40 min-[4000px]:w-40`
+      : 'h-12 w-12'
 
   return (
     <>

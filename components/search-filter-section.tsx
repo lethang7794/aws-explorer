@@ -13,6 +13,7 @@ import {
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { scrollTop } from '@/helpers/scroll-top'
 import { PAGE_SIZES } from '@/components/services-list'
+import { cn } from '@/lib/utils'
 
 export function SearchFilterSection({
   handleCategoryChange,
@@ -24,6 +25,7 @@ export function SearchFilterSection({
   setSearchTerm,
   pageSize,
   handlePageSizeChange,
+  className,
 }: {
   handleCategoryChange: (c: string) => void
   services: Service[]
@@ -34,9 +36,15 @@ export function SearchFilterSection({
   setSearchTerm: (s: string) => void
   pageSize: number
   handlePageSizeChange: (p: number) => void
+  className?: string
 }) {
   return (
-    <aside className="flex flex-col-reverse md:block md:col-span-1 space-y-3 md:space-y-6 p-6 pt-2 md:pt-6 bg-card rounded-lg shadow self-start md:sticky md:top-[136px] md:h-fit">
+    <aside
+      className={cn(
+        'flex flex-col-reverse md:block md:col-span-1 space-y-3 md:space-y-6 p-6 pt-2 md:pt-6 bg-card rounded-lg shadow self-start md:sticky md:top-[136px] md:h-fit',
+        className
+      )}
+    >
       <SearchInputSection
         services={services}
         searchTerm={searchTerm}

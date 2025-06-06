@@ -195,7 +195,7 @@ export default function ServicesList({
   )
 
   return (
-    <div className="min-h-screen container mx-auto p-4 md:py-8 md:px-0">
+    <div className="min-h-screen container min-[2000px]:max-w-full mx-auto p-4 md:py-8 md:px-0 min-[2000px]:px-8">
       <header className="mb-4 md:mb-8 text-center">
         <h1 className="text-4xl text-gray-100 font-bold tracking-tight">
           AWS Explorer
@@ -206,8 +206,9 @@ export default function ServicesList({
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 min-[2000px]:grid-cols-9 gap-6">
         <SearchFilterSection
+          className="min-[2000px]:col-span-2 min-[2500px]:col-span-1"
           services={filteredServices}
           selectedCategories={selectedCategories}
           handleCategoryChange={handleCategoryChange}
@@ -219,7 +220,10 @@ export default function ServicesList({
           handlePageSizeChange={handlePageSizeChange}
         />
 
-        <main id="main-content" className="md:col-span-2 lg:col-span-3">
+        <main
+          id="main-content"
+          className="md:col-span-2 lg:col-span-3 min-[2000px]:col-span-7 min-[2500px]:col-span-8"
+        >
           <FoundServices
             searchTerm={debouncedSearchTerm}
             services={filteredServices}
@@ -247,7 +251,7 @@ export default function ServicesList({
                 </div>
               )}
               {layoutMode === 'icon' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 min-[2000px]:grid-cols-6 min-[2399px]:grid-cols-7 min-[2879px]:grid-cols-8 min-[3839px]:grid-cols-9 min-[4000px]:grid-cols-10 gap-6">
                   {paginatedServices.map((service) => (
                     <ServiceIconItem key={service.service} service={service} />
                   ))}

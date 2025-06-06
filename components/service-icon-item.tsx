@@ -35,7 +35,7 @@ export function ServiceIconItem({ service }: { service: Service }) {
                     <img
                       src={`/aws/${r}.svg`}
                       alt={`${resourceName} icon`}
-                      className="inline h-5 w-5 lg:h-10 lg:w-10"
+                      className="inline h-5 w-5 lg:h-10 lg:w-10 min-[2879px]:h-14 min-[2879px]:w-14 min-[3839px]:h-16 min-[3839px]:w-16 min-[3839px]:h-16 min-[3839px]:w-16 min-[4000px]:h-24 min-[4000px]:w-24"
                     />
                     {/* {resourceName} */}
                   </li>
