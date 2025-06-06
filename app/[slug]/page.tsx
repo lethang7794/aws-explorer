@@ -364,7 +364,7 @@ export default async function ServiceDetailPage({
                       <CardHeader className="flex flex-row flex-wrap items-center gap-2 pt-3 pb-2">
                         <ServiceIcons
                           service={relatedService}
-                          classNameWrapper="justify-start flex-shrink"
+                          classNameWrapper="justify-start !flex-shrink"
                         />
                         <CardTitle className="text-lg">
                           {relatedService.service}
