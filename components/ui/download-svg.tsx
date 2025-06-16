@@ -11,6 +11,7 @@ interface Props {
   filename: string
   name?: string
   buttonText?: React.ReactNode
+  size?: number
   className?: string
 }
 
@@ -19,6 +20,7 @@ export function DownloadSvg({
   filename,
   name,
   buttonText = 'SVG',
+  size,
   className,
 }: Props) {
   return (
@@ -39,6 +41,12 @@ export function DownloadSvg({
           const svg = svgDoc.querySelector('svg')
 
           if (!svg) return
+
+          // Resize SVG
+          if (size) {
+            svg.setAttribute('width', size.toString())
+            svg.setAttribute('height', size.toString())
+          }
 
           // Create SVG blob and download link
           const svgBlob = new Blob([svg.outerHTML], { type: 'image/svg+xml' })

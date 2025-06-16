@@ -194,6 +194,7 @@ export default async function ServiceDetailPage({
                 id={service.iconService}
                 filename={service.iconService}
                 name={service.service}
+                size={60}
                 className="hidden md:flex"
                 buttonText={
                   <>
@@ -251,6 +252,7 @@ export default async function ServiceDetailPage({
                         filename={r}
                         name={resourceName}
                         className="hidden md:flex"
+                        size={65}
                         buttonText={
                           <>
                             SVG <Star fill="yellow" strokeWidth={1} />
