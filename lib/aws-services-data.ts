@@ -71,6 +71,36 @@ export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
   if (s.service === 'Amazon Elastic File System') {
     icon = awsIconsByName['Amazon EFS']
   }
+  if (s.service === 'Amazon SNS') {
+    icon = awsIconsByName['Amazon Simple Notification Service']
+  }
+  if (s.service === 'Amazon SQS') {
+    icon = awsIconsByName['Amazon Simple Queue Service']
+  }
+  if (s.service === 'Amazon ECR') {
+    icon = awsIconsByName['Amazon Elastic Container Registry']
+  }
+  if (s.service === 'Amazon ECS') {
+    icon = awsIconsByName['Amazon Elastic Container Service']
+  }
+  if (s.service === 'Amazon EKS') {
+    icon = awsIconsByName['Amazon Elastic Kubernetes Service']
+  }
+  if (s.service === 'AWS KMS') {
+    icon = awsIconsByName['AWS Key Management Service']
+  }
+  if (s.service === 'Amazon Relational Database Service') {
+    icon = awsIconsByName['Amazon RDS']
+  }
+  if (s.service === 'Amazon S3') {
+    icon = awsIconsByName['Amazon Simple Storage Service']
+  }
+  if (s.service === 'Amazon S3 Glacier') {
+    icon = awsIconsByName['Amazon Simple Storage Service Glacier']
+  }
+  if (s.service === 'Amazon EBS') {
+    icon = awsIconsByName['Amazon Elastic Block Store']
+  }
 
   const simpleName = simplifyServiceName(s.service).trim()
 

@@ -854,7 +854,15 @@
       "categories": [
         "Artificial Intelligence"
       ],
-      "iconName": "Amazon-SageMaker-AI"
+      "iconName": "Amazon-SageMaker-AI",
+      "resources": [
+        "Amazon-SageMaker_Canvas",
+        "Amazon-SageMaker_Geospatial-ML",
+        "Amazon-SageMaker_Model",
+        "Amazon-SageMaker_Notebook",
+        "Amazon-SageMaker_Shadow-Testing",
+        "Amazon-SageMaker_Train"
+      ]
     },
     {
       "service": "Amazon SageMaker Ground Truth",
@@ -4723,7 +4731,26 @@
       "categories": [
         "Networking Content Delivery"
       ],
-      "iconName": "Amazon-Virtual-Private-Cloud"
+      "iconName": "Amazon-Virtual-Private-Cloud",
+      "resources": [
+        "Amazon-VPC_Carrier-Gateway",
+        "Amazon-VPC_Customer-Gateway",
+        "Amazon-VPC_Elastic-Network-Adapter",
+        "Amazon-VPC_Elastic-Network-Interface",
+        "Amazon-VPC_Endpoints",
+        "Amazon-VPC_Flow-Logs",
+        "Amazon-VPC_Internet-Gateway",
+        "Amazon-VPC_NAT-Gateway",
+        "Amazon-VPC_Network-Access-Analyzer",
+        "Amazon-VPC_Network-Access-Control-List",
+        "Amazon-VPC_Peering-Connection",
+        "Amazon-VPC_Reachability-Analyzer",
+        "Amazon-VPC_Router",
+        "Amazon-VPC_Traffic-Mirroring",
+        "Amazon-VPC_Virtual-private-cloud-VPC",
+        "Amazon-VPC_VPN-Connection",
+        "Amazon-VPC_VPN-Gateway"
+      ]
     },
     {
       "service": "Amazon VPC Lattice",
@@ -5509,7 +5536,21 @@
       "categories": [
         "Security Identity Compliance"
       ],
-      "iconName": "AWS-Identity-and-Access-Management"
+      "iconName": "AWS-Identity-and-Access-Management",
+      "resources": [
+        "AWS-Identity-Access-Management_Add-on",
+        "AWS-Identity-Access-Management_AWS-STS-Alternate",
+        "AWS-Identity-Access-Management_AWS-STS",
+        "AWS-Identity-Access-Management_Data-Encryption-Key",
+        "AWS-Identity-Access-Management_Encrypted-Data",
+        "AWS-Identity-Access-Management_IAM-Access-Analyzer",
+        "AWS-Identity-Access-Management_IAM-Roles-Anywhere",
+        "AWS-Identity-Access-Management_Long-Term-Security-Credential",
+        "AWS-Identity-Access-Management_MFA-Token",
+        "AWS-Identity-Access-Management_Permissions",
+        "AWS-Identity-Access-Management_Role",
+        "AWS-Identity-Access-Management_Temporary-Security-Credential"
+      ]
     },
     {
       "service": "AWS Key Management Service",
@@ -5836,7 +5877,16 @@
       "categories": [
         "Storage"
       ],
-      "iconName": "Amazon-EFS"
+      "iconName": "Amazon-EFS",
+      "resources": [
+        "Amazon-Elastic-File-System_EFS-Intelligent-Tiering",
+        "Amazon-Elastic-File-System_EFS-One-Zone-Infrequent-Access",
+        "Amazon-Elastic-File-System_EFS-One-Zone",
+        "Amazon-Elastic-File-System_EFS-Standard-Infrequent-Access",
+        "Amazon-Elastic-File-System_EFS-Standard",
+        "Amazon-Elastic-File-System_Elastic-Throughput",
+        "Amazon-Elastic-File-System_File-System"
+      ]
     },
     {
       "service": "Amazon Elastic Block Store",

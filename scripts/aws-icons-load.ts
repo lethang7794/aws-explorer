@@ -1,11 +1,17 @@
 import fs from 'fs'
 import path from 'path'
-import { RecursiveDirectory, recursiveDirectory } from 'recursive-directory'
-import { ICON_FILENAME_TO_SERVICE } from '../data/aws-service-icon-mapping'
+import {
+  recursiveDirectory,
+  RecursiveDirectory,
+} from 'recursive-directory'
+
 import {
   AWS_ICONS_DATA_PATH,
   AWS_ICONS_EXTRACT_PATH,
 } from '@/constants/aws-icons-etl'
+import {
+  SERVICE_ICON_TO_RESOURCE_ICON_PREFIX,
+} from '@/data/aws-service-icon-to-resource-prefix'
 
 type Icon = {
   service?: string
@@ -166,23 +172,12 @@ function groupResourcesOfService(data: Icon[]): Icon[] {
     if (icon.type === 'Architecture Service') {
       const matchedResources = resources
         .filter((resource) => {
-          //
-          // Special cases:
-          //
-          // - SageMaker AI
-          if (icon.iconName === 'AmazonSageMakerAI') {
-            return resource.iconName.startsWith('AmazonSageMaker')
-          }
-          if (icon.iconName === 'AmazonVirtualPrivateCloud') {
-            return resource.iconName.startsWith('AmazonVPC')
-          }
-          if (icon.iconName === 'AWSIdentityandAccessManagement') {
-            return resource.iconName.startsWith('AWSIdentityAccessManagement')
-          }
-          if (icon.iconName === 'AmazonEFS') {
-            return resource.iconName.startsWith('AmazonElasticFileSystem')
-          }
-          return resource.iconName.startsWith(icon.iconName)
+          const resourcePrefix =
+            SERVICE_ICON_TO_RESOURCE_ICON_PREFIX[icon.iconName] || icon.iconName
+          return (
+            resource.iconName.startsWith(resourcePrefix) ||
+            resource.iconName.startsWith(icon.iconName)
+          )
         })
         .map((resource) => resource.iconName)
       return {

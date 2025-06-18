@@ -1,3 +1,6 @@
+import {
+  SERVICE_ICON_TO_RESOURCE_ICON_PREFIX,
+} from '@/data/aws-service-icon-to-resource-prefix'
 import { Service } from '@/lib/aws-services-data'
 import { pascalToTitleCase } from '@/lib/text'
 
@@ -5,28 +8,14 @@ export function getResourceNameFromServiceName(
   resource: string,
   service: Service
 ): string {
-  let resourceWithoutPrefix = resource.replace(service.iconService || '', '')
-  //
-  // Special cases:
-  //
-  // - SageMaker AI
-  if (service.iconService === 'AmazonSageMakerAI') {
-    resourceWithoutPrefix = resource.replace('AmazonSageMaker', '')
-  }
-  // - VPC
-  if (service.iconService === 'AmazonVirtualPrivateCloud') {
-    resourceWithoutPrefix = resource.replace('AmazonVPC', '')
-  }
-  // - IAM
-  if (service.iconService === 'AWSIdentityandAccessManagement') {
-    resourceWithoutPrefix = resource.replace('AWSIdentityAccessManagement', '')
-  }
-  // - EFS
-  if (service.iconService === 'AmazonEFS') {
-    resourceWithoutPrefix = resource.replace('AmazonElasticFileSystem', '')
-  }
+  let resourcePrefix =
+    SERVICE_ICON_TO_RESOURCE_ICON_PREFIX[service.iconService || ''] ||
+    service.iconService
+  let resourceWithoutPrefix = resource.replace(resourcePrefix || '', '')
 
-  return pascalToTitleCase(resourceWithoutPrefix)
+  return pascalToTitleCase(
+    resourceWithoutPrefix.replaceAll('-', ' ').replaceAll('_', ' ')
+  )
     .replace('A W S', 'AWS')
     .replace('H D F S', 'HDFS')
     .replace('E M R', 'EMR')
