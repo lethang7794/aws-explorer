@@ -1,7 +1,6 @@
-import AWS_SERVICES from '@/data/aws-services.json'
 import AWS_ICONS from '@/data/aws-icons.json'
 import { SERVICE_TO_ICON_FILENAME } from '@/data/aws-service-icon-mapping'
-import { AWS_CATEGORY_TO_ICON } from '@/data/aws-icon-from-category'
+import AWS_SERVICES from '@/data/aws-services.json'
 import { ServiceCrawl } from '@/scripts/aws-services-docs-crawler'
 
 export interface Service extends ServiceCrawl {
@@ -29,9 +28,9 @@ interface AwsIcon {
   service?: string
   type: string
   categories: string[]
-  name: string
-  names?: string[]
-  nameWithPrefix: string
+  iconName: string
+  iconNames?: string[]
+  iconNameWithPrefix?: string
   resources?: string[]
 }
 
@@ -72,6 +71,36 @@ export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
   if (s.service === 'Amazon Elastic File System') {
     icon = awsIconsByName['Amazon EFS']
   }
+  if (s.service === 'Amazon SNS') {
+    icon = awsIconsByName['Amazon Simple Notification Service']
+  }
+  if (s.service === 'Amazon SQS') {
+    icon = awsIconsByName['Amazon Simple Queue Service']
+  }
+  if (s.service === 'Amazon ECR') {
+    icon = awsIconsByName['Amazon Elastic Container Registry']
+  }
+  if (s.service === 'Amazon ECS') {
+    icon = awsIconsByName['Amazon Elastic Container Service']
+  }
+  if (s.service === 'Amazon EKS') {
+    icon = awsIconsByName['Amazon Elastic Kubernetes Service']
+  }
+  if (s.service === 'AWS KMS') {
+    icon = awsIconsByName['AWS Key Management Service']
+  }
+  if (s.service === 'Amazon Relational Database Service') {
+    icon = awsIconsByName['Amazon RDS']
+  }
+  if (s.service === 'Amazon S3') {
+    icon = awsIconsByName['Amazon Simple Storage Service']
+  }
+  if (s.service === 'Amazon S3 Glacier') {
+    icon = awsIconsByName['Amazon Simple Storage Service Glacier']
+  }
+  if (s.service === 'Amazon EBS') {
+    icon = awsIconsByName['Amazon Elastic Block Store']
+  }
 
   const simpleName = simplifyServiceName(s.service).trim()
 
@@ -80,7 +109,7 @@ export const awsServicesData: Service[] = AWS_SERVICES.map((s) => {
     serviceSimpleName: simpleName,
     slug: generateSlug(simpleName),
     iconService:
-      icon?.name ||
+      icon?.iconName ||
       ((typeof SERVICE_TO_ICON_FILENAME[s.service] === 'string'
         ? SERVICE_TO_ICON_FILENAME[s.service]
         : undefined) as string) ||
@@ -104,7 +133,7 @@ function getAllCategories(services: Service[]): ServiceCategory[] {
         name: c,
         slug: generateSlug(c),
         services: services.filter((service) => service.categories.includes(c)),
-        icon: AWS_CATEGORY_TO_ICON[c] || undefined,
+        icon: getCategoryIcon(c),
       }
     })
 }
@@ -132,4 +161,45 @@ export const getServiceBySlug = (
       s.categories.includes(service.categories[0])
     ),
   }
+}
+
+function getCategoryIcon(c: string): string {
+  const CATEGORY_TO_ICON = {
+    'AWS Management Console': 'AWS-Management-Console',
+    Analytics: 'Category_Analytics',
+    'Application Integration': 'Category_Application-Integration',
+    Blockchain: 'Category_Blockchain',
+    'Business Applications': 'Category_Business-Applications',
+    'Cloud Financial Management': 'Category_Cloud-Financial-Management',
+    Compute: 'Category_Compute',
+    'Compute HPC': 'Category_Compute',
+    Containers: 'Category_Containers',
+    'Cryptography & PKI': 'Category_Security-Identity-Compliance',
+    'Customer Enablement Services': 'Category_Customer-Enablement',
+    Database: 'Category_Database',
+    'Decision Guides': 'GeneralResource',
+    'Developer Tools': 'Category_Developer-Tools',
+    'End User Computing': 'Category_End-User-Computing',
+    'Front-End Web & Mobile': 'Category_Front-End-Web-Mobile',
+    'Game Development': 'Category_Games',
+    'General Reference': 'GeneralResource',
+    'Internet of Things (IoT)': 'Category_Internet-of-Things',
+    'Machine Learning': 'Category_Artificial-Intelligence',
+    'Management & Governance': 'Category_Management-Governance',
+    Marketplace: 'AWS-Marketplace',
+    'Media Services': 'Category_Media-Services',
+    'Migration & Transfer': 'Category_Migration-Modernization',
+    'Networking & Content Delivery': 'Category_Networking-Content-Delivery',
+    'Partner Central': 'GeneralResource',
+    'Quantum Computing': 'Category_Quantum-Technologies',
+    Robotics: 'Category_Robotics',
+    Satellite: 'Category_Satellite',
+    'Security, Identity, & Compliance': 'Category_Security-Identity-Compliance',
+    Serverless: 'Category_Serverless',
+    Storage: 'Category_Storage',
+  } as Record<string, string>
+  if (CATEGORY_TO_ICON[c]) {
+    return CATEGORY_TO_ICON[c]
+  }
+  return `Category_${c.replaceAll(' & ', '-').replaceAll(' ', '-').replaceAll(',', '')}`
 }

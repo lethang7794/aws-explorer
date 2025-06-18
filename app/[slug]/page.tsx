@@ -1,25 +1,34 @@
-import { awsServicesData, getServiceBySlug } from '@/lib/aws-services-data'
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from '@/components/ui/card'
+  ArrowLeft,
+  ExternalLink,
+  Star,
+} from 'lucide-react'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+
+import { Footer } from '@/components/footer'
+import { ServiceIcons } from '@/components/service-icons'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { ArrowLeft, ExternalLink, Star } from 'lucide-react'
-import { notFound } from 'next/navigation'
-import { Footer } from '@/components/footer'
-import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
-import { AWS_DOCS_URL } from '@/constants/aws-docs'
-import { DownloadSvg } from '@/components/ui/download-svg'
-import { DownloadPng } from '@/components/ui/download-png'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { CopyPng } from '@/components/ui/copy-png'
-import { CopySvg } from '@/components/ui/copy-svg'
-import { ServiceIcons } from '@/components/service-icons'
+import { DownloadPng } from '@/components/ui/download-png'
+import { DownloadSvg } from '@/components/ui/download-svg'
+import { AWS_DOCS_URL } from '@/constants/aws-docs'
+import {
+  awsServicesData,
+  getServiceBySlug,
+} from '@/lib/aws-services-data'
+import {
+  getResourceNameFromServiceName,
+} from '@/lib/get-aws-resource-name-from-service-name'
 
 interface ServiceDetailPageProps {
   params: {
@@ -133,7 +142,7 @@ export default async function ServiceDetailPage({
                 </div>
               ) : null}
               <div className="flex items-center justify-between gap-2 text-3xl md:text-4xl">
-                <div className="mr-2">{service.service}</div>
+                <div className="mr-1">{service.service}</div>
               </div>
               {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
                 <div className="flex-grow font-normal text-lg md:text-4xl">
