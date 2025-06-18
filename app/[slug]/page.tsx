@@ -1,8 +1,4 @@
-import {
-  ArrowLeft,
-  ExternalLink,
-  Star,
-} from 'lucide-react'
+import { ArrowLeft, ExternalLink, Star } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -22,13 +18,9 @@ import { CopyPng } from '@/components/ui/copy-png'
 import { DownloadPng } from '@/components/ui/download-png'
 import { DownloadSvg } from '@/components/ui/download-svg'
 import { AWS_DOCS_URL } from '@/constants/aws-docs'
-import {
-  awsServicesData,
-  getServiceBySlug,
-} from '@/lib/aws-services-data'
-import {
-  getResourceNameFromServiceName,
-} from '@/lib/get-aws-resource-name-from-service-name'
+import { awsServicesData, getServiceBySlug } from '@/lib/aws-services-data'
+import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
+import { CopyDrawIO } from '@/components/ui/copy-draw-io'
 
 interface ServiceDetailPageProps {
   params: {
@@ -225,6 +217,15 @@ export default async function ServiceDetailPage({
                 className="hidden md:flex"
                 buttonText="Copy PNG"
               />
+              <CopyDrawIO
+                id={service.iconService}
+                name={service.service}
+                filename={service.iconService}
+                size={60}
+                borderColor="#FF8000"
+                className="hidden md:flex"
+                buttonText="Copy draw.io"
+              />
             </div>
             <div className="md:hidden mt-2 text-sm font-normal italic text-center">
               (See more on desktop 💻🖥️)
@@ -268,11 +269,20 @@ export default async function ServiceDetailPage({
                           </>
                         }
                       />
-                      <CopyPng
+                      {/* <CopyPng
                         id={r}
                         name={resourceName}
                         targetSize={1024}
                         className="hidden md:flex"
+                      /> */}
+                      <CopyDrawIO
+                        id={r}
+                        filename={r}
+                        name={resourceName}
+                        size={65}
+                        borderColor="#0000FF"
+                        className="hidden md:flex"
+                        buttonText="draw.io"
                       />
                     </div>
                   </li>
