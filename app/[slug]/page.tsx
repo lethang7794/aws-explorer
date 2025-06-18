@@ -83,8 +83,6 @@ export default async function ServiceDetailPage({
     notFound() // Triggers the not-found page
   }
 
-  console.log({ service })
-
   // Sort related services to maintain consistent order
   const sortedServices = [...service.othersInCategory].sort((a, b) =>
     a.service.localeCompare(b.service)
