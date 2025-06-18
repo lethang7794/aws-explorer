@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, Star } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Star, Heart } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -224,7 +224,11 @@ export default async function ServiceDetailPage({
                 size={60}
                 borderColor="#FF8000"
                 className="hidden md:flex"
-                buttonText="Copy draw.io"
+                buttonText={
+                  <>
+                    Copy draw.io <Heart fill="deeppink" strokeWidth={1} />
+                  </>
+                }
               />
             </div>
             <div className="md:hidden mt-2 text-sm font-normal italic text-center">
@@ -282,7 +286,11 @@ export default async function ServiceDetailPage({
                         size={65}
                         borderColor="#0000FF"
                         className="hidden md:flex"
-                        buttonText="draw.io"
+                        buttonText={
+                          <>
+                            draw.io <Heart fill="deeppink" strokeWidth={1} />
+                          </>
+                        }
                       />
                     </div>
                   </li>
