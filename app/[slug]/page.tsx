@@ -133,7 +133,7 @@ export default async function ServiceDetailPage({
                 </div>
               ) : null}
               <div className="flex items-center justify-between gap-2 text-3xl md:text-4xl">
-                <div className="mr-2">{service.service}</div>
+                <div className="mr-1">{service.service}</div>
               </div>
               {service.alsoKnownAs && service.alsoKnownAs.length > 0 ? (
                 <div className="flex-grow font-normal text-lg md:text-4xl">
