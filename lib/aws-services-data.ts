@@ -109,7 +109,6 @@ function getAllCategories(services: Service[]): ServiceCategory[] {
 }
 
 export const awsServiceCategories = getAllCategories(awsServicesData)
-console.log({ awsServiceCategories })
 
 export const awsServiceCountByCategory = awsServiceCategories.reduce(
   (acc, { name: category }) => {
