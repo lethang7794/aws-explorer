@@ -1,6 +1,4 @@
-import {
-  SERVICE_ICON_TO_RESOURCE_ICON_PREFIX,
-} from '@/data/aws-service-icon-to-resource-prefix'
+import { SERVICE_ICON_TO_RESOURCE_ICON_PREFIX } from '@/data/aws-service-icon-to-resource-prefix'
 import { Service } from '@/lib/aws-services-data'
 import { pascalToTitleCase } from '@/lib/text'
 
@@ -26,14 +24,16 @@ export function getResourceNameFromServiceName(
     .replace('M L', 'ML')
     .replace('H T T P', 'HTTP')
     .replace('A M I', 'AMI')
-    .replace('for N E T', 'for .NET')
+    .replace('N E T', '.NET')
     .replace('D B', 'DB')
     .replace('I P', 'IP')
     .replace('Instancewith', 'Instance with')
     .replace('Cloud Watch', 'CloudWatch')
     .replace(/Container([123])/, 'Container $1')
-    .replace('Copi Io T C L I', 'Copilot CLI')
+    .replace('Copi Io T  C L I', 'Copilot CLI')
     .replace('E C S ', 'ECS ')
+    .replace('E K S ', 'EKS ')
+    .replace('E K S ', 'EKS ')
     .replace('Dynamo DB', 'DynamoDB')
     .replace('Globalsecondaryindex', 'Global Secondary Index')
     .replace('Infrequent Access', 'Infrequent-Access')
@@ -51,10 +51,12 @@ export function getResourceNameFromServiceName(
     .replace('D N S', 'DNS')
     .replace('V P C ', 'VPC ')
     .replace('I A', 'IA')
+    .replace('Io T  Device  Jobs', 'IoT Device Jobs')
     .replace('Directorybucket', 'Directory bucket')
     .replace('N A T', 'NAT')
     .replace('V P N', 'VPN')
     .replace('Virtualprivatecloud V P C', 'Virtual private cloud (VPC)')
+    .replace('V P C', 'VPC')
     .replace('Q P U', 'QPU')
     .replace(/Simulator([1234])/, 'Simulator $1')
     .replace('R O S', 'ROS')
@@ -62,13 +64,11 @@ export function getResourceNameFromServiceName(
     .replace('S T S', 'STS')
     .replace('IA M ', 'IAM ')
     .replace('M F A', 'MFA')
+    .replace('F T P', 'FTP')
     .replace('Volumegp3', 'Volume gp3')
     .replace('E F S ', 'EFS ')
     .replace('Backupfor A W S', 'Backup for AWS')
-    .replace(
-      'AWS Backupsupportfor Amazon FSxfor Net App O N T A P',
-      'AWS Backup support for Amazon FSx for NetApp ONTAP'
-    )
+    .replace('Net App  O N T A P', 'NetApp ONTAP')
     .replace('AWS Backupsupportfor ', 'AWS Backup support for ')
     .replace('V Mware', 'VMware')
     .replace('R D S', 'RDS')
@@ -83,5 +83,7 @@ export function getResourceNameFromServiceName(
     )
     .replace('E K Son Outposts', 'EKS on Outposts')
     .replace('Uicksight Paginated Reports', 'Paginated Reports')
+    .replace('A W S', 'AWS')
+    .replaceAll(' For ', ' for ')
   // .replace('', '')
 }

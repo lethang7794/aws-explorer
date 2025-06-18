@@ -9,7 +9,7 @@ import { Toaster } from '@/components/ui/sonner'
 export const metadata: Metadata = {
   title: 'AWS Explorer',
   description:
-    'Browse, explorer, and find your next AWS services... or quickly find the docs you need.',
+    'Browse, explorer, and find your next AWS services; find the docs you need; download architecture icons...',
   metadataBase: new URL(
     process.env.METADATA_BASE_URL || 'https://aws-explorer.vercel.app'
   ),

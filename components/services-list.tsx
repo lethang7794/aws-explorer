@@ -201,8 +201,8 @@ export default function ServicesList({
           AWS Explorer
         </h1>
         <p className="text-gray-200 mt-2">
-          Browse, explorer, and find your next AWS services...or quickly find
-          the docs you need.
+          Browse, explorer, and find your next AWS services; find the docs you
+          need; download architecture icons...
         </p>
       </header>
 
