@@ -100,7 +100,7 @@ function getShape({
     <mxCell id="0" />
     <mxCell id="1" parent="0" />
     <mxCell id="2" value=" ${name} "
-      style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;editableCssRules=.*;image=${dataUri};${borderColorText};html=1;"
+      style="shape=image;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontFamily=Arial;fontSize=12;aspect=fixed;imageAspect=0;editableCssRules=.*;image=${dataUri};${borderColorText};labelBackgroundColor=default;spacingTop=-4;"
       vertex="1" parent="1">
       <mxGeometry width="60" height="60" as="geometry" />
     </mxCell>
