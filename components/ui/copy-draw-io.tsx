@@ -80,7 +80,7 @@ export function CopyDrawIO({
 
 function getShape({
   name,
-  borderColor: color,
+  borderColor,
   svg,
 }: {
   name: string
@@ -93,12 +93,14 @@ function getShape({
   // Create a full data URI
   const dataUri = `data:image/svg+xml,${base64}`
 
+  const borderColorText = borderColor ? `labelBorderColor=${borderColor};` : ''
+
   return `<mxGraphModel>
   <root>
     <mxCell id="0" />
     <mxCell id="1" parent="0" />
     <mxCell id="2" value=" ${name} "
-      style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;editableCssRules=.*;image=${dataUri};labelBorderColor=${color};"
+      style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;editableCssRules=.*;image=${dataUri};${borderColorText};html=1;"
       vertex="1" parent="1">
       <mxGeometry width="60" height="60" as="geometry" />
     </mxCell>
