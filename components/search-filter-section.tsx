@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import { LayoutGrid, List, Grid, BoxSelect } from 'lucide-react'
+import { LayoutGrid, List, Grid, BoxSelect, X } from 'lucide-react'
 import { awsServiceCategories, type Service } from '@/lib/aws-services-data'
 import {
   SortType,
@@ -97,13 +97,24 @@ function SearchInputSection({
           totalServices={totalServices}
         />
       </h2>
-      <Input
-        type="text"
-        placeholder="Search by name or description ..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full"
-      />
+      <div className="relative">
+        <Input
+          type="text"
+          placeholder="Search by name or description ..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full pr-10"
+        />
+        {searchTerm && (
+          <button
+            onClick={() => setSearchTerm('')}
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Clear search"
+          >
+            <X />
+          </button>
+        )}
+      </div>
     </div>
   )
 }
