@@ -39,11 +39,11 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
               )}
               <Link
                 href={`/${service.slug}`}
-                className=" text-blue-600 hover:text-blue-700 hover:underline"
+                className="h-[14px] text-blue-600 hover:text-blue-700 hover:underline"
                 scroll={true}
                 target="_blank"
               >
-                <ExternalLink className="inline-block" size={14} />
+                <ExternalLink className="block self-baseline" size={14} />
               </Link>
             </div>
             <div className="absolute z-10 inset-0 bottom-6 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
