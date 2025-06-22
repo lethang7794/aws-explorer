@@ -118,17 +118,30 @@ export default function ServicesList({
   // Memoize filtered, sorted, and prefix-adjusted services
   const filteredServices = useMemo(() => {
     const search = debouncedSearchTerm.trim().toLowerCase()
+
     let filtered = initialServices.filter((service) => {
-      const matchesSearchTerm =
+      let matchesSearchTerm =
         service.service.toLowerCase().includes(search) ||
         service.shortDescription.toLowerCase().includes(search) ||
         service.alsoKnownAs?.some((aka) =>
           aka.toLowerCase().includes(search)
         ) ||
         service.categories?.some((cat) => cat.toLowerCase().includes(search))
+
+      if (layoutMode === 'drawio') {
+        matchesSearchTerm =
+          service.service.toLowerCase().includes(search) ||
+          service.alsoKnownAs?.some((aka) =>
+            aka.toLowerCase().includes(search)
+          ) ||
+          service.iconResources?.some((icon) =>
+            icon.toLowerCase().replaceAll('-', ' ').includes(search)
+          )!
+      }
       const matchesCategories =
         selectedCategories.length === 0 ||
         selectedCategories.some((cat) => service.categories.includes(cat))
+
       return matchesSearchTerm && matchesCategories
     })
 
@@ -164,6 +177,7 @@ export default function ServicesList({
     selectedCategories,
     sortType,
     prefixDisplay,
+    layoutMode,
   ])
 
   // Pagination logic

@@ -30,7 +30,7 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
         <CardTitle className="text-lg">
           <div className="group relative flex flex-col flex-wrap gap-1 items-center justify-between">
             <ServiceIcons service={service} size="medium" />
-            <div className="flex gap-1 justify-center items-center w-full text-center text-sm text-primary">
+            <div className="flex gap-1 flex-wrap justify-center items-center w-full text-center text-sm text-primary">
               <div className="font-[Arial]">{displayName} </div>
               {akaText && (
                 <div className="whitespace overflow-hidden truncate">
