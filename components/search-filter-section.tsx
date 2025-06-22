@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import { LayoutGrid, List, Grid } from 'lucide-react'
+import { LayoutGrid, List, Grid, BoxSelect } from 'lucide-react'
 import { awsServiceCategories, type Service } from '@/lib/aws-services-data'
 import {
   SortType,
@@ -297,6 +297,15 @@ function LayoutInputSection() {
           className="w-fit px-2"
         >
           <Grid className="h-5 w-5" /> Icon
+        </Button>
+        <Button
+          variant={layoutMode === 'drawio' ? 'secondary' : 'outline'}
+          size="icon"
+          onClick={() => setLayoutMode('drawio')}
+          aria-label="Draw.io view"
+          className="w-fit px-2"
+        >
+          <BoxSelect className="h-5 w-5" /> Draw.io
         </Button>
       </div>
     </div>

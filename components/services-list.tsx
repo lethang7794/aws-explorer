@@ -20,6 +20,7 @@ import { Pagination } from './pagination'
 import { ServiceListItem } from './service-list-item'
 import { ServiceCardItem } from './service-card-item'
 import { ServiceIconItem } from './service-icon-item'
+import { ServiceDrawIOItem } from './service-drawio-item'
 import { SearchFilterSection } from './search-filter-section'
 
 interface ServicesListProps {
@@ -255,6 +256,16 @@ export default function ServicesList({
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 min-[2000px]:grid-cols-6 min-[2399px]:grid-cols-7 min-[2879px]:grid-cols-8 min-[3839px]:grid-cols-9 min-[4000px]:grid-cols-10 gap-6">
                   {paginatedServices.map((service) => (
                     <ServiceIconItem key={service.service} service={service} />
+                  ))}
+                </div>
+              )}
+              {layoutMode === 'drawio' && (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-4 min-[2000px]:grid-cols-5 min-[2399px]:grid-cols-6 min-[2879px]:grid-cols-7 min-[3839px]:grid-cols-8 min-[4000px]:grid-cols-9 gap-6">
+                  {paginatedServices.map((service) => (
+                    <ServiceDrawIOItem
+                      key={service.service}
+                      service={service}
+                    />
                   ))}
                 </div>
               )}

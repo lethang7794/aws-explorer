@@ -11,7 +11,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 
 export type SortType = 'simpleName' | 'category' | 'fullName'
 export type PrefixDisplayType = 'with' | 'without'
-export type LayoutMode = 'card' | 'list' | 'icon'
+export type LayoutMode = 'card' | 'list' | 'icon' | 'drawio'
 
 interface AwsServicesFilterContextProps {
   selectedCategories: string[]
