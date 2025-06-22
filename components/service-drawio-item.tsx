@@ -6,6 +6,7 @@ import { CopyDrawIO } from '@/components/ui/copy-draw-io'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
 import { ServiceIcons } from './service-icons'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
+import { ExternalLink } from 'lucide-react'
 
 export function ServiceDrawIOItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
@@ -29,15 +30,23 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
         <CardTitle className="text-lg">
           <div className="group relative flex flex-col flex-wrap gap-1 items-center justify-between">
             <ServiceIcons service={service} size="medium" />
-            <div className="w-full text-center text-sm text-primary">
-              <div className="font-[Arial]">{displayName}</div>
+            <div className="flex gap-1 justify-center items-center w-full text-center text-sm text-primary">
+              <div className="font-[Arial]">{displayName} </div>
               {akaText && (
                 <div className="whitespace overflow-hidden truncate">
                   {akaText}
                 </div>
               )}
+              <Link
+                href={`/${service.slug}`}
+                className=" text-blue-600 hover:text-blue-700 hover:underline"
+                scroll={true}
+                target="_blank"
+              >
+                <ExternalLink className="inline-block" size={14} />
+              </Link>
             </div>
-            <div className="absolute z-10 inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
+            <div className="absolute z-10 inset-0 bottom-6 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
               <CopyDrawIO
                 id={service.iconService || ''}
                 name={service.service}
@@ -50,12 +59,6 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
               />
             </div>
           </div>
-          <Link
-            href={`/${service.slug}`}
-            className=" text-blue-600 hover:text-blue-700 hover:underline"
-            scroll={true}
-            target="_blank"
-          ></Link>
         </CardTitle>
       </CardHeader>
       <CardContent className="pb-0">

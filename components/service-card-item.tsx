@@ -33,6 +33,7 @@ export function ServiceCardItem({ service }: { service: Service }) {
             <ServiceIcons
               service={service}
               classNameWrapper="justify-start !flex-shrink"
+              size="medium"
             />
             <div className="flex-1 min-w-48">
               {displayName}
