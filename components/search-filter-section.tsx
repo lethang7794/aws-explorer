@@ -124,7 +124,7 @@ function SearchHeader({
       Search in{' '}
       {selectedCategoriesCount
         ? serviceCountOfSelectedCategories
-        : initialServicesCount}{' '}
+        : totalServices}{' '}
       services
       {selectedCategoriesCount > 0 ? (
         <span className="text-sm font-normal">

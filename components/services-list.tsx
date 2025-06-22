@@ -188,14 +188,11 @@ export default function ServicesList({
   )
 
   const serviceCountOfSelectedCategories = useMemo(() => {
-    if (filteredServices.length === 0) {
-      return initialServices.length
-    }
     return selectedCategories.reduce(
       (acc, category) => acc + (awsServiceCountByCategory[category] || 0),
       0
     )
-  }, [selectedCategories, initialServices])
+  }, [selectedCategories])
 
   const handleCategoryChange = useCallback(
     (category: string) => {
