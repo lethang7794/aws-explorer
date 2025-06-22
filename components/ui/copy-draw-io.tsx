@@ -25,7 +25,7 @@ export function CopyDrawIO({
   borderColor,
   buttonText = 'DrawIO',
   className,
-  variant = 'ghost',
+  variant = 'outline',
 }: Props) {
   return (
     <Button

@@ -242,7 +242,7 @@ export default async function ServiceDetailPage({
             <h2 className="flex justify-between gap-2 items-baseline text-xl font-semibold mb-2">
               <span>Resources</span>{' '}
               <span className="hidden md:block text-sm font-normal italic text-balance text-right">
-                (Hover over the resource to download/copy)
+                (Hover to download/copy)
               </span>
             </h2>
             <ul className="flex gap-4 flex-wrap justify-center">
