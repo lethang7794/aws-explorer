@@ -53,6 +53,7 @@ export function SearchFilterSection({
         selectedCategories={selectedCategories}
         serviceCountOfSelectedCategories={serviceCountOfSelectedCategories}
         setSearchTerm={setSearchTerm}
+        totalServices={totalServices}
       />
       <CategoriesInputSection
         services={services}
@@ -77,12 +78,14 @@ function SearchInputSection({
   selectedCategories,
   serviceCountOfSelectedCategories,
   setSearchTerm,
+  totalServices,
 }: {
   services: Service[]
   searchTerm: string
   selectedCategories: string[]
   serviceCountOfSelectedCategories: number
   setSearchTerm: (s: string) => void
+  totalServices: number
 }) {
   return (
     <div className="mt-4 md:mt-0">
@@ -91,6 +94,7 @@ function SearchInputSection({
           servicesCount={services.length}
           selectedCategoriesCount={selectedCategories.length}
           serviceCountOfSelectedCategories={serviceCountOfSelectedCategories}
+          totalServices={totalServices}
         />
       </h2>
       <Input
@@ -108,21 +112,20 @@ function SearchHeader({
   servicesCount: initialServicesCount,
   selectedCategoriesCount,
   serviceCountOfSelectedCategories,
+  totalServices,
 }: {
   servicesCount: number
   selectedCategoriesCount: number
   serviceCountOfSelectedCategories: number
+  totalServices: number
 }) {
   return (
     <>
-      Search{' '}
-      {selectedCategoriesCount > 0
-        ? serviceCountOfSelectedCategories === 1
-          ? `in 1 service`
-          : `in ${serviceCountOfSelectedCategories} services`
-        : initialServicesCount === 1
-          ? `in 1 service`
-          : `in ${initialServicesCount} services`}
+      Search in{' '}
+      {selectedCategoriesCount
+        ? serviceCountOfSelectedCategories
+        : initialServicesCount}{' '}
+      services
       {selectedCategoriesCount > 0 ? (
         <span className="text-sm font-normal">
           {selectedCategoriesCount === 1
