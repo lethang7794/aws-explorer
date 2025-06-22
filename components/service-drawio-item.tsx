@@ -27,15 +27,27 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
     <Card className="flex flex-col overflow-hidden">
       <CardHeader className="p-3 pb-1 md:p-4 md:pb-2 lg:p-6 lg:pb-4 bg-gray-100">
         <CardTitle className="text-lg">
-          <div className="flex flex-col flex-wrap gap-1 items-center justify-between">
+          <div className="group relative flex flex-col flex-wrap gap-1 items-center justify-between">
             <ServiceIcons service={service} size="medium" />
             <div className="w-full text-center text-sm text-primary">
-              <div className="font-[Arial]">{service.service}</div>
+              <div className="font-[Arial]">{displayName}</div>
               {akaText && (
                 <div className="whitespace overflow-hidden truncate">
                   {akaText}
                 </div>
               )}
+            </div>
+            <div className="absolute z-10 inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
+              <CopyDrawIO
+                id={service.iconService || ''}
+                name={service.service}
+                filename={service.iconService || ''}
+                size={60}
+                borderColor="#FF8000"
+                variant="default"
+                className="hidden md:flex"
+                buttonText={<>draw.io</>}
+              />
             </div>
           </div>
           <Link
@@ -65,13 +77,14 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
                   <div className="font-normal text-xs lg:text-sm max-w-20 text-center font-[Arial]">
                     {resourceName}
                   </div>
-                  <div className="absolute inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
+                  <div className="absolute z-10 inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
                     <CopyDrawIO
                       id={r}
                       filename={r}
                       name={resourceName}
                       size={65}
                       borderColor="#0000FF"
+                      variant="default"
                       className="hidden md:flex"
                       buttonText={<>draw.io</>}
                     />

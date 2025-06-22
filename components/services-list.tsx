@@ -150,12 +150,12 @@ export default function ServicesList({
     }
 
     // Adjust service names based on prefixDisplay
-    if (prefixDisplay === 'without') {
-      return filtered.map((service) => ({
-        ...service,
-        service: service.serviceSimpleName || service.service,
-      }))
-    }
+    // if (prefixDisplay === 'without') {
+    //   return filtered.map((service) => ({
+    //     ...service,
+    //     service: service.serviceSimpleName || service.service,
+    //   }))
+    // }
 
     return filtered
   }, [

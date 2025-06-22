@@ -1,7 +1,7 @@
 'use client'
 
 import { Copy } from 'lucide-react'
-import { Button } from './button'
+import { Button, ButtonProps } from './button'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
 
@@ -13,6 +13,7 @@ interface Props {
   borderColor?: BorderColor
   buttonText?: React.ReactNode
   className?: string
+  variant?: ButtonProps['variant']
 }
 
 type BorderColor = '#FF8000' | '#0000FF'
@@ -24,10 +25,11 @@ export function CopyDrawIO({
   borderColor,
   buttonText = 'DrawIO',
   className,
+  variant = 'ghost',
 }: Props) {
   return (
     <Button
-      variant="outline"
+      variant={variant}
       size="icon"
       className={cn('w-fit px-2', className)}
       onClick={async () => {

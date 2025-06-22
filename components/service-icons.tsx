@@ -26,6 +26,7 @@ export function ServiceIcons({
     <>
       {service.iconService ? (
         <img
+          id={service.iconService}
           src={`/aws/${service.iconService}.svg`}
           alt={service.iconService}
           className={cn(classNames, sizeClasses, className)}

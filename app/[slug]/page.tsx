@@ -260,13 +260,14 @@ export default async function ServiceDetailPage({
                       className="inline h-12 w-12 lg:h-20 lg:w-20"
                     />
                     <div className="text-xs lg:text-base">{resourceName}</div>
-                    <div className="absolute inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
+                    <div className="absolute z-10 inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
                       <DownloadSvg
                         id={r}
                         filename={r}
                         name={resourceName}
                         className="hidden md:flex"
                         size={65}
+                        variant="default"
                         buttonText={
                           <>
                             SVG <Star fill="yellow" strokeWidth={1} />
@@ -286,6 +287,7 @@ export default async function ServiceDetailPage({
                         size={65}
                         borderColor="#0000FF"
                         className="hidden md:flex"
+                        variant="default"
                         buttonText={
                           <>
                             draw.io <Heart fill="deeppink" strokeWidth={1} />
