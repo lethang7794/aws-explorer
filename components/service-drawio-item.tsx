@@ -16,9 +16,7 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
 
   if (
     service.categories.some((category) =>
-      ['Decision Guides', 'Developer Tools', 'Partner Central'].includes(
-        category
-      )
+      ['Decision Guides', 'Partner Central'].includes(category)
     )
   ) {
     return null
