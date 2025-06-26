@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <footer className="w-full py-4 text-center text-sm text-muted-foreground bg-white/80 backdrop-blur-md">
-      <div>
+    <footer className="w-full py-2 text-center text-sm text-muted-foreground bg-white/80 backdrop-blur-md">
+      <div className="text-[10px]">
         <a
           href="https://github.com/lethang7794/aws-explorer"
           target="_blank"
@@ -20,7 +20,7 @@ export function Footer() {
           Thắng
         </a>
       </div>
-      <div className="mt-2 text-xs">
+      <div className="text-[10px]">
         Icons are from{' '}
         <a
           className="underline text-yellow-600 hover:text-yellow-700"
@@ -44,7 +44,7 @@ export function Footer() {
         </a>
         .
       </div>
-      <div className="text-xs">
+      <div className="text-[10px]">
         AWS Explorer is not affiliated with, endorsed by, or in any way
         officially connected with Amazon Web Services (AWS), Amazon.com, Inc.,
         or any of its subsidiaries or affiliates.
