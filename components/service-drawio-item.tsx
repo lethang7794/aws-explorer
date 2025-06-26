@@ -28,7 +28,7 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
         <CardTitle className="text-lg">
           <div className="group relative flex flex-col flex-wrap gap-1 items-center justify-between">
             <ServiceIcons service={service} size="medium" />
-            <div className="flex gap-1 flex-wrap justify-center items-center w-full text-center text-sm text-primary">
+            <div className="flex gap-1 flex-wrap justify-center items-center w-full text-center text-sm min-[2879px]:text-xl min-[3839px]:text-2xl min-[4000px]:text-4xl text-primary">
               <div className="font-[Arial]">{displayName} </div>
               {akaText && (
                 <div className="whitespace overflow-hidden truncate">
@@ -73,9 +73,9 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
                     id={r}
                     src={`/aws/${r}.svg`}
                     alt={`${resourceName} icon`}
-                    className="inline h-10 w-10 lg:h-12 lg:w-12 min-[3839px]:h-16 min-[3839px]:w-16 min-[4000px]:h-20 min-[4000px]:w-20"
+                    className="inline h-10 w-10 lg:h-12 lg:w-12 min-[3839px]:h-20 min-[3839px]:w-20 min-[4000px]:h-24 min-[4000px]:w-24"
                   />
-                  <div className="font-normal text-xs lg:text-sm max-w-20 text-center font-[Arial]">
+                  <div className="font-normal text-xs lg:text-sm min-[2879px]:text-lg min-[3839px]:text-xl min-[4000px]:text-3xl max-w-20 text-center font-[Arial] min-w-fit">
                     {resourceName}
                   </div>
                   <div className="absolute z-10 inset-0 hidden group-hover:flex flex-col mx-auto w-min flex-wrap gap-1 justify-center items-center">
