@@ -1,8 +1,8 @@
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
-import { type Service } from '@/lib/aws-services-data'
-import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
+import type { Service } from '@/lib/aws-services-data'
+import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
 import { ServiceIcons } from './service-icons'
 
 export function ServiceIconItem({ service }: { service: Service }) {
@@ -33,6 +33,7 @@ export function ServiceIconItem({ service }: { service: Service }) {
                 return (
                   <li key={r} className="flex flex-col items-center p-1">
                     <img
+                      loading="lazy"
                       src={`/aws/${r}.svg`}
                       alt={`${resourceName} icon`}
                       className="inline h-5 w-5 lg:h-10 lg:w-10 min-[2879px]:h-14 min-[2879px]:w-14 min-[3839px]:h-16 min-[3839px]:w-16 min-[4000px]:h-24 min-[4000px]:w-24"

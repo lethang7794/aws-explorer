@@ -1,11 +1,11 @@
-import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
-import { type Service } from '@/lib/aws-services-data'
-import { usePrefixDisplay } from '@/hooks/use-prefix-display'
+import { Badge } from '@/components/ui/badge'
+import { Card } from '@/components/ui/card'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
-import { ServiceIcons } from './service-icons'
 import { getServiceImageUrl } from '@/helpers/get-service-image-url'
+import { usePrefixDisplay } from '@/hooks/use-prefix-display'
+import type { Service } from '@/lib/aws-services-data'
+import { ServiceIcons } from './service-icons'
 
 export function ServiceListItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
@@ -39,12 +39,13 @@ export function ServiceListItem({ service }: { service: Service }) {
               {service.detailDescription}
             </p>
           </div>
-          <ServiceIcons service={service} classNameWrapper='justify-end' />
+          <ServiceIcons service={service} classNameWrapper="justify-end" />
         </div>
         {service.images && service.images.length > 0 ? (
           <div className="flex flex-col gap-4 items-center justify-center px-4 pb-4">
             {service.images.slice(0, 3).map((img) => (
               <img
+                loading="lazy"
                 key={img.url}
                 alt={img.alt}
                 className="aspect-auto object-center w-full max-w-2xl rounded-md"

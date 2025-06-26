@@ -1,12 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
-import { type Service } from '@/lib/aws-services-data'
-import { usePrefixDisplay } from '@/hooks/use-prefix-display'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CopyDrawIO } from '@/components/ui/copy-draw-io'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
-import { ServiceIcons } from './service-icons'
+import { usePrefixDisplay } from '@/hooks/use-prefix-display'
+import type { Service } from '@/lib/aws-services-data'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
-import { ExternalLink } from 'lucide-react'
+import { ServiceIcons } from './service-icons'
 
 export function ServiceDrawIOItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
@@ -70,6 +70,7 @@ export function ServiceDrawIOItem({ service }: { service: Service }) {
                   className="group relative flex flex-col items-center border-2 border-gray-200 p-2 rounded-lg"
                 >
                   <img
+                    loading="lazy"
                     id={r}
                     src={`/aws/${r}.svg`}
                     alt={`${resourceName} icon`}

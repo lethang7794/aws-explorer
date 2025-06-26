@@ -26,6 +26,7 @@ export function ServiceIcons({
     <>
       {service.iconService ? (
         <img
+          loading="lazy"
           id={service.iconService}
           src={`/aws/${service.iconService}.svg`}
           alt={service.iconService}
@@ -33,6 +34,7 @@ export function ServiceIcons({
         />
       ) : service.iconServices ? null : (
         <img
+          loading="lazy"
           src={`/aws/GeneralResource.svg`}
           alt={service.iconService}
           className={cn(classNames, sizeClasses, className)}
@@ -47,6 +49,7 @@ export function ServiceIcons({
         >
           {service.iconServices.map((icon) => (
             <img
+              loading="lazy"
               key={icon}
               src={`/aws/${icon}.svg`}
               alt={icon}

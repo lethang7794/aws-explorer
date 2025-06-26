@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, Star, Heart } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Heart, Star } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -14,13 +14,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { CopyDrawIO } from '@/components/ui/copy-draw-io'
 import { CopyPng } from '@/components/ui/copy-png'
 import { DownloadPng } from '@/components/ui/download-png'
 import { DownloadSvg } from '@/components/ui/download-svg'
 import { AWS_DOCS_URL } from '@/constants/aws-docs'
 import { awsServicesData, getServiceBySlug } from '@/lib/aws-services-data'
 import { getResourceNameFromServiceName } from '@/lib/get-aws-resource-name-from-service-name'
-import { CopyDrawIO } from '@/components/ui/copy-draw-io'
 
 interface ServiceDetailPageProps {
   params: {
@@ -114,6 +114,7 @@ export default async function ServiceDetailPage({
               {service.iconService ? (
                 <div className="flex flex-col gap-2">
                   <img
+                    loading="lazy"
                     src={`/aws/${service.iconService}.svg`}
                     className="h-20 w-20 md:h-24 md:w-24"
                     alt={`${service.iconService} icon`}
@@ -125,6 +126,7 @@ export default async function ServiceDetailPage({
                 <div className="flex flex-wrap gap-2">
                   {service.iconServices.map((icon) => (
                     <img
+                      loading="lazy"
                       key={icon}
                       alt={`${icon} icon`}
                       src={`/aws/${icon}.svg`}
@@ -254,6 +256,7 @@ export default async function ServiceDetailPage({
                     className="group relative flex flex-col items-center border-2 border-gray-200 p-2 rounded-lg"
                   >
                     <img
+                      loading="lazy"
                       id={r}
                       src={`/aws/${r}.svg`}
                       alt={`${resourceName} icon`}
@@ -361,6 +364,7 @@ export default async function ServiceDetailPage({
             {service.images.map((img) => (
               <div key={img.url} className="w-full">
                 <img
+                  loading="lazy"
                   alt={img.alt}
                   className="aspect-auto object-center w-full rounded-lg"
                   src={AWS_DOCS_URL + img.url}

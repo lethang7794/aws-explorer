@@ -1,18 +1,18 @@
+import { BoxSelect, Grid, LayoutGrid, List, X } from 'lucide-react'
 import { useMemo } from 'react'
-import { Input } from '@/components/ui/input'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Label } from '@/components/ui/label'
+import { PAGE_SIZES } from '@/components/services-list'
 import { Button } from '@/components/ui/button'
-import { LayoutGrid, List, Grid, BoxSelect, X } from 'lucide-react'
-import { awsServiceCategories, type Service } from '@/lib/aws-services-data'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
-  SortType,
-  PrefixDisplayType,
+  type PrefixDisplayType,
+  type SortType,
   useAwsServicesFilter,
 } from '@/contexts/aws-services-filter-context'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { scrollTop } from '@/helpers/scroll-top'
-import { PAGE_SIZES } from '@/components/services-list'
+import { awsServiceCategories, type Service } from '@/lib/aws-services-data'
 import { cn } from '@/lib/utils'
 
 export function SearchFilterSection({
@@ -202,7 +202,12 @@ function CategoriesInputSection({
               htmlFor={`category-${category}`}
               className="flex-grow flex items-center gap-2 text-sm font-medium cursor-pointer"
             >
-              <img src={`/aws/${icon}.svg`} alt={icon} className="h-5 w-5" />
+              <img
+                loading="lazy"
+                src={`/aws/${icon}.svg`}
+                alt={icon}
+                className="h-5 w-5"
+              />
               <div className="flex-grow">{category}</div>
               <span className="ml-0 text-sm text-muted-foreground">
                 ({categoryCounts[category]})

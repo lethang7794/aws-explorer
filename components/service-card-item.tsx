@@ -1,20 +1,21 @@
+import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
 import {
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
-import { type Service } from '@/lib/aws-services-data'
-import { usePrefixDisplay } from '@/hooks/use-prefix-display'
 import { getServiceAkaText } from '@/helpers/get-service-aka-text'
-import { ServiceIcons } from './service-icons'
 import { getServiceImageUrl } from '@/helpers/get-service-image-url'
+import { usePrefixDisplay } from '@/hooks/use-prefix-display'
+import type { Service } from '@/lib/aws-services-data'
+import { ServiceIcons } from './service-icons'
 
 export function ServiceCardItem({ service }: { service: Service }) {
   const prefixDisplay = usePrefixDisplay()
+
   const displayName =
     prefixDisplay === 'with' ? service.service : service.serviceSimpleName
 
@@ -59,6 +60,7 @@ export function ServiceCardItem({ service }: { service: Service }) {
           ? service.images.slice(0, 3).map((img) => (
               <div key={img.url} className="mt-4 w-full">
                 <img
+                  loading="lazy"
                   className="aspect-auto object-center w-full max-w-2xl rounded-lg"
                   src={getServiceImageUrl(img)}
                   alt={img.alt}
